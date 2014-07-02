@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	<!--<mvc:default-servlet-handler/> -->
+	<!--sring支持注解 使用@ResponseBody输出date类型格式 -->
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean
+				class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+				<!-- 
+				<property name="objectMapper" ref="customObjectMapper"></property>
+				-->
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<!-- 自定义日期转换器 <bean id="customObjectMapper" class="com.ztesoft.appmgr.web.common.util.CustomObjectMapper"></bean> -->
+
+	<!-- spring扫描包use-default-filters：false 不会去扫描service和dao层注解 -->
+	<context:component-scan base-package="cn.kangbao.webapp"
+		use-default-filters="false">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 根据请求的参数确定调用的方法 -->
+	<bean id="parameterMethodNameResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+		<property name="paramName" value="method"></property>
+		<property name="defaultMethodName" value="index"></property>
+	</bean>
+
+	<mvc:resources location="/app/" mapping="/app/**" />
+	<mvc:resources location="/jslibs/" mapping="/jslibs/**" />
+
+	<mvc:resources location="/scripts/" mapping="/scripts/**" />
+	<mvc:resources location="/images/" mapping="/images/**" />
+	<mvc:resources location="/css/" mapping="/css/**" />
+	<mvc:resources location="/" mapping="/*.ico" />
+
+	<!-- 拦截器 -->
+	<!-- <mvc:interceptors> <mvc:interceptor> <mvc:mapping path="/*" /> <bean 
+		class="com.iflytek.framework.common.CommonInterceptor"></bean> </mvc:interceptor> 
+		</mvc:interceptors> -->
+
+	<bean id="exceptionResolver"
+		class="cn.kangbao.common.plugin.CustomSimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.exception">404</prop>
+			</props>
+		</property>
+	</bean>
+
+
+
+
+
+
+
+	<!-- 国际化资源文件绑定，该文件放置在src下 <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"> 
+		<property name="basename" value="error_code"></property> <property name="defaultEncoding" 
+		value="UTF-8"></property> </bean> -->
+
+	<!-- 自定义全局异常捕获器 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
+		<property name="defaultEncoding"> <value>UTF-8</value> </property> </bean> -->
+</beans>
+
+
