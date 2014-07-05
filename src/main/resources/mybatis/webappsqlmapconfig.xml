@@ -5,7 +5,26 @@
         <property name="dialect" value="MySql"/>
     </properties>
     <!-- - - - - - - - 物理分页拦截器- - - - - - - -->
+    <plugins>
+        <plugin interceptor="cn.kangbao.webapp.db.plugin.PaginationInterceptor"/>
+    </plugins>
     <!-- - - - - - - -映射文件路径- - - - - - -->
 	<mappers>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/hospitalMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/hospital_doctorMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/message_userMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/patient_bloodpressureMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/patient_bloodsugarMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/patient_healthMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/patient_livestateMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/personMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/seerecordMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_bloorstandardMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_cityMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_dictMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_keytableMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_messageMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_userMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/custom/xml/CustomMapper.xml"/>
 	</mappers>
 </configuration>

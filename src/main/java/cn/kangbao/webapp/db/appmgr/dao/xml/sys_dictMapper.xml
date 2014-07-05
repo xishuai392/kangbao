@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="cn.kangbao.webapp.db.appmgr.dao.mapper.ISysDictMapper" >
+    <resultMap id="BaseResultMap" type="cn.kangbao.webapp.db.appmgr.entity.SysDict">
+		<id column="dictId" property="dictid" jdbcType="BIGINT" />
+		<result column="dictName" property="dictname" jdbcType="VARCHAR" />
+		<result column="updictId" property="updictid" jdbcType="INTEGER" />
+		<result column="constant" property="constant" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+  	dictId,dictName,updictId,constant
+  </sql>
+  <sql id="Arg_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Arg_Where_Clause" >
+    <where >
+      <foreach collection="arg.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <select id="selectByArg" resultMap="BaseResultMap" parameterType="cn.kangbao.webapp.db.appmgr.arg.SysDictArg" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sys_dict
+    <if test="_parameter != null" >
+      <include refid="Arg_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByArgAndPage" resultMap="BaseResultMap" parameterType="cn.kangbao.webapp.db.appmgr.arg.SysDictArg" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+     <if test="columns == null" >
+    	<include refid="Base_Column_List" />
+    </if>
+    <if test="columns != null" >
+    	${columns}
+   	</if>
+    from sys_dict
+    <if test="_parameter != null" >
+      <include refid="Arg_Where_Clause" />
+    </if>
+	<if test="groupByClause != null" >
+      group by ${groupByClause}
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByArg" parameterType="cn.kangbao.webapp.db.appmgr.arg.SysDictArg" >
+    delete from sys_dict
+    <if test="_parameter != null" >
+      <include refid="Arg_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByArg" parameterType="cn.kangbao.webapp.db.appmgr.arg.SysDictArg" resultType="java.lang.Integer" >
+    <if test="countsql1 != null" >
+    	${countsql1}
+    	<if test="_parameter != null" >
+		  <include refid="Arg_Where_Clause" />
+		</if>
+		${countsql2}
+    </if>
+	<if test="countsql1 == null" >
+		select count(*) from sys_dict
+		<if test="_parameter != null" >
+		  <include refid="Arg_Where_Clause" />
+		</if>
+	</if>
+  </select>
+  <update id="updateByArgSelective" parameterType="map" >
+    update sys_dict
+    <set >
+		<if test="record.dictid != null" >
+		dictId= #{record.dictid,jdbcType=BIGINT},
+	</if>
+	<if test="record.dictname != null" >
+		dictName= #{record.dictname,jdbcType=VARCHAR},
+	</if>
+	<if test="record.updictid != null" >
+		updictId= #{record.updictid,jdbcType=INTEGER},
+	</if>
+	<if test="record.constant != null" >
+		constant= #{record.constant,jdbcType=VARCHAR},
+	</if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Arg_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByArg" parameterType="map" >
+    update sys_dict
+    set 
+		dictId = #{record.dictid,jdbcType=BIGINT},
+	dictName = #{record.dictname,jdbcType=VARCHAR},
+	updictId = #{record.updictid,jdbcType=INTEGER},
+	constant = #{record.constant,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Arg_Where_Clause" />
+    </if>
+  </update>
+  <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysDict" >
+		insert into sys_dict(dictId,dictName,updictId,constant
+			)
+		 values (#{dictid,jdbcType=BIGINT},#{dictname,jdbcType=VARCHAR},#{updictid,jdbcType=INTEGER},#{constant,jdbcType=VARCHAR}
+			)
+  </insert>
+  <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysDict" >
+		insert into sys_dict
+<trim prefix="(" suffix=")" suffixOverrides="," >
+	<if test="dictid != null" >
+		dictid,
+	</if>
+	<if test="dictname != null" >
+		dictname,
+	</if>
+	<if test="updictid != null" >
+		updictid,
+	</if>
+	<if test="constant != null" >
+		constant,
+	</if>
+ </trim>
+  <trim prefix="values (" suffix=")" suffixOverrides="," >
+	<if test="dictid != null" >
+		#{dictid,jdbcType=BIGINT},
+	</if>
+	<if test="dictname != null" >
+		#{dictname,jdbcType=VARCHAR},
+	</if>
+	<if test="updictid != null" >
+		#{updictid,jdbcType=INTEGER},
+	</if>
+	<if test="constant != null" >
+		#{constant,jdbcType=VARCHAR},
+	</if>
+    </trim>
+  </insert>
+   <insert id="insertBatch" parameterType="list" >
+		insert into sys_dict(dictId,dictName,updictId,constant
+			)
+		 values 
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.dictid,jdbcType=BIGINT},#{ item.dictname,jdbcType=VARCHAR},#{ item.updictid,jdbcType=INTEGER},#{ item.constant,jdbcType=VARCHAR}
+			)
+		</foreach>
+  </insert>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+		delete from sys_dict
+ where dictId = #{dictid,jdbcType=BIGINT}
+	</delete>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+		select
+		<include refid="Base_Column_List" />
+		from sys_dict
+ where dictId = #{dictid,jdbcType=BIGINT}
+	</select>
+	<update id="updateByPrimaryKeySelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysDict" >
+		update sys_dict
+		<set >
+	<if test="dictname != null" >
+		dictName = #{dictname,jdbcType=VARCHAR},
+	</if>
+	<if test="updictid != null" >
+		updictId = #{updictid,jdbcType=INTEGER},
+	</if>
+	<if test="constant != null" >
+		constant = #{constant,jdbcType=VARCHAR},
+	</if>
+		</set >
+	 where dictId = #{dictid,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysDict" >
+		update sys_dict
+		set 
+		dictName = #{dictname,jdbcType=VARCHAR},
+		updictId = #{updictid,jdbcType=INTEGER},
+		constant = #{constant,jdbcType=VARCHAR}
+	 where dictId = #{dictid,jdbcType=BIGINT}
+	</update>
+</mapper>

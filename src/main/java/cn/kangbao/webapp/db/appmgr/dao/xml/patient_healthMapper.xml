@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="cn.kangbao.webapp.db.appmgr.dao.mapper.IPatientHealthMapper" >
+    <resultMap id="BaseResultMap" type="cn.kangbao.webapp.db.appmgr.entity.PatientHealth">
+		<id column="healthId" property="healthid" jdbcType="INTEGER" />
+		<result column="personid" property="personid" jdbcType="INTEGER" />
+		<result column="weight" property="weight" jdbcType="DECIMAL" />
+		<result column="height" property="height" jdbcType="DECIMAL" />
+		<result column="isFamilyDiabetes" property="isfamilydiabetes" jdbcType="BIT" />
+		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+  	healthId,personid,weight,height,isFamilyDiabetes,createTime
+  </sql>
+  <sql id="Arg_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Arg_Where_Clause" >
+    <where >
+      <foreach collection="arg.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <select id="selectByArg" resultMap="BaseResultMap" parameterType="cn.kangbao.webapp.db.appmgr.arg.PatientHealthArg" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from patient_health
+    <if test="_parameter != null" >
+      <include refid="Arg_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByArgAndPage" resultMap="BaseResultMap" parameterType="cn.kangbao.webapp.db.appmgr.arg.PatientHealthArg" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+     <if test="columns == null" >
+    	<include refid="Base_Column_List" />
+    </if>
+    <if test="columns != null" >
+    	${columns}
+   	</if>
+    from patient_health
+    <if test="_parameter != null" >
+      <include refid="Arg_Where_Clause" />
+    </if>
+	<if test="groupByClause != null" >
+      group by ${groupByClause}
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByArg" parameterType="cn.kangbao.webapp.db.appmgr.arg.PatientHealthArg" >
+    delete from patient_health
+    <if test="_parameter != null" >
+      <include refid="Arg_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByArg" parameterType="cn.kangbao.webapp.db.appmgr.arg.PatientHealthArg" resultType="java.lang.Integer" >
+    <if test="countsql1 != null" >
+    	${countsql1}
+    	<if test="_parameter != null" >
+		  <include refid="Arg_Where_Clause" />
+		</if>
+		${countsql2}
+    </if>
+	<if test="countsql1 == null" >
+		select count(*) from patient_health
+		<if test="_parameter != null" >
+		  <include refid="Arg_Where_Clause" />
+		</if>
+	</if>
+  </select>
+  <update id="updateByArgSelective" parameterType="map" >
+    update patient_health
+    <set >
+		<if test="record.healthid != null" >
+		healthId= #{record.healthid,jdbcType=INTEGER},
+	</if>
+	<if test="record.personid != null" >
+		personid= #{record.personid,jdbcType=INTEGER},
+	</if>
+	<if test="record.weight != null" >
+		weight= #{record.weight,jdbcType=DECIMAL},
+	</if>
+	<if test="record.height != null" >
+		height= #{record.height,jdbcType=DECIMAL},
+	</if>
+	<if test="record.isfamilydiabetes != null" >
+		isFamilyDiabetes= #{record.isfamilydiabetes,jdbcType=BIT},
+	</if>
+	<if test="record.createtime != null" >
+		createTime= #{record.createtime,jdbcType=TIMESTAMP},
+	</if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Arg_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByArg" parameterType="map" >
+    update patient_health
+    set 
+		healthId = #{record.healthid,jdbcType=INTEGER},
+	personid = #{record.personid,jdbcType=INTEGER},
+	weight = #{record.weight,jdbcType=DECIMAL},
+	height = #{record.height,jdbcType=DECIMAL},
+	isFamilyDiabetes = #{record.isfamilydiabetes,jdbcType=BIT},
+	createTime = #{record.createtime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Arg_Where_Clause" />
+    </if>
+  </update>
+  <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientHealth" >
+		insert into patient_health(healthId,personid,weight,height,isFamilyDiabetes,createTime
+			)
+		 values (#{healthid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{weight,jdbcType=DECIMAL},#{height,jdbcType=DECIMAL},#{isfamilydiabetes,jdbcType=BIT},#{createtime,jdbcType=TIMESTAMP}
+			)
+  </insert>
+  <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientHealth" >
+		insert into patient_health
+<trim prefix="(" suffix=")" suffixOverrides="," >
+	<if test="healthid != null" >
+		healthid,
+	</if>
+	<if test="personid != null" >
+		personid,
+	</if>
+	<if test="weight != null" >
+		weight,
+	</if>
+	<if test="height != null" >
+		height,
+	</if>
+	<if test="isfamilydiabetes != null" >
+		isfamilydiabetes,
+	</if>
+	<if test="createtime != null" >
+		createtime,
+	</if>
+ </trim>
+  <trim prefix="values (" suffix=")" suffixOverrides="," >
+	<if test="healthid != null" >
+		#{healthid,jdbcType=INTEGER},
+	</if>
+	<if test="personid != null" >
+		#{personid,jdbcType=INTEGER},
+	</if>
+	<if test="weight != null" >
+		#{weight,jdbcType=DECIMAL},
+	</if>
+	<if test="height != null" >
+		#{height,jdbcType=DECIMAL},
+	</if>
+	<if test="isfamilydiabetes != null" >
+		#{isfamilydiabetes,jdbcType=BIT},
+	</if>
+	<if test="createtime != null" >
+		#{createtime,jdbcType=TIMESTAMP},
+	</if>
+    </trim>
+  </insert>
+   <insert id="insertBatch" parameterType="list" >
+		insert into patient_health(healthId,personid,weight,height,isFamilyDiabetes,createTime
+			)
+		 values 
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.healthid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.weight,jdbcType=DECIMAL},#{ item.height,jdbcType=DECIMAL},#{ item.isfamilydiabetes,jdbcType=BIT},#{ item.createtime,jdbcType=TIMESTAMP}
+			)
+		</foreach>
+  </insert>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+		delete from patient_health
+ where healthId = #{healthid,jdbcType=INTEGER}
+	</delete>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+		select
+		<include refid="Base_Column_List" />
+		from patient_health
+ where healthId = #{healthid,jdbcType=INTEGER}
+	</select>
+	<update id="updateByPrimaryKeySelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientHealth" >
+		update patient_health
+		<set >
+	<if test="personid != null" >
+		personid = #{personid,jdbcType=INTEGER},
+	</if>
+	<if test="weight != null" >
+		weight = #{weight,jdbcType=DECIMAL},
+	</if>
+	<if test="height != null" >
+		height = #{height,jdbcType=DECIMAL},
+	</if>
+	<if test="isfamilydiabetes != null" >
+		isFamilyDiabetes = #{isfamilydiabetes,jdbcType=BIT},
+	</if>
+	<if test="createtime != null" >
+		createTime = #{createtime,jdbcType=TIMESTAMP},
+	</if>
+		</set >
+	 where healthId = #{healthid,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientHealth" >
+		update patient_health
+		set 
+		personid = #{personid,jdbcType=INTEGER},
+		weight = #{weight,jdbcType=DECIMAL},
+		height = #{height,jdbcType=DECIMAL},
+		isFamilyDiabetes = #{isfamilydiabetes,jdbcType=BIT},
+		createTime = #{createtime,jdbcType=TIMESTAMP}
+	 where healthId = #{healthid,jdbcType=INTEGER}
+	</update>
+</mapper>

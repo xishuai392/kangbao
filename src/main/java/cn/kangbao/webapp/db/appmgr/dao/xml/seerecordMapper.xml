@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="cn.kangbao.webapp.db.appmgr.dao.mapper.ISeerecordMapper" >
+    <resultMap id="BaseResultMap" type="cn.kangbao.webapp.db.appmgr.entity.Seerecord">
+		<id column="caseId" property="caseid" jdbcType="INTEGER" />
+		<result column="personid" property="personid" jdbcType="INTEGER" />
+		<result column="doctorId" property="doctorid" jdbcType="INTEGER" />
+		<result column="readTime" property="readtime" jdbcType="TIMESTAMP" />
+		<result column="reply" property="reply" jdbcType="VARCHAR" />
+		<result column="replyTime" property="replytime" jdbcType="TIMESTAMP" />
+		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+  	caseId,personid,doctorId,readTime,reply,replyTime,createTime
+  </sql>
+  <sql id="Arg_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Arg_Where_Clause" >
+    <where >
+      <foreach collection="arg.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <select id="selectByArg" resultMap="BaseResultMap" parameterType="cn.kangbao.webapp.db.appmgr.arg.SeerecordArg" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from seerecord
+    <if test="_parameter != null" >
+      <include refid="Arg_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByArgAndPage" resultMap="BaseResultMap" parameterType="cn.kangbao.webapp.db.appmgr.arg.SeerecordArg" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+     <if test="columns == null" >
+    	<include refid="Base_Column_List" />
+    </if>
+    <if test="columns != null" >
+    	${columns}
+   	</if>
+    from seerecord
+    <if test="_parameter != null" >
+      <include refid="Arg_Where_Clause" />
+    </if>
+	<if test="groupByClause != null" >
+      group by ${groupByClause}
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByArg" parameterType="cn.kangbao.webapp.db.appmgr.arg.SeerecordArg" >
+    delete from seerecord
+    <if test="_parameter != null" >
+      <include refid="Arg_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByArg" parameterType="cn.kangbao.webapp.db.appmgr.arg.SeerecordArg" resultType="java.lang.Integer" >
+    <if test="countsql1 != null" >
+    	${countsql1}
+    	<if test="_parameter != null" >
+		  <include refid="Arg_Where_Clause" />
+		</if>
+		${countsql2}
+    </if>
+	<if test="countsql1 == null" >
+		select count(*) from seerecord
+		<if test="_parameter != null" >
+		  <include refid="Arg_Where_Clause" />
+		</if>
+	</if>
+  </select>
+  <update id="updateByArgSelective" parameterType="map" >
+    update seerecord
+    <set >
+		<if test="record.caseid != null" >
+		caseId= #{record.caseid,jdbcType=INTEGER},
+	</if>
+	<if test="record.personid != null" >
+		personid= #{record.personid,jdbcType=INTEGER},
+	</if>
+	<if test="record.doctorid != null" >
+		doctorId= #{record.doctorid,jdbcType=INTEGER},
+	</if>
+	<if test="record.readtime != null" >
+		readTime= #{record.readtime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="record.reply != null" >
+		reply= #{record.reply,jdbcType=VARCHAR},
+	</if>
+	<if test="record.replytime != null" >
+		replyTime= #{record.replytime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="record.createtime != null" >
+		createTime= #{record.createtime,jdbcType=TIMESTAMP},
+	</if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Arg_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByArg" parameterType="map" >
+    update seerecord
+    set 
+		caseId = #{record.caseid,jdbcType=INTEGER},
+	personid = #{record.personid,jdbcType=INTEGER},
+	doctorId = #{record.doctorid,jdbcType=INTEGER},
+	readTime = #{record.readtime,jdbcType=TIMESTAMP},
+	reply = #{record.reply,jdbcType=VARCHAR},
+	replyTime = #{record.replytime,jdbcType=TIMESTAMP},
+	createTime = #{record.createtime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Arg_Where_Clause" />
+    </if>
+  </update>
+  <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.Seerecord" >
+		insert into seerecord(caseId,personid,doctorId,readTime,reply,replyTime,createTime
+			)
+		 values (#{caseid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{doctorid,jdbcType=INTEGER},#{readtime,jdbcType=TIMESTAMP},#{reply,jdbcType=VARCHAR},#{replytime,jdbcType=TIMESTAMP},#{createtime,jdbcType=TIMESTAMP}
+			)
+  </insert>
+  <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.Seerecord" >
+		insert into seerecord
+<trim prefix="(" suffix=")" suffixOverrides="," >
+	<if test="caseid != null" >
+		caseid,
+	</if>
+	<if test="personid != null" >
+		personid,
+	</if>
+	<if test="doctorid != null" >
+		doctorid,
+	</if>
+	<if test="readtime != null" >
+		readtime,
+	</if>
+	<if test="reply != null" >
+		reply,
+	</if>
+	<if test="replytime != null" >
+		replytime,
+	</if>
+	<if test="createtime != null" >
+		createtime,
+	</if>
+ </trim>
+  <trim prefix="values (" suffix=")" suffixOverrides="," >
+	<if test="caseid != null" >
+		#{caseid,jdbcType=INTEGER},
+	</if>
+	<if test="personid != null" >
+		#{personid,jdbcType=INTEGER},
+	</if>
+	<if test="doctorid != null" >
+		#{doctorid,jdbcType=INTEGER},
+	</if>
+	<if test="readtime != null" >
+		#{readtime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="reply != null" >
+		#{reply,jdbcType=VARCHAR},
+	</if>
+	<if test="replytime != null" >
+		#{replytime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="createtime != null" >
+		#{createtime,jdbcType=TIMESTAMP},
+	</if>
+    </trim>
+  </insert>
+   <insert id="insertBatch" parameterType="list" >
+		insert into seerecord(caseId,personid,doctorId,readTime,reply,replyTime,createTime
+			)
+		 values 
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.caseid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.doctorid,jdbcType=INTEGER},#{ item.readtime,jdbcType=TIMESTAMP},#{ item.reply,jdbcType=VARCHAR},#{ item.replytime,jdbcType=TIMESTAMP},#{ item.createtime,jdbcType=TIMESTAMP}
+			)
+		</foreach>
+  </insert>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+		delete from seerecord
+ where caseId = #{caseid,jdbcType=INTEGER}
+	</delete>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+		select
+		<include refid="Base_Column_List" />
+		from seerecord
+ where caseId = #{caseid,jdbcType=INTEGER}
+	</select>
+	<update id="updateByPrimaryKeySelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.Seerecord" >
+		update seerecord
+		<set >
+	<if test="personid != null" >
+		personid = #{personid,jdbcType=INTEGER},
+	</if>
+	<if test="doctorid != null" >
+		doctorId = #{doctorid,jdbcType=INTEGER},
+	</if>
+	<if test="readtime != null" >
+		readTime = #{readtime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="reply != null" >
+		reply = #{reply,jdbcType=VARCHAR},
+	</if>
+	<if test="replytime != null" >
+		replyTime = #{replytime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="createtime != null" >
+		createTime = #{createtime,jdbcType=TIMESTAMP},
+	</if>
+		</set >
+	 where caseId = #{caseid,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.kangbao.webapp.db.appmgr.entity.Seerecord" >
+		update seerecord
+		set 
+		personid = #{personid,jdbcType=INTEGER},
+		doctorId = #{doctorid,jdbcType=INTEGER},
+		readTime = #{readtime,jdbcType=TIMESTAMP},
+		reply = #{reply,jdbcType=VARCHAR},
+		replyTime = #{replytime,jdbcType=TIMESTAMP},
+		createTime = #{createtime,jdbcType=TIMESTAMP}
+	 where caseId = #{caseid,jdbcType=INTEGER}
+	</update>
+</mapper>
