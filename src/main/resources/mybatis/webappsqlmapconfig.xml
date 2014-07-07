@@ -25,6 +25,10 @@
 		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_keytableMapper.xml"/>
 		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_messageMapper.xml"/>
 		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_userMapper.xml"/>
+		
+		<!--自定义拓展-->
 		<mapper resource="cn/kangbao/webapp/db/appmgr/custom/xml/CustomMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/custom/xml/CustomSequenceMapper.xml"/>
+		
 	</mappers>
 </configuration>

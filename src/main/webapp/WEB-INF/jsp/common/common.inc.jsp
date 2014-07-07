@@ -1,4 +1,4 @@
-<%@ include file="/jsp/common/taglibs.jsp"%>
+<%@ include file="/WEB-INF/jsp/common/taglibs.jsp"%>
 
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/common.css">
