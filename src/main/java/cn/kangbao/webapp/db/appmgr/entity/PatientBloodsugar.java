@@ -34,16 +34,6 @@ public class PatientBloodsugar implements Serializable {
 		return influence; 
 	}
 
-	private Date createtime;
-
-	public void setCreatetime(Date createtime){
-		this.createtime = createtime;
-	}
-
-	public Date getCreatetime() {
-		return createtime; 
-	}
-
 	private Integer personid;
 
 	public void setPersonid(Integer personid){
@@ -62,6 +52,26 @@ public class PatientBloodsugar implements Serializable {
 
 	public String getTestperiod() {
 		return StringUtils.isBlank(testperiod)?testperiod:testperiod.trim(); 
+	}
+
+	private Date testtime;
+
+	public void setTesttime(Date testtime){
+		this.testtime = testtime;
+	}
+
+	public Date getTesttime() {
+		return testtime; 
+	}
+
+	private Date createtime;
+
+	public void setCreatetime(Date createtime){
+		this.createtime = createtime;
+	}
+
+	public Date getCreatetime() {
+		return createtime; 
 	}
 
 }

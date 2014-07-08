@@ -10,7 +10,7 @@ import org.springframework.util.StringUtils;
 
 import cn.kangbao.common.exception.BaseAppException;
 import cn.kangbao.common.exception.ExceptionHandler;
-import cn.kangbao.common.log.AmManagerLogger;
+import cn.kangbao.common.log.LoggerManager;
 
 /**
  * 2012
@@ -35,7 +35,7 @@ public final class DateHelper {
     /** 分钟日期格式. */
     public static String DATE_FORMAT_MINUTE = "yyyy-MM-dd HH:mm";
 
-    public static final AmManagerLogger logger = AmManagerLogger.getLogger(DateHelper.class);
+    public static final LoggerManager logger = LoggerManager.getLogger(DateHelper.class);
 
     private DateHelper() {
     }

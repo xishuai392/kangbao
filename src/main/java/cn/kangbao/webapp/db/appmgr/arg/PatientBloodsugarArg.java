@@ -462,96 +462,6 @@ public class PatientBloodsugarArg {
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andCreatetimeIsNull() {
-			addCriterion("createTime is null");
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeIsNotNull() {
-			addCriterion("createTime is not null");
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeEqualTo(Date value) {
-			addCriterion("createTime =", value, "createTime");
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeNotEqualTo(Date value) {
-			addCriterion("createTime <>", value, "createTime");
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeGreaterThan(Date value) {
-			addCriterion("createTime >", value, "createTime");
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeGreaterThanOrEqualTo(Date value) {
-			addCriterion("createTime >=", value, "createTime");
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeLessThan(Date value) {
-			addCriterion("createTime <", value, "createTime");
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeLessThanOrEqualTo(Date value) {
-			addCriterion("createTime <=", value, "createTime");
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeLike(Date value) {
-			addCriterion("createTime like ", value, "createTime",1);
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeNotLike(Date value) {
-			addCriterion("createTime  not like ", value, "createTime",1);
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeLeftLike(Date value) {
-			addCriterion("createTime like ", value, "createTime",0);
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeNotLeftLike(Date value) {
-			addCriterion("createTime  not like ", value, "createTime",0);
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeRightLike(Date value) {
-			addCriterion("createTime like ", value, "createTime",2);
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeNotRightLike(Date value) {
-			addCriterion("createTime  not like ", value, "createTime",2);
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeIn(List<Date> values) {
-			addCriterion("createTime  in ", values, "createTime");
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeNotIn(List<Date> values) {
-			addCriterion("createTime not in ", values, "createTime");
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeBetween(Date value1,Date value2) {
-			addCriterion("createTime between ", value1, value2, "createTime");
-			return (PatientBloodsugarCriteria) this;
-		}
-
-		public PatientBloodsugarCriteria andCreatetimeNotBetween(Date value1,Date value2) {
-			addCriterion("createTime not between ", value1, value2, "createTime");
-			return (PatientBloodsugarCriteria) this;
-		}
-
 		public PatientBloodsugarCriteria andPersonidIsNull() {
 			addCriterion("personId is null");
 			return (PatientBloodsugarCriteria) this;
@@ -729,6 +639,186 @@ public class PatientBloodsugarArg {
 
 		public PatientBloodsugarCriteria andTestperiodNotBetween(String value1,String value2) {
 			addCriterion("testPeriod not between ", value1, value2, "testPeriod");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeIsNull() {
+			addCriterion("testTime is null");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeIsNotNull() {
+			addCriterion("testTime is not null");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeEqualTo(Date value) {
+			addCriterion("testTime =", value, "testTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeNotEqualTo(Date value) {
+			addCriterion("testTime <>", value, "testTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeGreaterThan(Date value) {
+			addCriterion("testTime >", value, "testTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeGreaterThanOrEqualTo(Date value) {
+			addCriterion("testTime >=", value, "testTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeLessThan(Date value) {
+			addCriterion("testTime <", value, "testTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeLessThanOrEqualTo(Date value) {
+			addCriterion("testTime <=", value, "testTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeLike(Date value) {
+			addCriterion("testTime like ", value, "testTime",1);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeNotLike(Date value) {
+			addCriterion("testTime  not like ", value, "testTime",1);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeLeftLike(Date value) {
+			addCriterion("testTime like ", value, "testTime",0);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeNotLeftLike(Date value) {
+			addCriterion("testTime  not like ", value, "testTime",0);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeRightLike(Date value) {
+			addCriterion("testTime like ", value, "testTime",2);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeNotRightLike(Date value) {
+			addCriterion("testTime  not like ", value, "testTime",2);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeIn(List<Date> values) {
+			addCriterion("testTime  in ", values, "testTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeNotIn(List<Date> values) {
+			addCriterion("testTime not in ", values, "testTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeBetween(Date value1,Date value2) {
+			addCriterion("testTime between ", value1, value2, "testTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTesttimeNotBetween(Date value1,Date value2) {
+			addCriterion("testTime not between ", value1, value2, "testTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeIsNull() {
+			addCriterion("createTime is null");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeIsNotNull() {
+			addCriterion("createTime is not null");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeEqualTo(Date value) {
+			addCriterion("createTime =", value, "createTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeNotEqualTo(Date value) {
+			addCriterion("createTime <>", value, "createTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeGreaterThan(Date value) {
+			addCriterion("createTime >", value, "createTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeGreaterThanOrEqualTo(Date value) {
+			addCriterion("createTime >=", value, "createTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeLessThan(Date value) {
+			addCriterion("createTime <", value, "createTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeLessThanOrEqualTo(Date value) {
+			addCriterion("createTime <=", value, "createTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeLike(Date value) {
+			addCriterion("createTime like ", value, "createTime",1);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeNotLike(Date value) {
+			addCriterion("createTime  not like ", value, "createTime",1);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeLeftLike(Date value) {
+			addCriterion("createTime like ", value, "createTime",0);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeNotLeftLike(Date value) {
+			addCriterion("createTime  not like ", value, "createTime",0);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeRightLike(Date value) {
+			addCriterion("createTime like ", value, "createTime",2);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeNotRightLike(Date value) {
+			addCriterion("createTime  not like ", value, "createTime",2);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeIn(List<Date> values) {
+			addCriterion("createTime  in ", values, "createTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeNotIn(List<Date> values) {
+			addCriterion("createTime not in ", values, "createTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeBetween(Date value1,Date value2) {
+			addCriterion("createTime between ", value1, value2, "createTime");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andCreatetimeNotBetween(Date value1,Date value2) {
+			addCriterion("createTime not between ", value1, value2, "createTime");
 			return (PatientBloodsugarCriteria) this;
 		}
 

@@ -7,11 +7,13 @@
 		<result column="upNum" property="upnum" jdbcType="INTEGER" />
 		<result column="downNum" property="downnum" jdbcType="INTEGER" />
 		<result column="heartRate" property="heartrate" jdbcType="INTEGER" />
-		<result column="feelingDescription" property="feelingdescription" jdbcType="VARCHAR" />
+		<result column="testTime" property="testtime" jdbcType="TIMESTAMP" />
+		<result column="feelingState" property="feelingstate" jdbcType="INTEGER" />
+		<result column="feelingDesc" property="feelingdesc" jdbcType="VARCHAR" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	measurementId,personId,upNum,downNum,heartRate,feelingDescription,createTime
+  	measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -146,8 +148,14 @@
 	<if test="record.heartrate != null" >
 		heartRate= #{record.heartrate,jdbcType=INTEGER},
 	</if>
-	<if test="record.feelingdescription != null" >
-		feelingDescription= #{record.feelingdescription,jdbcType=VARCHAR},
+	<if test="record.testtime != null" >
+		testTime= #{record.testtime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="record.feelingstate != null" >
+		feelingState= #{record.feelingstate,jdbcType=INTEGER},
+	</if>
+	<if test="record.feelingdesc != null" >
+		feelingDesc= #{record.feelingdesc,jdbcType=VARCHAR},
 	</if>
 	<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
@@ -165,16 +173,18 @@
 	upNum = #{record.upnum,jdbcType=INTEGER},
 	downNum = #{record.downnum,jdbcType=INTEGER},
 	heartRate = #{record.heartrate,jdbcType=INTEGER},
-	feelingDescription = #{record.feelingdescription,jdbcType=VARCHAR},
+	testTime = #{record.testtime,jdbcType=TIMESTAMP},
+	feelingState = #{record.feelingstate,jdbcType=INTEGER},
+	feelingDesc = #{record.feelingdesc,jdbcType=VARCHAR},
 	createTime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure" >
-		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,feelingDescription,createTime
+		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime
 			)
-		 values (#{measurementid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{upnum,jdbcType=INTEGER},#{downnum,jdbcType=INTEGER},#{heartrate,jdbcType=INTEGER},#{feelingdescription,jdbcType=VARCHAR},#{createtime,jdbcType=TIMESTAMP}
+		 values (#{measurementid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{upnum,jdbcType=INTEGER},#{downnum,jdbcType=INTEGER},#{heartrate,jdbcType=INTEGER},#{testtime,jdbcType=TIMESTAMP},#{feelingstate,jdbcType=INTEGER},#{feelingdesc,jdbcType=VARCHAR},#{createtime,jdbcType=TIMESTAMP}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure" >
@@ -195,8 +205,14 @@
 	<if test="heartrate != null" >
 		heartrate,
 	</if>
-	<if test="feelingdescription != null" >
-		feelingdescription,
+	<if test="testtime != null" >
+		testtime,
+	</if>
+	<if test="feelingstate != null" >
+		feelingstate,
+	</if>
+	<if test="feelingdesc != null" >
+		feelingdesc,
 	</if>
 	<if test="createtime != null" >
 		createtime,
@@ -218,8 +234,14 @@
 	<if test="heartrate != null" >
 		#{heartrate,jdbcType=INTEGER},
 	</if>
-	<if test="feelingdescription != null" >
-		#{feelingdescription,jdbcType=VARCHAR},
+	<if test="testtime != null" >
+		#{testtime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="feelingstate != null" >
+		#{feelingstate,jdbcType=INTEGER},
+	</if>
+	<if test="feelingdesc != null" >
+		#{feelingdesc,jdbcType=VARCHAR},
 	</if>
 	<if test="createtime != null" >
 		#{createtime,jdbcType=TIMESTAMP},
@@ -227,10 +249,10 @@
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,feelingDescription,createTime
+		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.measurementid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.upnum,jdbcType=INTEGER},#{ item.downnum,jdbcType=INTEGER},#{ item.heartrate,jdbcType=INTEGER},#{ item.feelingdescription,jdbcType=VARCHAR},#{ item.createtime,jdbcType=TIMESTAMP}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.measurementid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.upnum,jdbcType=INTEGER},#{ item.downnum,jdbcType=INTEGER},#{ item.heartrate,jdbcType=INTEGER},#{ item.testtime,jdbcType=TIMESTAMP},#{ item.feelingstate,jdbcType=INTEGER},#{ item.feelingdesc,jdbcType=VARCHAR},#{ item.createtime,jdbcType=TIMESTAMP}
 			)
 		</foreach>
   </insert>
@@ -259,8 +281,14 @@
 	<if test="heartrate != null" >
 		heartRate = #{heartrate,jdbcType=INTEGER},
 	</if>
-	<if test="feelingdescription != null" >
-		feelingDescription = #{feelingdescription,jdbcType=VARCHAR},
+	<if test="testtime != null" >
+		testTime = #{testtime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="feelingstate != null" >
+		feelingState = #{feelingstate,jdbcType=INTEGER},
+	</if>
+	<if test="feelingdesc != null" >
+		feelingDesc = #{feelingdesc,jdbcType=VARCHAR},
 	</if>
 	<if test="createtime != null" >
 		createTime = #{createtime,jdbcType=TIMESTAMP},
@@ -275,7 +303,9 @@
 		upNum = #{upnum,jdbcType=INTEGER},
 		downNum = #{downnum,jdbcType=INTEGER},
 		heartRate = #{heartrate,jdbcType=INTEGER},
-		feelingDescription = #{feelingdescription,jdbcType=VARCHAR},
+		testTime = #{testtime,jdbcType=TIMESTAMP},
+		feelingState = #{feelingstate,jdbcType=INTEGER},
+		feelingDesc = #{feelingdesc,jdbcType=VARCHAR},
 		createTime = #{createtime,jdbcType=TIMESTAMP}
 	 where measurementId = #{measurementid,jdbcType=INTEGER}
 	</update>

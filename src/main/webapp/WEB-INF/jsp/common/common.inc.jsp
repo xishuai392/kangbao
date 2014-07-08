@@ -15,7 +15,7 @@ var webRoot = "<%=webRoot %>";
 </script>
 
 
-
+<%@ include file="/WEB-INF/jsp/common/top.jsp"%>
 
 
 

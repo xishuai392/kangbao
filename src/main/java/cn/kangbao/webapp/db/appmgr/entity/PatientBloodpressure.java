@@ -54,14 +54,34 @@ public class PatientBloodpressure implements Serializable {
 		return heartrate; 
 	}
 
-	private String feelingdescription;
+	private Date testtime;
 
-	public void setFeelingdescription(String feelingdescription){
-		this.feelingdescription = feelingdescription;
+	public void setTesttime(Date testtime){
+		this.testtime = testtime;
 	}
 
-	public String getFeelingdescription() {
-		return StringUtils.isBlank(feelingdescription)?feelingdescription:feelingdescription.trim(); 
+	public Date getTesttime() {
+		return testtime; 
+	}
+
+	private Integer feelingstate;
+
+	public void setFeelingstate(Integer feelingstate){
+		this.feelingstate = feelingstate;
+	}
+
+	public Integer getFeelingstate() {
+		return feelingstate; 
+	}
+
+	private String feelingdesc;
+
+	public void setFeelingdesc(String feelingdesc){
+		this.feelingdesc = feelingdesc;
+	}
+
+	public String getFeelingdesc() {
+		return StringUtils.isBlank(feelingdesc)?feelingdesc:feelingdesc.trim(); 
 	}
 
 	private Date createtime;

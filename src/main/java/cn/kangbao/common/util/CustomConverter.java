@@ -9,14 +9,14 @@ import java.util.Map;
 import org.springframework.util.StringUtils;
 
 import net.sf.cglib.core.Converter;
-import cn.kangbao.common.log.AmManagerLogger;
+import cn.kangbao.common.log.LoggerManager;
 
 /**
  * 转换器，对象拷贝使用
  */
 public class CustomConverter implements Converter {
 
-    public static final AmManagerLogger logger = AmManagerLogger.getLogger(CustomConverter.class);
+    public static final LoggerManager logger = LoggerManager.getLogger(CustomConverter.class);
 
     public Object target;
 

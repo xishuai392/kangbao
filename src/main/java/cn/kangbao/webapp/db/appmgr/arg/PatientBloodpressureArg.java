@@ -642,93 +642,273 @@ public class PatientBloodpressureArg {
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionIsNull() {
-			addCriterion("feelingDescription is null");
+		public PatientBloodpressureCriteria andTesttimeIsNull() {
+			addCriterion("testTime is null");
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionIsNotNull() {
-			addCriterion("feelingDescription is not null");
+		public PatientBloodpressureCriteria andTesttimeIsNotNull() {
+			addCriterion("testTime is not null");
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionEqualTo(String value) {
-			addCriterion("feelingDescription =", value, "feelingDescription");
+		public PatientBloodpressureCriteria andTesttimeEqualTo(Date value) {
+			addCriterion("testTime =", value, "testTime");
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionNotEqualTo(String value) {
-			addCriterion("feelingDescription <>", value, "feelingDescription");
+		public PatientBloodpressureCriteria andTesttimeNotEqualTo(Date value) {
+			addCriterion("testTime <>", value, "testTime");
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionGreaterThan(String value) {
-			addCriterion("feelingDescription >", value, "feelingDescription");
+		public PatientBloodpressureCriteria andTesttimeGreaterThan(Date value) {
+			addCriterion("testTime >", value, "testTime");
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionGreaterThanOrEqualTo(String value) {
-			addCriterion("feelingDescription >=", value, "feelingDescription");
+		public PatientBloodpressureCriteria andTesttimeGreaterThanOrEqualTo(Date value) {
+			addCriterion("testTime >=", value, "testTime");
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionLessThan(String value) {
-			addCriterion("feelingDescription <", value, "feelingDescription");
+		public PatientBloodpressureCriteria andTesttimeLessThan(Date value) {
+			addCriterion("testTime <", value, "testTime");
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionLessThanOrEqualTo(String value) {
-			addCriterion("feelingDescription <=", value, "feelingDescription");
+		public PatientBloodpressureCriteria andTesttimeLessThanOrEqualTo(Date value) {
+			addCriterion("testTime <=", value, "testTime");
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionLike(String value) {
-			addCriterion("feelingDescription like ", value, "feelingDescription",1);
+		public PatientBloodpressureCriteria andTesttimeLike(Date value) {
+			addCriterion("testTime like ", value, "testTime",1);
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionNotLike(String value) {
-			addCriterion("feelingDescription  not like ", value, "feelingDescription",1);
+		public PatientBloodpressureCriteria andTesttimeNotLike(Date value) {
+			addCriterion("testTime  not like ", value, "testTime",1);
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionLeftLike(String value) {
-			addCriterion("feelingDescription like ", value, "feelingDescription",0);
+		public PatientBloodpressureCriteria andTesttimeLeftLike(Date value) {
+			addCriterion("testTime like ", value, "testTime",0);
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionNotLeftLike(String value) {
-			addCriterion("feelingDescription  not like ", value, "feelingDescription",0);
+		public PatientBloodpressureCriteria andTesttimeNotLeftLike(Date value) {
+			addCriterion("testTime  not like ", value, "testTime",0);
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionRightLike(String value) {
-			addCriterion("feelingDescription like ", value, "feelingDescription",2);
+		public PatientBloodpressureCriteria andTesttimeRightLike(Date value) {
+			addCriterion("testTime like ", value, "testTime",2);
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionNotRightLike(String value) {
-			addCriterion("feelingDescription  not like ", value, "feelingDescription",2);
+		public PatientBloodpressureCriteria andTesttimeNotRightLike(Date value) {
+			addCriterion("testTime  not like ", value, "testTime",2);
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionIn(List<String> values) {
-			addCriterion("feelingDescription  in ", values, "feelingDescription");
+		public PatientBloodpressureCriteria andTesttimeIn(List<Date> values) {
+			addCriterion("testTime  in ", values, "testTime");
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionNotIn(List<String> values) {
-			addCriterion("feelingDescription not in ", values, "feelingDescription");
+		public PatientBloodpressureCriteria andTesttimeNotIn(List<Date> values) {
+			addCriterion("testTime not in ", values, "testTime");
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionBetween(String value1,String value2) {
-			addCriterion("feelingDescription between ", value1, value2, "feelingDescription");
+		public PatientBloodpressureCriteria andTesttimeBetween(Date value1,Date value2) {
+			addCriterion("testTime between ", value1, value2, "testTime");
 			return (PatientBloodpressureCriteria) this;
 		}
 
-		public PatientBloodpressureCriteria andFeelingdescriptionNotBetween(String value1,String value2) {
-			addCriterion("feelingDescription not between ", value1, value2, "feelingDescription");
+		public PatientBloodpressureCriteria andTesttimeNotBetween(Date value1,Date value2) {
+			addCriterion("testTime not between ", value1, value2, "testTime");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateIsNull() {
+			addCriterion("feelingState is null");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateIsNotNull() {
+			addCriterion("feelingState is not null");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateEqualTo(Integer value) {
+			addCriterion("feelingState =", value, "feelingState");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateNotEqualTo(Integer value) {
+			addCriterion("feelingState <>", value, "feelingState");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateGreaterThan(Integer value) {
+			addCriterion("feelingState >", value, "feelingState");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateGreaterThanOrEqualTo(Integer value) {
+			addCriterion("feelingState >=", value, "feelingState");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateLessThan(Integer value) {
+			addCriterion("feelingState <", value, "feelingState");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateLessThanOrEqualTo(Integer value) {
+			addCriterion("feelingState <=", value, "feelingState");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateLike(Integer value) {
+			addCriterion("feelingState like ", value, "feelingState",1);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateNotLike(Integer value) {
+			addCriterion("feelingState  not like ", value, "feelingState",1);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateLeftLike(Integer value) {
+			addCriterion("feelingState like ", value, "feelingState",0);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateNotLeftLike(Integer value) {
+			addCriterion("feelingState  not like ", value, "feelingState",0);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateRightLike(Integer value) {
+			addCriterion("feelingState like ", value, "feelingState",2);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateNotRightLike(Integer value) {
+			addCriterion("feelingState  not like ", value, "feelingState",2);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateIn(List<Integer> values) {
+			addCriterion("feelingState  in ", values, "feelingState");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateNotIn(List<Integer> values) {
+			addCriterion("feelingState not in ", values, "feelingState");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateBetween(Integer value1,Integer value2) {
+			addCriterion("feelingState between ", value1, value2, "feelingState");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingstateNotBetween(Integer value1,Integer value2) {
+			addCriterion("feelingState not between ", value1, value2, "feelingState");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescIsNull() {
+			addCriterion("feelingDesc is null");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescIsNotNull() {
+			addCriterion("feelingDesc is not null");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescEqualTo(String value) {
+			addCriterion("feelingDesc =", value, "feelingDesc");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescNotEqualTo(String value) {
+			addCriterion("feelingDesc <>", value, "feelingDesc");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescGreaterThan(String value) {
+			addCriterion("feelingDesc >", value, "feelingDesc");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescGreaterThanOrEqualTo(String value) {
+			addCriterion("feelingDesc >=", value, "feelingDesc");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescLessThan(String value) {
+			addCriterion("feelingDesc <", value, "feelingDesc");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescLessThanOrEqualTo(String value) {
+			addCriterion("feelingDesc <=", value, "feelingDesc");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescLike(String value) {
+			addCriterion("feelingDesc like ", value, "feelingDesc",1);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescNotLike(String value) {
+			addCriterion("feelingDesc  not like ", value, "feelingDesc",1);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescLeftLike(String value) {
+			addCriterion("feelingDesc like ", value, "feelingDesc",0);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescNotLeftLike(String value) {
+			addCriterion("feelingDesc  not like ", value, "feelingDesc",0);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescRightLike(String value) {
+			addCriterion("feelingDesc like ", value, "feelingDesc",2);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescNotRightLike(String value) {
+			addCriterion("feelingDesc  not like ", value, "feelingDesc",2);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescIn(List<String> values) {
+			addCriterion("feelingDesc  in ", values, "feelingDesc");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescNotIn(List<String> values) {
+			addCriterion("feelingDesc not in ", values, "feelingDesc");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescBetween(String value1,String value2) {
+			addCriterion("feelingDesc between ", value1, value2, "feelingDesc");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andFeelingdescNotBetween(String value1,String value2) {
+			addCriterion("feelingDesc not between ", value1, value2, "feelingDesc");
 			return (PatientBloodpressureCriteria) this;
 		}
 

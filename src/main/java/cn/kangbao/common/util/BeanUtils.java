@@ -3,7 +3,7 @@ package cn.kangbao.common.util;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import cn.kangbao.common.log.AmManagerLogger;
+import cn.kangbao.common.log.LoggerManager;
 
 import net.sf.cglib.beans.BeanCopier;
 import net.sf.cglib.core.Converter;
@@ -13,7 +13,7 @@ import net.sf.cglib.core.Converter;
  */
 public class BeanUtils {
 
-    public static final AmManagerLogger logger = AmManagerLogger.getLogger(BeanUtils.class.getName());
+    public static final LoggerManager logger = LoggerManager.getLogger(BeanUtils.class.getName());
 
     // 拷贝实例map
     private static Map<String, BeanCopier> beanCopierMap = new ConcurrentHashMap<String, BeanCopier>();

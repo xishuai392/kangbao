@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page language="java" import="java.text.*,java.util.*"
+	pageEncoding="UTF-8"%>
 
-</body>
-</html>
+
+<div class="login_foot">
+	<p class="login_foot_nav">
+		<a href="#">关于我们</a>| <a href="#">联系我们</a>| <a href="#">服务条款</a>| <a
+			href="#">隐私保护</a>| <a href="#">建议反馈</a>| <a href="#">版权声明</a>
+	</p>
+	<p class="login_foot_ban">Copyrighr © 2004-2014 康宝科技股份有限公司 版权所有</p>
+</div>

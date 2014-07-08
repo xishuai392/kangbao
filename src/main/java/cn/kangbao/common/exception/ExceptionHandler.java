@@ -3,7 +3,7 @@ package cn.kangbao.common.exception;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 
-import cn.kangbao.common.log.AmManagerLogger;
+import cn.kangbao.common.log.LoggerManager;
 import cn.kangbao.common.util.AssertUtil;
 import cn.kangbao.common.util.MessageResourceHelper;
 
@@ -21,7 +21,7 @@ public final class ExceptionHandler {
 
     // private static ResourceBundle res = null;
 
-    private static AmManagerLogger logger = AmManagerLogger.getLogger(ExceptionHandler.class);
+    private static LoggerManager logger = LoggerManager.getLogger(ExceptionHandler.class);
 
     private static long appExceptionCount = 0;
 

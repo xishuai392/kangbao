@@ -5,12 +5,13 @@
 		<id column="bloodSugarId" property="bloodsugarid" jdbcType="INTEGER" />
 		<result column="bloodSugarNum" property="bloodsugarnum" jdbcType="INTEGER" />
 		<result column="influence" property="influence" jdbcType="INTEGER" />
-		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
 		<result column="personId" property="personid" jdbcType="INTEGER" />
 		<result column="testPeriod" property="testperiod" jdbcType="CHAR" />
+		<result column="testTime" property="testtime" jdbcType="TIMESTAMP" />
+		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	bloodSugarId,bloodSugarNum,influence,createTime,personId,testPeriod
+  	bloodSugarId,bloodSugarNum,influence,personId,testPeriod,testTime,createTime
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -139,14 +140,17 @@
 	<if test="record.influence != null" >
 		influence= #{record.influence,jdbcType=INTEGER},
 	</if>
-	<if test="record.createtime != null" >
-		createTime= #{record.createtime,jdbcType=TIMESTAMP},
-	</if>
 	<if test="record.personid != null" >
 		personId= #{record.personid,jdbcType=INTEGER},
 	</if>
 	<if test="record.testperiod != null" >
 		testPeriod= #{record.testperiod,jdbcType=CHAR},
+	</if>
+	<if test="record.testtime != null" >
+		testTime= #{record.testtime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="record.createtime != null" >
+		createTime= #{record.createtime,jdbcType=TIMESTAMP},
 	</if>
     </set>
     <if test="_parameter != null" >
@@ -159,17 +163,18 @@
 		bloodSugarId = #{record.bloodsugarid,jdbcType=INTEGER},
 	bloodSugarNum = #{record.bloodsugarnum,jdbcType=INTEGER},
 	influence = #{record.influence,jdbcType=INTEGER},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP},
 	personId = #{record.personid,jdbcType=INTEGER},
-	testPeriod = #{record.testperiod,jdbcType=CHAR}
+	testPeriod = #{record.testperiod,jdbcType=CHAR},
+	testTime = #{record.testtime,jdbcType=TIMESTAMP},
+	createTime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodsugar" >
-		insert into patient_bloodsugar(bloodSugarId,bloodSugarNum,influence,createTime,personId,testPeriod
+		insert into patient_bloodsugar(bloodSugarId,bloodSugarNum,influence,personId,testPeriod,testTime,createTime
 			)
-		 values (#{bloodsugarid,jdbcType=INTEGER},#{bloodsugarnum,jdbcType=INTEGER},#{influence,jdbcType=INTEGER},#{createtime,jdbcType=TIMESTAMP},#{personid,jdbcType=INTEGER},#{testperiod,jdbcType=CHAR}
+		 values (#{bloodsugarid,jdbcType=INTEGER},#{bloodsugarnum,jdbcType=INTEGER},#{influence,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{testperiod,jdbcType=CHAR},#{testtime,jdbcType=TIMESTAMP},#{createtime,jdbcType=TIMESTAMP}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodsugar" >
@@ -184,14 +189,17 @@
 	<if test="influence != null" >
 		influence,
 	</if>
-	<if test="createtime != null" >
-		createtime,
-	</if>
 	<if test="personid != null" >
 		personid,
 	</if>
 	<if test="testperiod != null" >
 		testperiod,
+	</if>
+	<if test="testtime != null" >
+		testtime,
+	</if>
+	<if test="createtime != null" >
+		createtime,
 	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -204,22 +212,25 @@
 	<if test="influence != null" >
 		#{influence,jdbcType=INTEGER},
 	</if>
-	<if test="createtime != null" >
-		#{createtime,jdbcType=TIMESTAMP},
-	</if>
 	<if test="personid != null" >
 		#{personid,jdbcType=INTEGER},
 	</if>
 	<if test="testperiod != null" >
 		#{testperiod,jdbcType=CHAR},
 	</if>
+	<if test="testtime != null" >
+		#{testtime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="createtime != null" >
+		#{createtime,jdbcType=TIMESTAMP},
+	</if>
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into patient_bloodsugar(bloodSugarId,bloodSugarNum,influence,createTime,personId,testPeriod
+		insert into patient_bloodsugar(bloodSugarId,bloodSugarNum,influence,personId,testPeriod,testTime,createTime
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.bloodsugarid,jdbcType=INTEGER},#{ item.bloodsugarnum,jdbcType=INTEGER},#{ item.influence,jdbcType=INTEGER},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.personid,jdbcType=INTEGER},#{ item.testperiod,jdbcType=CHAR}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.bloodsugarid,jdbcType=INTEGER},#{ item.bloodsugarnum,jdbcType=INTEGER},#{ item.influence,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.testperiod,jdbcType=CHAR},#{ item.testtime,jdbcType=TIMESTAMP},#{ item.createtime,jdbcType=TIMESTAMP}
 			)
 		</foreach>
   </insert>
@@ -242,14 +253,17 @@
 	<if test="influence != null" >
 		influence = #{influence,jdbcType=INTEGER},
 	</if>
-	<if test="createtime != null" >
-		createTime = #{createtime,jdbcType=TIMESTAMP},
-	</if>
 	<if test="personid != null" >
 		personId = #{personid,jdbcType=INTEGER},
 	</if>
 	<if test="testperiod != null" >
 		testPeriod = #{testperiod,jdbcType=CHAR},
+	</if>
+	<if test="testtime != null" >
+		testTime = #{testtime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="createtime != null" >
+		createTime = #{createtime,jdbcType=TIMESTAMP},
 	</if>
 		</set >
 	 where bloodSugarId = #{bloodsugarid,jdbcType=INTEGER}
@@ -259,9 +273,10 @@
 		set 
 		bloodSugarNum = #{bloodsugarnum,jdbcType=INTEGER},
 		influence = #{influence,jdbcType=INTEGER},
-		createTime = #{createtime,jdbcType=TIMESTAMP},
 		personId = #{personid,jdbcType=INTEGER},
-		testPeriod = #{testperiod,jdbcType=CHAR}
+		testPeriod = #{testperiod,jdbcType=CHAR},
+		testTime = #{testtime,jdbcType=TIMESTAMP},
+		createTime = #{createtime,jdbcType=TIMESTAMP}
 	 where bloodSugarId = #{bloodsugarid,jdbcType=INTEGER}
 	</update>
 </mapper>

@@ -8,14 +8,13 @@ import java.util.Date;
  */
 public final class Constants {
 
-    private Constants() {}
-
+    private Constants() {
+    }
 
     public static final String PACKAGE_BASE_HOME = "cn.kangbao";
-    
+
     public static final String PACKAGE_WEB_DB_HOME = "cn.kangbao.webapp.db";
-    
-    
+
     /** APP_HOME. */
     public static final String APP_WEB_HOME = "APP_HOME";
 
@@ -44,8 +43,6 @@ public final class Constants {
     /** 缓存模式_REDIS */
     public static final String CACHE_MODE_REDIS = "REDIS";
 
-
-
     public static int DB_DIALECT_INT;
 
     public static final String TRUE = "T";
@@ -63,8 +60,6 @@ public final class Constants {
     // /** 是否是VNO模式 */
     // public static final boolean IS_VNO_MODE =
     // ConfigHelper.getCfgBoolean("COMMON", "IS_VNO_MODE", false);
-
- 
 
     // 编码集设置
 
@@ -241,4 +236,15 @@ public final class Constants {
     /** 无效状态 */
     public static final String STATUS_AP_EXP = "30B";
 
+    /****************************************************************/
+
+    /****************************************************************/
+    /** 当前session中的(SysUser)sysUser,当前登录用户对象 */
+    public final static String SESSIONUSER = "sessionuser";
+
+    /** 当前session中的(Person)person,当前登录用户对象 */
+    public final static String SESSIONPERSON = "sessionperson";
+
+    /** 当前session中的(String)fullname,用户昵称 */
+    public final static String SESSIONTHISUSERNAME = "sessionThisUserName";
 }

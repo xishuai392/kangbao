@@ -28,7 +28,7 @@
 				<div class="main_rightnav">
 					<div class="main_esc">
 						用户名：${ sessionScope.sessionThisUserName}
-						<a href="${ctx}/login/loginOut.do" class="main_esc_ico"></a><a href="${ctx}/login/loginOut.do">退出</a>
+						<a href="${ctx}/login/loginOut.html" class="main_esc_ico"></a><a href="${ctx}/login/loginOut.html">退出</a>
 					</div>
 					<div class="main_right_nav">
 						<a href="#" class="main_right_nav1"></a>

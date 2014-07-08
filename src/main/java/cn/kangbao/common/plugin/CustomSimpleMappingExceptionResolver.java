@@ -16,13 +16,13 @@ import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
 import cn.kangbao.common.exception.BaseAppException;
 import cn.kangbao.common.exception.SysExceptionCode;
-import cn.kangbao.common.log.AmManagerLogger;
+import cn.kangbao.common.log.LoggerManager;
 import cn.kangbao.common.util.MessageResourceHelper;
 
 public class CustomSimpleMappingExceptionResolver extends
 		SimpleMappingExceptionResolver {
 	
-	final static AmManagerLogger logger=AmManagerLogger.getLogger(CustomSimpleMappingExceptionResolver.class);
+	final static LoggerManager logger=LoggerManager.getLogger(CustomSimpleMappingExceptionResolver.class);
 
 	@Override
 	protected ModelAndView doResolveException(HttpServletRequest request,
