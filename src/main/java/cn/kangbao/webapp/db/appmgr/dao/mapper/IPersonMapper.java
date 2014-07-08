@@ -26,9 +26,9 @@ public interface IPersonMapper {
 
 	int insertBatch(@Param("list")List<Person> records);
 
-	int deleteByPrimaryKey(Integer personid);
+	int deleteByPrimaryKey(Integer personId);
 
-	Person selectByPrimaryKey(Integer personid);
+	Person selectByPrimaryKey(Integer personId);
 
 	int updateByPrimaryKeySelective(Person record);
 

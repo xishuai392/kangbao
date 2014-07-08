@@ -5,7 +5,7 @@ import java.math.*;
 import org.apache.commons.lang.*;
 
 public class SysKeytableArg {
-	private String pk_name = "tableId";
+	private String pk_name = "tableName";
     private String orderByClause;
 
 	private String groupByClause;
@@ -192,273 +192,273 @@ public class SysKeytableArg {
 			addCriterion(criterion);
 			return (SysKeytableCriteria) this;
 		}
-				public SysKeytableCriteria andTableidIsNull() {
-			addCriterion("tableId is null");
+				public SysKeytableCriteria andTablenameIsNull() {
+			addCriterion("tableName is null");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidIsNotNull() {
-			addCriterion("tableId is not null");
+		public SysKeytableCriteria andTablenameIsNotNull() {
+			addCriterion("tableName is not null");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidEqualTo(Integer value) {
-			addCriterion("tableId =", value, "tableId");
+		public SysKeytableCriteria andTablenameEqualTo(String value) {
+			addCriterion("tableName =", value, "tableName");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidNotEqualTo(Integer value) {
-			addCriterion("tableId <>", value, "tableId");
+		public SysKeytableCriteria andTablenameNotEqualTo(String value) {
+			addCriterion("tableName <>", value, "tableName");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidGreaterThan(Integer value) {
-			addCriterion("tableId >", value, "tableId");
+		public SysKeytableCriteria andTablenameGreaterThan(String value) {
+			addCriterion("tableName >", value, "tableName");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidGreaterThanOrEqualTo(Integer value) {
-			addCriterion("tableId >=", value, "tableId");
+		public SysKeytableCriteria andTablenameGreaterThanOrEqualTo(String value) {
+			addCriterion("tableName >=", value, "tableName");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidLessThan(Integer value) {
-			addCriterion("tableId <", value, "tableId");
+		public SysKeytableCriteria andTablenameLessThan(String value) {
+			addCriterion("tableName <", value, "tableName");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidLessThanOrEqualTo(Integer value) {
-			addCriterion("tableId <=", value, "tableId");
+		public SysKeytableCriteria andTablenameLessThanOrEqualTo(String value) {
+			addCriterion("tableName <=", value, "tableName");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidLike(Integer value) {
-			addCriterion("tableId like ", value, "tableId",1);
+		public SysKeytableCriteria andTablenameLike(String value) {
+			addCriterion("tableName like ", value, "tableName",1);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidNotLike(Integer value) {
-			addCriterion("tableId  not like ", value, "tableId",1);
+		public SysKeytableCriteria andTablenameNotLike(String value) {
+			addCriterion("tableName  not like ", value, "tableName",1);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidLeftLike(Integer value) {
-			addCriterion("tableId like ", value, "tableId",0);
+		public SysKeytableCriteria andTablenameLeftLike(String value) {
+			addCriterion("tableName like ", value, "tableName",0);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidNotLeftLike(Integer value) {
-			addCriterion("tableId  not like ", value, "tableId",0);
+		public SysKeytableCriteria andTablenameNotLeftLike(String value) {
+			addCriterion("tableName  not like ", value, "tableName",0);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidRightLike(Integer value) {
-			addCriterion("tableId like ", value, "tableId",2);
+		public SysKeytableCriteria andTablenameRightLike(String value) {
+			addCriterion("tableName like ", value, "tableName",2);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidNotRightLike(Integer value) {
-			addCriterion("tableId  not like ", value, "tableId",2);
+		public SysKeytableCriteria andTablenameNotRightLike(String value) {
+			addCriterion("tableName  not like ", value, "tableName",2);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidIn(List<Integer> values) {
-			addCriterion("tableId  in ", values, "tableId");
+		public SysKeytableCriteria andTablenameIn(List<String> values) {
+			addCriterion("tableName  in ", values, "tableName");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidNotIn(List<Integer> values) {
-			addCriterion("tableId not in ", values, "tableId");
+		public SysKeytableCriteria andTablenameNotIn(List<String> values) {
+			addCriterion("tableName not in ", values, "tableName");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidBetween(Integer value1,Integer value2) {
-			addCriterion("tableId between ", value1, value2, "tableId");
+		public SysKeytableCriteria andTablenameBetween(String value1,String value2) {
+			addCriterion("tableName between ", value1, value2, "tableName");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTableidNotBetween(Integer value1,Integer value2) {
-			addCriterion("tableId not between ", value1, value2, "tableId");
+		public SysKeytableCriteria andTablenameNotBetween(String value1,String value2) {
+			addCriterion("tableName not between ", value1, value2, "tableName");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameIsNull() {
-			addCriterion("talbeName is null");
+		public SysKeytableCriteria andCurrentvalueIsNull() {
+			addCriterion("currentValue is null");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameIsNotNull() {
-			addCriterion("talbeName is not null");
+		public SysKeytableCriteria andCurrentvalueIsNotNull() {
+			addCriterion("currentValue is not null");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameEqualTo(String value) {
-			addCriterion("talbeName =", value, "talbeName");
+		public SysKeytableCriteria andCurrentvalueEqualTo(Integer value) {
+			addCriterion("currentValue =", value, "currentValue");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameNotEqualTo(String value) {
-			addCriterion("talbeName <>", value, "talbeName");
+		public SysKeytableCriteria andCurrentvalueNotEqualTo(Integer value) {
+			addCriterion("currentValue <>", value, "currentValue");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameGreaterThan(String value) {
-			addCriterion("talbeName >", value, "talbeName");
+		public SysKeytableCriteria andCurrentvalueGreaterThan(Integer value) {
+			addCriterion("currentValue >", value, "currentValue");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameGreaterThanOrEqualTo(String value) {
-			addCriterion("talbeName >=", value, "talbeName");
+		public SysKeytableCriteria andCurrentvalueGreaterThanOrEqualTo(Integer value) {
+			addCriterion("currentValue >=", value, "currentValue");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameLessThan(String value) {
-			addCriterion("talbeName <", value, "talbeName");
+		public SysKeytableCriteria andCurrentvalueLessThan(Integer value) {
+			addCriterion("currentValue <", value, "currentValue");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameLessThanOrEqualTo(String value) {
-			addCriterion("talbeName <=", value, "talbeName");
+		public SysKeytableCriteria andCurrentvalueLessThanOrEqualTo(Integer value) {
+			addCriterion("currentValue <=", value, "currentValue");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameLike(String value) {
-			addCriterion("talbeName like ", value, "talbeName",1);
+		public SysKeytableCriteria andCurrentvalueLike(Integer value) {
+			addCriterion("currentValue like ", value, "currentValue",1);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameNotLike(String value) {
-			addCriterion("talbeName  not like ", value, "talbeName",1);
+		public SysKeytableCriteria andCurrentvalueNotLike(Integer value) {
+			addCriterion("currentValue  not like ", value, "currentValue",1);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameLeftLike(String value) {
-			addCriterion("talbeName like ", value, "talbeName",0);
+		public SysKeytableCriteria andCurrentvalueLeftLike(Integer value) {
+			addCriterion("currentValue like ", value, "currentValue",0);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameNotLeftLike(String value) {
-			addCriterion("talbeName  not like ", value, "talbeName",0);
+		public SysKeytableCriteria andCurrentvalueNotLeftLike(Integer value) {
+			addCriterion("currentValue  not like ", value, "currentValue",0);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameRightLike(String value) {
-			addCriterion("talbeName like ", value, "talbeName",2);
+		public SysKeytableCriteria andCurrentvalueRightLike(Integer value) {
+			addCriterion("currentValue like ", value, "currentValue",2);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameNotRightLike(String value) {
-			addCriterion("talbeName  not like ", value, "talbeName",2);
+		public SysKeytableCriteria andCurrentvalueNotRightLike(Integer value) {
+			addCriterion("currentValue  not like ", value, "currentValue",2);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameIn(List<String> values) {
-			addCriterion("talbeName  in ", values, "talbeName");
+		public SysKeytableCriteria andCurrentvalueIn(List<Integer> values) {
+			addCriterion("currentValue  in ", values, "currentValue");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameNotIn(List<String> values) {
-			addCriterion("talbeName not in ", values, "talbeName");
+		public SysKeytableCriteria andCurrentvalueNotIn(List<Integer> values) {
+			addCriterion("currentValue not in ", values, "currentValue");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameBetween(String value1,String value2) {
-			addCriterion("talbeName between ", value1, value2, "talbeName");
+		public SysKeytableCriteria andCurrentvalueBetween(Integer value1,Integer value2) {
+			addCriterion("currentValue between ", value1, value2, "currentValue");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andTalbenameNotBetween(String value1,String value2) {
-			addCriterion("talbeName not between ", value1, value2, "talbeName");
+		public SysKeytableCriteria andCurrentvalueNotBetween(Integer value1,Integer value2) {
+			addCriterion("currentValue not between ", value1, value2, "currentValue");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidIsNull() {
-			addCriterion("nextId is null");
+		public SysKeytableCriteria andIncrementIsNull() {
+			addCriterion("increment is null");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidIsNotNull() {
-			addCriterion("nextId is not null");
+		public SysKeytableCriteria andIncrementIsNotNull() {
+			addCriterion("increment is not null");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidEqualTo(Integer value) {
-			addCriterion("nextId =", value, "nextId");
+		public SysKeytableCriteria andIncrementEqualTo(Integer value) {
+			addCriterion("increment =", value, "increment");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidNotEqualTo(Integer value) {
-			addCriterion("nextId <>", value, "nextId");
+		public SysKeytableCriteria andIncrementNotEqualTo(Integer value) {
+			addCriterion("increment <>", value, "increment");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidGreaterThan(Integer value) {
-			addCriterion("nextId >", value, "nextId");
+		public SysKeytableCriteria andIncrementGreaterThan(Integer value) {
+			addCriterion("increment >", value, "increment");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidGreaterThanOrEqualTo(Integer value) {
-			addCriterion("nextId >=", value, "nextId");
+		public SysKeytableCriteria andIncrementGreaterThanOrEqualTo(Integer value) {
+			addCriterion("increment >=", value, "increment");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidLessThan(Integer value) {
-			addCriterion("nextId <", value, "nextId");
+		public SysKeytableCriteria andIncrementLessThan(Integer value) {
+			addCriterion("increment <", value, "increment");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidLessThanOrEqualTo(Integer value) {
-			addCriterion("nextId <=", value, "nextId");
+		public SysKeytableCriteria andIncrementLessThanOrEqualTo(Integer value) {
+			addCriterion("increment <=", value, "increment");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidLike(Integer value) {
-			addCriterion("nextId like ", value, "nextId",1);
+		public SysKeytableCriteria andIncrementLike(Integer value) {
+			addCriterion("increment like ", value, "increment",1);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidNotLike(Integer value) {
-			addCriterion("nextId  not like ", value, "nextId",1);
+		public SysKeytableCriteria andIncrementNotLike(Integer value) {
+			addCriterion("increment  not like ", value, "increment",1);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidLeftLike(Integer value) {
-			addCriterion("nextId like ", value, "nextId",0);
+		public SysKeytableCriteria andIncrementLeftLike(Integer value) {
+			addCriterion("increment like ", value, "increment",0);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidNotLeftLike(Integer value) {
-			addCriterion("nextId  not like ", value, "nextId",0);
+		public SysKeytableCriteria andIncrementNotLeftLike(Integer value) {
+			addCriterion("increment  not like ", value, "increment",0);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidRightLike(Integer value) {
-			addCriterion("nextId like ", value, "nextId",2);
+		public SysKeytableCriteria andIncrementRightLike(Integer value) {
+			addCriterion("increment like ", value, "increment",2);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidNotRightLike(Integer value) {
-			addCriterion("nextId  not like ", value, "nextId",2);
+		public SysKeytableCriteria andIncrementNotRightLike(Integer value) {
+			addCriterion("increment  not like ", value, "increment",2);
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidIn(List<Integer> values) {
-			addCriterion("nextId  in ", values, "nextId");
+		public SysKeytableCriteria andIncrementIn(List<Integer> values) {
+			addCriterion("increment  in ", values, "increment");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidNotIn(List<Integer> values) {
-			addCriterion("nextId not in ", values, "nextId");
+		public SysKeytableCriteria andIncrementNotIn(List<Integer> values) {
+			addCriterion("increment not in ", values, "increment");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidBetween(Integer value1,Integer value2) {
-			addCriterion("nextId between ", value1, value2, "nextId");
+		public SysKeytableCriteria andIncrementBetween(Integer value1,Integer value2) {
+			addCriterion("increment between ", value1, value2, "increment");
 			return (SysKeytableCriteria) this;
 		}
 
-		public SysKeytableCriteria andNextidNotBetween(Integer value1,Integer value2) {
-			addCriterion("nextId not between ", value1, value2, "nextId");
+		public SysKeytableCriteria andIncrementNotBetween(Integer value1,Integer value2) {
+			addCriterion("increment not between ", value1, value2, "increment");
 			return (SysKeytableCriteria) this;
 		}
 

@@ -283,92 +283,92 @@ public class PatientLivestateArg {
 		}
 
 		public PatientLivestateCriteria andPersonidIsNull() {
-			addCriterion("personid is null");
+			addCriterion("personId is null");
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidIsNotNull() {
-			addCriterion("personid is not null");
+			addCriterion("personId is not null");
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidEqualTo(Integer value) {
-			addCriterion("personid =", value, "personid");
+			addCriterion("personId =", value, "personId");
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidNotEqualTo(Integer value) {
-			addCriterion("personid <>", value, "personid");
+			addCriterion("personId <>", value, "personId");
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidGreaterThan(Integer value) {
-			addCriterion("personid >", value, "personid");
+			addCriterion("personId >", value, "personId");
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidGreaterThanOrEqualTo(Integer value) {
-			addCriterion("personid >=", value, "personid");
+			addCriterion("personId >=", value, "personId");
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidLessThan(Integer value) {
-			addCriterion("personid <", value, "personid");
+			addCriterion("personId <", value, "personId");
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidLessThanOrEqualTo(Integer value) {
-			addCriterion("personid <=", value, "personid");
+			addCriterion("personId <=", value, "personId");
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidLike(Integer value) {
-			addCriterion("personid like ", value, "personid",1);
+			addCriterion("personId like ", value, "personId",1);
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidNotLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",1);
+			addCriterion("personId  not like ", value, "personId",1);
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidLeftLike(Integer value) {
-			addCriterion("personid like ", value, "personid",0);
+			addCriterion("personId like ", value, "personId",0);
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidNotLeftLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",0);
+			addCriterion("personId  not like ", value, "personId",0);
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidRightLike(Integer value) {
-			addCriterion("personid like ", value, "personid",2);
+			addCriterion("personId like ", value, "personId",2);
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidNotRightLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",2);
+			addCriterion("personId  not like ", value, "personId",2);
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidIn(List<Integer> values) {
-			addCriterion("personid  in ", values, "personid");
+			addCriterion("personId  in ", values, "personId");
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidNotIn(List<Integer> values) {
-			addCriterion("personid not in ", values, "personid");
+			addCriterion("personId not in ", values, "personId");
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidBetween(Integer value1,Integer value2) {
-			addCriterion("personid between ", value1, value2, "personid");
+			addCriterion("personId between ", value1, value2, "personId");
 			return (PatientLivestateCriteria) this;
 		}
 
 		public PatientLivestateCriteria andPersonidNotBetween(Integer value1,Integer value2) {
-			addCriterion("personid not between ", value1, value2, "personid");
+			addCriterion("personId not between ", value1, value2, "personId");
 			return (PatientLivestateCriteria) this;
 		}
 
@@ -472,82 +472,82 @@ public class PatientLivestateArg {
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateEqualTo(Boolean value) {
+		public PatientLivestateCriteria andLivestateEqualTo(String value) {
 			addCriterion("liveState =", value, "liveState");
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateNotEqualTo(Boolean value) {
+		public PatientLivestateCriteria andLivestateNotEqualTo(String value) {
 			addCriterion("liveState <>", value, "liveState");
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateGreaterThan(Boolean value) {
+		public PatientLivestateCriteria andLivestateGreaterThan(String value) {
 			addCriterion("liveState >", value, "liveState");
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateGreaterThanOrEqualTo(Boolean value) {
+		public PatientLivestateCriteria andLivestateGreaterThanOrEqualTo(String value) {
 			addCriterion("liveState >=", value, "liveState");
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateLessThan(Boolean value) {
+		public PatientLivestateCriteria andLivestateLessThan(String value) {
 			addCriterion("liveState <", value, "liveState");
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateLessThanOrEqualTo(Boolean value) {
+		public PatientLivestateCriteria andLivestateLessThanOrEqualTo(String value) {
 			addCriterion("liveState <=", value, "liveState");
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateLike(Boolean value) {
+		public PatientLivestateCriteria andLivestateLike(String value) {
 			addCriterion("liveState like ", value, "liveState",1);
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateNotLike(Boolean value) {
+		public PatientLivestateCriteria andLivestateNotLike(String value) {
 			addCriterion("liveState  not like ", value, "liveState",1);
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateLeftLike(Boolean value) {
+		public PatientLivestateCriteria andLivestateLeftLike(String value) {
 			addCriterion("liveState like ", value, "liveState",0);
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateNotLeftLike(Boolean value) {
+		public PatientLivestateCriteria andLivestateNotLeftLike(String value) {
 			addCriterion("liveState  not like ", value, "liveState",0);
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateRightLike(Boolean value) {
+		public PatientLivestateCriteria andLivestateRightLike(String value) {
 			addCriterion("liveState like ", value, "liveState",2);
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateNotRightLike(Boolean value) {
+		public PatientLivestateCriteria andLivestateNotRightLike(String value) {
 			addCriterion("liveState  not like ", value, "liveState",2);
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateIn(List<Boolean> values) {
+		public PatientLivestateCriteria andLivestateIn(List<String> values) {
 			addCriterion("liveState  in ", values, "liveState");
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateNotIn(List<Boolean> values) {
+		public PatientLivestateCriteria andLivestateNotIn(List<String> values) {
 			addCriterion("liveState not in ", values, "liveState");
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateBetween(Boolean value1,Boolean value2) {
+		public PatientLivestateCriteria andLivestateBetween(String value1,String value2) {
 			addCriterion("liveState between ", value1, value2, "liveState");
 			return (PatientLivestateCriteria) this;
 		}
 
-		public PatientLivestateCriteria andLivestateNotBetween(Boolean value1,Boolean value2) {
+		public PatientLivestateCriteria andLivestateNotBetween(String value1,String value2) {
 			addCriterion("liveState not between ", value1, value2, "liveState");
 			return (PatientLivestateCriteria) this;
 		}

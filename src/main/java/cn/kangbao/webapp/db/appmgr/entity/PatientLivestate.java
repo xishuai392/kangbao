@@ -34,14 +34,14 @@ public class PatientLivestate implements Serializable {
 		return liveitem; 
 	}
 
-	private Boolean livestate;
+	private String livestate;
 
-	public void setLivestate(Boolean livestate){
+	public void setLivestate(String livestate){
 		this.livestate = livestate;
 	}
 
-	public Boolean getLivestate() {
-		return livestate; 
+	public String getLivestate() {
+		return StringUtils.isBlank(livestate)?livestate:livestate.trim(); 
 	}
 
 	private Date createtime;

@@ -4,34 +4,34 @@ import java.math.*;
 import java.util.*;
 import org.apache.commons.lang.StringUtils;
 public class SysKeytable implements Serializable {
-       	private Integer tableid;
+       	private String tablename;
 
-	public void setTableid(Integer tableid){
-		this.tableid = tableid;
+	public void setTablename(String tablename){
+		this.tablename = tablename;
 	}
 
-	public Integer getTableid() {
-		return tableid; 
+	public String getTablename() {
+		return StringUtils.isBlank(tablename)?tablename:tablename.trim(); 
 	}
 
-	private String talbename;
+	private Integer currentvalue;
 
-	public void setTalbename(String talbename){
-		this.talbename = talbename;
+	public void setCurrentvalue(Integer currentvalue){
+		this.currentvalue = currentvalue;
 	}
 
-	public String getTalbename() {
-		return StringUtils.isBlank(talbename)?talbename:talbename.trim(); 
+	public Integer getCurrentvalue() {
+		return currentvalue; 
 	}
 
-	private Integer nextid;
+	private Integer increment;
 
-	public void setNextid(Integer nextid){
-		this.nextid = nextid;
+	public void setIncrement(Integer increment){
+		this.increment = increment;
 	}
 
-	public Integer getNextid() {
-		return nextid; 
+	public Integer getIncrement() {
+		return increment; 
 	}
 
 	private Date createtime;

@@ -5,7 +5,7 @@
 		<id column="userId" property="userid" jdbcType="INTEGER" />
 		<result column="userName" property="username" jdbcType="VARCHAR" />
 		<result column="password" property="password" jdbcType="VARCHAR" />
-		<result column="userType" property="usertype" jdbcType="BIT" />
+		<result column="userType" property="usertype" jdbcType="CHAR" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -139,7 +139,7 @@
 		password= #{record.password,jdbcType=VARCHAR},
 	</if>
 	<if test="record.usertype != null" >
-		userType= #{record.usertype,jdbcType=BIT},
+		userType= #{record.usertype,jdbcType=CHAR},
 	</if>
 	<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
@@ -155,7 +155,7 @@
 		userId = #{record.userid,jdbcType=INTEGER},
 	userName = #{record.username,jdbcType=VARCHAR},
 	password = #{record.password,jdbcType=VARCHAR},
-	userType = #{record.usertype,jdbcType=BIT},
+	userType = #{record.usertype,jdbcType=CHAR},
 	createTime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
@@ -164,7 +164,7 @@
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysUser" >
 		insert into sys_user(userId,userName,password,userType,createTime
 			)
-		 values (#{userid,jdbcType=INTEGER},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{usertype,jdbcType=BIT},#{createtime,jdbcType=TIMESTAMP}
+		 values (#{userid,jdbcType=INTEGER},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{usertype,jdbcType=CHAR},#{createtime,jdbcType=TIMESTAMP}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysUser" >
@@ -197,7 +197,7 @@
 		#{password,jdbcType=VARCHAR},
 	</if>
 	<if test="usertype != null" >
-		#{usertype,jdbcType=BIT},
+		#{usertype,jdbcType=CHAR},
 	</if>
 	<if test="createtime != null" >
 		#{createtime,jdbcType=TIMESTAMP},
@@ -208,7 +208,7 @@
 		insert into sys_user(userId,userName,password,userType,createTime
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.userid,jdbcType=INTEGER},#{ item.username,jdbcType=VARCHAR},#{ item.password,jdbcType=VARCHAR},#{ item.usertype,jdbcType=BIT},#{ item.createtime,jdbcType=TIMESTAMP}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.userid,jdbcType=INTEGER},#{ item.username,jdbcType=VARCHAR},#{ item.password,jdbcType=VARCHAR},#{ item.usertype,jdbcType=CHAR},#{ item.createtime,jdbcType=TIMESTAMP}
 			)
 		</foreach>
   </insert>
@@ -232,7 +232,7 @@
 		password = #{password,jdbcType=VARCHAR},
 	</if>
 	<if test="usertype != null" >
-		userType = #{usertype,jdbcType=BIT},
+		userType = #{usertype,jdbcType=CHAR},
 	</if>
 	<if test="createtime != null" >
 		createTime = #{createtime,jdbcType=TIMESTAMP},
@@ -245,7 +245,7 @@
 		set 
 		userName = #{username,jdbcType=VARCHAR},
 		password = #{password,jdbcType=VARCHAR},
-		userType = #{usertype,jdbcType=BIT},
+		userType = #{usertype,jdbcType=CHAR},
 		createTime = #{createtime,jdbcType=TIMESTAMP}
 	 where userId = #{userid,jdbcType=INTEGER}
 	</update>

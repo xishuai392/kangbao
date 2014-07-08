@@ -283,92 +283,92 @@ public class PatientHealthArg {
 		}
 
 		public PatientHealthCriteria andPersonidIsNull() {
-			addCriterion("personid is null");
+			addCriterion("personId is null");
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidIsNotNull() {
-			addCriterion("personid is not null");
+			addCriterion("personId is not null");
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidEqualTo(Integer value) {
-			addCriterion("personid =", value, "personid");
+			addCriterion("personId =", value, "personId");
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidNotEqualTo(Integer value) {
-			addCriterion("personid <>", value, "personid");
+			addCriterion("personId <>", value, "personId");
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidGreaterThan(Integer value) {
-			addCriterion("personid >", value, "personid");
+			addCriterion("personId >", value, "personId");
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidGreaterThanOrEqualTo(Integer value) {
-			addCriterion("personid >=", value, "personid");
+			addCriterion("personId >=", value, "personId");
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidLessThan(Integer value) {
-			addCriterion("personid <", value, "personid");
+			addCriterion("personId <", value, "personId");
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidLessThanOrEqualTo(Integer value) {
-			addCriterion("personid <=", value, "personid");
+			addCriterion("personId <=", value, "personId");
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidLike(Integer value) {
-			addCriterion("personid like ", value, "personid",1);
+			addCriterion("personId like ", value, "personId",1);
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidNotLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",1);
+			addCriterion("personId  not like ", value, "personId",1);
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidLeftLike(Integer value) {
-			addCriterion("personid like ", value, "personid",0);
+			addCriterion("personId like ", value, "personId",0);
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidNotLeftLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",0);
+			addCriterion("personId  not like ", value, "personId",0);
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidRightLike(Integer value) {
-			addCriterion("personid like ", value, "personid",2);
+			addCriterion("personId like ", value, "personId",2);
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidNotRightLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",2);
+			addCriterion("personId  not like ", value, "personId",2);
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidIn(List<Integer> values) {
-			addCriterion("personid  in ", values, "personid");
+			addCriterion("personId  in ", values, "personId");
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidNotIn(List<Integer> values) {
-			addCriterion("personid not in ", values, "personid");
+			addCriterion("personId not in ", values, "personId");
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidBetween(Integer value1,Integer value2) {
-			addCriterion("personid between ", value1, value2, "personid");
+			addCriterion("personId between ", value1, value2, "personId");
 			return (PatientHealthCriteria) this;
 		}
 
 		public PatientHealthCriteria andPersonidNotBetween(Integer value1,Integer value2) {
-			addCriterion("personid not between ", value1, value2, "personid");
+			addCriterion("personId not between ", value1, value2, "personId");
 			return (PatientHealthCriteria) this;
 		}
 
@@ -562,82 +562,82 @@ public class PatientHealthArg {
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesEqualTo(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesEqualTo(String value) {
 			addCriterion("isFamilyDiabetes =", value, "isFamilyDiabetes");
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesNotEqualTo(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesNotEqualTo(String value) {
 			addCriterion("isFamilyDiabetes <>", value, "isFamilyDiabetes");
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesGreaterThan(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesGreaterThan(String value) {
 			addCriterion("isFamilyDiabetes >", value, "isFamilyDiabetes");
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesGreaterThanOrEqualTo(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesGreaterThanOrEqualTo(String value) {
 			addCriterion("isFamilyDiabetes >=", value, "isFamilyDiabetes");
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesLessThan(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesLessThan(String value) {
 			addCriterion("isFamilyDiabetes <", value, "isFamilyDiabetes");
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesLessThanOrEqualTo(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesLessThanOrEqualTo(String value) {
 			addCriterion("isFamilyDiabetes <=", value, "isFamilyDiabetes");
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesLike(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesLike(String value) {
 			addCriterion("isFamilyDiabetes like ", value, "isFamilyDiabetes",1);
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesNotLike(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesNotLike(String value) {
 			addCriterion("isFamilyDiabetes  not like ", value, "isFamilyDiabetes",1);
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesLeftLike(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesLeftLike(String value) {
 			addCriterion("isFamilyDiabetes like ", value, "isFamilyDiabetes",0);
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesNotLeftLike(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesNotLeftLike(String value) {
 			addCriterion("isFamilyDiabetes  not like ", value, "isFamilyDiabetes",0);
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesRightLike(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesRightLike(String value) {
 			addCriterion("isFamilyDiabetes like ", value, "isFamilyDiabetes",2);
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesNotRightLike(Boolean value) {
+		public PatientHealthCriteria andIsfamilydiabetesNotRightLike(String value) {
 			addCriterion("isFamilyDiabetes  not like ", value, "isFamilyDiabetes",2);
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesIn(List<Boolean> values) {
+		public PatientHealthCriteria andIsfamilydiabetesIn(List<String> values) {
 			addCriterion("isFamilyDiabetes  in ", values, "isFamilyDiabetes");
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesNotIn(List<Boolean> values) {
+		public PatientHealthCriteria andIsfamilydiabetesNotIn(List<String> values) {
 			addCriterion("isFamilyDiabetes not in ", values, "isFamilyDiabetes");
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesBetween(Boolean value1,Boolean value2) {
+		public PatientHealthCriteria andIsfamilydiabetesBetween(String value1,String value2) {
 			addCriterion("isFamilyDiabetes between ", value1, value2, "isFamilyDiabetes");
 			return (PatientHealthCriteria) this;
 		}
 
-		public PatientHealthCriteria andIsfamilydiabetesNotBetween(Boolean value1,Boolean value2) {
+		public PatientHealthCriteria andIsfamilydiabetesNotBetween(String value1,String value2) {
 			addCriterion("isFamilyDiabetes not between ", value1, value2, "isFamilyDiabetes");
 			return (PatientHealthCriteria) this;
 		}

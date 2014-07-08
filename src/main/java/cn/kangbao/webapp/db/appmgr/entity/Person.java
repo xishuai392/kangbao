@@ -34,14 +34,14 @@ public class Person implements Serializable {
 		return mainpersonid; 
 	}
 
-	private Boolean usertype;
+	private String usertype;
 
-	public void setUsertype(Boolean usertype){
+	public void setUsertype(String usertype){
 		this.usertype = usertype;
 	}
 
-	public Boolean getUsertype() {
-		return usertype; 
+	public String getUsertype() {
+		return StringUtils.isBlank(usertype)?usertype:usertype.trim(); 
 	}
 
 	private String fullname;

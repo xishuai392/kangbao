@@ -3,7 +3,7 @@
 <mapper namespace="cn.kangbao.webapp.db.appmgr.dao.mapper.ISeerecordMapper" >
     <resultMap id="BaseResultMap" type="cn.kangbao.webapp.db.appmgr.entity.Seerecord">
 		<id column="caseId" property="caseid" jdbcType="INTEGER" />
-		<result column="personid" property="personid" jdbcType="INTEGER" />
+		<result column="personId" property="personid" jdbcType="INTEGER" />
 		<result column="doctorId" property="doctorid" jdbcType="INTEGER" />
 		<result column="readTime" property="readtime" jdbcType="TIMESTAMP" />
 		<result column="reply" property="reply" jdbcType="VARCHAR" />
@@ -11,7 +11,7 @@
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	caseId,personid,doctorId,readTime,reply,replyTime,createTime
+  	caseId,personId,doctorId,readTime,reply,replyTime,createTime
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -135,7 +135,7 @@
 		caseId= #{record.caseid,jdbcType=INTEGER},
 	</if>
 	<if test="record.personid != null" >
-		personid= #{record.personid,jdbcType=INTEGER},
+		personId= #{record.personid,jdbcType=INTEGER},
 	</if>
 	<if test="record.doctorid != null" >
 		doctorId= #{record.doctorid,jdbcType=INTEGER},
@@ -161,7 +161,7 @@
     update seerecord
     set 
 		caseId = #{record.caseid,jdbcType=INTEGER},
-	personid = #{record.personid,jdbcType=INTEGER},
+	personId = #{record.personid,jdbcType=INTEGER},
 	doctorId = #{record.doctorid,jdbcType=INTEGER},
 	readTime = #{record.readtime,jdbcType=TIMESTAMP},
 	reply = #{record.reply,jdbcType=VARCHAR},
@@ -172,7 +172,7 @@
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.Seerecord" >
-		insert into seerecord(caseId,personid,doctorId,readTime,reply,replyTime,createTime
+		insert into seerecord(caseId,personId,doctorId,readTime,reply,replyTime,createTime
 			)
 		 values (#{caseid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{doctorid,jdbcType=INTEGER},#{readtime,jdbcType=TIMESTAMP},#{reply,jdbcType=VARCHAR},#{replytime,jdbcType=TIMESTAMP},#{createtime,jdbcType=TIMESTAMP}
 			)
@@ -227,7 +227,7 @@
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into seerecord(caseId,personid,doctorId,readTime,reply,replyTime,createTime
+		insert into seerecord(caseId,personId,doctorId,readTime,reply,replyTime,createTime
 			)
 		 values 
 		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.caseid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.doctorid,jdbcType=INTEGER},#{ item.readtime,jdbcType=TIMESTAMP},#{ item.reply,jdbcType=VARCHAR},#{ item.replytime,jdbcType=TIMESTAMP},#{ item.createtime,jdbcType=TIMESTAMP}
@@ -248,7 +248,7 @@
 		update seerecord
 		<set >
 	<if test="personid != null" >
-		personid = #{personid,jdbcType=INTEGER},
+		personId = #{personid,jdbcType=INTEGER},
 	</if>
 	<if test="doctorid != null" >
 		doctorId = #{doctorid,jdbcType=INTEGER},
@@ -271,7 +271,7 @@
 	<update id="updateByPrimaryKey" parameterType="cn.kangbao.webapp.db.appmgr.entity.Seerecord" >
 		update seerecord
 		set 
-		personid = #{personid,jdbcType=INTEGER},
+		personId = #{personid,jdbcType=INTEGER},
 		doctorId = #{doctorid,jdbcType=INTEGER},
 		readTime = #{readtime,jdbcType=TIMESTAMP},
 		reply = #{reply,jdbcType=VARCHAR},

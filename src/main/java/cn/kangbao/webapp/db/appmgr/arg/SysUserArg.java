@@ -472,82 +472,82 @@ public class SysUserArg {
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeEqualTo(Boolean value) {
+		public SysUserCriteria andUsertypeEqualTo(String value) {
 			addCriterion("userType =", value, "userType");
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeNotEqualTo(Boolean value) {
+		public SysUserCriteria andUsertypeNotEqualTo(String value) {
 			addCriterion("userType <>", value, "userType");
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeGreaterThan(Boolean value) {
+		public SysUserCriteria andUsertypeGreaterThan(String value) {
 			addCriterion("userType >", value, "userType");
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeGreaterThanOrEqualTo(Boolean value) {
+		public SysUserCriteria andUsertypeGreaterThanOrEqualTo(String value) {
 			addCriterion("userType >=", value, "userType");
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeLessThan(Boolean value) {
+		public SysUserCriteria andUsertypeLessThan(String value) {
 			addCriterion("userType <", value, "userType");
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeLessThanOrEqualTo(Boolean value) {
+		public SysUserCriteria andUsertypeLessThanOrEqualTo(String value) {
 			addCriterion("userType <=", value, "userType");
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeLike(Boolean value) {
+		public SysUserCriteria andUsertypeLike(String value) {
 			addCriterion("userType like ", value, "userType",1);
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeNotLike(Boolean value) {
+		public SysUserCriteria andUsertypeNotLike(String value) {
 			addCriterion("userType  not like ", value, "userType",1);
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeLeftLike(Boolean value) {
+		public SysUserCriteria andUsertypeLeftLike(String value) {
 			addCriterion("userType like ", value, "userType",0);
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeNotLeftLike(Boolean value) {
+		public SysUserCriteria andUsertypeNotLeftLike(String value) {
 			addCriterion("userType  not like ", value, "userType",0);
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeRightLike(Boolean value) {
+		public SysUserCriteria andUsertypeRightLike(String value) {
 			addCriterion("userType like ", value, "userType",2);
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeNotRightLike(Boolean value) {
+		public SysUserCriteria andUsertypeNotRightLike(String value) {
 			addCriterion("userType  not like ", value, "userType",2);
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeIn(List<Boolean> values) {
+		public SysUserCriteria andUsertypeIn(List<String> values) {
 			addCriterion("userType  in ", values, "userType");
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeNotIn(List<Boolean> values) {
+		public SysUserCriteria andUsertypeNotIn(List<String> values) {
 			addCriterion("userType not in ", values, "userType");
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeBetween(Boolean value1,Boolean value2) {
+		public SysUserCriteria andUsertypeBetween(String value1,String value2) {
 			addCriterion("userType between ", value1, value2, "userType");
 			return (SysUserCriteria) this;
 		}
 
-		public SysUserCriteria andUsertypeNotBetween(Boolean value1,Boolean value2) {
+		public SysUserCriteria andUsertypeNotBetween(String value1,String value2) {
 			addCriterion("userType not between ", value1, value2, "userType");
 			return (SysUserCriteria) this;
 		}

@@ -5,7 +5,7 @@ import java.math.*;
 import org.apache.commons.lang.*;
 
 public class PersonArg {
-	private String pk_name = "personid";
+	private String pk_name = "personId";
     private String orderByClause;
 
 	private String groupByClause;
@@ -193,92 +193,92 @@ public class PersonArg {
 			return (PersonCriteria) this;
 		}
 				public PersonCriteria andPersonidIsNull() {
-			addCriterion("personid is null");
+			addCriterion("personId is null");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidIsNotNull() {
-			addCriterion("personid is not null");
+			addCriterion("personId is not null");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidEqualTo(Integer value) {
-			addCriterion("personid =", value, "personid");
+			addCriterion("personId =", value, "personId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidNotEqualTo(Integer value) {
-			addCriterion("personid <>", value, "personid");
+			addCriterion("personId <>", value, "personId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidGreaterThan(Integer value) {
-			addCriterion("personid >", value, "personid");
+			addCriterion("personId >", value, "personId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidGreaterThanOrEqualTo(Integer value) {
-			addCriterion("personid >=", value, "personid");
+			addCriterion("personId >=", value, "personId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidLessThan(Integer value) {
-			addCriterion("personid <", value, "personid");
+			addCriterion("personId <", value, "personId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidLessThanOrEqualTo(Integer value) {
-			addCriterion("personid <=", value, "personid");
+			addCriterion("personId <=", value, "personId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidLike(Integer value) {
-			addCriterion("personid like ", value, "personid",1);
+			addCriterion("personId like ", value, "personId",1);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidNotLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",1);
+			addCriterion("personId  not like ", value, "personId",1);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidLeftLike(Integer value) {
-			addCriterion("personid like ", value, "personid",0);
+			addCriterion("personId like ", value, "personId",0);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidNotLeftLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",0);
+			addCriterion("personId  not like ", value, "personId",0);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidRightLike(Integer value) {
-			addCriterion("personid like ", value, "personid",2);
+			addCriterion("personId like ", value, "personId",2);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidNotRightLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",2);
+			addCriterion("personId  not like ", value, "personId",2);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidIn(List<Integer> values) {
-			addCriterion("personid  in ", values, "personid");
+			addCriterion("personId  in ", values, "personId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidNotIn(List<Integer> values) {
-			addCriterion("personid not in ", values, "personid");
+			addCriterion("personId not in ", values, "personId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidBetween(Integer value1,Integer value2) {
-			addCriterion("personid between ", value1, value2, "personid");
+			addCriterion("personId between ", value1, value2, "personId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andPersonidNotBetween(Integer value1,Integer value2) {
-			addCriterion("personid not between ", value1, value2, "personid");
+			addCriterion("personId not between ", value1, value2, "personId");
 			return (PersonCriteria) this;
 		}
 
@@ -373,92 +373,92 @@ public class PersonArg {
 		}
 
 		public PersonCriteria andMainpersonidIsNull() {
-			addCriterion("mainpersonid is null");
+			addCriterion("mainPersonId is null");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidIsNotNull() {
-			addCriterion("mainpersonid is not null");
+			addCriterion("mainPersonId is not null");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidEqualTo(Integer value) {
-			addCriterion("mainpersonid =", value, "mainpersonid");
+			addCriterion("mainPersonId =", value, "mainPersonId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidNotEqualTo(Integer value) {
-			addCriterion("mainpersonid <>", value, "mainpersonid");
+			addCriterion("mainPersonId <>", value, "mainPersonId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidGreaterThan(Integer value) {
-			addCriterion("mainpersonid >", value, "mainpersonid");
+			addCriterion("mainPersonId >", value, "mainPersonId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidGreaterThanOrEqualTo(Integer value) {
-			addCriterion("mainpersonid >=", value, "mainpersonid");
+			addCriterion("mainPersonId >=", value, "mainPersonId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidLessThan(Integer value) {
-			addCriterion("mainpersonid <", value, "mainpersonid");
+			addCriterion("mainPersonId <", value, "mainPersonId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidLessThanOrEqualTo(Integer value) {
-			addCriterion("mainpersonid <=", value, "mainpersonid");
+			addCriterion("mainPersonId <=", value, "mainPersonId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidLike(Integer value) {
-			addCriterion("mainpersonid like ", value, "mainpersonid",1);
+			addCriterion("mainPersonId like ", value, "mainPersonId",1);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidNotLike(Integer value) {
-			addCriterion("mainpersonid  not like ", value, "mainpersonid",1);
+			addCriterion("mainPersonId  not like ", value, "mainPersonId",1);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidLeftLike(Integer value) {
-			addCriterion("mainpersonid like ", value, "mainpersonid",0);
+			addCriterion("mainPersonId like ", value, "mainPersonId",0);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidNotLeftLike(Integer value) {
-			addCriterion("mainpersonid  not like ", value, "mainpersonid",0);
+			addCriterion("mainPersonId  not like ", value, "mainPersonId",0);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidRightLike(Integer value) {
-			addCriterion("mainpersonid like ", value, "mainpersonid",2);
+			addCriterion("mainPersonId like ", value, "mainPersonId",2);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidNotRightLike(Integer value) {
-			addCriterion("mainpersonid  not like ", value, "mainpersonid",2);
+			addCriterion("mainPersonId  not like ", value, "mainPersonId",2);
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidIn(List<Integer> values) {
-			addCriterion("mainpersonid  in ", values, "mainpersonid");
+			addCriterion("mainPersonId  in ", values, "mainPersonId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidNotIn(List<Integer> values) {
-			addCriterion("mainpersonid not in ", values, "mainpersonid");
+			addCriterion("mainPersonId not in ", values, "mainPersonId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidBetween(Integer value1,Integer value2) {
-			addCriterion("mainpersonid between ", value1, value2, "mainpersonid");
+			addCriterion("mainPersonId between ", value1, value2, "mainPersonId");
 			return (PersonCriteria) this;
 		}
 
 		public PersonCriteria andMainpersonidNotBetween(Integer value1,Integer value2) {
-			addCriterion("mainpersonid not between ", value1, value2, "mainpersonid");
+			addCriterion("mainPersonId not between ", value1, value2, "mainPersonId");
 			return (PersonCriteria) this;
 		}
 
@@ -472,82 +472,82 @@ public class PersonArg {
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeEqualTo(Boolean value) {
+		public PersonCriteria andUsertypeEqualTo(String value) {
 			addCriterion("userType =", value, "userType");
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeNotEqualTo(Boolean value) {
+		public PersonCriteria andUsertypeNotEqualTo(String value) {
 			addCriterion("userType <>", value, "userType");
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeGreaterThan(Boolean value) {
+		public PersonCriteria andUsertypeGreaterThan(String value) {
 			addCriterion("userType >", value, "userType");
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeGreaterThanOrEqualTo(Boolean value) {
+		public PersonCriteria andUsertypeGreaterThanOrEqualTo(String value) {
 			addCriterion("userType >=", value, "userType");
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeLessThan(Boolean value) {
+		public PersonCriteria andUsertypeLessThan(String value) {
 			addCriterion("userType <", value, "userType");
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeLessThanOrEqualTo(Boolean value) {
+		public PersonCriteria andUsertypeLessThanOrEqualTo(String value) {
 			addCriterion("userType <=", value, "userType");
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeLike(Boolean value) {
+		public PersonCriteria andUsertypeLike(String value) {
 			addCriterion("userType like ", value, "userType",1);
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeNotLike(Boolean value) {
+		public PersonCriteria andUsertypeNotLike(String value) {
 			addCriterion("userType  not like ", value, "userType",1);
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeLeftLike(Boolean value) {
+		public PersonCriteria andUsertypeLeftLike(String value) {
 			addCriterion("userType like ", value, "userType",0);
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeNotLeftLike(Boolean value) {
+		public PersonCriteria andUsertypeNotLeftLike(String value) {
 			addCriterion("userType  not like ", value, "userType",0);
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeRightLike(Boolean value) {
+		public PersonCriteria andUsertypeRightLike(String value) {
 			addCriterion("userType like ", value, "userType",2);
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeNotRightLike(Boolean value) {
+		public PersonCriteria andUsertypeNotRightLike(String value) {
 			addCriterion("userType  not like ", value, "userType",2);
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeIn(List<Boolean> values) {
+		public PersonCriteria andUsertypeIn(List<String> values) {
 			addCriterion("userType  in ", values, "userType");
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeNotIn(List<Boolean> values) {
+		public PersonCriteria andUsertypeNotIn(List<String> values) {
 			addCriterion("userType not in ", values, "userType");
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeBetween(Boolean value1,Boolean value2) {
+		public PersonCriteria andUsertypeBetween(String value1,String value2) {
 			addCriterion("userType between ", value1, value2, "userType");
 			return (PersonCriteria) this;
 		}
 
-		public PersonCriteria andUsertypeNotBetween(Boolean value1,Boolean value2) {
+		public PersonCriteria andUsertypeNotBetween(String value1,String value2) {
 			addCriterion("userType not between ", value1, value2, "userType");
 			return (PersonCriteria) this;
 		}

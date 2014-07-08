@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="cn.kangbao.webapp.db.appmgr.dao.mapper.ISysKeytableMapper" >
     <resultMap id="BaseResultMap" type="cn.kangbao.webapp.db.appmgr.entity.SysKeytable">
-		<id column="tableId" property="tableid" jdbcType="INTEGER" />
-		<result column="talbeName" property="talbename" jdbcType="VARCHAR" />
-		<result column="nextId" property="nextid" jdbcType="INTEGER" />
+		<id column="tableName" property="tablename" jdbcType="VARCHAR" />
+		<result column="currentValue" property="currentvalue" jdbcType="INTEGER" />
+		<result column="increment" property="increment" jdbcType="INTEGER" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	tableId,talbeName,nextId,createTime
+  	tableName,currentValue,increment,createTime
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -128,14 +128,14 @@
   <update id="updateByArgSelective" parameterType="map" >
     update sys_keytable
     <set >
-		<if test="record.tableid != null" >
-		tableId= #{record.tableid,jdbcType=INTEGER},
+		<if test="record.tablename != null" >
+		tableName= #{record.tablename,jdbcType=VARCHAR},
 	</if>
-	<if test="record.talbename != null" >
-		talbeName= #{record.talbename,jdbcType=VARCHAR},
+	<if test="record.currentvalue != null" >
+		currentValue= #{record.currentvalue,jdbcType=INTEGER},
 	</if>
-	<if test="record.nextid != null" >
-		nextId= #{record.nextid,jdbcType=INTEGER},
+	<if test="record.increment != null" >
+		increment= #{record.increment,jdbcType=INTEGER},
 	</if>
 	<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
@@ -148,90 +148,90 @@
   <update id="updateByArg" parameterType="map" >
     update sys_keytable
     set 
-		tableId = #{record.tableid,jdbcType=INTEGER},
-	talbeName = #{record.talbename,jdbcType=VARCHAR},
-	nextId = #{record.nextid,jdbcType=INTEGER},
+		tableName = #{record.tablename,jdbcType=VARCHAR},
+	currentValue = #{record.currentvalue,jdbcType=INTEGER},
+	increment = #{record.increment,jdbcType=INTEGER},
 	createTime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
-  <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysKeytable" useGeneratedKeys="true" keyProperty="tableId" >
-		insert into sys_keytable(tableId,talbeName,nextId,createTime
+  <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysKeytable" >
+		insert into sys_keytable(tableName,currentValue,increment,createTime
 			)
-		 values (#{tableid,jdbcType=INTEGER},#{talbename,jdbcType=VARCHAR},#{nextid,jdbcType=INTEGER},#{createtime,jdbcType=TIMESTAMP}
+		 values (#{tablename,jdbcType=VARCHAR},#{currentvalue,jdbcType=INTEGER},#{increment,jdbcType=INTEGER},#{createtime,jdbcType=TIMESTAMP}
 			)
   </insert>
-  <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysKeytable" useGeneratedKeys="true" keyProperty="tableId" >
+  <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysKeytable" >
 		insert into sys_keytable
 <trim prefix="(" suffix=")" suffixOverrides="," >
-	<if test="tableid != null" >
-		tableid,
+	<if test="tablename != null" >
+		tablename,
 	</if>
-	<if test="talbename != null" >
-		talbename,
+	<if test="currentvalue != null" >
+		currentvalue,
 	</if>
-	<if test="nextid != null" >
-		nextid,
+	<if test="increment != null" >
+		increment,
 	</if>
 	<if test="createtime != null" >
 		createtime,
 	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >
-	<if test="tableid != null" >
-		#{tableid,jdbcType=INTEGER},
+	<if test="tablename != null" >
+		#{tablename,jdbcType=VARCHAR},
 	</if>
-	<if test="talbename != null" >
-		#{talbename,jdbcType=VARCHAR},
+	<if test="currentvalue != null" >
+		#{currentvalue,jdbcType=INTEGER},
 	</if>
-	<if test="nextid != null" >
-		#{nextid,jdbcType=INTEGER},
+	<if test="increment != null" >
+		#{increment,jdbcType=INTEGER},
 	</if>
 	<if test="createtime != null" >
 		#{createtime,jdbcType=TIMESTAMP},
 	</if>
     </trim>
   </insert>
-   <insert id="insertBatch" parameterType="list" useGeneratedKeys="true" keyProperty="tableId" >
-		insert into sys_keytable(tableId,talbeName,nextId,createTime
+   <insert id="insertBatch" parameterType="list" >
+		insert into sys_keytable(tableName,currentValue,increment,createTime
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.tableid,jdbcType=INTEGER},#{ item.talbename,jdbcType=VARCHAR},#{ item.nextid,jdbcType=INTEGER},#{ item.createtime,jdbcType=TIMESTAMP}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.tablename,jdbcType=VARCHAR},#{ item.currentvalue,jdbcType=INTEGER},#{ item.increment,jdbcType=INTEGER},#{ item.createtime,jdbcType=TIMESTAMP}
 			)
 		</foreach>
   </insert>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
 		delete from sys_keytable
- where tableId = #{tableid,jdbcType=INTEGER}
+ where tableName = #{tablename,jdbcType=VARCHAR}
 	</delete>
-	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
 		select
 		<include refid="Base_Column_List" />
 		from sys_keytable
- where tableId = #{tableid,jdbcType=INTEGER}
+ where tableName = #{tablename,jdbcType=VARCHAR}
 	</select>
 	<update id="updateByPrimaryKeySelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysKeytable" >
 		update sys_keytable
 		<set >
-	<if test="talbename != null" >
-		talbeName = #{talbename,jdbcType=VARCHAR},
+	<if test="currentvalue != null" >
+		currentValue = #{currentvalue,jdbcType=INTEGER},
 	</if>
-	<if test="nextid != null" >
-		nextId = #{nextid,jdbcType=INTEGER},
+	<if test="increment != null" >
+		increment = #{increment,jdbcType=INTEGER},
 	</if>
 	<if test="createtime != null" >
 		createTime = #{createtime,jdbcType=TIMESTAMP},
 	</if>
 		</set >
-	 where tableId = #{tableid,jdbcType=INTEGER}
+	 where tableName = #{tablename,jdbcType=VARCHAR}
 	</update>
 	<update id="updateByPrimaryKey" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysKeytable" >
 		update sys_keytable
 		set 
-		talbeName = #{talbename,jdbcType=VARCHAR},
-		nextId = #{nextid,jdbcType=INTEGER},
+		currentValue = #{currentvalue,jdbcType=INTEGER},
+		increment = #{increment,jdbcType=INTEGER},
 		createTime = #{createtime,jdbcType=TIMESTAMP}
-	 where tableId = #{tableid,jdbcType=INTEGER}
+	 where tableName = #{tablename,jdbcType=VARCHAR}
 	</update>
 </mapper>

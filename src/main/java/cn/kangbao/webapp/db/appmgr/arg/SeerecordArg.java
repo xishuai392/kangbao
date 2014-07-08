@@ -283,92 +283,92 @@ public class SeerecordArg {
 		}
 
 		public SeerecordCriteria andPersonidIsNull() {
-			addCriterion("personid is null");
+			addCriterion("personId is null");
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidIsNotNull() {
-			addCriterion("personid is not null");
+			addCriterion("personId is not null");
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidEqualTo(Integer value) {
-			addCriterion("personid =", value, "personid");
+			addCriterion("personId =", value, "personId");
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidNotEqualTo(Integer value) {
-			addCriterion("personid <>", value, "personid");
+			addCriterion("personId <>", value, "personId");
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidGreaterThan(Integer value) {
-			addCriterion("personid >", value, "personid");
+			addCriterion("personId >", value, "personId");
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidGreaterThanOrEqualTo(Integer value) {
-			addCriterion("personid >=", value, "personid");
+			addCriterion("personId >=", value, "personId");
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidLessThan(Integer value) {
-			addCriterion("personid <", value, "personid");
+			addCriterion("personId <", value, "personId");
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidLessThanOrEqualTo(Integer value) {
-			addCriterion("personid <=", value, "personid");
+			addCriterion("personId <=", value, "personId");
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidLike(Integer value) {
-			addCriterion("personid like ", value, "personid",1);
+			addCriterion("personId like ", value, "personId",1);
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidNotLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",1);
+			addCriterion("personId  not like ", value, "personId",1);
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidLeftLike(Integer value) {
-			addCriterion("personid like ", value, "personid",0);
+			addCriterion("personId like ", value, "personId",0);
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidNotLeftLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",0);
+			addCriterion("personId  not like ", value, "personId",0);
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidRightLike(Integer value) {
-			addCriterion("personid like ", value, "personid",2);
+			addCriterion("personId like ", value, "personId",2);
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidNotRightLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",2);
+			addCriterion("personId  not like ", value, "personId",2);
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidIn(List<Integer> values) {
-			addCriterion("personid  in ", values, "personid");
+			addCriterion("personId  in ", values, "personId");
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidNotIn(List<Integer> values) {
-			addCriterion("personid not in ", values, "personid");
+			addCriterion("personId not in ", values, "personId");
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidBetween(Integer value1,Integer value2) {
-			addCriterion("personid between ", value1, value2, "personid");
+			addCriterion("personId between ", value1, value2, "personId");
 			return (SeerecordCriteria) this;
 		}
 
 		public SeerecordCriteria andPersonidNotBetween(Integer value1,Integer value2) {
-			addCriterion("personid not between ", value1, value2, "personid");
+			addCriterion("personId not between ", value1, value2, "personId");
 			return (SeerecordCriteria) this;
 		}
 

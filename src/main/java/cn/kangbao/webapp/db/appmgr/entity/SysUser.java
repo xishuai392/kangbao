@@ -34,14 +34,14 @@ public class SysUser implements Serializable {
 		return StringUtils.isBlank(password)?password:password.trim(); 
 	}
 
-	private Boolean usertype;
+	private String usertype;
 
-	public void setUsertype(Boolean usertype){
+	public void setUsertype(String usertype){
 		this.usertype = usertype;
 	}
 
-	public Boolean getUsertype() {
-		return usertype; 
+	public String getUsertype() {
+		return StringUtils.isBlank(usertype)?usertype:usertype.trim(); 
 	}
 
 	private Date createtime;

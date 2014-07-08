@@ -44,14 +44,14 @@ public class PatientHealth implements Serializable {
 		return height; 
 	}
 
-	private Boolean isfamilydiabetes;
+	private String isfamilydiabetes;
 
-	public void setIsfamilydiabetes(Boolean isfamilydiabetes){
+	public void setIsfamilydiabetes(String isfamilydiabetes){
 		this.isfamilydiabetes = isfamilydiabetes;
 	}
 
-	public Boolean getIsfamilydiabetes() {
-		return isfamilydiabetes; 
+	public String getIsfamilydiabetes() {
+		return StringUtils.isBlank(isfamilydiabetes)?isfamilydiabetes:isfamilydiabetes.trim(); 
 	}
 
 	private Date createtime;

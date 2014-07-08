@@ -3,13 +3,13 @@
 <mapper namespace="cn.kangbao.webapp.db.appmgr.dao.mapper.IPatientLivestateMapper" >
     <resultMap id="BaseResultMap" type="cn.kangbao.webapp.db.appmgr.entity.PatientLivestate">
 		<id column="liveStateId" property="livestateid" jdbcType="INTEGER" />
-		<result column="personid" property="personid" jdbcType="INTEGER" />
+		<result column="personId" property="personid" jdbcType="INTEGER" />
 		<result column="liveItem" property="liveitem" jdbcType="INTEGER" />
-		<result column="liveState" property="livestate" jdbcType="BIT" />
+		<result column="liveState" property="livestate" jdbcType="CHAR" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	liveStateId,personid,liveItem,liveState,createTime
+  	liveStateId,personId,liveItem,liveState,createTime
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -133,13 +133,13 @@
 		liveStateId= #{record.livestateid,jdbcType=INTEGER},
 	</if>
 	<if test="record.personid != null" >
-		personid= #{record.personid,jdbcType=INTEGER},
+		personId= #{record.personid,jdbcType=INTEGER},
 	</if>
 	<if test="record.liveitem != null" >
 		liveItem= #{record.liveitem,jdbcType=INTEGER},
 	</if>
 	<if test="record.livestate != null" >
-		liveState= #{record.livestate,jdbcType=BIT},
+		liveState= #{record.livestate,jdbcType=CHAR},
 	</if>
 	<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
@@ -153,18 +153,18 @@
     update patient_livestate
     set 
 		liveStateId = #{record.livestateid,jdbcType=INTEGER},
-	personid = #{record.personid,jdbcType=INTEGER},
+	personId = #{record.personid,jdbcType=INTEGER},
 	liveItem = #{record.liveitem,jdbcType=INTEGER},
-	liveState = #{record.livestate,jdbcType=BIT},
+	liveState = #{record.livestate,jdbcType=CHAR},
 	createTime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientLivestate" >
-		insert into patient_livestate(liveStateId,personid,liveItem,liveState,createTime
+		insert into patient_livestate(liveStateId,personId,liveItem,liveState,createTime
 			)
-		 values (#{livestateid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{liveitem,jdbcType=INTEGER},#{livestate,jdbcType=BIT},#{createtime,jdbcType=TIMESTAMP}
+		 values (#{livestateid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{liveitem,jdbcType=INTEGER},#{livestate,jdbcType=CHAR},#{createtime,jdbcType=TIMESTAMP}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientLivestate" >
@@ -197,7 +197,7 @@
 		#{liveitem,jdbcType=INTEGER},
 	</if>
 	<if test="livestate != null" >
-		#{livestate,jdbcType=BIT},
+		#{livestate,jdbcType=CHAR},
 	</if>
 	<if test="createtime != null" >
 		#{createtime,jdbcType=TIMESTAMP},
@@ -205,10 +205,10 @@
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into patient_livestate(liveStateId,personid,liveItem,liveState,createTime
+		insert into patient_livestate(liveStateId,personId,liveItem,liveState,createTime
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.livestateid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.liveitem,jdbcType=INTEGER},#{ item.livestate,jdbcType=BIT},#{ item.createtime,jdbcType=TIMESTAMP}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.livestateid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.liveitem,jdbcType=INTEGER},#{ item.livestate,jdbcType=CHAR},#{ item.createtime,jdbcType=TIMESTAMP}
 			)
 		</foreach>
   </insert>
@@ -226,13 +226,13 @@
 		update patient_livestate
 		<set >
 	<if test="personid != null" >
-		personid = #{personid,jdbcType=INTEGER},
+		personId = #{personid,jdbcType=INTEGER},
 	</if>
 	<if test="liveitem != null" >
 		liveItem = #{liveitem,jdbcType=INTEGER},
 	</if>
 	<if test="livestate != null" >
-		liveState = #{livestate,jdbcType=BIT},
+		liveState = #{livestate,jdbcType=CHAR},
 	</if>
 	<if test="createtime != null" >
 		createTime = #{createtime,jdbcType=TIMESTAMP},
@@ -243,9 +243,9 @@
 	<update id="updateByPrimaryKey" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientLivestate" >
 		update patient_livestate
 		set 
-		personid = #{personid,jdbcType=INTEGER},
+		personId = #{personid,jdbcType=INTEGER},
 		liveItem = #{liveitem,jdbcType=INTEGER},
-		liveState = #{livestate,jdbcType=BIT},
+		liveState = #{livestate,jdbcType=CHAR},
 		createTime = #{createtime,jdbcType=TIMESTAMP}
 	 where liveStateId = #{livestateid,jdbcType=INTEGER}
 	</update>

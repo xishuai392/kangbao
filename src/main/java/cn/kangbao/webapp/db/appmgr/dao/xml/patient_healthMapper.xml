@@ -3,14 +3,14 @@
 <mapper namespace="cn.kangbao.webapp.db.appmgr.dao.mapper.IPatientHealthMapper" >
     <resultMap id="BaseResultMap" type="cn.kangbao.webapp.db.appmgr.entity.PatientHealth">
 		<id column="healthId" property="healthid" jdbcType="INTEGER" />
-		<result column="personid" property="personid" jdbcType="INTEGER" />
+		<result column="personId" property="personid" jdbcType="INTEGER" />
 		<result column="weight" property="weight" jdbcType="DECIMAL" />
 		<result column="height" property="height" jdbcType="DECIMAL" />
-		<result column="isFamilyDiabetes" property="isfamilydiabetes" jdbcType="BIT" />
+		<result column="isFamilyDiabetes" property="isfamilydiabetes" jdbcType="CHAR" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	healthId,personid,weight,height,isFamilyDiabetes,createTime
+  	healthId,personId,weight,height,isFamilyDiabetes,createTime
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -134,7 +134,7 @@
 		healthId= #{record.healthid,jdbcType=INTEGER},
 	</if>
 	<if test="record.personid != null" >
-		personid= #{record.personid,jdbcType=INTEGER},
+		personId= #{record.personid,jdbcType=INTEGER},
 	</if>
 	<if test="record.weight != null" >
 		weight= #{record.weight,jdbcType=DECIMAL},
@@ -143,7 +143,7 @@
 		height= #{record.height,jdbcType=DECIMAL},
 	</if>
 	<if test="record.isfamilydiabetes != null" >
-		isFamilyDiabetes= #{record.isfamilydiabetes,jdbcType=BIT},
+		isFamilyDiabetes= #{record.isfamilydiabetes,jdbcType=CHAR},
 	</if>
 	<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
@@ -157,19 +157,19 @@
     update patient_health
     set 
 		healthId = #{record.healthid,jdbcType=INTEGER},
-	personid = #{record.personid,jdbcType=INTEGER},
+	personId = #{record.personid,jdbcType=INTEGER},
 	weight = #{record.weight,jdbcType=DECIMAL},
 	height = #{record.height,jdbcType=DECIMAL},
-	isFamilyDiabetes = #{record.isfamilydiabetes,jdbcType=BIT},
+	isFamilyDiabetes = #{record.isfamilydiabetes,jdbcType=CHAR},
 	createTime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientHealth" >
-		insert into patient_health(healthId,personid,weight,height,isFamilyDiabetes,createTime
+		insert into patient_health(healthId,personId,weight,height,isFamilyDiabetes,createTime
 			)
-		 values (#{healthid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{weight,jdbcType=DECIMAL},#{height,jdbcType=DECIMAL},#{isfamilydiabetes,jdbcType=BIT},#{createtime,jdbcType=TIMESTAMP}
+		 values (#{healthid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{weight,jdbcType=DECIMAL},#{height,jdbcType=DECIMAL},#{isfamilydiabetes,jdbcType=CHAR},#{createtime,jdbcType=TIMESTAMP}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientHealth" >
@@ -208,7 +208,7 @@
 		#{height,jdbcType=DECIMAL},
 	</if>
 	<if test="isfamilydiabetes != null" >
-		#{isfamilydiabetes,jdbcType=BIT},
+		#{isfamilydiabetes,jdbcType=CHAR},
 	</if>
 	<if test="createtime != null" >
 		#{createtime,jdbcType=TIMESTAMP},
@@ -216,10 +216,10 @@
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into patient_health(healthId,personid,weight,height,isFamilyDiabetes,createTime
+		insert into patient_health(healthId,personId,weight,height,isFamilyDiabetes,createTime
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.healthid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.weight,jdbcType=DECIMAL},#{ item.height,jdbcType=DECIMAL},#{ item.isfamilydiabetes,jdbcType=BIT},#{ item.createtime,jdbcType=TIMESTAMP}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.healthid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.weight,jdbcType=DECIMAL},#{ item.height,jdbcType=DECIMAL},#{ item.isfamilydiabetes,jdbcType=CHAR},#{ item.createtime,jdbcType=TIMESTAMP}
 			)
 		</foreach>
   </insert>
@@ -237,7 +237,7 @@
 		update patient_health
 		<set >
 	<if test="personid != null" >
-		personid = #{personid,jdbcType=INTEGER},
+		personId = #{personid,jdbcType=INTEGER},
 	</if>
 	<if test="weight != null" >
 		weight = #{weight,jdbcType=DECIMAL},
@@ -246,7 +246,7 @@
 		height = #{height,jdbcType=DECIMAL},
 	</if>
 	<if test="isfamilydiabetes != null" >
-		isFamilyDiabetes = #{isfamilydiabetes,jdbcType=BIT},
+		isFamilyDiabetes = #{isfamilydiabetes,jdbcType=CHAR},
 	</if>
 	<if test="createtime != null" >
 		createTime = #{createtime,jdbcType=TIMESTAMP},
@@ -257,10 +257,10 @@
 	<update id="updateByPrimaryKey" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientHealth" >
 		update patient_health
 		set 
-		personid = #{personid,jdbcType=INTEGER},
+		personId = #{personid,jdbcType=INTEGER},
 		weight = #{weight,jdbcType=DECIMAL},
 		height = #{height,jdbcType=DECIMAL},
-		isFamilyDiabetes = #{isfamilydiabetes,jdbcType=BIT},
+		isFamilyDiabetes = #{isfamilydiabetes,jdbcType=CHAR},
 		createTime = #{createtime,jdbcType=TIMESTAMP}
 	 where healthId = #{healthid,jdbcType=INTEGER}
 	</update>

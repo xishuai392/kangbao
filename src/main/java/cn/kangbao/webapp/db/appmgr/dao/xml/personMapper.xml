@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="cn.kangbao.webapp.db.appmgr.dao.mapper.IPersonMapper" >
     <resultMap id="BaseResultMap" type="cn.kangbao.webapp.db.appmgr.entity.Person">
-		<id column="personid" property="personid" jdbcType="INTEGER" />
+		<id column="personId" property="personid" jdbcType="INTEGER" />
 		<result column="userId" property="userid" jdbcType="INTEGER" />
-		<result column="mainpersonid" property="mainpersonid" jdbcType="INTEGER" />
-		<result column="userType" property="usertype" jdbcType="BIT" />
+		<result column="mainPersonId" property="mainpersonid" jdbcType="INTEGER" />
+		<result column="userType" property="usertype" jdbcType="CHAR" />
 		<result column="fullName" property="fullname" jdbcType="VARCHAR" />
 		<result column="sexType" property="sextype" jdbcType="INTEGER" />
 		<result column="birthday" property="birthday" jdbcType="DATE" />
@@ -14,7 +14,7 @@
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	personid,userId,mainpersonid,userType,fullName,sexType,birthday,mobile,cityId,createTime
+  	personId,userId,mainPersonId,userType,fullName,sexType,birthday,mobile,cityId,createTime
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -135,16 +135,16 @@
     update person
     <set >
 		<if test="record.personid != null" >
-		personid= #{record.personid,jdbcType=INTEGER},
+		personId= #{record.personid,jdbcType=INTEGER},
 	</if>
 	<if test="record.userid != null" >
 		userId= #{record.userid,jdbcType=INTEGER},
 	</if>
 	<if test="record.mainpersonid != null" >
-		mainpersonid= #{record.mainpersonid,jdbcType=INTEGER},
+		mainPersonId= #{record.mainpersonid,jdbcType=INTEGER},
 	</if>
 	<if test="record.usertype != null" >
-		userType= #{record.usertype,jdbcType=BIT},
+		userType= #{record.usertype,jdbcType=CHAR},
 	</if>
 	<if test="record.fullname != null" >
 		fullName= #{record.fullname,jdbcType=VARCHAR},
@@ -172,10 +172,10 @@
   <update id="updateByArg" parameterType="map" >
     update person
     set 
-		personid = #{record.personid,jdbcType=INTEGER},
+		personId = #{record.personid,jdbcType=INTEGER},
 	userId = #{record.userid,jdbcType=INTEGER},
-	mainpersonid = #{record.mainpersonid,jdbcType=INTEGER},
-	userType = #{record.usertype,jdbcType=BIT},
+	mainPersonId = #{record.mainpersonid,jdbcType=INTEGER},
+	userType = #{record.usertype,jdbcType=CHAR},
 	fullName = #{record.fullname,jdbcType=VARCHAR},
 	sexType = #{record.sextype,jdbcType=INTEGER},
 	birthday = #{record.birthday,jdbcType=DATE},
@@ -187,9 +187,9 @@
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.Person" >
-		insert into person(personid,userId,mainpersonid,userType,fullName,sexType,birthday,mobile,cityId,createTime
+		insert into person(personId,userId,mainPersonId,userType,fullName,sexType,birthday,mobile,cityId,createTime
 			)
-		 values (#{personid,jdbcType=INTEGER},#{userid,jdbcType=INTEGER},#{mainpersonid,jdbcType=INTEGER},#{usertype,jdbcType=BIT},#{fullname,jdbcType=VARCHAR},#{sextype,jdbcType=INTEGER},#{birthday,jdbcType=DATE},#{mobile,jdbcType=VARCHAR},#{cityid,jdbcType=INTEGER},#{createtime,jdbcType=TIMESTAMP}
+		 values (#{personid,jdbcType=INTEGER},#{userid,jdbcType=INTEGER},#{mainpersonid,jdbcType=INTEGER},#{usertype,jdbcType=CHAR},#{fullname,jdbcType=VARCHAR},#{sextype,jdbcType=INTEGER},#{birthday,jdbcType=DATE},#{mobile,jdbcType=VARCHAR},#{cityid,jdbcType=INTEGER},#{createtime,jdbcType=TIMESTAMP}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.Person" >
@@ -237,7 +237,7 @@
 		#{mainpersonid,jdbcType=INTEGER},
 	</if>
 	<if test="usertype != null" >
-		#{usertype,jdbcType=BIT},
+		#{usertype,jdbcType=CHAR},
 	</if>
 	<if test="fullname != null" >
 		#{fullname,jdbcType=VARCHAR},
@@ -260,22 +260,22 @@
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into person(personid,userId,mainpersonid,userType,fullName,sexType,birthday,mobile,cityId,createTime
+		insert into person(personId,userId,mainPersonId,userType,fullName,sexType,birthday,mobile,cityId,createTime
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.personid,jdbcType=INTEGER},#{ item.userid,jdbcType=INTEGER},#{ item.mainpersonid,jdbcType=INTEGER},#{ item.usertype,jdbcType=BIT},#{ item.fullname,jdbcType=VARCHAR},#{ item.sextype,jdbcType=INTEGER},#{ item.birthday,jdbcType=DATE},#{ item.mobile,jdbcType=VARCHAR},#{ item.cityid,jdbcType=INTEGER},#{ item.createtime,jdbcType=TIMESTAMP}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.personid,jdbcType=INTEGER},#{ item.userid,jdbcType=INTEGER},#{ item.mainpersonid,jdbcType=INTEGER},#{ item.usertype,jdbcType=CHAR},#{ item.fullname,jdbcType=VARCHAR},#{ item.sextype,jdbcType=INTEGER},#{ item.birthday,jdbcType=DATE},#{ item.mobile,jdbcType=VARCHAR},#{ item.cityid,jdbcType=INTEGER},#{ item.createtime,jdbcType=TIMESTAMP}
 			)
 		</foreach>
   </insert>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
 		delete from person
- where personid = #{personid,jdbcType=INTEGER}
+ where personId = #{personid,jdbcType=INTEGER}
 	</delete>
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
 		select
 		<include refid="Base_Column_List" />
 		from person
- where personid = #{personid,jdbcType=INTEGER}
+ where personId = #{personid,jdbcType=INTEGER}
 	</select>
 	<update id="updateByPrimaryKeySelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.Person" >
 		update person
@@ -284,10 +284,10 @@
 		userId = #{userid,jdbcType=INTEGER},
 	</if>
 	<if test="mainpersonid != null" >
-		mainpersonid = #{mainpersonid,jdbcType=INTEGER},
+		mainPersonId = #{mainpersonid,jdbcType=INTEGER},
 	</if>
 	<if test="usertype != null" >
-		userType = #{usertype,jdbcType=BIT},
+		userType = #{usertype,jdbcType=CHAR},
 	</if>
 	<if test="fullname != null" >
 		fullName = #{fullname,jdbcType=VARCHAR},
@@ -308,20 +308,20 @@
 		createTime = #{createtime,jdbcType=TIMESTAMP},
 	</if>
 		</set >
-	 where personid = #{personid,jdbcType=INTEGER}
+	 where personId = #{personid,jdbcType=INTEGER}
 	</update>
 	<update id="updateByPrimaryKey" parameterType="cn.kangbao.webapp.db.appmgr.entity.Person" >
 		update person
 		set 
 		userId = #{userid,jdbcType=INTEGER},
-		mainpersonid = #{mainpersonid,jdbcType=INTEGER},
-		userType = #{usertype,jdbcType=BIT},
+		mainPersonId = #{mainpersonid,jdbcType=INTEGER},
+		userType = #{usertype,jdbcType=CHAR},
 		fullName = #{fullname,jdbcType=VARCHAR},
 		sexType = #{sextype,jdbcType=INTEGER},
 		birthday = #{birthday,jdbcType=DATE},
 		mobile = #{mobile,jdbcType=VARCHAR},
 		cityId = #{cityid,jdbcType=INTEGER},
 		createTime = #{createtime,jdbcType=TIMESTAMP}
-	 where personid = #{personid,jdbcType=INTEGER}
+	 where personId = #{personid,jdbcType=INTEGER}
 	</update>
 </mapper>

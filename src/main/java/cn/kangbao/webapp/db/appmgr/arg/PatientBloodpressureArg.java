@@ -283,92 +283,92 @@ public class PatientBloodpressureArg {
 		}
 
 		public PatientBloodpressureCriteria andPersonidIsNull() {
-			addCriterion("personid is null");
+			addCriterion("personId is null");
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidIsNotNull() {
-			addCriterion("personid is not null");
+			addCriterion("personId is not null");
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidEqualTo(Integer value) {
-			addCriterion("personid =", value, "personid");
+			addCriterion("personId =", value, "personId");
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidNotEqualTo(Integer value) {
-			addCriterion("personid <>", value, "personid");
+			addCriterion("personId <>", value, "personId");
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidGreaterThan(Integer value) {
-			addCriterion("personid >", value, "personid");
+			addCriterion("personId >", value, "personId");
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidGreaterThanOrEqualTo(Integer value) {
-			addCriterion("personid >=", value, "personid");
+			addCriterion("personId >=", value, "personId");
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidLessThan(Integer value) {
-			addCriterion("personid <", value, "personid");
+			addCriterion("personId <", value, "personId");
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidLessThanOrEqualTo(Integer value) {
-			addCriterion("personid <=", value, "personid");
+			addCriterion("personId <=", value, "personId");
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidLike(Integer value) {
-			addCriterion("personid like ", value, "personid",1);
+			addCriterion("personId like ", value, "personId",1);
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidNotLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",1);
+			addCriterion("personId  not like ", value, "personId",1);
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidLeftLike(Integer value) {
-			addCriterion("personid like ", value, "personid",0);
+			addCriterion("personId like ", value, "personId",0);
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidNotLeftLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",0);
+			addCriterion("personId  not like ", value, "personId",0);
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidRightLike(Integer value) {
-			addCriterion("personid like ", value, "personid",2);
+			addCriterion("personId like ", value, "personId",2);
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidNotRightLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",2);
+			addCriterion("personId  not like ", value, "personId",2);
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidIn(List<Integer> values) {
-			addCriterion("personid  in ", values, "personid");
+			addCriterion("personId  in ", values, "personId");
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidNotIn(List<Integer> values) {
-			addCriterion("personid not in ", values, "personid");
+			addCriterion("personId not in ", values, "personId");
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidBetween(Integer value1,Integer value2) {
-			addCriterion("personid between ", value1, value2, "personid");
+			addCriterion("personId between ", value1, value2, "personId");
 			return (PatientBloodpressureCriteria) this;
 		}
 
 		public PatientBloodpressureCriteria andPersonidNotBetween(Integer value1,Integer value2) {
-			addCriterion("personid not between ", value1, value2, "personid");
+			addCriterion("personId not between ", value1, value2, "personId");
 			return (PatientBloodpressureCriteria) this;
 		}
 

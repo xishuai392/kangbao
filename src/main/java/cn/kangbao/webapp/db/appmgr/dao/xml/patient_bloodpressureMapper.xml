@@ -3,7 +3,7 @@
 <mapper namespace="cn.kangbao.webapp.db.appmgr.dao.mapper.IPatientBloodpressureMapper" >
     <resultMap id="BaseResultMap" type="cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure">
 		<id column="measurementId" property="measurementid" jdbcType="INTEGER" />
-		<result column="personid" property="personid" jdbcType="INTEGER" />
+		<result column="personId" property="personid" jdbcType="INTEGER" />
 		<result column="upNum" property="upnum" jdbcType="INTEGER" />
 		<result column="downNum" property="downnum" jdbcType="INTEGER" />
 		<result column="heartRate" property="heartrate" jdbcType="INTEGER" />
@@ -11,7 +11,7 @@
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	measurementId,personid,upNum,downNum,heartRate,feelingDescription,createTime
+  	measurementId,personId,upNum,downNum,heartRate,feelingDescription,createTime
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -135,7 +135,7 @@
 		measurementId= #{record.measurementid,jdbcType=INTEGER},
 	</if>
 	<if test="record.personid != null" >
-		personid= #{record.personid,jdbcType=INTEGER},
+		personId= #{record.personid,jdbcType=INTEGER},
 	</if>
 	<if test="record.upnum != null" >
 		upNum= #{record.upnum,jdbcType=INTEGER},
@@ -161,7 +161,7 @@
     update patient_bloodpressure
     set 
 		measurementId = #{record.measurementid,jdbcType=INTEGER},
-	personid = #{record.personid,jdbcType=INTEGER},
+	personId = #{record.personid,jdbcType=INTEGER},
 	upNum = #{record.upnum,jdbcType=INTEGER},
 	downNum = #{record.downnum,jdbcType=INTEGER},
 	heartRate = #{record.heartrate,jdbcType=INTEGER},
@@ -172,7 +172,7 @@
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure" >
-		insert into patient_bloodpressure(measurementId,personid,upNum,downNum,heartRate,feelingDescription,createTime
+		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,feelingDescription,createTime
 			)
 		 values (#{measurementid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{upnum,jdbcType=INTEGER},#{downnum,jdbcType=INTEGER},#{heartrate,jdbcType=INTEGER},#{feelingdescription,jdbcType=VARCHAR},#{createtime,jdbcType=TIMESTAMP}
 			)
@@ -227,7 +227,7 @@
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into patient_bloodpressure(measurementId,personid,upNum,downNum,heartRate,feelingDescription,createTime
+		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,feelingDescription,createTime
 			)
 		 values 
 		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.measurementid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.upnum,jdbcType=INTEGER},#{ item.downnum,jdbcType=INTEGER},#{ item.heartrate,jdbcType=INTEGER},#{ item.feelingdescription,jdbcType=VARCHAR},#{ item.createtime,jdbcType=TIMESTAMP}
@@ -248,7 +248,7 @@
 		update patient_bloodpressure
 		<set >
 	<if test="personid != null" >
-		personid = #{personid,jdbcType=INTEGER},
+		personId = #{personid,jdbcType=INTEGER},
 	</if>
 	<if test="upnum != null" >
 		upNum = #{upnum,jdbcType=INTEGER},
@@ -271,7 +271,7 @@
 	<update id="updateByPrimaryKey" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure" >
 		update patient_bloodpressure
 		set 
-		personid = #{personid,jdbcType=INTEGER},
+		personId = #{personid,jdbcType=INTEGER},
 		upNum = #{upnum,jdbcType=INTEGER},
 		downNum = #{downnum,jdbcType=INTEGER},
 		heartRate = #{heartrate,jdbcType=INTEGER},

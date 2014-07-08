@@ -553,92 +553,182 @@ public class PatientBloodsugarArg {
 		}
 
 		public PatientBloodsugarCriteria andPersonidIsNull() {
-			addCriterion("personid is null");
+			addCriterion("personId is null");
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidIsNotNull() {
-			addCriterion("personid is not null");
+			addCriterion("personId is not null");
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidEqualTo(Integer value) {
-			addCriterion("personid =", value, "personid");
+			addCriterion("personId =", value, "personId");
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidNotEqualTo(Integer value) {
-			addCriterion("personid <>", value, "personid");
+			addCriterion("personId <>", value, "personId");
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidGreaterThan(Integer value) {
-			addCriterion("personid >", value, "personid");
+			addCriterion("personId >", value, "personId");
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidGreaterThanOrEqualTo(Integer value) {
-			addCriterion("personid >=", value, "personid");
+			addCriterion("personId >=", value, "personId");
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidLessThan(Integer value) {
-			addCriterion("personid <", value, "personid");
+			addCriterion("personId <", value, "personId");
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidLessThanOrEqualTo(Integer value) {
-			addCriterion("personid <=", value, "personid");
+			addCriterion("personId <=", value, "personId");
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidLike(Integer value) {
-			addCriterion("personid like ", value, "personid",1);
+			addCriterion("personId like ", value, "personId",1);
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidNotLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",1);
+			addCriterion("personId  not like ", value, "personId",1);
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidLeftLike(Integer value) {
-			addCriterion("personid like ", value, "personid",0);
+			addCriterion("personId like ", value, "personId",0);
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidNotLeftLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",0);
+			addCriterion("personId  not like ", value, "personId",0);
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidRightLike(Integer value) {
-			addCriterion("personid like ", value, "personid",2);
+			addCriterion("personId like ", value, "personId",2);
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidNotRightLike(Integer value) {
-			addCriterion("personid  not like ", value, "personid",2);
+			addCriterion("personId  not like ", value, "personId",2);
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidIn(List<Integer> values) {
-			addCriterion("personid  in ", values, "personid");
+			addCriterion("personId  in ", values, "personId");
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidNotIn(List<Integer> values) {
-			addCriterion("personid not in ", values, "personid");
+			addCriterion("personId not in ", values, "personId");
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidBetween(Integer value1,Integer value2) {
-			addCriterion("personid between ", value1, value2, "personid");
+			addCriterion("personId between ", value1, value2, "personId");
 			return (PatientBloodsugarCriteria) this;
 		}
 
 		public PatientBloodsugarCriteria andPersonidNotBetween(Integer value1,Integer value2) {
-			addCriterion("personid not between ", value1, value2, "personid");
+			addCriterion("personId not between ", value1, value2, "personId");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodIsNull() {
+			addCriterion("testPeriod is null");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodIsNotNull() {
+			addCriterion("testPeriod is not null");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodEqualTo(String value) {
+			addCriterion("testPeriod =", value, "testPeriod");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodNotEqualTo(String value) {
+			addCriterion("testPeriod <>", value, "testPeriod");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodGreaterThan(String value) {
+			addCriterion("testPeriod >", value, "testPeriod");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodGreaterThanOrEqualTo(String value) {
+			addCriterion("testPeriod >=", value, "testPeriod");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodLessThan(String value) {
+			addCriterion("testPeriod <", value, "testPeriod");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodLessThanOrEqualTo(String value) {
+			addCriterion("testPeriod <=", value, "testPeriod");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodLike(String value) {
+			addCriterion("testPeriod like ", value, "testPeriod",1);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodNotLike(String value) {
+			addCriterion("testPeriod  not like ", value, "testPeriod",1);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodLeftLike(String value) {
+			addCriterion("testPeriod like ", value, "testPeriod",0);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodNotLeftLike(String value) {
+			addCriterion("testPeriod  not like ", value, "testPeriod",0);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodRightLike(String value) {
+			addCriterion("testPeriod like ", value, "testPeriod",2);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodNotRightLike(String value) {
+			addCriterion("testPeriod  not like ", value, "testPeriod",2);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodIn(List<String> values) {
+			addCriterion("testPeriod  in ", values, "testPeriod");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodNotIn(List<String> values) {
+			addCriterion("testPeriod not in ", values, "testPeriod");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodBetween(String value1,String value2) {
+			addCriterion("testPeriod between ", value1, value2, "testPeriod");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andTestperiodNotBetween(String value1,String value2) {
+			addCriterion("testPeriod not between ", value1, value2, "testPeriod");
 			return (PatientBloodsugarCriteria) this;
 		}
 

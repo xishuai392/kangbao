@@ -26,9 +26,9 @@ public interface ISysKeytableMapper {
 
 	int insertBatch(@Param("list")List<SysKeytable> records);
 
-	int deleteByPrimaryKey(Integer tableId);
+	int deleteByPrimaryKey(String tableName);
 
-	SysKeytable selectByPrimaryKey(Integer tableId);
+	SysKeytable selectByPrimaryKey(String tableName);
 
 	int updateByPrimaryKeySelective(SysKeytable record);
 

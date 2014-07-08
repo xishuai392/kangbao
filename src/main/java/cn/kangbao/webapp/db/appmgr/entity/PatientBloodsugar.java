@@ -54,4 +54,14 @@ public class PatientBloodsugar implements Serializable {
 		return personid; 
 	}
 
+	private String testperiod;
+
+	public void setTestperiod(String testperiod){
+		this.testperiod = testperiod;
+	}
+
+	public String getTestperiod() {
+		return StringUtils.isBlank(testperiod)?testperiod:testperiod.trim(); 
+	}
+
 }

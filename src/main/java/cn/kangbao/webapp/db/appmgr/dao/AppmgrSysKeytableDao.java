@@ -49,7 +49,10 @@ public class AppmgrSysKeytableDao {
 	public List<SysKeytable> selectByArgAndPage(SysKeytableArg arg, RowBounds rowBound){
 		if(arg.getOrderByClause()==null)
 		{
-			arg.setOrderByClause( "tableId" +" desc");
+			if(arg.getPk_name()!=null)
+			{
+				arg.setOrderByClause(arg.getPk_name()+" desc");
+			}
 		}
 		ISysKeytableMapper mapper = mapperSupport.getMapper(ISysKeytableMapper.class);
 		return mapper.selectByArgAndPage(arg, rowBound);
@@ -80,12 +83,12 @@ public class AppmgrSysKeytableDao {
 		}
 	}
 
-	public int deleteByPrimaryKey(Integer key){
+	public int deleteByPrimaryKey(String key){
 		ISysKeytableMapper mapper = mapperSupport.getMapper(ISysKeytableMapper.class);
 		return mapper.deleteByPrimaryKey(key);
 	}
 
-	public SysKeytable selectByPrimaryKey(Integer key){
+	public SysKeytable selectByPrimaryKey(String key){
 		ISysKeytableMapper mapper = mapperSupport.getMapper(ISysKeytableMapper.class);
 		return mapper.selectByPrimaryKey(key);
 	}
