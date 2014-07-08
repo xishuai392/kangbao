@@ -9,17 +9,24 @@ import org.slf4j.LoggerFactory;
 import cn.kangbao.common.exception.ExceptionHandler;
 
 /**
- * 日志封装类 from v7.x
+ * 日志封装类 <Description> <br>
+ * 
+ * @author pan.xiaobo<br>
+ * @version 1.0<br>
+ * @taskId <br>
+ * @CreateDate 2014年7月8日 <br>
+ * @since V1.0<br>
+ * @see cn.kangbao.common.log <br>
  */
 
-public final class AmManagerLogger {
+public final class LoggerManager {
     Logger logger = null;
 
     public String name = "";
 
-    public final static ConcurrentHashMap<String, AmManagerLogger> loggerMap = new ConcurrentHashMap<String, AmManagerLogger>();
+    public final static ConcurrentHashMap<String, LoggerManager> loggerMap = new ConcurrentHashMap<String, LoggerManager>();
 
-    private AmManagerLogger(String name) {
+    private LoggerManager(String name) {
         this.logger = LoggerFactory.getLogger(name);
         this.name = name;
     }
@@ -28,18 +35,18 @@ public final class AmManagerLogger {
         return name;
     }
 
-    public static AmManagerLogger getLogger(String name) {
+    public static LoggerManager getLogger(String name) {
 
-        AmManagerLogger zsmartLogger = loggerMap.get(name);
+        LoggerManager zsmartLogger = loggerMap.get(name);
         if (zsmartLogger == null) {
-            zsmartLogger = new AmManagerLogger(name);
+            zsmartLogger = new LoggerManager(name);
             loggerMap.remove(name, zsmartLogger);
             loggerMap.putIfAbsent(name, zsmartLogger);
         }
         return zsmartLogger;
     }
 
-    public static AmManagerLogger getLogger(Class<?> clazz) {
+    public static LoggerManager getLogger(Class<?> clazz) {
         return getLogger(clazz.getName());
     }
 
@@ -219,7 +226,7 @@ public final class AmManagerLogger {
         String res = MessageFormat.format("{1}  {0} {2}", "abc", "cde");
         System.out.println(res);
 
-        AmManagerLogger log = AmManagerLogger.getLogger(AmManagerLogger.class);
+        LoggerManager log = LoggerManager.getLogger(LoggerManager.class);
 
         try {
             throw ExceptionHandler.publish("111", ExceptionHandler.BUSS_ERROR);
