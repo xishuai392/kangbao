@@ -9,9 +9,10 @@
 		<result column="testPeriod" property="testperiod" jdbcType="CHAR" />
 		<result column="testTime" property="testtime" jdbcType="TIMESTAMP" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="dr" property="dr" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	bloodSugarId,bloodSugarNum,influence,personId,testPeriod,testTime,createTime
+  	bloodSugarId,bloodSugarNum,influence,personId,testPeriod,testTime,createTime,dr
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -152,6 +153,9 @@
 	<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="record.dr != null" >
+		dr= #{record.dr,jdbcType=INTEGER},
+	</if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
@@ -166,15 +170,16 @@
 	personId = #{record.personid,jdbcType=INTEGER},
 	testPeriod = #{record.testperiod,jdbcType=CHAR},
 	testTime = #{record.testtime,jdbcType=TIMESTAMP},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP}
+	createTime = #{record.createtime,jdbcType=TIMESTAMP},
+	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodsugar" >
-		insert into patient_bloodsugar(bloodSugarId,bloodSugarNum,influence,personId,testPeriod,testTime,createTime
+		insert into patient_bloodsugar(bloodSugarId,bloodSugarNum,influence,personId,testPeriod,testTime,createTime,dr
 			)
-		 values (#{bloodsugarid,jdbcType=INTEGER},#{bloodsugarnum,jdbcType=INTEGER},#{influence,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{testperiod,jdbcType=CHAR},#{testtime,jdbcType=TIMESTAMP},#{createtime,jdbcType=TIMESTAMP}
+		 values (#{bloodsugarid,jdbcType=INTEGER},#{bloodsugarnum,jdbcType=INTEGER},#{influence,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{testperiod,jdbcType=CHAR},#{testtime,jdbcType=TIMESTAMP},#{createtime,jdbcType=TIMESTAMP},#{dr,jdbcType=INTEGER}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodsugar" >
@@ -201,6 +206,9 @@
 	<if test="createtime != null" >
 		createtime,
 	</if>
+	<if test="dr != null" >
+		dr,
+	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >
 	<if test="bloodsugarid != null" >
@@ -224,13 +232,16 @@
 	<if test="createtime != null" >
 		#{createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="dr != null" >
+		#{dr,jdbcType=INTEGER},
+	</if>
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into patient_bloodsugar(bloodSugarId,bloodSugarNum,influence,personId,testPeriod,testTime,createTime
+		insert into patient_bloodsugar(bloodSugarId,bloodSugarNum,influence,personId,testPeriod,testTime,createTime,dr
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.bloodsugarid,jdbcType=INTEGER},#{ item.bloodsugarnum,jdbcType=INTEGER},#{ item.influence,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.testperiod,jdbcType=CHAR},#{ item.testtime,jdbcType=TIMESTAMP},#{ item.createtime,jdbcType=TIMESTAMP}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.bloodsugarid,jdbcType=INTEGER},#{ item.bloodsugarnum,jdbcType=INTEGER},#{ item.influence,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.testperiod,jdbcType=CHAR},#{ item.testtime,jdbcType=TIMESTAMP},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.dr,jdbcType=INTEGER}
 			)
 		</foreach>
   </insert>
@@ -265,6 +276,9 @@
 	<if test="createtime != null" >
 		createTime = #{createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="dr != null" >
+		dr = #{dr,jdbcType=INTEGER},
+	</if>
 		</set >
 	 where bloodSugarId = #{bloodsugarid,jdbcType=INTEGER}
 	</update>
@@ -276,7 +290,8 @@
 		personId = #{personid,jdbcType=INTEGER},
 		testPeriod = #{testperiod,jdbcType=CHAR},
 		testTime = #{testtime,jdbcType=TIMESTAMP},
-		createTime = #{createtime,jdbcType=TIMESTAMP}
+		createTime = #{createtime,jdbcType=TIMESTAMP},
+		dr = #{dr,jdbcType=INTEGER}
 	 where bloodSugarId = #{bloodsugarid,jdbcType=INTEGER}
 	</update>
 </mapper>

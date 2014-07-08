@@ -7,9 +7,10 @@
 		<result column="liveItem" property="liveitem" jdbcType="INTEGER" />
 		<result column="liveState" property="livestate" jdbcType="CHAR" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="dr" property="dr" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	liveStateId,personId,liveItem,liveState,createTime
+  	liveStateId,personId,liveItem,liveState,createTime,dr
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -144,6 +145,9 @@
 	<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="record.dr != null" >
+		dr= #{record.dr,jdbcType=INTEGER},
+	</if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
@@ -156,15 +160,16 @@
 	personId = #{record.personid,jdbcType=INTEGER},
 	liveItem = #{record.liveitem,jdbcType=INTEGER},
 	liveState = #{record.livestate,jdbcType=CHAR},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP}
+	createTime = #{record.createtime,jdbcType=TIMESTAMP},
+	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientLivestate" >
-		insert into patient_livestate(liveStateId,personId,liveItem,liveState,createTime
+		insert into patient_livestate(liveStateId,personId,liveItem,liveState,createTime,dr
 			)
-		 values (#{livestateid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{liveitem,jdbcType=INTEGER},#{livestate,jdbcType=CHAR},#{createtime,jdbcType=TIMESTAMP}
+		 values (#{livestateid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{liveitem,jdbcType=INTEGER},#{livestate,jdbcType=CHAR},#{createtime,jdbcType=TIMESTAMP},#{dr,jdbcType=INTEGER}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientLivestate" >
@@ -185,6 +190,9 @@
 	<if test="createtime != null" >
 		createtime,
 	</if>
+	<if test="dr != null" >
+		dr,
+	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >
 	<if test="livestateid != null" >
@@ -202,13 +210,16 @@
 	<if test="createtime != null" >
 		#{createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="dr != null" >
+		#{dr,jdbcType=INTEGER},
+	</if>
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into patient_livestate(liveStateId,personId,liveItem,liveState,createTime
+		insert into patient_livestate(liveStateId,personId,liveItem,liveState,createTime,dr
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.livestateid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.liveitem,jdbcType=INTEGER},#{ item.livestate,jdbcType=CHAR},#{ item.createtime,jdbcType=TIMESTAMP}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.livestateid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.liveitem,jdbcType=INTEGER},#{ item.livestate,jdbcType=CHAR},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.dr,jdbcType=INTEGER}
 			)
 		</foreach>
   </insert>
@@ -237,6 +248,9 @@
 	<if test="createtime != null" >
 		createTime = #{createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="dr != null" >
+		dr = #{dr,jdbcType=INTEGER},
+	</if>
 		</set >
 	 where liveStateId = #{livestateid,jdbcType=INTEGER}
 	</update>
@@ -246,7 +260,8 @@
 		personId = #{personid,jdbcType=INTEGER},
 		liveItem = #{liveitem,jdbcType=INTEGER},
 		liveState = #{livestate,jdbcType=CHAR},
-		createTime = #{createtime,jdbcType=TIMESTAMP}
+		createTime = #{createtime,jdbcType=TIMESTAMP},
+		dr = #{dr,jdbcType=INTEGER}
 	 where liveStateId = #{livestateid,jdbcType=INTEGER}
 	</update>
 </mapper>

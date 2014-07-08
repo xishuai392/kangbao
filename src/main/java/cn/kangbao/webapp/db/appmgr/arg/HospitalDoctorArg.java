@@ -552,6 +552,96 @@ public class HospitalDoctorArg {
 			return (HospitalDoctorCriteria) this;
 		}
 
+		public HospitalDoctorCriteria andDrIsNull() {
+			addCriterion("dr is null");
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrIsNotNull() {
+			addCriterion("dr is not null");
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrEqualTo(Integer value) {
+			addCriterion("dr =", value, "dr");
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrNotEqualTo(Integer value) {
+			addCriterion("dr <>", value, "dr");
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrGreaterThan(Integer value) {
+			addCriterion("dr >", value, "dr");
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrGreaterThanOrEqualTo(Integer value) {
+			addCriterion("dr >=", value, "dr");
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrLessThan(Integer value) {
+			addCriterion("dr <", value, "dr");
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrLessThanOrEqualTo(Integer value) {
+			addCriterion("dr <=", value, "dr");
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrLike(Integer value) {
+			addCriterion("dr like ", value, "dr",1);
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrNotLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",1);
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrLeftLike(Integer value) {
+			addCriterion("dr like ", value, "dr",0);
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrNotLeftLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",0);
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrRightLike(Integer value) {
+			addCriterion("dr like ", value, "dr",2);
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrNotRightLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",2);
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrIn(List<Integer> values) {
+			addCriterion("dr  in ", values, "dr");
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrNotIn(List<Integer> values) {
+			addCriterion("dr not in ", values, "dr");
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrBetween(Integer value1,Integer value2) {
+			addCriterion("dr between ", value1, value2, "dr");
+			return (HospitalDoctorCriteria) this;
+		}
+
+		public HospitalDoctorCriteria andDrNotBetween(Integer value1,Integer value2) {
+			addCriterion("dr not between ", value1, value2, "dr");
+			return (HospitalDoctorCriteria) this;
+		}
+
     }
 
     public static class HospitalDoctorCriteria extends GeneratedCriteria {

@@ -822,6 +822,96 @@ public class SeerecordArg {
 			return (SeerecordCriteria) this;
 		}
 
+		public SeerecordCriteria andDrIsNull() {
+			addCriterion("dr is null");
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrIsNotNull() {
+			addCriterion("dr is not null");
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrEqualTo(Integer value) {
+			addCriterion("dr =", value, "dr");
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrNotEqualTo(Integer value) {
+			addCriterion("dr <>", value, "dr");
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrGreaterThan(Integer value) {
+			addCriterion("dr >", value, "dr");
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrGreaterThanOrEqualTo(Integer value) {
+			addCriterion("dr >=", value, "dr");
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrLessThan(Integer value) {
+			addCriterion("dr <", value, "dr");
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrLessThanOrEqualTo(Integer value) {
+			addCriterion("dr <=", value, "dr");
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrLike(Integer value) {
+			addCriterion("dr like ", value, "dr",1);
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrNotLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",1);
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrLeftLike(Integer value) {
+			addCriterion("dr like ", value, "dr",0);
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrNotLeftLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",0);
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrRightLike(Integer value) {
+			addCriterion("dr like ", value, "dr",2);
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrNotRightLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",2);
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrIn(List<Integer> values) {
+			addCriterion("dr  in ", values, "dr");
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrNotIn(List<Integer> values) {
+			addCriterion("dr not in ", values, "dr");
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrBetween(Integer value1,Integer value2) {
+			addCriterion("dr between ", value1, value2, "dr");
+			return (SeerecordCriteria) this;
+		}
+
+		public SeerecordCriteria andDrNotBetween(Integer value1,Integer value2) {
+			addCriterion("dr not between ", value1, value2, "dr");
+			return (SeerecordCriteria) this;
+		}
+
     }
 
     public static class SeerecordCriteria extends GeneratedCriteria {

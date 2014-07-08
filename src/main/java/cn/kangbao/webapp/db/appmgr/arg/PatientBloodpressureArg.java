@@ -1002,6 +1002,96 @@ public class PatientBloodpressureArg {
 			return (PatientBloodpressureCriteria) this;
 		}
 
+		public PatientBloodpressureCriteria andDrIsNull() {
+			addCriterion("dr is null");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrIsNotNull() {
+			addCriterion("dr is not null");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrEqualTo(Integer value) {
+			addCriterion("dr =", value, "dr");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrNotEqualTo(Integer value) {
+			addCriterion("dr <>", value, "dr");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrGreaterThan(Integer value) {
+			addCriterion("dr >", value, "dr");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrGreaterThanOrEqualTo(Integer value) {
+			addCriterion("dr >=", value, "dr");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrLessThan(Integer value) {
+			addCriterion("dr <", value, "dr");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrLessThanOrEqualTo(Integer value) {
+			addCriterion("dr <=", value, "dr");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrLike(Integer value) {
+			addCriterion("dr like ", value, "dr",1);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrNotLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",1);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrLeftLike(Integer value) {
+			addCriterion("dr like ", value, "dr",0);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrNotLeftLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",0);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrRightLike(Integer value) {
+			addCriterion("dr like ", value, "dr",2);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrNotRightLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",2);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrIn(List<Integer> values) {
+			addCriterion("dr  in ", values, "dr");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrNotIn(List<Integer> values) {
+			addCriterion("dr not in ", values, "dr");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrBetween(Integer value1,Integer value2) {
+			addCriterion("dr between ", value1, value2, "dr");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andDrNotBetween(Integer value1,Integer value2) {
+			addCriterion("dr not between ", value1, value2, "dr");
+			return (PatientBloodpressureCriteria) this;
+		}
+
     }
 
     public static class PatientBloodpressureCriteria extends GeneratedCriteria {

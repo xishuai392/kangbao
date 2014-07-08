@@ -732,6 +732,96 @@ public class PatientHealthArg {
 			return (PatientHealthCriteria) this;
 		}
 
+		public PatientHealthCriteria andDrIsNull() {
+			addCriterion("dr is null");
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrIsNotNull() {
+			addCriterion("dr is not null");
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrEqualTo(Integer value) {
+			addCriterion("dr =", value, "dr");
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrNotEqualTo(Integer value) {
+			addCriterion("dr <>", value, "dr");
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrGreaterThan(Integer value) {
+			addCriterion("dr >", value, "dr");
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrGreaterThanOrEqualTo(Integer value) {
+			addCriterion("dr >=", value, "dr");
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrLessThan(Integer value) {
+			addCriterion("dr <", value, "dr");
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrLessThanOrEqualTo(Integer value) {
+			addCriterion("dr <=", value, "dr");
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrLike(Integer value) {
+			addCriterion("dr like ", value, "dr",1);
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrNotLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",1);
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrLeftLike(Integer value) {
+			addCriterion("dr like ", value, "dr",0);
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrNotLeftLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",0);
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrRightLike(Integer value) {
+			addCriterion("dr like ", value, "dr",2);
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrNotRightLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",2);
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrIn(List<Integer> values) {
+			addCriterion("dr  in ", values, "dr");
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrNotIn(List<Integer> values) {
+			addCriterion("dr not in ", values, "dr");
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrBetween(Integer value1,Integer value2) {
+			addCriterion("dr between ", value1, value2, "dr");
+			return (PatientHealthCriteria) this;
+		}
+
+		public PatientHealthCriteria andDrNotBetween(Integer value1,Integer value2) {
+			addCriterion("dr not between ", value1, value2, "dr");
+			return (PatientHealthCriteria) this;
+		}
+
     }
 
     public static class PatientHealthCriteria extends GeneratedCriteria {

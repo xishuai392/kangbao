@@ -104,4 +104,14 @@ public class Person implements Serializable {
 		return createtime; 
 	}
 
+	private Integer dr;
+
+	public void setDr(Integer dr){
+		this.dr = dr;
+	}
+
+	public Integer getDr() {
+		return dr; 
+	}
+
 }

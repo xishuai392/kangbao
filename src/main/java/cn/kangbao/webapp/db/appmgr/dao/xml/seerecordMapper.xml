@@ -9,9 +9,10 @@
 		<result column="reply" property="reply" jdbcType="VARCHAR" />
 		<result column="replyTime" property="replytime" jdbcType="TIMESTAMP" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="dr" property="dr" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	caseId,personId,doctorId,readTime,reply,replyTime,createTime
+  	caseId,personId,doctorId,readTime,reply,replyTime,createTime,dr
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -152,6 +153,9 @@
 	<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="record.dr != null" >
+		dr= #{record.dr,jdbcType=INTEGER},
+	</if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
@@ -166,15 +170,16 @@
 	readTime = #{record.readtime,jdbcType=TIMESTAMP},
 	reply = #{record.reply,jdbcType=VARCHAR},
 	replyTime = #{record.replytime,jdbcType=TIMESTAMP},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP}
+	createTime = #{record.createtime,jdbcType=TIMESTAMP},
+	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.Seerecord" >
-		insert into seerecord(caseId,personId,doctorId,readTime,reply,replyTime,createTime
+		insert into seerecord(caseId,personId,doctorId,readTime,reply,replyTime,createTime,dr
 			)
-		 values (#{caseid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{doctorid,jdbcType=INTEGER},#{readtime,jdbcType=TIMESTAMP},#{reply,jdbcType=VARCHAR},#{replytime,jdbcType=TIMESTAMP},#{createtime,jdbcType=TIMESTAMP}
+		 values (#{caseid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{doctorid,jdbcType=INTEGER},#{readtime,jdbcType=TIMESTAMP},#{reply,jdbcType=VARCHAR},#{replytime,jdbcType=TIMESTAMP},#{createtime,jdbcType=TIMESTAMP},#{dr,jdbcType=INTEGER}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.Seerecord" >
@@ -201,6 +206,9 @@
 	<if test="createtime != null" >
 		createtime,
 	</if>
+	<if test="dr != null" >
+		dr,
+	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >
 	<if test="caseid != null" >
@@ -224,13 +232,16 @@
 	<if test="createtime != null" >
 		#{createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="dr != null" >
+		#{dr,jdbcType=INTEGER},
+	</if>
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into seerecord(caseId,personId,doctorId,readTime,reply,replyTime,createTime
+		insert into seerecord(caseId,personId,doctorId,readTime,reply,replyTime,createTime,dr
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.caseid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.doctorid,jdbcType=INTEGER},#{ item.readtime,jdbcType=TIMESTAMP},#{ item.reply,jdbcType=VARCHAR},#{ item.replytime,jdbcType=TIMESTAMP},#{ item.createtime,jdbcType=TIMESTAMP}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.caseid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.doctorid,jdbcType=INTEGER},#{ item.readtime,jdbcType=TIMESTAMP},#{ item.reply,jdbcType=VARCHAR},#{ item.replytime,jdbcType=TIMESTAMP},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.dr,jdbcType=INTEGER}
 			)
 		</foreach>
   </insert>
@@ -265,6 +276,9 @@
 	<if test="createtime != null" >
 		createTime = #{createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="dr != null" >
+		dr = #{dr,jdbcType=INTEGER},
+	</if>
 		</set >
 	 where caseId = #{caseid,jdbcType=INTEGER}
 	</update>
@@ -276,7 +290,8 @@
 		readTime = #{readtime,jdbcType=TIMESTAMP},
 		reply = #{reply,jdbcType=VARCHAR},
 		replyTime = #{replytime,jdbcType=TIMESTAMP},
-		createTime = #{createtime,jdbcType=TIMESTAMP}
+		createTime = #{createtime,jdbcType=TIMESTAMP},
+		dr = #{dr,jdbcType=INTEGER}
 	 where caseId = #{caseid,jdbcType=INTEGER}
 	</update>
 </mapper>

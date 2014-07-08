@@ -822,6 +822,96 @@ public class PatientBloodsugarArg {
 			return (PatientBloodsugarCriteria) this;
 		}
 
+		public PatientBloodsugarCriteria andDrIsNull() {
+			addCriterion("dr is null");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrIsNotNull() {
+			addCriterion("dr is not null");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrEqualTo(Integer value) {
+			addCriterion("dr =", value, "dr");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrNotEqualTo(Integer value) {
+			addCriterion("dr <>", value, "dr");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrGreaterThan(Integer value) {
+			addCriterion("dr >", value, "dr");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrGreaterThanOrEqualTo(Integer value) {
+			addCriterion("dr >=", value, "dr");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrLessThan(Integer value) {
+			addCriterion("dr <", value, "dr");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrLessThanOrEqualTo(Integer value) {
+			addCriterion("dr <=", value, "dr");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrLike(Integer value) {
+			addCriterion("dr like ", value, "dr",1);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrNotLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",1);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrLeftLike(Integer value) {
+			addCriterion("dr like ", value, "dr",0);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrNotLeftLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",0);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrRightLike(Integer value) {
+			addCriterion("dr like ", value, "dr",2);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrNotRightLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",2);
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrIn(List<Integer> values) {
+			addCriterion("dr  in ", values, "dr");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrNotIn(List<Integer> values) {
+			addCriterion("dr not in ", values, "dr");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrBetween(Integer value1,Integer value2) {
+			addCriterion("dr between ", value1, value2, "dr");
+			return (PatientBloodsugarCriteria) this;
+		}
+
+		public PatientBloodsugarCriteria andDrNotBetween(Integer value1,Integer value2) {
+			addCriterion("dr not between ", value1, value2, "dr");
+			return (PatientBloodsugarCriteria) this;
+		}
+
     }
 
     public static class PatientBloodsugarCriteria extends GeneratedCriteria {

@@ -1092,6 +1092,96 @@ public class PersonArg {
 			return (PersonCriteria) this;
 		}
 
+		public PersonCriteria andDrIsNull() {
+			addCriterion("dr is null");
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrIsNotNull() {
+			addCriterion("dr is not null");
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrEqualTo(Integer value) {
+			addCriterion("dr =", value, "dr");
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrNotEqualTo(Integer value) {
+			addCriterion("dr <>", value, "dr");
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrGreaterThan(Integer value) {
+			addCriterion("dr >", value, "dr");
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrGreaterThanOrEqualTo(Integer value) {
+			addCriterion("dr >=", value, "dr");
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrLessThan(Integer value) {
+			addCriterion("dr <", value, "dr");
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrLessThanOrEqualTo(Integer value) {
+			addCriterion("dr <=", value, "dr");
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrLike(Integer value) {
+			addCriterion("dr like ", value, "dr",1);
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrNotLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",1);
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrLeftLike(Integer value) {
+			addCriterion("dr like ", value, "dr",0);
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrNotLeftLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",0);
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrRightLike(Integer value) {
+			addCriterion("dr like ", value, "dr",2);
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrNotRightLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",2);
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrIn(List<Integer> values) {
+			addCriterion("dr  in ", values, "dr");
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrNotIn(List<Integer> values) {
+			addCriterion("dr not in ", values, "dr");
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrBetween(Integer value1,Integer value2) {
+			addCriterion("dr between ", value1, value2, "dr");
+			return (PersonCriteria) this;
+		}
+
+		public PersonCriteria andDrNotBetween(Integer value1,Integer value2) {
+			addCriterion("dr not between ", value1, value2, "dr");
+			return (PersonCriteria) this;
+		}
+
     }
 
     public static class PersonCriteria extends GeneratedCriteria {

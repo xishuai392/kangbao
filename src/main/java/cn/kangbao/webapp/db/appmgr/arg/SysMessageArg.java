@@ -642,6 +642,96 @@ public class SysMessageArg {
 			return (SysMessageCriteria) this;
 		}
 
+		public SysMessageCriteria andDrIsNull() {
+			addCriterion("dr is null");
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrIsNotNull() {
+			addCriterion("dr is not null");
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrEqualTo(Integer value) {
+			addCriterion("dr =", value, "dr");
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrNotEqualTo(Integer value) {
+			addCriterion("dr <>", value, "dr");
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrGreaterThan(Integer value) {
+			addCriterion("dr >", value, "dr");
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrGreaterThanOrEqualTo(Integer value) {
+			addCriterion("dr >=", value, "dr");
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrLessThan(Integer value) {
+			addCriterion("dr <", value, "dr");
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrLessThanOrEqualTo(Integer value) {
+			addCriterion("dr <=", value, "dr");
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrLike(Integer value) {
+			addCriterion("dr like ", value, "dr",1);
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrNotLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",1);
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrLeftLike(Integer value) {
+			addCriterion("dr like ", value, "dr",0);
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrNotLeftLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",0);
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrRightLike(Integer value) {
+			addCriterion("dr like ", value, "dr",2);
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrNotRightLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",2);
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrIn(List<Integer> values) {
+			addCriterion("dr  in ", values, "dr");
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrNotIn(List<Integer> values) {
+			addCriterion("dr not in ", values, "dr");
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrBetween(Integer value1,Integer value2) {
+			addCriterion("dr between ", value1, value2, "dr");
+			return (SysMessageCriteria) this;
+		}
+
+		public SysMessageCriteria andDrNotBetween(Integer value1,Integer value2) {
+			addCriterion("dr not between ", value1, value2, "dr");
+			return (SysMessageCriteria) this;
+		}
+
     }
 
     public static class SysMessageCriteria extends GeneratedCriteria {

@@ -642,6 +642,96 @@ public class PatientLivestateArg {
 			return (PatientLivestateCriteria) this;
 		}
 
+		public PatientLivestateCriteria andDrIsNull() {
+			addCriterion("dr is null");
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrIsNotNull() {
+			addCriterion("dr is not null");
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrEqualTo(Integer value) {
+			addCriterion("dr =", value, "dr");
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrNotEqualTo(Integer value) {
+			addCriterion("dr <>", value, "dr");
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrGreaterThan(Integer value) {
+			addCriterion("dr >", value, "dr");
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrGreaterThanOrEqualTo(Integer value) {
+			addCriterion("dr >=", value, "dr");
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrLessThan(Integer value) {
+			addCriterion("dr <", value, "dr");
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrLessThanOrEqualTo(Integer value) {
+			addCriterion("dr <=", value, "dr");
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrLike(Integer value) {
+			addCriterion("dr like ", value, "dr",1);
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrNotLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",1);
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrLeftLike(Integer value) {
+			addCriterion("dr like ", value, "dr",0);
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrNotLeftLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",0);
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrRightLike(Integer value) {
+			addCriterion("dr like ", value, "dr",2);
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrNotRightLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",2);
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrIn(List<Integer> values) {
+			addCriterion("dr  in ", values, "dr");
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrNotIn(List<Integer> values) {
+			addCriterion("dr not in ", values, "dr");
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrBetween(Integer value1,Integer value2) {
+			addCriterion("dr between ", value1, value2, "dr");
+			return (PatientLivestateCriteria) this;
+		}
+
+		public PatientLivestateCriteria andDrNotBetween(Integer value1,Integer value2) {
+			addCriterion("dr not between ", value1, value2, "dr");
+			return (PatientLivestateCriteria) this;
+		}
+
     }
 
     public static class PatientLivestateCriteria extends GeneratedCriteria {

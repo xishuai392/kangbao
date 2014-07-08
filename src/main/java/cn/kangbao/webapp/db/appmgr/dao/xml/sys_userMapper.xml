@@ -7,9 +7,10 @@
 		<result column="password" property="password" jdbcType="VARCHAR" />
 		<result column="userType" property="usertype" jdbcType="CHAR" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="dr" property="dr" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	userId,userName,password,userType,createTime
+  	userId,userName,password,userType,createTime,dr
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -144,6 +145,9 @@
 	<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="record.dr != null" >
+		dr= #{record.dr,jdbcType=INTEGER},
+	</if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
@@ -156,15 +160,16 @@
 	userName = #{record.username,jdbcType=VARCHAR},
 	password = #{record.password,jdbcType=VARCHAR},
 	userType = #{record.usertype,jdbcType=CHAR},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP}
+	createTime = #{record.createtime,jdbcType=TIMESTAMP},
+	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysUser" >
-		insert into sys_user(userId,userName,password,userType,createTime
+		insert into sys_user(userId,userName,password,userType,createTime,dr
 			)
-		 values (#{userid,jdbcType=INTEGER},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{usertype,jdbcType=CHAR},#{createtime,jdbcType=TIMESTAMP}
+		 values (#{userid,jdbcType=INTEGER},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{usertype,jdbcType=CHAR},#{createtime,jdbcType=TIMESTAMP},#{dr,jdbcType=INTEGER}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysUser" >
@@ -185,6 +190,9 @@
 	<if test="createtime != null" >
 		createtime,
 	</if>
+	<if test="dr != null" >
+		dr,
+	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >
 	<if test="userid != null" >
@@ -202,13 +210,16 @@
 	<if test="createtime != null" >
 		#{createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="dr != null" >
+		#{dr,jdbcType=INTEGER},
+	</if>
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into sys_user(userId,userName,password,userType,createTime
+		insert into sys_user(userId,userName,password,userType,createTime,dr
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.userid,jdbcType=INTEGER},#{ item.username,jdbcType=VARCHAR},#{ item.password,jdbcType=VARCHAR},#{ item.usertype,jdbcType=CHAR},#{ item.createtime,jdbcType=TIMESTAMP}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.userid,jdbcType=INTEGER},#{ item.username,jdbcType=VARCHAR},#{ item.password,jdbcType=VARCHAR},#{ item.usertype,jdbcType=CHAR},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.dr,jdbcType=INTEGER}
 			)
 		</foreach>
   </insert>
@@ -237,6 +248,9 @@
 	<if test="createtime != null" >
 		createTime = #{createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="dr != null" >
+		dr = #{dr,jdbcType=INTEGER},
+	</if>
 		</set >
 	 where userId = #{userid,jdbcType=INTEGER}
 	</update>
@@ -246,7 +260,8 @@
 		userName = #{username,jdbcType=VARCHAR},
 		password = #{password,jdbcType=VARCHAR},
 		userType = #{usertype,jdbcType=CHAR},
-		createTime = #{createtime,jdbcType=TIMESTAMP}
+		createTime = #{createtime,jdbcType=TIMESTAMP},
+		dr = #{dr,jdbcType=INTEGER}
 	 where userId = #{userid,jdbcType=INTEGER}
 	</update>
 </mapper>

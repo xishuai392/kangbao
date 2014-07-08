@@ -11,9 +11,10 @@
 		<result column="feelingState" property="feelingstate" jdbcType="INTEGER" />
 		<result column="feelingDesc" property="feelingdesc" jdbcType="VARCHAR" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="dr" property="dr" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime
+  	measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime,dr
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -160,6 +161,9 @@
 	<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="record.dr != null" >
+		dr= #{record.dr,jdbcType=INTEGER},
+	</if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
@@ -176,15 +180,16 @@
 	testTime = #{record.testtime,jdbcType=TIMESTAMP},
 	feelingState = #{record.feelingstate,jdbcType=INTEGER},
 	feelingDesc = #{record.feelingdesc,jdbcType=VARCHAR},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP}
+	createTime = #{record.createtime,jdbcType=TIMESTAMP},
+	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure" >
-		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime
+		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime,dr
 			)
-		 values (#{measurementid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{upnum,jdbcType=INTEGER},#{downnum,jdbcType=INTEGER},#{heartrate,jdbcType=INTEGER},#{testtime,jdbcType=TIMESTAMP},#{feelingstate,jdbcType=INTEGER},#{feelingdesc,jdbcType=VARCHAR},#{createtime,jdbcType=TIMESTAMP}
+		 values (#{measurementid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{upnum,jdbcType=INTEGER},#{downnum,jdbcType=INTEGER},#{heartrate,jdbcType=INTEGER},#{testtime,jdbcType=TIMESTAMP},#{feelingstate,jdbcType=INTEGER},#{feelingdesc,jdbcType=VARCHAR},#{createtime,jdbcType=TIMESTAMP},#{dr,jdbcType=INTEGER}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure" >
@@ -217,6 +222,9 @@
 	<if test="createtime != null" >
 		createtime,
 	</if>
+	<if test="dr != null" >
+		dr,
+	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >
 	<if test="measurementid != null" >
@@ -246,13 +254,16 @@
 	<if test="createtime != null" >
 		#{createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="dr != null" >
+		#{dr,jdbcType=INTEGER},
+	</if>
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime
+		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime,dr
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.measurementid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.upnum,jdbcType=INTEGER},#{ item.downnum,jdbcType=INTEGER},#{ item.heartrate,jdbcType=INTEGER},#{ item.testtime,jdbcType=TIMESTAMP},#{ item.feelingstate,jdbcType=INTEGER},#{ item.feelingdesc,jdbcType=VARCHAR},#{ item.createtime,jdbcType=TIMESTAMP}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.measurementid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.upnum,jdbcType=INTEGER},#{ item.downnum,jdbcType=INTEGER},#{ item.heartrate,jdbcType=INTEGER},#{ item.testtime,jdbcType=TIMESTAMP},#{ item.feelingstate,jdbcType=INTEGER},#{ item.feelingdesc,jdbcType=VARCHAR},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.dr,jdbcType=INTEGER}
 			)
 		</foreach>
   </insert>
@@ -293,6 +304,9 @@
 	<if test="createtime != null" >
 		createTime = #{createtime,jdbcType=TIMESTAMP},
 	</if>
+	<if test="dr != null" >
+		dr = #{dr,jdbcType=INTEGER},
+	</if>
 		</set >
 	 where measurementId = #{measurementid,jdbcType=INTEGER}
 	</update>
@@ -306,7 +320,8 @@
 		testTime = #{testtime,jdbcType=TIMESTAMP},
 		feelingState = #{feelingstate,jdbcType=INTEGER},
 		feelingDesc = #{feelingdesc,jdbcType=VARCHAR},
-		createTime = #{createtime,jdbcType=TIMESTAMP}
+		createTime = #{createtime,jdbcType=TIMESTAMP},
+		dr = #{dr,jdbcType=INTEGER}
 	 where measurementId = #{measurementid,jdbcType=INTEGER}
 	</update>
 </mapper>

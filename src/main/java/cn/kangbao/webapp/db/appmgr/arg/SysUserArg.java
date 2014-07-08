@@ -642,6 +642,96 @@ public class SysUserArg {
 			return (SysUserCriteria) this;
 		}
 
+		public SysUserCriteria andDrIsNull() {
+			addCriterion("dr is null");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrIsNotNull() {
+			addCriterion("dr is not null");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrEqualTo(Integer value) {
+			addCriterion("dr =", value, "dr");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrNotEqualTo(Integer value) {
+			addCriterion("dr <>", value, "dr");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrGreaterThan(Integer value) {
+			addCriterion("dr >", value, "dr");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrGreaterThanOrEqualTo(Integer value) {
+			addCriterion("dr >=", value, "dr");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrLessThan(Integer value) {
+			addCriterion("dr <", value, "dr");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrLessThanOrEqualTo(Integer value) {
+			addCriterion("dr <=", value, "dr");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrLike(Integer value) {
+			addCriterion("dr like ", value, "dr",1);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrNotLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",1);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrLeftLike(Integer value) {
+			addCriterion("dr like ", value, "dr",0);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrNotLeftLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",0);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrRightLike(Integer value) {
+			addCriterion("dr like ", value, "dr",2);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrNotRightLike(Integer value) {
+			addCriterion("dr  not like ", value, "dr",2);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrIn(List<Integer> values) {
+			addCriterion("dr  in ", values, "dr");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrNotIn(List<Integer> values) {
+			addCriterion("dr not in ", values, "dr");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrBetween(Integer value1,Integer value2) {
+			addCriterion("dr between ", value1, value2, "dr");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andDrNotBetween(Integer value1,Integer value2) {
+			addCriterion("dr not between ", value1, value2, "dr");
+			return (SysUserCriteria) this;
+		}
+
     }
 
     public static class SysUserCriteria extends GeneratedCriteria {
