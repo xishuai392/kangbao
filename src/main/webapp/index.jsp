@@ -3,7 +3,7 @@
 
 <%@include file="/WEB-INF/jsp/common/common.inc.jsp"%>
 <html>
-
+<link rel="stylesheet" type="text/css" href="${ctx}/css/component.css" />
 <script type="text/javascript" src="${ctx}/js/index.js"></script>
 <script type="text/javascript">
 	function checkIsLogin() {
@@ -74,24 +74,6 @@
 			</ul>
 		</div>
 	</div>
-	<script>
-		$(function() {
-			/*
-			- how to call the plugin:
-			$( selector ).cbpFWSlider( [options] );
-			- options:
-			{
-				// default transition speed (ms)
-				speed : 500,
-				// default transition easing
-				easing : 'ease'
-			}
-			- destroy:
-			$( selector ).cbpFWSlider( 'destroy' );
-			 */
-			//$('#cbp-fwslider').cbpFWSlider();
-		});
-	</script>
 	<p id="back-to-top">
 		<a href="#top"><span></span></a>
 	</p>
@@ -235,5 +217,9 @@
 	<!----------------------------footer_end------------>
 	<!----------------------------footer_end------------>
 </body>
-
 </html>
+<script type="text/javascript" src="${ctx}/jslibs/plugins/modernizr.custom.js"></script>
+<script type="text/javascript" src="${ctx}/jslibs/plugins/jquery.cbpFWSlider.min.js"></script>
+<script type="text/javascript">
+$('#cbp-fwslider').cbpFWSlider();
+</script>
