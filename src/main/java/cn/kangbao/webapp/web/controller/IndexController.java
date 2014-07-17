@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.kangbao.common.util.Constants;
+import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 
 /**
  * <Description> <br>
@@ -23,13 +24,17 @@ import cn.kangbao.common.util.Constants;
  * @see cn.kangbao.webapp.web.controller <br>
  */
 @Controller
+@RequestMapping("/guanjia")
 public class IndexController extends AbstractBaseController {
     @RequestMapping(value = "/index.html")
     public String index(HttpServletRequest request, Model model) {
+        request.getSession().setAttribute(Constants.SESSIONUSER, new SysUser());
+        
         if (null == request.getSession() || null == request.getSession().getAttribute(Constants.SESSIONUSER)) {
             // 没登陆
             return "login";
         }
-        return "main";
+        
+        return "login/main";
     }
 }

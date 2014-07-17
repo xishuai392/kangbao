@@ -9,6 +9,10 @@
 </script>
 </head>
 <body>
+	<!--顶部start-->
+	<%@ include file="/WEB-INF/jsp/common/top.jsp"%>
+	<!--顶部end-->
+	
 	欢迎您！！！！
 	<br>
 	<a href=""> 添加家庭成员</a>
@@ -17,6 +21,11 @@
 	<a href=""> 血糖输入</a>
 	<a href=""> 血糖查看</a>
 	<a href=""> 医生回复查看</a>
+
+	<!----------------footer_start-------->
+	<%@ include file="/WEB-INF/jsp/common/bottom.jsp"%>
+	<!----------------------------footer_end------------>
+
 </body>
 </html>
 

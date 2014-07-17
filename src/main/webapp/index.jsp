@@ -22,11 +22,11 @@
 			</div>
 			<ul id="header_nav">
 				<a href="${ctx}"><li id="current_page">首页</li></a>
-				<a href="${ctx}/index.html"><li>管家</li></a>
+				<a href="${ctx}/guanjia/index.html"><li>管家</li></a>
 				<a href="${ctx}/supermarket_index.html"><li>健康超市</li></a>
-				<a href="http://bbs.37mhealth.com/forum.php" target="_blank"><li>健康论坛</li></a>
-				<a href="/index.php/home/news/newslist.html"><li>康宝动态</li></a>
-				<a href="/index.php/home/about/index.html"><li>关于我们</li></a>
+				<a href="${ctx}/forum.php" target="_blank"><li>健康论坛</li></a>
+				<a href="${ctx}/news_index.html"><li>康宝动态</li></a>
+				<a href="${ctx}/about_index.html"><li>关于我们</li></a>
 			</ul>
 		</div>
 	</div>
