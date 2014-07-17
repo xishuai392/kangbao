@@ -11,25 +11,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.kangbao.common.util.Constants;
 
-/**
- * <Description> <br>
- * 主界面
- * 
+/** 
+ * <Description> <br> 
+ *  
  * @author pan.xiaobo<br>
  * @version 1.0<br>
  * @taskId <br>
- * @CreateDate 2014年7月7日 <br>
+ * @CreateDate 2014年7月17日 <br>
  * @since V1.0<br>
  * @see cn.kangbao.webapp.web.controller <br>
  */
 @Controller
-public class IndexController extends AbstractBaseController {
-    @RequestMapping(value = "/index.html")
+public class SuperMarketController extends AbstractBaseController {
+    
+    @RequestMapping(value = "/supermarket_index.html")
     public String index(HttpServletRequest request, Model model) {
-        if (null == request.getSession() || null == request.getSession().getAttribute(Constants.SESSIONUSER)) {
-            // 没登陆
-            return "login";
-        }
-        return "main";
+        return "supermarket/supermarket_index";
     }
 }

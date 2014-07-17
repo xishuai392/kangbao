@@ -3,7 +3,6 @@
 
 <%@include file="/WEB-INF/jsp/common/common.inc.jsp"%>
 <html>
-<link rel="stylesheet" type="text/css" href="${ctx}/css/component.css" />
 <script type="text/javascript" src="${ctx}/js/index.js"></script>
 <script type="text/javascript">
 	function checkIsLogin() {
@@ -23,10 +22,10 @@
 			</div>
 			<ul id="header_nav">
 				<a href="${ctx}"><li id="current_page">首页</li></a>
-				<a href="/index.php/home/health/member.html"><li>管家</li></a>
-				<a href="/index.php/home/sales/saleslist.html"><li>健康超市</li></a>
+				<a href="${ctx}/index.html"><li>管家</li></a>
+				<a href="${ctx}/supermarket_index.html"><li>健康超市</li></a>
 				<a href="http://bbs.37mhealth.com/forum.php" target="_blank"><li>健康论坛</li></a>
-				<a href="/index.php/home/news/newslist.html"><li>37动态</li></a>
+				<a href="/index.php/home/news/newslist.html"><li>康宝动态</li></a>
 				<a href="/index.php/home/about/index.html"><li>关于我们</li></a>
 			</ul>
 		</div>
@@ -211,10 +210,9 @@
 			style='width: 100%; height: 100%;'>
 	</div>
 	<!--产品介绍end-->
-	<!----------------footer_start-------->
+	
 	<!----------------footer_start-------->
 	<%@ include file="/WEB-INF/jsp/common/bottom.jsp"%>
-	<!----------------------------footer_end------------>
 	<!----------------------------footer_end------------>
 </body>
 </html>

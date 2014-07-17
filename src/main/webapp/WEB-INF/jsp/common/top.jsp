@@ -1,45 +1,28 @@
 <%@ page language="java" import="java.text.*,java.util.*"
 	pageEncoding="UTF-8"%>
 
+<!--顶部start-->
+<div id="top_container">
 
-<html>
-	<head>
-		<base href="<%=basePath%>" target="_parent">
-		<style>
-			#layout {
-				width: 300px;
-				height: 200px;
-				margin: 0 auto;
-				background: #ddd;
-				word-break: break-all;
-			}
-			
-			#layout a {
-				word-break: keep-all;
-				white-space: nowrap;
-			}
-		</style>
-	</head>
-
-	<body>
-		<Div class="login_contact">
-			<div class="main_head">
-				<div class="main_logo"></div>
-				<div class="main_rightnav">
-					<div class="main_esc">
-						用户名：${ sessionScope.sessionThisUserName}
-						<a href="${ctx}/login/loginOut.html" class="main_esc_ico"></a><a href="${ctx}/login/loginOut.html">退出</a>
-					</div>
-					<div class="main_right_nav">
-						<a href="#" class="main_right_nav1"></a>
-						<a href="#" class="main_right_nav2"></a>
-						<a href="#" class="main_right_nav3"></a>
-						<a href="#" class="main_right_nav4"></a>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
+	<div id="top_header_container">
+		<a href="${ctx}" style='float: left'><img id="logo_img"
+			src="${ctx}/images/logo.png"></a>
+		<div id="logout">
+			用户名：${ sessionScope.sessionThisUserName}
+			<a href="/index.php/home/login/login.html" id='login'>登录</a><a
+				href="/index.php/home/register/register.html" id='reg'>注册</a>
 		</div>
-	</body>
-</html>
+		<ul id="header_nav">
+			<a href="${ctx}"><li id="current_page">首页</li></a>
+			<a href="${ctx}/index.html"><li>管家</li></a>
+			<a href="${ctx}/supermarket_index.html"><li>健康超市</li></a>
+			<a href="http://bbs.37mhealth.com/forum.php" target="_blank"><li>健康论坛</li></a>
+			<a href="/index.php/home/news/newslist.html"><li>康宝动态</li></a>
+			<a href="/index.php/home/about/index.html"><li>关于我们</li></a>
+		</ul>
+	</div>
+</div>
+
+<!--顶部end-->
+
 
