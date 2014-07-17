@@ -15,14 +15,14 @@
 	<!--顶部start-->
 	<div id="top_container">
 		<div id="top_header_container">
-			<a href="http://www.37mhealth.com" style='float: left'><img
+			<a href="${ctx}" style='float: left'><img
 				id="logo_img" src="${ctx}/images/logo.png"></a>
 			<div id="logout">
 				<a href="/index.php/home/login/login.html" id='login'>登录</a><a
 					href="/index.php/home/register/register.html" id='reg'>注册</a>
 			</div>
 			<ul id="header_nav">
-				<a href="/index.php/home/index/index.html"><li id="current_page">首页</li></a>
+				<a href="${ctx}"><li id="current_page">首页</li></a>
 				<a href="/index.php/home/health/member.html"><li>管家</li></a>
 				<a href="/index.php/home/sales/saleslist.html"><li>健康超市</li></a>
 				<a href="http://bbs.37mhealth.com/forum.php" target="_blank"><li>健康论坛</li></a>
