@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cn.kangbao.common.log.LoggerManager;
 import cn.kangbao.common.util.Constants;
 import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 
@@ -26,6 +27,8 @@ import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 @Controller
 @RequestMapping("/guanjia")
 public class IndexController extends AbstractBaseController {
+    LoggerManager logger = LoggerManager.getLogger(IndexController.class);
+    
     @RequestMapping(value = "/index.html")
     public String index(HttpServletRequest request, Model model) {
         request.getSession().setAttribute(Constants.SESSIONUSER, new SysUser());

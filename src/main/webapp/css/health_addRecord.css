@@ -1,0 +1,204 @@
+@CHARSET "UTF-8";
+
+/*main_right_main_start*/
+div#main_blood_data{
+	width: 680px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+}
+#main_blood_data > div{
+	height: 60px;
+
+}
+div.lable_align{
+	float: left;
+	width: 100px;
+	height: 60px;
+	text-align: right;margin-right: 10px;
+}
+span.data_input_lable{
+	font-size: 20px;
+	position: relative;
+	top: 12px;
+}
+#main_blood_data input{
+	height: 35px;
+	font-size: 16px;
+}
+input[name=measure_date],input[name=measure_time]{
+	width: 150px;
+}
+input[name=heigh_blood],input[name=low_blood],input[name=heart_rate]{
+	width: 80px;
+}
+span.data_input_lable2{
+	font-size: 20px;
+	margin-left: 20px;
+}
+/*分割线start*/
+img.split_line{
+	width: 680px;
+	height: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*分割线end*/
+/*feel_start*/
+div#feel_container{
+	width: 680px;
+/*	min-height: 300px;
+*/	border-top: 1px solid #fff;
+	margin-top: 20px;
+}
+div#feel_left_container{
+	float: left;
+	height: 160px;
+	width: 100px;
+	margin-top: 10px;
+	font-size: 20px;
+}
+#feel_left_container span{
+	position: relative;
+	top: 10px;
+	left: 20px;
+}
+div#feel_right_container{
+	float: left;
+	width: 550px;
+	height: 100%;
+	margin-bottom: 50px;
+}
+div#feel_img_container{
+	width: 540px;
+	height: 120px;
+	margin-right: auto;
+	margin-left: 20px;
+	margin-top: 20px;
+	background-color: #e2e2e2;
+	border-radius: 5px;
+
+}
+div.feel_img_one{
+	width:60px;
+	height: 100px;
+	float: left;
+	margin-top: 12px;
+	margin-right: 13px;
+	margin-left: 10px;
+	cursor: pointer;
+
+}
+
+div.feel_img_one img{
+	height: 70px;
+	width: 60;
+}
+.feel_img_one div{
+	text-align: center;
+}
+div.feel_img_two{
+	width:70px;
+	height: 100px;
+	float: left;
+	margin-top: 12px;
+	margin-right: 10px;
+	margin-left: 10px;
+	cursor: pointer;
+
+}
+
+div.feel_img_two img{
+	height: 71px;
+	width: 72px;
+}
+.feel_img_two div{
+	text-align: center;
+}
+table#feel_other_container{
+	width: 500px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border:none;
+	border-collapse: collapse;
+}
+td.feel_ohter_lable{
+	width: 15%;
+}
+td.feel_star{
+	width: 30%;
+}
+td.feel_star img{
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+/*feel_end*/
+/*附加信息*/
+div#extra_message_container{
+	width: 680px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+div#extra_message_title{
+	float: left;
+	font-size: 20px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+textarea#extra_message_textarea{
+	width: 450px;
+	height: 100px;
+	margin-left: 20px;
+
+}
+
+
+/*附加信息end*/
+/*确认按钮*/
+div#submit_button_container{
+	width: 320px;
+	height: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	text-align: center;
+}
+div#submit_button_container button{
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0, 28, 88, 0.3);
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    font-size: 20px;
+    font-weight: 700;
+    height: 60px;
+    line-height: 38px;
+    outline: 0 none;
+    padding: 0;
+    text-align: center;
+    vertical-align: baseline;
+    width: 150px;
+}
+button[type=reset]{
+	background-color: #ccc;
+}
+button[type=reset]:hover{
+	background-color: #999;
+}
+button[type=button]{
+	background-color: #30c0da;
+	margin-left: 20px;
+}
+button[type=button]:hover{
+	background-color: #53d5ec;
+}
+/*main_right_main_end*/
+/*main_right_end*/
+/*main_end*/
