@@ -32,6 +32,12 @@ import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 public class LoginController extends AbstractBaseController {
     LoggerManager logger = LoggerManager.getLogger(LoginController.class);
 
+    @RequestMapping(value = "login/login.html")
+    public String login() {
+
+        return "login";
+    }
+
     @RequestMapping(value = "login/loginCheck.html", method = RequestMethod.POST)
     public ModelAndView loginCheck(HttpServletRequest request, SysUser sysUser) {
         // 验证用户账号与密码是否正确
