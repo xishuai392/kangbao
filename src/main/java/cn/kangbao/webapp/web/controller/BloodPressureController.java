@@ -3,12 +3,17 @@
  */
 package cn.kangbao.webapp.web.controller;
 
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cn.kangbao.common.exception.BaseAppException;
 import cn.kangbao.common.log.LoggerManager;
 import cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure;
+import cn.kangbao.webapp.web.service.BloodPressureService;
 
 /**
  * 血压 <Description> <br>
@@ -23,8 +28,11 @@ import cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure;
 
 @Controller
 @RequestMapping("/bp")
-public class BloodPressurecontroller extends AbstractBaseController {
-    LoggerManager logger = LoggerManager.getLogger(BloodPressurecontroller.class);
+public class BloodPressureController extends AbstractBaseController {
+    LoggerManager logger = LoggerManager.getLogger(BloodPressureController.class);
+
+    @Autowired
+    private BloodPressureService bloodPressureService;
 
     @RequestMapping(value = "/addRecord.html")
     public String index(Model model) {
@@ -33,8 +41,17 @@ public class BloodPressurecontroller extends AbstractBaseController {
     }
 
     @RequestMapping(value = "/saveRecord.html")
-    public String save(PatientBloodpressure bpDTO) {
+    public String save(PatientBloodpressure bpDTO) throws BaseAppException {
         logger.debug(bpDTO.toString());
+
+        // 设置初始值
+        bpDTO.setMeasurementid(getPkSequence(IWebConstans.PATIENT_BLOODPRESSURE));
+        bpDTO.setCreatetime(new Date());
+        bpDTO.setDr(0);
+        // bpDTO.setPersonid(personid);
+
+        bloodPressureService.insertRecord(bpDTO);
         return index(null);
     }
+
 }

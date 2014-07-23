@@ -16,14 +16,16 @@
 		<mvc:message-converters>
 			<bean
 				class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
-				<!-- 
+				<!--
 				<property name="objectMapper" ref="customObjectMapper"></property>
 				-->
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 
-	<!-- 自定义日期转换器 <bean id="customObjectMapper" class="com.ztesoft.appmgr.web.common.util.CustomObjectMapper"></bean> -->
+	<!-- 自定义日期转换器 
+	<bean id="customObjectMapper" class="cn.kangbao.common.plugin.CustomObjectMapper"></bean> 
+	-->
 
 	<!-- spring扫描包use-default-filters：false 不会去扫描service和dao层注解 -->
 	<context:component-scan base-package="cn.kangbao.webapp"
@@ -67,11 +69,6 @@
 			</props>
 		</property>
 	</bean>
-
-
-
-
-
 
 
 	<!-- 国际化资源文件绑定，该文件放置在src下 <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"> 
