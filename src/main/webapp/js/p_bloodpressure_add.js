@@ -66,10 +66,10 @@
 //表情选择结束
 //ajax提交表单
 	$('button[type=button]').click(function(event) {
-		var he=$('[name="bpDTO.upnum"]').val();
-		var lo=$('[name="bpDTO.downnum"]').val();
-		var hea=$('[name="bpDTO.heartrate"]').val();
-		var data=$('[name="bpDTO.testtime"]').val();
+		var he=$('[name="upnum"]').val();
+		var lo=$('[name="downnum"]').val();
+		var hea=$('[name="heartrate"]').val();
+		var data=$('[name="testtime"]').val();
 		if(he.length > 3){
 			jError("高压值不能超过3位!!",{
 					VerticalPosition : 'center',
@@ -121,13 +121,13 @@
 					HorizontalPosition : 'center'
 				});
 		}else{
-			$.post(webRoot+'/bp/saveRecord.html', $('form[name=blood_data_input]').serialize() , function(data, textStatus, xhr) {
+			$.post(webRoot+'bp/saveRecord.html', $('form[name=blood_data_input]').serialize() , function(data, textStatus, xhr) {
 				if (data.state == 1) {
 					jSuccess("添加记录成功！",{
 						VerticalPosition : 'center',
 						HorizontalPosition : 'center'
 					});
-					setTimeout("window.location = '/index.php/Home/Health/record'",2000)
+					//setTimeout("window.location = '/index.php/Home/Health/record'",2000)
 				}else if (data.state == 0) {
 					jError("操作失败，请重试!!",{
 						VerticalPosition : 'center',

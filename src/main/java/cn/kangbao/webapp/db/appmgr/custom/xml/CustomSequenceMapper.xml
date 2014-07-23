@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
-<mapper namespace=" cn.kangbao.webapp.db.appmgr.custom.mapper.ICustomSequenceMapper">
+<mapper namespace="cn.kangbao.webapp.db.appmgr.custom.mapper.ICustomSequenceMapper">
 
     <select id="selectSequence" resultType="Integer" parameterType="map">
         <![CDATA[

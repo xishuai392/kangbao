@@ -74,7 +74,7 @@
 							<span class="data_input_lable">测量时间</span>
 						</div>
 						<input id="measure_date" onclick="return WdatePicker();"
-							type="text" name="bpDTO.testtime" autocomplete="off"
+							type="text" name="testtime" autocomplete="off"
 							readonly="readonly" required="required"
 							placeholder="日期" />
 					</div>
@@ -82,13 +82,13 @@
 						<div class="lable_align">
 							<span class="data_input_lable">高压</span>
 						</div>
-						<input type="text" name="bpDTO.upnum"
+						<input type="text" name="upnum"
 							onkeyup="this.value=this.value.replace(/\D/g,'')" /> <span
 							class="danwei">mmHg</span> <span class="data_input_lable2">低压</span>
-						<input type="text" name="bpDTO.downnum"
+						<input type="text" name="downnum"
 							onkeyup="this.value=this.value.replace(/\D/g,'')" /> <span
 							class="danwei">mmHg</span> <span class="data_input_lable2">心率</span>
-						<input type="text" name="bpDTO.heartrate"
+						<input type="text" name="heartrate"
 							onkeyup="this.value=this.value.replace(/\D/g,'')" /> <span
 							class="danwei">次/分</span>
 					</div>
