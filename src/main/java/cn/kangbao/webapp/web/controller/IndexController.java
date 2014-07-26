@@ -25,7 +25,7 @@ import cn.kangbao.webapp.db.appmgr.entity.SysUser;
  * @see cn.kangbao.webapp.web.controller <br>
  */
 @Controller
-@RequestMapping("/guanjia")
+@RequestMapping("/steward")
 public class IndexController extends AbstractBaseController {
     LoggerManager logger = LoggerManager.getLogger(IndexController.class);
     

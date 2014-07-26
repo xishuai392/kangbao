@@ -8,7 +8,6 @@
   <!--顶部start-->
   <%@ include file="/WEB-INF/jsp/common/top.jsp"%>
   <!--顶部end-->
-     欢迎您！！！！
   <%@ include file="/WEB-INF/jsp/common/menu.jsp"%> 
   <!----------------footer_start--------> 
   <%@ include file="/WEB-INF/jsp/common/bottom.jsp"%>

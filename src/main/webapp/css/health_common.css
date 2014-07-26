@@ -2,6 +2,9 @@
 html,body{
 	background-color: #f3f3f3;
 }
+
+
+
 /*main_start*/
 div#main{
 	width: 1000px;
@@ -11,6 +14,8 @@ div#main{
 	margin-top: 10px;
 	margin-bottom: 40px;
 }
+
+
 /*mian_left_start*/
 div#main_left_container{
 	width: 200px;

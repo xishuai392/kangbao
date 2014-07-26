@@ -12,7 +12,7 @@
 	</div>
 	<ul id="header_nav">
 		<a href="${ctx}"><li name="menu">首页</li></a>
-		<a href="${ctx}/guanjia/index.html"><li name="menu">管家</li></a>
+		<a href="${ctx}/steward/index.html"><li name="menu">管家</li></a>
 		<a href="${ctx}/supermarket_index.html"><li name="menu">健康超市</li></a>
 		<a href="${ctx}/forum.php" target="_blank"><li name="menu">健康论坛</li></a>
 		<a href="${ctx}/news_index.html"><li name="menu">康宝动态</li></a>

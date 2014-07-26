@@ -1,16 +1,19 @@
 <%@ page language="java" import="java.text.*,java.util.*"
 	pageEncoding="UTF-8"%>
 
-<%@include file="/WEB-INF/jsp/common/common.inc.jsp"%>
+
 
 <html>
 <head>
 <title>康宝</title>
+<%@include file="/WEB-INF/jsp/common/common.inc.jsp"%>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/health_addRecord.css">
-	<link rel="stylesheet" type="text/css"
+<link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/health_common.css">
 </head>
+
+
 <body>
 	<!--顶部start-->
 	<%@ include file="/WEB-INF/jsp/common/top.jsp"%>
@@ -18,9 +21,11 @@
 
 	<%@ include file="/WEB-INF/jsp/common/menu.jsp"%>
 
-	<script type="text/javascript" src="${ctx }/jslibs/My97DatePicker/WdatePicker.js" defer="defer"></script>
+	<script type="text/javascript"
+		src="${ctx }/jslibs/My97DatePicker/WdatePicker.js" defer="defer"></script>
 
-	<script type="text/javascript" src="${ctx }/js/p_bloodpressure_add.js" defer="defer"></script>
+	<script type="text/javascript" src="${ctx }/js/p_bloodpressure_add.js"
+		defer="defer"></script>
 
 	<!--main_start-->
 	<div id="main">
@@ -75,8 +80,7 @@
 						</div>
 						<input id="measure_date" onclick="return WdatePicker();"
 							type="text" name="testtime" autocomplete="off"
-							readonly="readonly" required="required"
-							placeholder="日期" />
+							readonly="readonly" required="required" placeholder="日期" />
 					</div>
 					<div>
 						<div class="lable_align">
@@ -173,10 +177,10 @@
 							</tr>
 						</table>
 					-->
-						<input type="hidden" name="smoke" value="" /> 
-						<input type="hidden" name="wine" value="" /> 
-						<input type="hidden" name="sleep" value="" /> 
-						<input type="hidden" name="sports" value="" />
+						<input type="hidden" name="smoke" value="" /> <input
+							type="hidden" name="wine" value="" /> <input type="hidden"
+							name="sleep" value="" /> <input type="hidden" name="sports"
+							value="" />
 					</div>
 				</div>
 				<!--感觉如何end-->

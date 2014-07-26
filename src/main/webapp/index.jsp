@@ -22,7 +22,7 @@
 			</div>
 			<ul id="header_nav">
 				<a href="${ctx}"><li id="current_page">首页</li></a>
-				<a href="${ctx}/guanjia/index.html"><li>管家</li></a>
+				<a href="${ctx}/steward/index.html"><li>管家</li></a>
 				<a href="${ctx}/supermarket_index.html"><li>健康超市</li></a>
 				<a href="${ctx}/forum.php" target="_blank"><li>健康论坛</li></a>
 				<a href="${ctx}/news_index.html"><li>康宝动态</li></a>
@@ -30,6 +30,9 @@
 			</ul>
 		</div>
 	</div>
+	<!--顶部end-->
+	
+	
 	<div class="container">
 		<div id="cbp-fwslider" class="cbp-fwslider">
 			<!--onmouseover='aa();'-->
