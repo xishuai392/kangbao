@@ -4,7 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/login.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/login_register_common.css" />
 <link rel="shortcut icon" href="/images/logo_small.png" />
+
+<script type="text/javascript" src="${ctx }/js/login.js"
+	defer="defer"></script>
+	
 <title>康宝健康--登录</title>
 </head>
 <body>
@@ -36,7 +42,7 @@
 		<div class="input_left">
 		  <span>账户</span>
 		</div>
-		<input type="text" name="account" placeholder="血压管家邮箱或手机号" required="required" />
+		<input type="text" name="username" placeholder="血压管家邮箱或手机号" required="required" />
       </div>
 	  <div id="password_container">
 		<div class="input_left">
@@ -78,135 +84,5 @@
 		document.getElementById('login_other').style.display = "block";
 	}
 </script>
-<script type="text/javascript">
-	//调用QC.Login方法，指定btnId参数将按钮绑定在容器节点中
-	QC.Login({
-						//btnId：插入按钮的节点id，必选
-						btnId : "qq_login_btn",
-						//用户需要确认的scope授权项，可选，默认all
-						scope : "all",
-						//按钮尺寸，可用值[A_XL| A_L| A_M| A_S|  B_M| B_S| C_S]，可选，默认B_S
-						size : "A_L"
-					},
-					function(reqData, opts) {//登录成功
-						//根据返回数据，更换按钮显示状态方法
-						if (QC.Login.check()) {//如果已登录  
-							QC.Login.getMe(function(openId,
-											accessToken) {
-										var qqid = openId;
-										$
-												.ajax({
-													type : 'post',//选get
-													url : 'doLogin',//里接收数据PHP程序
-													data : 'qqlogin='
-															+ reqData.nickname
-															+ '&qqid='
-															+ qqid,//传给PHP数据多参数用&连接
-													dataType : 'text',//服务器返回数据类型 选XML ,Json jsonp script html text等
-													success : function(
-															msg) {
-														if (msg == 0) {
-															jError(
-																	"登录失败，请重试!",
-																	{
-																		VerticalPosition : 'center',
-																		HorizontalPosition : 'center'
-																	});
-														} else if (msg == 1) {
-															jSuccess(
-																	"登录成功！",
-																	{
-																		VerticalPosition : 'center',
-																		HorizontalPosition : 'center'
-																	});
-															setTimeout(
-																	"window.location = '/index.php/Home/Health/member'",
-																	2000)
-														}
-														;
-													},
-												})
-									});
-						}
-
-					}, function(opts) {//注销成功
-						location.reload();
-					});
-</script>
 <!--<div id="wb_connect_btn" ></div>-->
-<script>
-	WB2.anyWhere(function(W) {
-				W.widget
-						.connectButton({
-							id : "wb_connect_btn",
-							type : '2,2',
-							callback : {
-								login : function(o) { //登录后的回调函数
-									//alert("login: "+o.id); 
-									$.ajax({
-												type : 'post',//选get
-												url : 'doLogin',//里接收数据PHP程序
-												data : 'screen_name='
-														+ o.screen_name
-														+ '&sinaid='
-														+ o.id,//传给PHP数据多参数用&连接
-												dataType : 'text',//服务器返回数据类型 选XML ,Json jsonp script html text等
-												success : function(
-														msg) {
-													if (msg == 0) {
-														jError(
-																"登录失败，请重试!",
-																{
-																	VerticalPosition : 'center',
-																	HorizontalPosition : 'center'
-																});
-													} else if (msg == 1) {
-														jSuccess(
-																"登录成功！",
-																{
-																	VerticalPosition : 'center',
-																	HorizontalPosition : 'center'
-																});
-														setTimeout(
-																"window.location = '/index.php/Home/Health/member'",
-																1000)
-													}
-													;
-												},
-											})
-								},
-							}
-						});
-			});
-</script>
 
-<script type="text/javascript">
-	//从页面收集OpenAPI必要的参数。get_user_info不需要输入参数，因此paras中没有参数
-	var paras = {};
-
-	//用JS SDK调用OpenAPI
-	QC.api("get_user_info", paras)
-	//指定接口访问成功的接收函数，s为成功返回Response对象
-	.success(function(s) {
-		//成功回调，通过s.data获取OpenAPI的返回数据
-		alert("获取用户信息成功！当前用户昵称为：" + s.data.nickname);
-	})
-	//指定接口访问失败的接收函数，f为失败返回Response对象
-	.error(function(f) {
-		//失败回调
-		alert("获取用户信息失败！");
-	})
-	//指定接口完成请求后的接收函数，c为完成请求返回Response对象
-	.complete(function(c) {
-		//完成请求回调
-		alert("获取用户信息完成！");
-	});
-	if (QC.Login.check()) {//如果已登录
-		QC.Login.getMe(function(openId, accessToken) {
-			alert([ "当前登录用户的", "openId为：" + openId,
-					"accessToken为：" + accessToken ].join("\n"));
-		});
-		//这里可以调用自己的保存接口
-		//...
-	}
-</script>

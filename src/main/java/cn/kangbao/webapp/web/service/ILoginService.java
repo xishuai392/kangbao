@@ -3,12 +3,12 @@
  */
 package cn.kangbao.webapp.web.service;
 
+import cn.kangbao.common.exception.BaseAppException;
 import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 
 /**
+ * <Description> <br>
  * 
- * <Description> <br> 
- *  
  * @author pan.xiaobo<br>
  * @version 1.0<br>
  * @taskId <br>
@@ -19,5 +19,5 @@ import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 
 public interface ILoginService {
 
-    public SysUser userLogin(String userName, String password) throws Exception;
+    public SysUser userLogin(String userName, String password) throws BaseAppException;
 }

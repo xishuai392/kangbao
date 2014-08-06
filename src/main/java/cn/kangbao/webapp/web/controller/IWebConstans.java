@@ -16,6 +16,35 @@ package cn.kangbao.webapp.web.controller;
 
 public final class IWebConstans {
 
+    /****************************************************************/
+    /** 当前session中的(SysUser)sysUser,当前登录用户对象 */
+    public final static String SESSIONUSER = "sessionuser";
+
+    /** 当前session中的(Person)person,当前登录用户对象对应的所有person List */
+    public final static String SESSIONPERSONLIST = "sessionpersonlist";
+
+    /** 当前session中的(Person)person,当前登录用户对象对应的main_person */
+    public final static String SESSIONMAINPERSON = "sessionmainperson";
+
+    /** 当前session中的main_person (String)fullname,用户昵称 */
+    public final static String SESSIONTHISMAINUSERNAME = "sessionThisMainUserName";
+
+    /**
+     * 其他通过Ajax提交操作，后台处理完后，返回给前台的结果集中的success字段名
+     */
+    public static final String JSON_RESULT_SUCCESS = "success";
+
+    /**
+     * 其他通过Ajax提交操作，后台处理完后，返回给前台的结果集中的msg字段名
+     */
+    public static final String JSON_RESULT_MSG = "msg";
+
+    /**
+     * 其他通过Ajax提交操作，后台处理完后，返回给前台的结果集中的jsonData字段名
+     */
+    public static final String JSON_RESULT_JSONDATA = "jsonData";
+
+    /** 系统中各个表的常量 */
     public final static String HOSPITAL = "hospital";
 
     public final static String HOSPITAL_DOCTOR = "hospital_doctor";

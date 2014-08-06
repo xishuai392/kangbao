@@ -238,13 +238,5 @@ public final class Constants {
 
     /****************************************************************/
 
-    /****************************************************************/
-    /** 当前session中的(SysUser)sysUser,当前登录用户对象 */
-    public final static String SESSIONUSER = "sessionuser";
-
-    /** 当前session中的(Person)person,当前登录用户对象 */
-    public final static String SESSIONPERSON = "sessionperson";
-
-    /** 当前session中的(String)fullname,用户昵称 */
-    public final static String SESSIONTHISUSERNAME = "sessionThisUserName";
+    
 }

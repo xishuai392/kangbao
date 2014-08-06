@@ -28,16 +28,16 @@ import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 @RequestMapping("/steward")
 public class IndexController extends AbstractBaseController {
     LoggerManager logger = LoggerManager.getLogger(IndexController.class);
-    
+
     @RequestMapping(value = "/index.html")
     public String index(HttpServletRequest request, Model model) {
-        request.getSession().setAttribute(Constants.SESSIONUSER, new SysUser());
-        
-        if (null == request.getSession() || null == request.getSession().getAttribute(Constants.SESSIONUSER)) {
+        request.getSession().setAttribute(IWebConstans.SESSIONUSER, new SysUser());
+
+        if (null == request.getSession() || null == request.getSession().getAttribute(IWebConstans.SESSIONUSER)) {
             // 没登陆
             return "login";
         }
-        
+
         return "login/main";
     }
 }

@@ -3,13 +3,18 @@
  */
 package cn.kangbao.webapp.web.controller;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import cn.kangbao.common.exception.BaseAppException;
@@ -17,6 +22,8 @@ import cn.kangbao.common.log.LoggerManager;
 import cn.kangbao.common.util.Constants;
 import cn.kangbao.webapp.db.appmgr.entity.Person;
 import cn.kangbao.webapp.db.appmgr.entity.SysUser;
+import cn.kangbao.webapp.web.service.ILoginService;
+import cn.kangbao.webapp.web.service.PersonService;
 
 /**
  * <Description> <br>
@@ -32,31 +39,53 @@ import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 public class LoginController extends AbstractBaseController {
     LoggerManager logger = LoggerManager.getLogger(LoginController.class);
 
+    @Autowired
+    private ILoginService loginService;
+
+    @Autowired
+    private PersonService personService;
+
     @RequestMapping(value = "login/login.html")
     public String login() {
 
         return "login";
     }
 
-    @RequestMapping(value = "login/loginCheck.html", method = RequestMethod.POST)
-    public ModelAndView loginCheck(HttpServletRequest request, SysUser sysUser) {
+    // @RequestMapping(value = "login/loginCheck.html", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "login/loginCheck.json", method = RequestMethod.POST)
+    public @ResponseBody Map loginCheck(HttpServletRequest request, SysUser sysUser) {
         // 验证用户账号与密码是否正确
-        SysUser appUser = new SysUser();
-        appUser.setUserid(1);
-        appUser.setUsername("admin");
-        appUser.setPassword("1");
+        SysUser newSysUser = null;
+        Map resultMap = null;
+        try {
+            newSysUser = loginService.userLogin(sysUser.getUsername(), sysUser.getPassword());
+        }
+        catch (BaseAppException e) {
+            resultMap = getResultMap(false, "登录失败！" + e.getMessage(), null);
+        }
+        if (null == newSysUser) {
+            resultMap = getResultMap(false, "登录失败！<br>用户名或密码不正确，请重试!<br>如果您的密码丢失或遗忘，请点击 找回密码。", null);
+        }
 
-        Person person = new Person();
-        person.setUserid(1);
-        person.setPersonid(1);
-        person.setFullname("超级管理员");
+        if (null != resultMap) {
+            return resultMap;
+        }
 
-        request.getSession().setAttribute(Constants.SESSIONUSER, appUser);
-        request.getSession().setAttribute(Constants.SESSIONPERSON, person);
-        request.getSession().setAttribute(Constants.SESSIONTHISUSERNAME, person.getFullname());
+        List<Person> personList = personService.getPersonByUserId(newSysUser.getUserid());
+        Person mainPerson = null;
+        for (Person p : personList) {
+            if (p.getMainpersonid() > 0) {
+                mainPerson = p;
+                break;
+            }
 
-        ModelAndView view = new ModelAndView("redirect:/index.html");
-        return view;
+        }
+
+        request.getSession().setAttribute(IWebConstans.SESSIONUSER, newSysUser);
+        request.getSession().setAttribute(IWebConstans.SESSIONMAINPERSON, mainPerson);
+        request.getSession().setAttribute(IWebConstans.SESSIONTHISMAINUSERNAME, mainPerson == null ? null : mainPerson.getFullname());
+
+        return getResultMap("登录成功！");
     }
 
     @RequestMapping(value = "login/loginOut.html", method = {
@@ -64,9 +93,9 @@ public class LoginController extends AbstractBaseController {
     })
     public ModelAndView loginOut(HttpServletRequest request, Model model) throws BaseAppException {
         HttpSession session = request.getSession(true);
-        logger.debug("用户退出:user_name=" + session.getAttribute(Constants.SESSIONTHISUSERNAME));
-        session.removeAttribute(Constants.SESSIONUSER);
-        session.removeAttribute(Constants.SESSIONTHISUSERNAME);
+        logger.debug("用户退出:user_name=" + session.getAttribute(IWebConstans.SESSIONTHISMAINUSERNAME));
+        session.removeAttribute(IWebConstans.SESSIONUSER);
+        session.removeAttribute(IWebConstans.SESSIONMAINPERSON);
         ModelAndView view = new ModelAndView("redirect:/");
         return view;
     }

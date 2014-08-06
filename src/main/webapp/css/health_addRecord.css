@@ -26,10 +26,10 @@ span.data_input_lable{
 	height: 35px;
 	font-size: 16px;
 }
-input[name=measure_date],input[name=measure_time]{
+input[name=testtime],input[name=measure_time]{
 	width: 150px;
 }
-input[name=heigh_blood],input[name=low_blood],input[name=heart_rate]{
+input[name=upnum],input[name=downnum],input[name=heartrate]{
 	width: 80px;
 }
 span.data_input_lable2{

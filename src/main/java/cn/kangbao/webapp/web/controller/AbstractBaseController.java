@@ -3,8 +3,11 @@
  */
 package cn.kangbao.webapp.web.controller;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 
@@ -70,5 +73,38 @@ public abstract class AbstractBaseController {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+    }
+
+    /**
+     * 拼装返回结果，建议用这个
+     * 
+     * @author pan.xiaobo<br>
+     * @version 1.0<br>
+     * @CreateDate 2014-5-16 <br>
+     * @param <T>
+     * @param isDone
+     * @param msg
+     * @param jsonData
+     * @return
+     */
+    protected <T extends Serializable> Map getResultMap(boolean isDone, String msg, T jsonData) {
+        Map attributes = new HashMap();
+        attributes.put(IWebConstans.JSON_RESULT_SUCCESS, isDone);
+        attributes.put(IWebConstans.JSON_RESULT_MSG, msg);
+        attributes.put(IWebConstans.JSON_RESULT_JSONDATA, jsonData);
+
+        return attributes;
+    }
+
+    protected Map getResultMap(String msg) {
+        return getResultMap(true, msg, null);
+    }
+
+    protected Map getResultMap() {
+        return getResultMap(true, "操作成功！", null);
+    }
+
+    protected <T extends Serializable> Map getResultMap(T jsonData) {
+        return getResultMap(true, "操作成功！", jsonData);
     }
 }

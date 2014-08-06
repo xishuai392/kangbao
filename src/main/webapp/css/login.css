@@ -1,0 +1,168 @@
+@CHARSET "UTF-8";
+
+/*login_container_start*/
+div#login_container{
+	width: 500px;
+	height: 440px;
+	background-color: #fff;
+	position: absolute;
+	top: 30%;
+	right: 12%;
+	border-radius: 10px;
+
+}
+div#account_container1{
+	width: 350px;
+	height: 37px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div#account_container,#password_container,#submit_button_container{
+	width: 350px;
+	height: 60px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #999;
+	border-radius: 5px;
+}
+.input_left{
+	width: 100px;
+	height: 100%;
+	float: left;
+	text-align: center;
+	vertical-align: baseline;
+	background-color: #44b5df;
+}
+.input_left span{
+	position: relative;
+	top: 17px;
+	font-size: 20px;
+	color: #fff;
+}
+input[name=username],input[name=password]{
+	width: 228px;
+	height: 100%;
+	border: none;
+	font-size: 20px;
+	padding-left: 20px;
+	color: #333;
+}
+#submit_button{
+	width: 350px;
+	height: 60px;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	font-weight: 700;
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: baseline;
+	line-height: 38px;
+	outline: 0;
+	background-color: transparent;
+	border-radius: 3px;
+	color: #fff;
+	box-shadow: 0 2px 5px rgba(0,28,88,.3);
+	background-color: #44b5df;
+	font-size: 20px;
+}
+#submit_button:hover{
+	background-color: #71d0f3;
+}
+/*login_remember_start*/
+div#login_remember{
+	width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	vertical-align:baseline;
+}
+
+/*login_remember_end*/
+/*其他*/
+#login_other{
+	width: 350px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#login_others{
+	width: 350px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 3%;
+}
+#qq_login_btn{
+	width:150;
+	float: left;
+}
+#wb_connect_btn{
+	width:150;
+	float: right;
+}
+p#forget_pwd{
+	float: left;
+	color: #f8a137;
+	margin-right: 30%;
+	margin-top: 5%;
+}
+p#forget_pwd:hover{
+	text-decoration: underline;
+}
+button#register{
+	width: 150px;
+	height: 40px;
+	float: right;
+	text-align: center;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	font-weight: 700;
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: baseline;
+	line-height: 38px;
+	outline: 0;
+	margin-top: 3%;
+	background-color: transparent;
+	border-radius: 3px;
+	color: #fff;
+	box-shadow: 0 2px 5px rgba(0,28,88,.3);
+	background-color: #f8a137;
+	font-size: 20px;
+}
+#register:hover{
+	background-color: #f8ab51;
+}
+table.life_state_table{
+	width: 330px;
+	margin-left: auto;
+	margin-right: auto;
+}
+td.life_state_lable{
+	width: 12%;
+	text-align: left;
+}
+td.life_state_select{
+	width: 23%;
+	height: 60px;
+}
+td.life_state_select table{
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+}
+td.life_state_select td{
+	background-color: #359fd3;
+	height: 30px;
+	color: #fff;
+	cursor: pointer;
+}
+td.life_state_select td:hover{
+	background-color: #5ac9ff;
+}
+/*login_container_end*/
