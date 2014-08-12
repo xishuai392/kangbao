@@ -53,10 +53,11 @@ public class LoginController extends AbstractBaseController {
 
     // @RequestMapping(value = "login/loginCheck.html", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
     @RequestMapping(value = "login/loginCheck.json", method = RequestMethod.POST)
-    public @ResponseBody Map loginCheck(HttpServletRequest request, SysUser sysUser) {
+    public @ResponseBody Map loginCheck(SysUser sysUser) {
         // 验证用户账号与密码是否正确
         SysUser newSysUser = null;
         Map resultMap = null;
+        HttpServletRequest request = getRequest();
         try {
             newSysUser = loginService.userLogin(sysUser.getUsername(), sysUser.getPassword());
         }
@@ -74,7 +75,8 @@ public class LoginController extends AbstractBaseController {
         List<Person> personList = personService.getPersonByUserId(newSysUser.getUserid());
         Person mainPerson = null;
         for (Person p : personList) {
-            if (p.getMainpersonid() > 0) {
+            if (null == p.getMainpersonid()) {
+                // 户主ID为空，代表就是户主
                 mainPerson = p;
                 break;
             }
@@ -88,7 +90,7 @@ public class LoginController extends AbstractBaseController {
         return getResultMap("登录成功！");
     }
 
-    @RequestMapping(value = "login/loginOut.html", method = {
+    @RequestMapping(value = "login/loginout.html", method = {
             RequestMethod.POST, RequestMethod.GET
     })
     public ModelAndView loginOut(HttpServletRequest request, Model model) throws BaseAppException {
@@ -96,6 +98,7 @@ public class LoginController extends AbstractBaseController {
         logger.debug("用户退出:user_name=" + session.getAttribute(IWebConstans.SESSIONTHISMAINUSERNAME));
         session.removeAttribute(IWebConstans.SESSIONUSER);
         session.removeAttribute(IWebConstans.SESSIONMAINPERSON);
+        session.removeAttribute(IWebConstans.SESSIONTHISMAINUSERNAME);
         ModelAndView view = new ModelAndView("redirect:/");
         return view;
     }

@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.text.*,java.util.*"
+<%@ page language="java"
+	import="java.text.*,java.util.*,cn.kangbao.webapp.db.appmgr.entity.Person,cn.kangbao.webapp.web.controller.IWebConstans"
 	pageEncoding="UTF-8"%>
 
 <%@include file="/WEB-INF/jsp/common/common.inc.jsp"%>
@@ -14,11 +15,28 @@
 	<!--顶部start-->
 	<div id="top_container">
 		<div id="top_header_container">
-			<a href="${ctx}" style='float: left'><img
-				id="logo_img" src="${ctx}/images/logo.png"></a>
+			<a href="${ctx}" style='float: left'><img id="logo_img"
+				src="${ctx}/images/logo.png"></a>
 			<div id="logout">
-				<a href="/index.php/home/login/login.html" id='login'>登录</a><a
+				<%
+				    HttpSession sessions = request.getSession();
+							Person mainPerson = (Person) sessions
+									.getAttribute(IWebConstans.SESSIONMAINPERSON);
+							String sessionThisMainUserName = (String) sessions
+									.getAttribute(IWebConstans.SESSIONTHISMAINUSERNAME);
+							if (null == mainPerson) {
+				%>
+				<a href="${ctx}/login/login.html" id='login'>登录</a> <a
 					href="/index.php/home/register/register.html" id='reg'>注册</a>
+				<%
+				    } else {
+				%>
+				<span>hi，</span> <span>${ sessionScope.sessionThisMainUserName}
+				</span> <a id="reg1" href="${ctx}/login/loginout.html">退出</a>
+				<%
+				    }
+				%>
+
 			</div>
 			<ul id="header_nav">
 				<a href="${ctx}"><li id="current_page">首页</li></a>
@@ -31,8 +49,8 @@
 		</div>
 	</div>
 	<!--顶部end-->
-	
-	
+
+
 	<div class="container">
 		<div id="cbp-fwslider" class="cbp-fwslider">
 			<!--onmouseover='aa();'-->
@@ -213,14 +231,16 @@
 			style='width: 100%; height: 100%;'>
 	</div>
 	<!--产品介绍end-->
-	
+
 	<!----------------footer_start-------->
 	<%@ include file="/WEB-INF/jsp/common/bottom.jsp"%>
 	<!----------------------------footer_end------------>
 </body>
 </html>
-<script type="text/javascript" src="${ctx}/jslibs/plugins/modernizr.custom.js"></script>
-<script type="text/javascript" src="${ctx}/jslibs/plugins/jquery.cbpFWSlider.min.js"></script>
+<script type="text/javascript"
+	src="${ctx}/jslibs/plugins/modernizr.custom.js"></script>
+<script type="text/javascript"
+	src="${ctx}/jslibs/plugins/jquery.cbpFWSlider.min.js"></script>
 <script type="text/javascript">
-$('#cbp-fwslider').cbpFWSlider();
+	$('#cbp-fwslider').cbpFWSlider();
 </script>

@@ -31,13 +31,10 @@ public class IndexController extends AbstractBaseController {
 
     @RequestMapping(value = "/index.html")
     public String index(HttpServletRequest request, Model model) {
-        request.getSession().setAttribute(IWebConstans.SESSIONUSER, new SysUser());
-
         if (null == request.getSession() || null == request.getSession().getAttribute(IWebConstans.SESSIONUSER)) {
             // 没登陆
             return "login";
         }
-
         return "login/main";
     }
 }

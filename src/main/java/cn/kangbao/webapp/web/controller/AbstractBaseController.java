@@ -10,14 +10,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
 import cn.kangbao.common.exception.BaseAppException;
 import cn.kangbao.common.util.TableSeqUtil;
+import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 
 /**
  * <Description> <br>
@@ -106,5 +110,27 @@ public abstract class AbstractBaseController {
 
     protected <T extends Serializable> Map getResultMap(T jsonData) {
         return getResultMap(true, "操作成功！", jsonData);
+    }
+
+    /**
+     * 获取request对象
+     * 
+     * @return
+     */
+    protected HttpServletRequest getRequest() {
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        return request;
+    }
+
+    /**
+     * 获取session中的登录用户对象
+     * 
+     * @return
+     */
+    public SysUser getSessionSysUser() {
+        SysUser newSysUser = null;
+        HttpServletRequest request = getRequest();
+        newSysUser = (SysUser) request.getSession().getAttribute(IWebConstans.SESSIONUSER);
+        return newSysUser;
     }
 }
