@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import cn.kangbao.webapp.db.appmgr.arg.PersonArg;
 import cn.kangbao.webapp.db.appmgr.arg.PersonArg.PersonCriteria;
 import cn.kangbao.webapp.db.appmgr.dao.AppmgrPersonDao;
+import cn.kangbao.webapp.db.appmgr.dao.mapper.IPersonMapper;
 import cn.kangbao.webapp.db.appmgr.entity.Person;
 
 /**
@@ -33,5 +34,17 @@ public class PersonService {
         PersonCriteria cri = arg.createCriteria();
         cri.andUseridEqualTo(userId);
         return appmgrPersonDao.selectByArg(arg);
+    }
+
+    public int insert(Person record) {
+        return appmgrPersonDao.insert(record);
+    }
+    
+    public Person selectByPersonId(Integer personId){
+        return appmgrPersonDao.selectByPrimaryKey(personId);
+    }
+
+    public int updateByPersonId(Person record){
+        return appmgrPersonDao.updateByPrimaryKeySelective(record);
     }
 }

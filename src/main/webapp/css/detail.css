@@ -60,7 +60,7 @@ div.all_container3{
 
 div.banner{
 	width: 100%;
-	background: url(/Public/Images/Sales/12.jpg) no-repeat  scroll 50% 50%;
+	background: url(../images/sales/12.jpg) no-repeat  scroll 50% 50%;
     height: 699px;
     overflow: hidden;
     position: relative;
@@ -70,7 +70,7 @@ div.banner{
 }
 div.banner1{
 	width: 100%;
-	background: url(/Public/Images/Sales/to.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);
+	background: url(../images/sales/to.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);
     height: 100px;
     overflow: hidden;
     position: relative;
@@ -606,7 +606,7 @@ div#main_intro_4{
 	position: relative;
 	line-height: 40px;
 	margin-top: 50px;
-	background: url(/Public/Images/ball1.png) no-repeat  scroll 100% 100%;
+	background: url(../images/ball1.png) no-repeat  scroll 100% 100%;
 }
 .bm_1_3{
 	width: 600px;

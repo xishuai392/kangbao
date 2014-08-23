@@ -11,8 +11,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import cn.kangbao.common.exception.BaseAppException;
 import cn.kangbao.common.log.LoggerManager;
 import cn.kangbao.webapp.db.appmgr.entity.Person;
 import cn.kangbao.webapp.db.appmgr.entity.SysUser;
@@ -37,11 +40,24 @@ public class PersonController extends AbstractBaseController {
     @Autowired
     private PersonService personService;
 
-    @RequestMapping(value = "/addRecord.html")
-    public String index() {
+    @RequestMapping(value = "/index.html")
+    public String index(Model model) {
         SysUser newSysUser = getSessionSysUser();
         List<Person> pList = personService.getPersonByUserId(newSysUser.getUserid());
-        getRequest().setAttribute("pList", pList);
+        // getRequest().setAttribute("pList", pList);
+        model.addAttribute("pList", pList);
         return "main/person";
+    }
+
+    @RequestMapping(value = "/jumpToModify.html")
+    public String jumpToModify(@RequestParam("personId") int personId, Model model) throws BaseAppException {
+        Person person = personService.selectByPersonId(personId);
+        if (null == person) {
+            throw new BaseAppException("查询不到该成员！");
+        }
+        
+        model.addAttribute("thisPerson", person);
+        
+        return "main/person_operate";
     }
 }
