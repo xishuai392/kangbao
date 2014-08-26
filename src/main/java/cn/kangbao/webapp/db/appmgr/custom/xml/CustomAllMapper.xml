@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="cn.kangbao.webapp.db.appmgr.custom.mapper.ICustomAllMapper">
+
+	<select id="selectPatientLivestateAndSysDict" resultType="map" parameterType="map">
+	<![CDATA[
+		   SELECT * FROM PATIENT_LIVESTATE pl,SYS_DICT sd  WHERE pl.liveitem=sd.dictid
+
+	]]>AND pl.personid=#{personid}
+	</select>
+</mapper>

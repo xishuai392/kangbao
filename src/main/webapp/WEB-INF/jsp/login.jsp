@@ -42,13 +42,13 @@
 		<div class="input_left">
 		  <span>账户</span>
 		</div>
-		<input type="text" name="username" placeholder="血压管家邮箱或手机号" required="required" />
+		<input type="text" name="username" value="18888888888" placeholder="血压管家邮箱或手机号" required="required" />
       </div>
 	  <div id="password_container">
 		<div class="input_left">
 		  <span>密码</span>
 		</div>
-		<input type="password" name="password" placeholder="请输入密码" required="required" />
+		<input type="password" name="password" value="1" placeholder="请输入密码" required="required" />
 	  </div>
 	  <div id="submit_button_container"> 
 		<button type="button" id="submit_button">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>

@@ -1,0 +1,123 @@
+/* CSS Document */
+@CHARSET "UTF-8";
+/*person_operate.css */
+/*ajax返回内容start*/
+div.ajax_container{
+	width: 660px;
+	margin-left:auto;
+	margin-right: auto;
+	min-height: 400px;
+	background-color: #fff;
+	margin-top: 20px;
+	border: 1px solid #EEEEEE;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #CCCCCC;
+}
+div.basic_info_container{
+	width:  600px;
+	height: 320px;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom: 1px solid #ccc;
+}
+div.info_title{
+	width: 100%;
+	height: 40px;
+}
+div.info_title span{
+	font-size: 20px;
+	position: relative;
+	top: 5px;
+}
+table.basic_info_table{
+	width: 400px;
+	margin-left: auto;
+	margin-right:auto;
+	border-collapse: collapse;
+
+}
+table.basic_info_table td{
+	height: 40px;
+	font-size: 16px;
+}
+table.basic_info_table input[type=text]{
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	height: 30px;
+	width: 150px;
+	text-align: center;
+}
+div.life_state_container{
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+table.life_state_table{
+	width: 550px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+td.life_state_lable{
+	width: 10%;
+	text-align: right;
+}
+td.life_state_select{
+	width: 24%;
+	height: 60px;
+}
+td.life_state_select table{
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+}
+td.life_state_select td{
+	background-color: #359fd3;
+	height: 30px;
+	color: #fff;
+	cursor: pointer;
+}
+td.life_state_select td:hover{
+	background-color: #5ac9ff;
+}
+div.button_contaienr{
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+button{
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	font-weight: 700;
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: baseline;
+	line-height: 30px;
+	outline: 0;
+	border-radius: 3px;
+	color: #fff;
+	box-shadow: 0 2px 5px rgba(0,28,88,.3);
+	font-size: 18px;
+}
+button[type=reset]{
+	background-color: #ccc;
+
+}
+button[type=reset]:hover{
+	background-color: #aaa;
+
+}
+button.submit_button,button.member_submit,button.submit_add{
+	background-color: #44b5df;
+
+}
+button.submit_button:hover,button.member_submit:hover,button.submit_add:hover{
+	background-color: #85d2f6;
+
+}
+/*ajax返回内容end*/
+

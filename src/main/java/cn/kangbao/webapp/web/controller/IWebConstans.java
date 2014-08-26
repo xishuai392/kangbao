@@ -44,6 +44,23 @@ public final class IWebConstans {
      */
     public static final String JSON_RESULT_JSONDATA = "jsonData";
 
+    /** 操作类型，添加 */
+    public static final String OPERATE_ADD = "A";
+
+    /** 操作类型，修改 */
+    public static final String OPERATE_UPDATE = "U";
+
+    /** 操作类型，删除 */
+    public static final String OPERATE_DELETE = "D";
+    
+    /** 字段DR的有效值*/
+    public static final int FIELD_DR_ACTVED = 0;
+    
+    /** 用户类型  病人*/
+    public static final String USERTYPE_PATIENT="0";
+    /** 用户类型  医生*/
+    public static final String USERTYPE_DOCTOR ="1";
+
     /** 系统中各个表的常量 */
     public final static String HOSPITAL = "hospital";
 

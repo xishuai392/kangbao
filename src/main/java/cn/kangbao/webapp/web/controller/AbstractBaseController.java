@@ -21,6 +21,7 @@ import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
 import cn.kangbao.common.exception.BaseAppException;
 import cn.kangbao.common.util.TableSeqUtil;
+import cn.kangbao.webapp.db.appmgr.entity.Person;
 import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 
 /**
@@ -35,6 +36,11 @@ import cn.kangbao.webapp.db.appmgr.entity.SysUser;
  */
 
 public abstract class AbstractBaseController {
+    /**
+     * 操作结果，供前台展现，非AJAX情况下使用
+     */
+    private String operateContext;
+
     /**
      * 根据数据库表名，获取单个主键
      * 
@@ -60,7 +66,8 @@ public abstract class AbstractBaseController {
      * @return
      * @throws BaseAppException
      */
-    public Integer[] getPkSequenceArray(String tableName, int count) throws BaseAppException {
+    public Integer[] getPkSequenceArray(String tableName, int count)
+            throws BaseAppException {
         return TableSeqUtil.getSequenceBatch(tableName, count);
     }
 
@@ -72,11 +79,13 @@ public abstract class AbstractBaseController {
      */
     @InitBinder
     protected void initBinder(WebDataBinder binder) throws ServletException {
-        binder.registerCustomEditor(byte[].class, new ByteArrayMultipartFileEditor());
+        binder.registerCustomEditor(byte[].class,
+                new ByteArrayMultipartFileEditor());
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         dateFormat.setLenient(false);
-        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(
+                dateFormat, false));
     }
 
     /**
@@ -91,7 +100,8 @@ public abstract class AbstractBaseController {
      * @param jsonData
      * @return
      */
-    protected <T extends Serializable> Map getResultMap(boolean isDone, String msg, T jsonData) {
+    protected <T extends Serializable> Map getResultMap(boolean isDone,
+            String msg, T jsonData) {
         Map attributes = new HashMap();
         attributes.put(IWebConstans.JSON_RESULT_SUCCESS, isDone);
         attributes.put(IWebConstans.JSON_RESULT_MSG, msg);
@@ -118,7 +128,8 @@ public abstract class AbstractBaseController {
      * @return
      */
     protected HttpServletRequest getRequest() {
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
+                .getRequestAttributes()).getRequest();
         return request;
     }
 
@@ -130,7 +141,36 @@ public abstract class AbstractBaseController {
     public SysUser getSessionSysUser() {
         SysUser newSysUser = null;
         HttpServletRequest request = getRequest();
-        newSysUser = (SysUser) request.getSession().getAttribute(IWebConstans.SESSIONUSER);
+        newSysUser = (SysUser) request.getSession().getAttribute(
+                IWebConstans.SESSIONUSER);
         return newSysUser;
     }
+
+    /**
+     * 获取session中的登录用户对于的主person
+     * 
+     * @return
+     */
+    public Person getSessionMainPerson() {
+        Person mainPerson = null;
+        HttpServletRequest request = getRequest();
+        mainPerson = (Person) request.getSession().getAttribute(
+                IWebConstans.SESSIONMAINPERSON);
+        return mainPerson;
+    }
+
+    /**
+     * @return the operateContext
+     */
+    public String getOperateContext() {
+        return operateContext;
+    }
+
+    /**
+     * @param operateContext the operateContext to set
+     */
+    public void setOperateContext(String operateContext) {
+        this.operateContext = operateContext;
+    }
+
 }

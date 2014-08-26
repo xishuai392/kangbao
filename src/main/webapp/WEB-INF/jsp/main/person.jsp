@@ -14,10 +14,9 @@
 </head>
 
 <script type="text/javascript">
-
-	function jumpToModify(id){
-		alert(id);
-		document.forms[0].action = webRoot+"person/jumpToModify.html?personId="+id;
+	function jumpToModify(id) {
+		document.forms[0].action = webRoot
+				+ "person/jumpToModify.html?personId=" + id;
 		document.forms[0].submit();
 	}
 </script>
@@ -32,6 +31,7 @@
 	<script type="text/javascript"
 		src="${ctx }/jslibs/My97DatePicker/WdatePicker.js" defer="defer"></script>
 
+	<script type="text/javascript" src="${ctx }/js/person.js" defer="defer"></script>
 
 	<!--main_start-->
 	<div id="main">
@@ -65,7 +65,8 @@
 								<td title="出生日期"><fmt:formatDate value="${person.birthday}" />
 								</td>
 								<td>
-									<div is-click="0" class="edit_container" title="编辑信息" onclick='jumpToModify("${person.personid }" )  '>&nbsp;</div>
+									<div is-click="0" class="edit_container" title="编辑信息"
+										onclick='jumpToModify("${person.personid }" )  '>&nbsp;</div>
 
 									<c:if
 										test="${person.mainpersonid!=null|| person.mainpersonid>0}">
@@ -86,7 +87,7 @@
 						<img id="add_member" src="${ctx }/images/health/add.png " /> <span>添加成员</span>
 					</div>
 				</div>
-				
+
 				<!--华丽的分割线start-->
 				<img class="split_line"
 					src="${ctx }/images/health/health_input_line_down.png" />

@@ -29,6 +29,7 @@
 		<!--自定义拓展-->
 		<mapper resource="cn/kangbao/webapp/db/appmgr/custom/xml/CustomMapper.xml"/>
 		<mapper resource="cn/kangbao/webapp/db/appmgr/custom/xml/CustomSequenceMapper.xml"/>
+		<mapper resource="cn/kangbao/webapp/db/appmgr/custom/xml/CustomAllMapper.xml"/>
 		
 	</mappers>
 </configuration>

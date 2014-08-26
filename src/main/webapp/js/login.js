@@ -25,9 +25,9 @@ $(document).ready(function($) {
 			var form = $(this).parents('form');
 			$.post(webRoot + 'login/loginCheck.json', form.serialize(),
 					function(data, textStatus, xhr) {
-						console.log(data);
-						console.log(textStatus);
-						console.log(xhr);
+//						console.log(data);
+//						console.log(textStatus);
+//						console.log(xhr);
 						if (!data.success) {
 							if (data.msg == null || data.msg == "") {
 								jError(	"密码不正确，请重试!" + "<br/>"
