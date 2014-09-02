@@ -14,11 +14,7 @@
 </head>
 
 <script type="text/javascript">
-	function jumpToModify(id) {
-		document.forms[0].action = webRoot
-				+ "person/jumpToModify.html?personId=" + id;
-		document.forms[0].submit();
-	}
+	
 </script>
 
 <body>
@@ -43,6 +39,11 @@
 
 			<form name="blood_data_input" action="/person/index.html"
 				method="post">
+
+				<input type="hidden" name="operateContext" value="${operateContext}" />
+
+				<input type="hidden" name="isOperateDone" value="${isOperateDone}" />
+
 				<!--main_blood_data_start-->
 				<c:forEach var="person" items="${pList}">
 					<div class="all_container">
@@ -65,15 +66,12 @@
 								<td title="出生日期"><fmt:formatDate value="${person.birthday}" />
 								</td>
 								<td>
-									<div is-click="0" class="edit_container" title="编辑信息"
-										onclick='jumpToModify("${person.personid }" )  '>&nbsp;</div>
+									<div  class="edit_container" title="编辑信息"
+										personId ="${person.personid }" >&nbsp;</div>
 
 									<c:if
 										test="${person.mainpersonid!=null|| person.mainpersonid>0}">
-										<a
-											href="/index.php/home/health/ajaxdeletemember.html?member_id=2674">
-											<div class="delete_container" title="删除此成员" member-id="2674">&nbsp;</div>
-										</a>
+											<div class="delete_container" personId ="${person.personid }" title="删除此成员">&nbsp;</div>
 									</c:if>
 								</td>
 							</tr>

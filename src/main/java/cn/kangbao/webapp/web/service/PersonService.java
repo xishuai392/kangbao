@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.kangbao.common.log.LoggerManager;
+import cn.kangbao.webapp.db.appmgr.arg.PatientHealthArg;
+import cn.kangbao.webapp.db.appmgr.arg.PatientHealthArg.PatientHealthCriteria;
 import cn.kangbao.webapp.db.appmgr.arg.PatientLivestateArg;
 import cn.kangbao.webapp.db.appmgr.arg.PatientLivestateArg.PatientLivestateCriteria;
 import cn.kangbao.webapp.db.appmgr.arg.PersonArg;
@@ -23,6 +25,7 @@ import cn.kangbao.webapp.db.appmgr.dao.AppmgrPersonDao;
 import cn.kangbao.webapp.db.appmgr.entity.PatientHealth;
 import cn.kangbao.webapp.db.appmgr.entity.PatientLivestate;
 import cn.kangbao.webapp.db.appmgr.entity.Person;
+import cn.kangbao.webapp.web.controller.IWebConstans;
 import cn.kangbao.webapp.web.vo.PersonVO;
 
 /**
@@ -55,6 +58,8 @@ public class PersonService {
         PersonArg arg = new PersonArg();
         PersonCriteria cri = arg.createCriteria();
         cri.andUseridEqualTo(userId);
+        // 有效的记录
+        cri.andDrEqualTo(IWebConstans.FIELD_DR_ACTVED);
         return appmgrPersonDao.selectByArg(arg);
     }
 
@@ -154,4 +159,51 @@ public class PersonService {
                 + isNeedInsertLivestate + " ,livestate add:" + l);
         return true;
     }
+
+    /**
+     * 删除操作，不是物理删除，是更新dr字段
+     * 
+     * @param personVO
+     * @return
+     */
+    public boolean deletePersonAndHealthAndLiveState(PersonVO personVO) {
+
+        PersonArg personArg = new PersonArg();
+        PersonCriteria personCriteria = personArg.createCriteria();
+        personCriteria.andPersonidEqualTo(personVO.getPersonid());
+        Person person = new Person();
+        person.setPersonid(personVO.getPersonid());
+        // 置为无效
+        person.setDr(IWebConstans.FIELD_DR_DISABLED);
+
+        int i = appmgrPersonDao.updateByArgSelective(person, personArg);
+
+        PatientHealthArg patientHealthArg = new PatientHealthArg();
+        PatientHealthCriteria patientHealthCriteria = patientHealthArg
+                .createCriteria();
+        patientHealthCriteria.andPersonidEqualTo(personVO.getPersonid());
+        PatientHealth patientHealth = new PatientHealth();
+        patientHealth.setPersonid(personVO.getPersonid());
+        // 置为无效
+        patientHealth.setDr(IWebConstans.FIELD_DR_DISABLED);
+
+        int j = appmgrPatientHealthDao.updateByArgSelective(patientHealth,
+                patientHealthArg);
+
+        PatientLivestateArg patientLivestateArg = new PatientLivestateArg();
+        PatientLivestateCriteria patientLivestateCriteria = patientLivestateArg
+                .createCriteria();
+        patientLivestateCriteria.andPersonidEqualTo(person.getPersonid());
+        PatientLivestate patientLivestate = new PatientLivestate();
+        patientLivestate.setPersonid(personVO.getPersonid());
+        // 置为无效
+        patientLivestate.setDr(IWebConstans.FIELD_DR_DISABLED);
+        int k = appmgrPatientLivestateDao.updateByArgSelective(
+                patientLivestate, patientLivestateArg);
+
+        logger.info("delete... person update dr=1: " + i
+                + " ,health update dr=1:" + j + " ,livestate update dr=1:" + k);
+        return true;
+    }
+
 }

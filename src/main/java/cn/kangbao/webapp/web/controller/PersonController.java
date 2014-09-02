@@ -6,12 +6,15 @@ package cn.kangbao.webapp.web.controller;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import cn.kangbao.common.exception.BaseAppException;
@@ -42,8 +45,6 @@ public class PersonController extends AbstractBaseController {
 
     LoggerManager logger = LoggerManager.getLogger(PersonController.class);
 
-    private String operateType;
-
     @Autowired
     private PersonService personService;
 
@@ -61,6 +62,11 @@ public class PersonController extends AbstractBaseController {
         List<Person> pList = personService.getPersonByUserId(newSysUser
                 .getUserid());
         // getRequest().setAttribute("pList", pList);
+
+        if (null == getOperateContext()) {
+            mav.addObject("operateContext", "");
+        }
+
         mav.addObject("pList", pList);
         return mav;
     }
@@ -142,7 +148,7 @@ public class PersonController extends AbstractBaseController {
                     .setHealthid(getPkSequence(IWebConstans.PATIENT_HEALTH));
             patientHealth.setCreatetime(new Date());
             patientHealth.setDr(IWebConstans.FIELD_DR_ACTVED);
-            
+
             // 更新成将要添加的这个的id，因为PatientLivestate要用到这个id
             patientHealth.setPersonid(person.getPersonid());
             personVO.setPersonid(person.getPersonid());
@@ -175,7 +181,18 @@ public class PersonController extends AbstractBaseController {
             setOperateContext("操作失败！");
         }
 
+        mav.addObject("isOperateDone", isOperateDone);
+
+        mav.addObject("operateContext", getOperateContext());
         return index(mav);
+    }
+
+    @RequestMapping(value = "/delete.json", method = RequestMethod.POST)
+    @ResponseBody
+    public Map delete(PersonVO personVO) throws BaseAppException {
+        logger.debug("delete personVO begin...personVO=[{0}]", personVO);
+        //personService.deletePersonAndHealthAndLiveState(personVO);
+        return getResultMap();
     }
 
     private List<PatientLivestate> buildPatientLivestateList(PersonVO personVO)
@@ -262,20 +279,6 @@ public class PersonController extends AbstractBaseController {
         patientLivestate.setCreatetime(new Date());
         patientLivestate.setDr(IWebConstans.FIELD_DR_ACTVED);
         return patientLivestate;
-    }
-
-    /**
-     * @return the operateType
-     */
-    public String getOperateType() {
-        return operateType;
-    }
-
-    /**
-     * @param operateType the operateType to set
-     */
-    public void setOperateType(String operateType) {
-        this.operateType = operateType;
     }
 
 }

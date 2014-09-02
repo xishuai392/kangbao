@@ -10,10 +10,6 @@ import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Plugin;
 import org.apache.ibatis.plugin.Signature;
 import org.apache.ibatis.reflection.MetaObject;
-import org.apache.ibatis.reflection.factory.DefaultObjectFactory;
-import org.apache.ibatis.reflection.factory.ObjectFactory;
-import org.apache.ibatis.reflection.wrapper.DefaultObjectWrapperFactory;
-import org.apache.ibatis.reflection.wrapper.ObjectWrapperFactory;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.RowBounds;
 
@@ -23,10 +19,6 @@ import org.apache.ibatis.session.RowBounds;
     })
 })
 public class PaginationInterceptor implements Interceptor {
-
-    private static final ObjectFactory DEFAULT_OBJECT_FACTORY = new DefaultObjectFactory();
-
-    private static final ObjectWrapperFactory DEFAULT_OBJECT_WRAPPER_FACTORY = new DefaultObjectWrapperFactory();
 
     // 日志对象
     // protected static Logger log =
@@ -39,27 +31,37 @@ public class PaginationInterceptor implements Interceptor {
     // [start]
     public Object intercept(Invocation invocation) throws Throwable {
 
-        StatementHandler statementHandler = (StatementHandler) invocation.getTarget();
-        MetaObject metaStatementHandler = MetaObject.forObject(statementHandler, DEFAULT_OBJECT_FACTORY, DEFAULT_OBJECT_WRAPPER_FACTORY);
-        RowBounds rowBounds = (RowBounds) metaStatementHandler.getValue("delegate.rowBounds");
+        StatementHandler statementHandler = (StatementHandler) invocation
+                .getTarget();
+        MetaObject metaStatementHandler = MetaObject.forObject(
+                statementHandler, MetaObject.DEFAULT_OBJECT_FACTORY,
+                MetaObject.DEFAULT_OBJECT_WRAPPER_FACTORY);
+        RowBounds rowBounds = (RowBounds) metaStatementHandler
+                .getValue("delegate.rowBounds");
         if (rowBounds == null || rowBounds == RowBounds.DEFAULT) {
             return invocation.proceed();
 
         }
 
-        String originalSql = (String) metaStatementHandler.getValue("delegate.boundSql.sql");
+        String originalSql = (String) metaStatementHandler
+                .getValue("delegate.boundSql.sql");
 
-        Configuration configuration = (Configuration) metaStatementHandler.getValue("delegate.configuration");
+        Configuration configuration = (Configuration) metaStatementHandler
+                .getValue("delegate.configuration");
 
         Dialect.Type databaseType = null;
         try {
-            databaseType = Dialect.Type.valueOf(configuration.getVariables().getProperty("dialect").toUpperCase());
+            databaseType = Dialect.Type.valueOf(configuration.getVariables()
+                    .getProperty("dialect").toUpperCase());
         }
         catch (Exception e) {
             // ignore
         }
         if (databaseType == null) {
-            throw new RuntimeException("the value of the dialect property in configuration.xml is not defined : " + configuration.getVariables().getProperty("dialect"));
+            throw new RuntimeException(
+                    "the value of the dialect property in configuration.xml is not defined : "
+                            + configuration.getVariables().getProperty(
+                                    "dialect"));
         }
         Dialect dialect = null;
         switch (databaseType) {
@@ -77,9 +79,13 @@ public class PaginationInterceptor implements Interceptor {
                 break;
         }
 
-        metaStatementHandler.setValue("delegate.boundSql.sql", dialect.getLimitString(originalSql, rowBounds.getOffset(), rowBounds.getLimit()));
-        metaStatementHandler.setValue("delegate.rowBounds.offset", RowBounds.NO_ROW_OFFSET);
-        metaStatementHandler.setValue("delegate.rowBounds.limit", RowBounds.NO_ROW_LIMIT);
+        metaStatementHandler.setValue("delegate.boundSql.sql", dialect
+                .getLimitString(originalSql, rowBounds.getOffset(),
+                        rowBounds.getLimit()));
+        metaStatementHandler.setValue("delegate.rowBounds.offset",
+                RowBounds.NO_ROW_OFFSET);
+        metaStatementHandler.setValue("delegate.rowBounds.limit",
+                RowBounds.NO_ROW_LIMIT);
         return invocation.proceed();
     }
 

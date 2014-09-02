@@ -16,6 +16,7 @@ import cn.kangbao.webapp.db.appmgr.arg.SysUserArg;
 import cn.kangbao.webapp.db.appmgr.arg.SysUserArg.SysUserCriteria;
 import cn.kangbao.webapp.db.appmgr.dao.AppmgrSysUserDao;
 import cn.kangbao.webapp.db.appmgr.entity.SysUser;
+import cn.kangbao.webapp.web.controller.IWebConstans;
 import cn.kangbao.webapp.web.service.ILoginService;
 
 /**
@@ -39,7 +40,8 @@ public class LoginServiceImpl implements ILoginService {
      * @see com.ztesoft.appmgr.web.service.ILoginService#userLogin(java.lang.String, java.lang.String)
      */
     @Override
-    public SysUser userLogin(String userName, String password) throws BaseAppException {
+    public SysUser userLogin(String userName, String password)
+            throws BaseAppException {
         Map<String, String> params = new HashMap<String, String>();
         params.put("user_name", userName);
         params.put("password", password);
@@ -47,7 +49,10 @@ public class LoginServiceImpl implements ILoginService {
         SysUserCriteria criteria = arg.createCriteria();
         criteria.andUsernameEqualTo(userName);
         criteria.andPasswordEqualTo(password);
-        List<SysUser> listUsers = appmgrSysUserDao.selectByArgAndPage(arg, new RowBounds(0, 10));
+        //有效的记录
+        criteria.andDrEqualTo(IWebConstans.FIELD_DR_ACTVED);
+        List<SysUser> listUsers = appmgrSysUserDao.selectByArgAndPage(arg,
+                new RowBounds(0, 10));
         if (null == listUsers || listUsers.size() == 0)
             throw new BaseAppException("用户不存在或密码错误！");
         return listUsers.get(0);

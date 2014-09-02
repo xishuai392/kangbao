@@ -5,7 +5,7 @@
 	<select id="selectPatientLivestateAndSysDict" resultType="map" parameterType="map">
 	<![CDATA[
 		   SELECT * FROM PATIENT_LIVESTATE pl,SYS_DICT sd  WHERE pl.liveitem=sd.dictid
-
+		AND pl.dr=0 
 	]]>AND pl.personid=#{personid}
 	</select>
 </mapper>

@@ -56,6 +56,9 @@ public final class IWebConstans {
     /** 字段DR的有效值*/
     public static final int FIELD_DR_ACTVED = 0;
     
+    /** 字段DR的删除值*/
+    public static final int FIELD_DR_DISABLED = 1;
+    
     /** 用户类型  病人*/
     public static final String USERTYPE_PATIENT="0";
     /** 用户类型  医生*/

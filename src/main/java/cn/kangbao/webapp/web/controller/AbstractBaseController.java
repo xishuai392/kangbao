@@ -39,7 +39,12 @@ public abstract class AbstractBaseController {
     /**
      * 操作结果，供前台展现，非AJAX情况下使用
      */
-    private String operateContext;
+    protected String operateContext;
+
+    /**
+     * 操作类型，供前台展现，
+     */
+    protected String operateType;
 
     /**
      * 根据数据库表名，获取单个主键
@@ -171,6 +176,20 @@ public abstract class AbstractBaseController {
      */
     public void setOperateContext(String operateContext) {
         this.operateContext = operateContext;
+    }
+
+    /**
+     * @return the operateType
+     */
+    public String getOperateType() {
+        return operateType;
+    }
+
+    /**
+     * @param operateType the operateType to set
+     */
+    public void setOperateType(String operateType) {
+        this.operateType = operateType;
     }
 
 }
