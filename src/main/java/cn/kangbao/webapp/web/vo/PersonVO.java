@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import cn.kangbao.webapp.db.appmgr.entity.PatientLivestate;
 
 /**
@@ -35,6 +37,7 @@ public class PersonVO implements Serializable {
 
     private Integer sextype;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
 
     private String mobile;

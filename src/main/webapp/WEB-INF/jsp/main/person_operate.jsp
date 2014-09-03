@@ -67,7 +67,7 @@
 								<tr>
 									<td>生日：</td>
 									<td><form:input path="birthday"
-											onclick="return WdatePicker();" autocomplete="off"
+											onclick="return WdatePicker({dateFmt:'yyyy-MM-dd'});" autocomplete="off"
 											readonly="readonly" required="required" placeholder="日期" />
 									</td>
 								</tr>
@@ -144,7 +144,7 @@
 								</tr>
 								<tr>
 									<td class="life_state_lable">睡眠</td>
-									<td input-name="sleep" class="life_state_select">
+									<td input-name="livestate_shuimian" class="life_state_select">
 										<table>
 											<tbody>
 												<tr>
@@ -157,7 +157,7 @@
 										</table>
 									</td>
 									<td class="life_state_lable">情绪</td>
-									<td input-name="mood" class="life_state_select">
+									<td input-name="livestate_qingxu" class="life_state_select">
 										<table>
 											<tbody>
 												<tr>
@@ -170,7 +170,7 @@
 										</table>
 									</td>
 									<td class="life_state_lable">运动</td>
-									<td input-name="sports" class="life_state_select">
+									<td input-name="livestate_yundong" class="life_state_select">
 										<table>
 											<tbody>
 												<tr>
@@ -185,7 +185,7 @@
 								</tr>
 								<tr>
 									<td class="life_state_lable">体型</td>
-									<td input-name="fat" class="life_state_select">
+									<td input-name="livestate_tixing" class="life_state_select">
 										<table>
 											<tbody>
 												<tr>
@@ -198,7 +198,7 @@
 										</table>
 									</td>
 									<td class="life_state_lable">血脂</td>
-									<td input-name="g_xuezhi" class="life_state_select">
+									<td input-name="livestate_xuezhi" class="life_state_select">
 										<table>
 											<tbody>
 												<tr>
@@ -211,7 +211,7 @@
 										</table>
 									</td>
 									<td class="life_state_lable">血糖</td>
-									<td input-name="g_xuetang" class="life_state_select">
+									<td input-name="livestate_xuetang" class="life_state_select">
 										<table>
 											<tbody>
 												<tr>
@@ -226,7 +226,7 @@
 								</tr>
 								<tr>
 									<td class="life_state_lable">胆固醇</td>
-									<td input-name="g_danguchun" class="life_state_select">
+									<td input-name="livestate_danguchun" class="life_state_select">
 										<table>
 											<tbody>
 												<tr>
@@ -239,7 +239,7 @@
 										</table>
 									</td>
 									<td class="life_state_lable">糖尿病</td>
-									<td input-name="tangniaobing" class="life_state_select">
+									<td input-name="livestate_tangniaobing" class="life_state_select">
 										<table>
 											<tbody>
 												<tr>
@@ -256,6 +256,9 @@
 								</tr>
 							</tbody>
 						</table>
+						
+						<input type="hidden" name="operateType" value="${operateType }" />
+						
 						<form:hidden path="personid" />
 						<form:hidden path="healthid" />
 						<form:hidden path="mainpersonid" />

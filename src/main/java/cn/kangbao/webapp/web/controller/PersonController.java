@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,6 +41,7 @@ import cn.kangbao.webapp.web.vo.PersonVO;
  * @see cn.kangbao.webapp.web.controller <br>
  */
 @Controller
+@Scope("prototype")
 @RequestMapping("/person")
 public class PersonController extends AbstractBaseController {
 
@@ -88,6 +90,7 @@ public class PersonController extends AbstractBaseController {
         personVO.setUserid(sessionUser.getUserid());
         personVO.setMainpersonid(sessionMainPerson.getPersonid());
 
+        mav.addObject("operateType", operateType);
         mav.addObject("thisPersonVO", personVO);
         return mav;
     }
@@ -121,13 +124,15 @@ public class PersonController extends AbstractBaseController {
         personService.selectPatientLivestateToPersonVOByPersonId(personVO,
                 personVO.getPersonid());
 
+        mav.addObject("operateType", operateType);
         mav.addObject("thisPersonVO", personVO);
         return mav;
     }
 
     // save.html
     @RequestMapping(value = "/save.html")
-    public ModelAndView save(PersonVO personVO) throws BaseAppException {
+    public ModelAndView save(PersonVO personVO, @RequestParam String operateType)
+            throws BaseAppException {
         ModelAndView mav = new ModelAndView("main/person_operate");
 
         boolean isOperateDone = false;
@@ -191,7 +196,7 @@ public class PersonController extends AbstractBaseController {
     @ResponseBody
     public Map delete(PersonVO personVO) throws BaseAppException {
         logger.debug("delete personVO begin...personVO=[{0}]", personVO);
-        //personService.deletePersonAndHealthAndLiveState(personVO);
+        // personService.deletePersonAndHealthAndLiveState(personVO);
         return getResultMap();
     }
 

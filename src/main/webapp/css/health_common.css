@@ -1,12 +1,11 @@
 @CHARSET "UTF-8";
-html,body{
+
+html,body {
 	background-color: #f3f3f3;
 }
 
-
-
 /*main_start*/
-div#main{
+div#main {
 	width: 1000px;
 	min-height: 100%;
 	margin-left: auto;
@@ -15,14 +14,14 @@ div#main{
 	margin-bottom: 40px;
 }
 
-
 /*mian_left_start*/
-div#main_left_container{
+div#main_left_container {
 	width: 200px;
 	min-height: 500px;
 	float: left;
 }
-div#user_info{
+
+div#user_info {
 	width: 150px;
 	margin-left: auto;
 	margin-right: auto;
@@ -30,19 +29,40 @@ div#user_info{
 	overflow: hidden;
 	border-radius: 5px;
 }
-img#user_head_img{
+
+img#user_head_img {
 	width: 150px;
 	height: 150px;
 	cursor: pointer;
 }
-div#user_name{
+
+div#user_name {
 	line-height: 30px;
 	font-size: 20px;
 	text-align: center;
 	height: 40px;
 }
+
+div#select_user {
+	line-height: 30px;
+	font-size: 20px;
+	text-align: center;
+	height: 40px;
+}
+
+}
+div#select_user select {
+	padding: 5px;
+	background: transparent;
+	width: 268px;
+	font-size: 16px;
+	border: none;
+	height: 30px;
+	-webkit-appearance: none; /*for Webkit browsers*/
+}
+
 /*member_info_start*/
-div#member_info_container{
+div#member_info_container {
 	width: 180px;
 	margin-right: auto;
 	margin-left: auto;
@@ -50,7 +70,8 @@ div#member_info_container{
 	border-radius: 3px;
 	overflow: hidden;
 }
-div.member_info{
+
+div.member_info {
 	width: 50px;
 	height: 65px;
 	margin-left: 5px;
@@ -61,29 +82,33 @@ div.member_info{
 	cursor: pointer;
 	color: #000;
 }
-div.member_info:hover{
+
+div.member_info:hover {
 	box-shadow: 1px 1px 5px #359fd3;
 	background-color: #5ac7ff;
 }
-img.member_head_img{
+
+img.member_head_img {
 	width: 50px;
 	height: 50px;
 	border-style: none;
 }
-div.member_name{
+
+div.member_name {
 	font-size: 12px;
 	text-align: center;
 	line-height: 4px;
 }
 /*more_member*/
-div#more_member{
+div#more_member {
 	margin-top: 2px;
 	text-align: right;
 	width: 180px;
 	margin-left: auto;
 	margin-right: auto;
 }
-#more_member img{
+
+#more_member img {
 	cursor: pointer;
 	width: 10px;
 	height: 10px;
@@ -91,13 +116,14 @@ div#more_member{
 }
 /*member_info_end*/
 /*health_left_nav_start*/
-ul#health_left_nav{
+ul#health_left_nav {
 	width: 190px;
 	margin-right: auto;
 	margin-left: auto;
 	list-style: none;
 }
-#health_left_nav li{
+
+#health_left_nav li {
 	width: 100%;
 	height: 65px;
 	background-color: #359fd3;
@@ -108,10 +134,11 @@ ul#health_left_nav{
 	cursor: pointer;
 }
 
-#health_left_nav li:hover{
+#health_left_nav li:hover {
 	background-color: #5ac7ff;
 }
-#health_left_nav span{
+
+#health_left_nav span {
 	position: relative;
 	top: 20px;
 	color: #fff;
@@ -119,106 +146,122 @@ ul#health_left_nav{
 /*health_left_nav_end*/
 /*main_left_end*/
 /*main_right_start*/
-div#main_right_container{
+div#main_right_container {
 	width: 700px;
 	float: left;
 	margin-left: 60px;
 	margin-top: 10px;
 }
-div#main_right_title_container{
+
+div#main_right_title_container {
 	height: 50px;
 	width: 100%;
 	border-bottom: 1px solid #fff;
 }
-div#main_right_title_container span{
+
+div#main_right_title_container span {
 	font-size: 24px;
 	color: #e0641c;
 	font-weight: 600;
 }
+
 #nav {
- width: 190px;
- margin-right: auto;
- margin-left: auto;
- line-height: 50px; 
- list-style-type: none;
-    /*定义整个ul菜单的行高和背景色*/
+	width: 190px;
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 50px;
+	list-style-type: none;
+	/*定义整个ul菜单的行高和背景色*/
 }
 
 /*==================一级目录===================*/
 #nav a {
- width: 170px; 
- display: block;
- padding-left:20px;
- height: 50px;
- font-size: 20px;
- /*Width(一定要)，否则下面的Li会变形*/
+	width: 170px;
+	display: block;
+	padding-left: 20px;
+	height: 50px;
+	font-size: 20px;
+	/*Width(一定要)，否则下面的Li会变形*/
 }
 
 #nav li {
- background:#359FD3; /*一级目录的背景色*/
- border-bottom:#FFF 1px solid; /*下面的一条白边*/
- float:left;
- /*float：left,本不应该设置，但由于在Firefox不能正常显示
+	background: #359FD3; /*一级目录的背景色*/
+	border-bottom: #FFF 1px solid; /*下面的一条白边*/
+	float: left;
+	/*float：left,本不应该设置，但由于在Firefox不能正常显示
  继承Nav的width,限制宽度，li自动向下延伸*/
 }
 
-#nav li a:hover{
+#nav li a:hover {
 	font-weight: normal;
- 	background:#5ac7ff; /*一级目录onMouseOver显示的背景色*/
+	background: #5ac7ff; /*一级目录onMouseOver显示的背景色*/
 }
 
-#nav a:link  {
- color:#fff; text-decoration:none;
+#nav a:link {
+	color: #fff;
+	text-decoration: none;
 }
-#nav a:visited  {
- color:#fff;text-decoration:none;
+
+#nav a:visited {
+	color: #fff;
+	text-decoration: none;
 }
-#nav a:hover  {
- color:#FFF;text-decoration:none;font-weight:bold;
+
+#nav a:hover {
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 /*==================二级目录===================*/
 #nav li ul {
- list-style:none;
- text-align:left;
-}
-#nav li ul li{ 
- background: #5ac7ff; /*二级目录的背景色*/
- height: 50px;
- width: 190px; 
+	list-style: none;
+	text-align: left;
 }
 
-#nav li ul a{
-         padding-left:50px;
-         width:140px;
- /* padding-left二级目录中文字向右移动，但Width必须重新设置=(总宽度-padding-left)*/
+#nav li ul li {
+	background: #5ac7ff; /*二级目录的背景色*/
+	height: 50px;
+	width: 190px;
 }
+
+#nav li ul a {
+	padding-left: 50px;
+	width: 140px;
+	/* padding-left二级目录中文字向右移动，但Width必须重新设置=(总宽度-padding-left)*/
+}
+
 #nav ul.collapsed {
 	display: none;
 }
 /*下面是二级目录的链接样式*/
+#nav li ul a:link {
+	color: #fff;
+	text-decoration: none;
+}
 
-#nav li ul a:link  {
- color:#fff; text-decoration:none;
+#nav li ul a:visited {
+	color: #fff;
+	text-decoration: none;
 }
-#nav li ul a:visited  {
- color:#fff;text-decoration:none;
-}
+
 #nav li ul a:hover {
- color:#F3F3F3;
- text-decoration:none;
- font-weight:normal;
- background:#ccc;
- /* 二级onmouseover的字体颜色、背景色*/
+	color: #F3F3F3;
+	text-decoration: none;
+	font-weight: normal;
+	background: #ccc;
+	/* 二级onmouseover的字体颜色、背景色*/
 }
 
 /*==============================*/
 #nav li:hover ul {
- left: auto;
+	left: auto;
 }
+
 #nav li.sfhover ul {
- left: auto;
+	left: auto;
 }
+
 #content {
- clear: left; 
+	clear: left;
 }

@@ -39,8 +39,8 @@ public class DateConverter implements WebBindingInitializer {
         SimpleDateFormat datetimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         datetimeFormat.setLenient(false);
 
-        binder.registerCustomEditor(java.util.Date.class, new CustomDateEditor(dateFormat, true));
-        binder.registerCustomEditor(java.sql.Timestamp.class, new CustomTimestampEditor(datetimeFormat, true));
+//        binder.registerCustomEditor(java.util.Date.class, new CustomDateEditor(dateFormat, true));
+//        binder.registerCustomEditor(java.sql.Timestamp.class, new CustomTimestampEditor(datetimeFormat, true));
     }
 
 }

@@ -82,16 +82,16 @@ public abstract class AbstractBaseController {
      * @param binder
      * @throws ServletException
      */
-    @InitBinder
-    protected void initBinder(WebDataBinder binder) throws ServletException {
-        binder.registerCustomEditor(byte[].class,
-                new ByteArrayMultipartFileEditor());
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        dateFormat.setLenient(false);
-        binder.registerCustomEditor(Date.class, new CustomDateEditor(
-                dateFormat, false));
-    }
+//    @InitBinder
+//    protected void initBinder(WebDataBinder binder) throws ServletException {
+//        binder.registerCustomEditor(byte[].class,
+//                new ByteArrayMultipartFileEditor());
+//
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//        dateFormat.setLenient(false);
+//        binder.registerCustomEditor(Date.class, new CustomDateEditor(
+//                dateFormat, false));
+//    }
 
     /**
      * 拼装返回结果，建议用这个

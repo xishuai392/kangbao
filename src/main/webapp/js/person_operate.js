@@ -128,8 +128,8 @@ $(document).ready(function() {
 			return;
 		}
 
-		// var obj = document.forms[0];
-		// obj.submit();
+//		 var obj = document.forms[0];
+//		 obj.submit();
 		$("#person_data_input").submit();
 
 	});

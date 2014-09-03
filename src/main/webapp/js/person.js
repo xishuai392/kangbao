@@ -2,18 +2,6 @@
  * 
  */
 
-$(window).load(function() {
-			var isOperateDone = $("input[name=isOperateDone]").val() + "";
-			var operateContext = $("input[name=operateContext]").val();
-
-			if ("true" == isOperateDone || "false" == isOperateDone) {
-				jSuccess(operateContext, {
-							VerticalPosition : 'center',
-							HorizontalPosition : 'center'
-						});
-			}
-		});
-
 $(document).ready(function() {
 	// 添加用户按钮
 	$("div#add_member_container").click(function() {
@@ -47,12 +35,12 @@ $(document).ready(function() {
 												VerticalPosition : 'center',
 												HorizontalPosition : 'center'
 											});
-									console.log(this_click);
-									console.log(this_click.parents('tr'));
+									// console.log(this_click);
+									// console.log(this_click.parents('tr'));
 									this_click.parents('div.all_container')
 											.hide();
 									// $(this).parents('div.ajax_container').hide();
-								} else if (data == 0) {
+								} else {
 									jError("操作有误，请重试!!");
 									// setTimeout("window.location.reload()",2000);
 								}
