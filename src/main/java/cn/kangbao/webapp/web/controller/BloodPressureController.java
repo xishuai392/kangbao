@@ -37,7 +37,6 @@ import cn.kangbao.webapp.web.vo.PatientBloodpressureVO;
 
 @Controller
 @Scope("prototype")
-@RequestMapping("/bp")
 public class BloodPressureController extends AbstractBaseController {
     LoggerManager logger = LoggerManager
             .getLogger(BloodPressureController.class);
@@ -48,7 +47,7 @@ public class BloodPressureController extends AbstractBaseController {
     @Autowired
     private PersonService personService;
 
-    @RequestMapping(value = "/addRecord.html")
+    @RequestMapping(value = "/bp/addRecord.html")
     public ModelAndView index(ModelAndView mav) {
         mav.setViewName("main/p_bloodpressure_add");
         SysUser newSysUser = getSessionSysUser();
@@ -68,7 +67,7 @@ public class BloodPressureController extends AbstractBaseController {
         return mav;
     }
 
-    @RequestMapping(value = "/saveRecord.json")
+    @RequestMapping(value = "/bp/saveRecord.json")
     @ResponseBody
     public Map save(PatientBloodpressureVO patientBloodpressureVO)
             throws BaseAppException {

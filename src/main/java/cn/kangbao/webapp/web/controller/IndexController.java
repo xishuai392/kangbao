@@ -25,11 +25,10 @@ import cn.kangbao.webapp.db.appmgr.entity.SysUser;
  * @see cn.kangbao.webapp.web.controller <br>
  */
 @Controller
-@RequestMapping("/steward")
 public class IndexController extends AbstractBaseController {
     LoggerManager logger = LoggerManager.getLogger(IndexController.class);
 
-    @RequestMapping(value = "/index.html")
+    @RequestMapping(value = "/steward/index.html")
     public String index(HttpServletRequest request, Model model) {
         if (null == request.getSession() || null == request.getSession().getAttribute(IWebConstans.SESSIONUSER)) {
             // 没登陆

@@ -32,7 +32,7 @@
 		<form name="blood_data_input" action="/bp/saveRecord.html"
 			method="post">
 			<form:form id="bloodpressure_data_input"
-				action="${ctx }/bp/saveRecord.html"
+				action="${ctx }/bp/saveRecord.json"
 				commandName="thisPatientBloodpressureVO" method="post">
 				<div id="main_left_container">
 					<div id="user_info">

@@ -78,12 +78,12 @@
 								</tr>
 								<tr>
 									<td>体重：</td>
-									<td><form:input path="weight"
+									<td><form:input path="weight" maxlength="3"
 											onkeyup="this.value=this.value.replace(/\D/g,'')" /> kg</td>
 								</tr>
 								<tr>
 									<td>身高：</td>
-									<td><form:input path="height"
+									<td><form:input path="height" maxlength="3"
 											onkeyup="this.value=this.value.replace(/\D/g,'')" /> cm</td>
 								</tr>
 								<tr>

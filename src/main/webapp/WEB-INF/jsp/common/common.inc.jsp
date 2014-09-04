@@ -12,6 +12,10 @@
 <script type="text/javascript">
 var webRoot = "<%=webRoot%>";
 </script>
+
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/jslibs/plugins/dateFormat.js"></script>
+
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/js/operate_common.js"></script>
 

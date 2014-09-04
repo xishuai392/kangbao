@@ -28,7 +28,7 @@ public class BloodSugarService {
     private AppmgrPatientBloodsugarDao appmgrPatientBloodsugarDao;
 
     public boolean insertRecord(PatientBloodsugar record) {
-        int i = appmgrPatientBloodsugarDao.insert(record);
+        int i = appmgrPatientBloodsugarDao.insertSelective(record);
         logger.debug("insertRecord finished,count=" + i);
         return true;
     }

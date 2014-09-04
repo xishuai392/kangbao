@@ -29,7 +29,7 @@ public class BloodPressureService {
     private AppmgrPatientBloodpressureDao appmgrPatientBloodpressureDao;
 
     public boolean insertRecord(PatientBloodpressure record) {
-        int i = appmgrPatientBloodpressureDao.insert(record);
+        int i = appmgrPatientBloodpressureDao.insertSelective(record);
         logger.debug("insertRecord finished,count=" + i);
         return true;
     }

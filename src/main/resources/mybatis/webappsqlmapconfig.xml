@@ -8,7 +8,9 @@
     <plugins>
         <plugin interceptor="cn.kangbao.webapp.db.plugin.PaginationInterceptor"/>
     </plugins>
+     <!-- - - - - - - -映射文件路径：改到spring-dao里面配置目录了，以后不需要手动增加xml- - - - - - -->
     <!-- - - - - - - -映射文件路径- - - - - - -->
+    <!--
 	<mappers>
 		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/hospitalMapper.xml"/>
 		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/hospital_doctorMapper.xml"/>
@@ -25,11 +27,13 @@
 		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_keytableMapper.xml"/>
 		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_messageMapper.xml"/>
 		<mapper resource="cn/kangbao/webapp/db/appmgr/dao/xml/sys_userMapper.xml"/>
-		
+	-->
 		<!--自定义拓展-->
+		<!--
 		<mapper resource="cn/kangbao/webapp/db/appmgr/custom/xml/CustomMapper.xml"/>
 		<mapper resource="cn/kangbao/webapp/db/appmgr/custom/xml/CustomSequenceMapper.xml"/>
 		<mapper resource="cn/kangbao/webapp/db/appmgr/custom/xml/CustomAllMapper.xml"/>
 		
 	</mappers>
+	-->
 </configuration>

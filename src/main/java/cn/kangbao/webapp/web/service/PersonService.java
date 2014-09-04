@@ -94,8 +94,7 @@ public class PersonService {
                 BeanUtils.setProperty(personVO, key, value);
             }
             catch (IllegalAccessException | InvocationTargetException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                logger.error(e);
             }
         }
     }
@@ -111,8 +110,8 @@ public class PersonService {
     public boolean insertPersonAndHealthAndLiveState(Person person,
             PatientHealth patientHealth,
             List<PatientLivestate> patientLivestateList) {
-        int i = insert(person);
-        int j = appmgrPatientHealthDao.insert(patientHealth);
+        int i = appmgrPersonDao.insert(person);
+        int j = appmgrPatientHealthDao.insertSelective(patientHealth);
         PatientLivestateArg patientLivestateArg = new PatientLivestateArg();
         PatientLivestateCriteria patientLivestateCriteria = patientLivestateArg
                 .createCriteria();
@@ -172,7 +171,6 @@ public class PersonService {
         PersonCriteria personCriteria = personArg.createCriteria();
         personCriteria.andPersonidEqualTo(personVO.getPersonid());
         Person person = new Person();
-        person.setPersonid(personVO.getPersonid());
         // 置为无效
         person.setDr(IWebConstans.FIELD_DR_DISABLED);
 
@@ -183,7 +181,6 @@ public class PersonService {
                 .createCriteria();
         patientHealthCriteria.andPersonidEqualTo(personVO.getPersonid());
         PatientHealth patientHealth = new PatientHealth();
-        patientHealth.setPersonid(personVO.getPersonid());
         // 置为无效
         patientHealth.setDr(IWebConstans.FIELD_DR_DISABLED);
 
@@ -193,9 +190,8 @@ public class PersonService {
         PatientLivestateArg patientLivestateArg = new PatientLivestateArg();
         PatientLivestateCriteria patientLivestateCriteria = patientLivestateArg
                 .createCriteria();
-        patientLivestateCriteria.andPersonidEqualTo(person.getPersonid());
+        patientLivestateCriteria.andPersonidEqualTo(personVO.getPersonid());
         PatientLivestate patientLivestate = new PatientLivestate();
-        patientLivestate.setPersonid(personVO.getPersonid());
         // 置为无效
         patientLivestate.setDr(IWebConstans.FIELD_DR_DISABLED);
         int k = appmgrPatientLivestateDao.updateByArgSelective(

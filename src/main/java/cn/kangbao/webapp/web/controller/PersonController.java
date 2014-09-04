@@ -42,7 +42,6 @@ import cn.kangbao.webapp.web.vo.PersonVO;
  */
 @Controller
 @Scope("prototype")
-@RequestMapping("/person")
 public class PersonController extends AbstractBaseController {
 
     LoggerManager logger = LoggerManager.getLogger(PersonController.class);
@@ -56,7 +55,7 @@ public class PersonController extends AbstractBaseController {
     @Autowired
     private PatientLiveStateService patientLiveStateService;
 
-    @RequestMapping(value = "/index.html")
+    @RequestMapping(value = "/person/index.html")
     public ModelAndView index(ModelAndView mav) {
         mav.setViewName("main/person");
         // ModelAndView mav = new ModelAndView("main/person");
@@ -73,7 +72,7 @@ public class PersonController extends AbstractBaseController {
         return mav;
     }
 
-    @RequestMapping(value = "/jumpToAdd.html")
+    @RequestMapping(value = "/person/jumpToAdd.html")
     public ModelAndView jumpToAdd() throws BaseAppException {
         ModelAndView mav = new ModelAndView("main/person_operate");
         operateType = IWebConstans.OPERATE_ADD;
@@ -95,7 +94,7 @@ public class PersonController extends AbstractBaseController {
         return mav;
     }
 
-    @RequestMapping(value = "/jumpToModify.html")
+    @RequestMapping(value = "/person/jumpToModify.html")
     public ModelAndView jumpToModify(@RequestParam("personId") int personId,
             Model model) throws BaseAppException {
         ModelAndView mav = new ModelAndView("main/person_operate");
@@ -130,7 +129,7 @@ public class PersonController extends AbstractBaseController {
     }
 
     // save.html
-    @RequestMapping(value = "/save.html")
+    @RequestMapping(value = "/person/save.html")
     public ModelAndView save(PersonVO personVO, @RequestParam String operateType)
             throws BaseAppException {
         ModelAndView mav = new ModelAndView("main/person_operate");
@@ -192,11 +191,11 @@ public class PersonController extends AbstractBaseController {
         return index(mav);
     }
 
-    @RequestMapping(value = "/delete.json", method = RequestMethod.POST)
+    @RequestMapping(value = "/person/delete.json", method = RequestMethod.POST)
     @ResponseBody
     public Map delete(PersonVO personVO) throws BaseAppException {
         logger.debug("delete personVO begin...personVO=[{0}]", personVO);
-        // personService.deletePersonAndHealthAndLiveState(personVO);
+        personService.deletePersonAndHealthAndLiveState(personVO);
         return getResultMap();
     }
 

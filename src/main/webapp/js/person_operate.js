@@ -50,12 +50,13 @@ $(document).ready(function() {
 		/* Act on the event */
 
 		var fullname = $('[name="fullname"]').val();
-		var sextype = $('[name="sextype"]').val();
+		
+		var sextype = $('input:radio[name="sextype"]:checked').val();
+		//var sextype = $('[name="sextype"]').val();
 		var birthday = $('[name="birthday"]').val();
 		var mobile = $('[name="mobile"]').val();
 		var weight = $('[name="weight"]').val();
 		var height = $('[name="height"]').val();
-		var sextype = $('[name="sextype"]').val();
 
 		var isValidate = true;
 		var regPartton = /^0?1[3|4|5|8][0-9]\d{8}$/;
@@ -78,7 +79,7 @@ $(document).ready(function() {
 			return;
 		}
 
-		if (sextype == '') {
+		if (null==sextype||sextype == '') {
 			jError("请选择性别!!", {
 						VerticalPosition : 'center',
 						HorizontalPosition : 'center'

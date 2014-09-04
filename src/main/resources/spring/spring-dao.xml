@@ -16,7 +16,9 @@
 
     <!-- 创建SqlSessionFactory，同时指定数据源 -->
     <bean name="webappsqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
-          p:dataSource-ref="webappdataSource" p:configLocation="classpath:mybatis/webappsqlmapconfig.xml"/>
+          p:dataSource-ref="webappdataSource" p:configLocation="classpath:mybatis/webappsqlmapconfig.xml">
+          <property name="mapperLocations" value="classpath*:cn/kangbao/webapp/db/appmgr/**/*Mapper.xml" />
+    </bean>     
 
     <bean id="webappsqlSession" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg index="0" ref="webappsqlSessionFactory"/>

@@ -137,7 +137,7 @@ $(document).ready(function() {
 						HorizontalPosition : 'center'
 					});
 		} else {
-			$.post(webRoot + 'bp/saveRecord.html',
+			$.post(webRoot + 'bp/saveRecord.json',
 					$('form[name=blood_data_input]').serialize(), function(
 							data, textStatus, xhr) {
 						if (data.success) {
@@ -145,10 +145,16 @@ $(document).ready(function() {
 										VerticalPosition : 'center',
 										HorizontalPosition : 'center'
 									});
+							// $("#bloodpressure_data_input")[0].reset();
+							// $("#bloodpressure_data_input").eq(0).reset();
+							$("button[type='reset']").click();
+							// 更新时间
+							$("#measure_date").val(new Date()
+									.format("yyyy-MM-dd hh:mm:ss"));
 
 							// $(this).parents('div.ajax_container').hide();
 						} else {
-							jError("操作有误，请重试!!"+data.operateContext);
+							jError("操作有误，请重试!!" + data.operateContext);
 							// setTimeout("window.location.reload()",2000);
 						}
 
