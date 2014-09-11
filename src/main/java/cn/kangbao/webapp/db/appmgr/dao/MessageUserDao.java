@@ -18,7 +18,7 @@ import java.math.*;
 import java.lang.reflect.Method;
 @Repository
 
-public class AppmgrMessageUserDao {
+public class MessageUserDao {
 
 	@Autowired
 	private AppmgrSessionAndMapperSupport mapperSupport;
@@ -70,18 +70,8 @@ public class AppmgrMessageUserDao {
 	}
 
 	public int insertBatch(List<MessageUser> records){
-		SqlSession session = mapperSupport.getSession();
-		session.commit();
-		try {
-			IMessageUserMapper mapper = session.getMapper(IMessageUserMapper.class);
-			return mapper.insertBatch(records);
-		 } catch (Exception e) {
-			session.rollback();
-			throw new RuntimeException(e);
-		}
-		finally{
-			session.close();
-		}
+		IMessageUserMapper mapper = mapperSupport.getMapper(IMessageUserMapper.class);
+		return mapper.insertBatch(records);
 	}
 
 	public int deleteByPrimaryKey(MessageUserKey key){

@@ -4,6 +4,9 @@ import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * <Description>常见简体汉字字典 <br>
+ */
 public class SimplifiedChineseDetect {
 
     public static Map<String, String> simplifiedChineseMap = new HashMap<String, String>();
@@ -20,7 +23,8 @@ public class SimplifiedChineseDetect {
         String key = MessageFormat.format("{0}", code).replace(",", "");
         if (simplifiedChineseMap.containsKey(key)) {
             return true;
-        } else {
+        }
+        else {
             return false;
         }
     }
@@ -33,7 +37,8 @@ public class SimplifiedChineseDetect {
         String key = MessageFormat.format("{0}", code).replace(",", "");
         if (simplifiedChineseMap.containsKey(key)) {
             return true;
-        } else {
+        }
+        else {
             return false;
         }
     }

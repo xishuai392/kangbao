@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="cn.kangbao.webapp.db.appmgr.custom.mapper.IDBSequenceMapper">
+    <!--  序号  -->
+    <select id="selectSequence" resultType="Integer" parameterType="map">
+        <![CDATA[
+           SELECT NEXTVAL(#{tableName},#{count})
+        ]]>
+    </select>
+    
+    
+    <!--  最大编号  -->
+    <select id="maxSeq" resultType="java.lang.Integer">
+        SELECT 
+            MAX(${colName}) 
+        FROM ${tableName}
+           WHERE ${idName} = ${id}
+        
+    </select>
+</mapper>

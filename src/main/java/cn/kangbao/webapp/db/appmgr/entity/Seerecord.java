@@ -3,7 +3,8 @@ import java.io.Serializable;
 import java.math.*;
 import java.util.*;
 import org.apache.commons.lang.StringUtils;
-public class Seerecord implements Serializable {
+import cn.kangbao.common.dto.AbstractDto;
+public class Seerecord  extends AbstractDto  implements Serializable {
        	private Integer caseid;
 
 	public void setCaseid(Integer caseid){

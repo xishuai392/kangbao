@@ -132,10 +132,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update patient_bloodsugar
     <set >
-		<if test="record.bloodsugarid != null" >
-		bloodSugarId= #{record.bloodsugarid,jdbcType=INTEGER},
-	</if>
-	<if test="record.bloodsugarnum != null" >
+		<if test="record.bloodsugarnum != null" >
 		bloodSugarNum= #{record.bloodsugarnum,jdbcType=INTEGER},
 	</if>
 	<if test="record.influence != null" >
@@ -164,14 +161,7 @@
   <update id="updateByArg" parameterType="map" >
     update patient_bloodsugar
     set 
-		bloodSugarId = #{record.bloodsugarid,jdbcType=INTEGER},
-	bloodSugarNum = #{record.bloodsugarnum,jdbcType=INTEGER},
-	influence = #{record.influence,jdbcType=INTEGER},
-	personId = #{record.personid,jdbcType=INTEGER},
-	testPeriod = #{record.testperiod,jdbcType=CHAR},
-	testTime = #{record.testtime,jdbcType=TIMESTAMP},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP},
-	dr = #{record.dr,jdbcType=INTEGER}
+		bloodSugarNum = #{record.bloodsugarnum,jdbcType=INTEGER},	influence = #{record.influence,jdbcType=INTEGER},	personId = #{record.personid,jdbcType=INTEGER},	testPeriod = #{record.testperiod,jdbcType=CHAR},	testTime = #{record.testtime,jdbcType=TIMESTAMP},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -186,25 +176,25 @@
 		insert into patient_bloodsugar
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="bloodsugarid != null" >
-		bloodsugarid,
+		bloodSugarId,
 	</if>
 	<if test="bloodsugarnum != null" >
-		bloodsugarnum,
+		bloodSugarNum,
 	</if>
 	<if test="influence != null" >
 		influence,
 	</if>
 	<if test="personid != null" >
-		personid,
+		personId,
 	</if>
 	<if test="testperiod != null" >
-		testperiod,
+		testPeriod,
 	</if>
 	<if test="testtime != null" >
-		testtime,
+		testTime,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
 	<if test="dr != null" >
 		dr,

@@ -6,38 +6,66 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import org.springframework.util.StringUtils;
-
 import cn.kangbao.common.exception.BaseAppException;
 import cn.kangbao.common.exception.ExceptionHandler;
 import cn.kangbao.common.log.LoggerManager;
 
 /**
- * 2012
+ * 日期辅助工具类
  */
 public final class DateHelper {
 
-    /** 默认的日期格式. */
-    public static String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    /** 默认的日期格式.yyyy-MM-dd HH:mm:ss */
+    public static String STR_DEFAULT_DATE_FORMAT_WITH_SPLIT = "yyyy-MM-dd HH:mm:ss";
 
-    /** 用于文件命名的日期格式. */
-    public static String NAME_FILE_DATE_FORMAT = "yyyyMMdd_HHmmss";
+    /** 日期格式.yyyyMMddHHmmss */
+    public static String STR_DEFAULT_DATE_FORMAT_WITHOUT_SPLIT = "yyyyMMddHHmmss";
 
-    /** DAY日期格式. */
-    public static String DATE_FORMAT_DAY = "yyyy-MM-dd";
+    /** 用于文件命名的日期格式.yyyyMMdd_HHmmss */
+    public static String STR_NAME_FILE_DATE_FORMAT = "yyyyMMdd_HHmmss";
 
-    /** DAY日期格式. */
-    public static String DATE_FORMAT_MONTH = "yyyy-MM";
+    /** DAY日期格式. yyyy-MM-dd */
+    public static String STR_DATE_FORMAT_DAY_WITH_SPLIT = "yyyy-MM-dd";
 
-    /** DAY日期格式. */
-    public static String DATE_FORMAT_YEAR = "yyyy";
+    /** DAY日期格式. yyyyMMdd */
+    public static String STR_DATE_FORMAT_DAY_WITHOUT_SPLIT = "yyyyMMdd";
 
-    /** 分钟日期格式. */
-    public static String DATE_FORMAT_MINUTE = "yyyy-MM-dd HH:mm";
+    /** DAY日期格式. yyyy-MM */
+    public static String STR_DATE_FORMAT_MONTH_WITH_SPLIT = "yyyy-MM";
 
-    public static final LoggerManager logger = LoggerManager.getLogger(DateHelper.class);
+    /** DAY日期格式. yyyyMM */
+    public static String STR_DATE_FORMAT_MONTH_WITHOUT_SPLIT = "yyyyMM";
+
+    /** DAY日期格式. yyyy */
+    public static String STR_DATE_FORMAT_YEAR = "yyyy";
+
+    /** 分钟日期格式. yyyy-MM-dd HH:mm */
+    public static String STR_DATE_FORMAT_MINUTE = "yyyy-MM-dd HH:mm";
+
+    // //////////////////////////////////////////
+
+    /** SimpleDateFormat. yyyy */
+    public static SimpleDateFormat SIMPLE_DATE_FORMAT_yyyy = new SimpleDateFormat(
+            STR_DATE_FORMAT_YEAR);
+
+    /** SimpleDateFormat. yyyyMMdd */
+    public static SimpleDateFormat SIMPLE_DATE_FORMAT_yyyyMMdd = new SimpleDateFormat(
+            STR_DATE_FORMAT_DAY_WITHOUT_SPLIT);
+
+    /** SimpleDateFormat. yyyyMMddhhmmss */
+    public static SimpleDateFormat SIMPLE_DATE_FORMAT_yyyyMMddhhmmss = new SimpleDateFormat(
+            STR_DEFAULT_DATE_FORMAT_WITHOUT_SPLIT);
+
+    /** SimpleDateFormat. yyyy-MM-dd HH:mm:ss */
+    public static SimpleDateFormat SIMPLE_DATE_FORMAT_yyyy_MMdd_HHmmss = new SimpleDateFormat(
+            STR_DEFAULT_DATE_FORMAT_WITH_SPLIT);
+
+    // //////////////////////////////////////////
+    public static final LoggerManager logger = LoggerManager
+            .getLogger(DateHelper.class);
 
     private DateHelper() {
+
     }
 
     /**
@@ -56,7 +84,7 @@ public final class DateHelper {
             sdf = new SimpleDateFormat(format);
         }
         catch (Exception e) {
-            sdf = new SimpleDateFormat(DEFAULT_DATE_FORMAT);
+            sdf = new SimpleDateFormat(STR_DEFAULT_DATE_FORMAT_WITH_SPLIT);
         }
         return sdf.format(date);
     }
@@ -68,7 +96,7 @@ public final class DateHelper {
      * @return
      */
     public static String date2StringDay(Date date) {
-        return date2String(date, DATE_FORMAT_DAY);
+        return date2String(date, STR_DATE_FORMAT_DAY_WITH_SPLIT);
     }
 
     /**
@@ -79,11 +107,11 @@ public final class DateHelper {
      */
 
     public static String date2StringMonth(Date date) {
-        return date2String(date, DATE_FORMAT_MONTH);
+        return date2String(date, STR_DATE_FORMAT_MONTH_WITH_SPLIT);
     }
 
     public static String date2StringYear(Date date) {
-        return date2String(date, DATE_FORMAT_YEAR);
+        return date2String(date, STR_DATE_FORMAT_YEAR);
     }
 
     /**
@@ -100,12 +128,12 @@ public final class DateHelper {
         int minute = calendar.get(Calendar.MINUTE);
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         if (sec == 0 && minute != 0) {// 只取分钟
-            return date2String(date, DATE_FORMAT_MINUTE);
+            return date2String(date, STR_DATE_FORMAT_MINUTE);
         }
         if (minute == 0 && hour == 0) {// 取日
-            return date2String(date, DATE_FORMAT_DAY);
+            return date2String(date, STR_DATE_FORMAT_DAY_WITH_SPLIT);
         }
-        return date2String(date, DATE_FORMAT_MINUTE);
+        return date2String(date, STR_DATE_FORMAT_MINUTE);
     }
 
     /**
@@ -115,7 +143,7 @@ public final class DateHelper {
      * @return String
      */
     public static String date2String(Date date) {
-        return date2String(date, DEFAULT_DATE_FORMAT);
+        return date2String(date, STR_DEFAULT_DATE_FORMAT_WITH_SPLIT);
     }
 
     /**
@@ -125,7 +153,7 @@ public final class DateHelper {
      */
     public static String getCurrentDate() {
         Date date = new Date();
-        return date2String(date, DEFAULT_DATE_FORMAT);
+        return date2String(date, STR_DEFAULT_DATE_FORMAT_WITH_SPLIT);
     }
 
     /**
@@ -135,7 +163,7 @@ public final class DateHelper {
      */
     public static String getNameFileCurrentDate() {
         Date date = new Date();
-        return date2String(date, NAME_FILE_DATE_FORMAT);
+        return date2String(date, STR_NAME_FILE_DATE_FORMAT);
     }
 
     /**
@@ -145,7 +173,7 @@ public final class DateHelper {
      * @return Date
      */
     public static java.util.Date string2Date(String date) {
-        return string2Date(date, DEFAULT_DATE_FORMAT);
+        return string2Date(date, STR_DEFAULT_DATE_FORMAT_WITH_SPLIT);
     }
 
     public static java.util.Date string2Date(String date, String dateFormat) {
@@ -178,7 +206,7 @@ public final class DateHelper {
      * @return SimpleDateFormat 格式化器
      */
     public static SimpleDateFormat getStandardTimeFormat() {
-        return new SimpleDateFormat(DEFAULT_DATE_FORMAT);
+        return new SimpleDateFormat(STR_DEFAULT_DATE_FORMAT_WITH_SPLIT);
     }
 
     /**
@@ -470,8 +498,10 @@ public final class DateHelper {
      * @return boolean true-在范围内, false-不在范围内
      * @throws BaseAppException
      */
-    public static boolean isInRange(String date, String beginDate, String endDate) throws BaseAppException {
-        if (StringUtils.isEmpty(date) || StringUtils.isEmpty(beginDate) || StringUtils.isEmpty(endDate)) {
+    public static boolean isInRange(String date, String beginDate,
+            String endDate) throws BaseAppException {
+        if (Utils.isEmpty(date) || Utils.isEmpty(beginDate)
+                || Utils.isEmpty(endDate)) {
             ExceptionHandler.publish("");
             /** @todo */
         }
@@ -480,7 +510,7 @@ public final class DateHelper {
         int beginDateLen = date.length();
         int endDateLen = date.length();
 
-        if (beginDateLen != dateLen || endDateLen != endDateLen) {
+        if (beginDateLen != dateLen) {
             ExceptionHandler.publish("");
             /** @todo */
         }
@@ -717,7 +747,8 @@ public final class DateHelper {
      * @return 两个日期之间的日期,例如如果 开始时间是2012-12-30 20:59:17， 结束时间是2013-1-1 10:45:57 结果是如下数组信息 2012-12-30 20:59:17 2012-12-31 0:00:00 2013-1-1 0:00:00 //
      *         注意这个是循环后添加的 2013-1-1 10:45:57
      */
-    public static ArrayList<Date> getDateArraysWithoutEndTime(Date start, Date end, int calendarType) {
+    public static ArrayList<Date> getDateArraysWithoutEndTime(Date start,
+            Date end, int calendarType) {
         ArrayList<Date> ret = new ArrayList<Date>();
         Calendar calendar = Calendar.getInstance();
 
@@ -739,7 +770,8 @@ public final class DateHelper {
             // System.out.println("tmpEndDate: " + tmpEndDate.toLocaleString());
             i++;
         }
-        if (getDayStartTime(tmpEndDate).before(end) && getDayStartTime(tmpEndDate).after(start)) {
+        if (getDayStartTime(tmpEndDate).before(end)
+                && getDayStartTime(tmpEndDate).after(start)) {
             ret.add(getDayStartTime(end));
         }
         ret.add(end);
@@ -815,7 +847,13 @@ public final class DateHelper {
         return tmpDate;
     }
 
-    // 获取start 和 timespanDate相同周几，时分秒 的日期
+    /**
+     * 获取start 和 timespanDate相同周几，时分秒 的日期
+     * 
+     * @param start
+     * @param timeSpanDate
+     * @return
+     */
     public static Date setWeekDateHHMMSS(Date start, Date timeSpanDate) {
         Calendar c = new GregorianCalendar();
         Calendar c1 = new GregorianCalendar();
@@ -838,7 +876,8 @@ public final class DateHelper {
      * @return
      * @throws Exception
      */
-    public static ArrayList<Date> getIntervalDay(Date lastExsitDate, Date lastday) throws Exception {
+    public static ArrayList<Date> getIntervalDay(Date lastExsitDate,
+            Date lastday) throws Exception {
         if (lastExsitDate == null || lastday == null) {// 没有时间，返回null
             return null;
         }

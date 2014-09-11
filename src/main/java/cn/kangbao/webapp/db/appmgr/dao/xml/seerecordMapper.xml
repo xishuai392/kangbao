@@ -132,10 +132,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update seerecord
     <set >
-		<if test="record.caseid != null" >
-		caseId= #{record.caseid,jdbcType=INTEGER},
-	</if>
-	<if test="record.personid != null" >
+		<if test="record.personid != null" >
 		personId= #{record.personid,jdbcType=INTEGER},
 	</if>
 	<if test="record.doctorid != null" >
@@ -164,14 +161,7 @@
   <update id="updateByArg" parameterType="map" >
     update seerecord
     set 
-		caseId = #{record.caseid,jdbcType=INTEGER},
-	personId = #{record.personid,jdbcType=INTEGER},
-	doctorId = #{record.doctorid,jdbcType=INTEGER},
-	readTime = #{record.readtime,jdbcType=TIMESTAMP},
-	reply = #{record.reply,jdbcType=VARCHAR},
-	replyTime = #{record.replytime,jdbcType=TIMESTAMP},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP},
-	dr = #{record.dr,jdbcType=INTEGER}
+		personId = #{record.personid,jdbcType=INTEGER},	doctorId = #{record.doctorid,jdbcType=INTEGER},	readTime = #{record.readtime,jdbcType=TIMESTAMP},	reply = #{record.reply,jdbcType=VARCHAR},	replyTime = #{record.replytime,jdbcType=TIMESTAMP},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -186,25 +176,25 @@
 		insert into seerecord
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="caseid != null" >
-		caseid,
+		caseId,
 	</if>
 	<if test="personid != null" >
-		personid,
+		personId,
 	</if>
 	<if test="doctorid != null" >
-		doctorid,
+		doctorId,
 	</if>
 	<if test="readtime != null" >
-		readtime,
+		readTime,
 	</if>
 	<if test="reply != null" >
 		reply,
 	</if>
 	<if test="replytime != null" >
-		replytime,
+		replyTime,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
 	<if test="dr != null" >
 		dr,

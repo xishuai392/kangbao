@@ -3,7 +3,8 @@ import java.io.Serializable;
 import java.math.*;
 import java.util.*;
 import org.apache.commons.lang.StringUtils;
-public class SysBloorstandard implements Serializable {
+import cn.kangbao.common.dto.AbstractDto;
+public class SysBloorstandard  extends AbstractDto  implements Serializable {
        	private Integer bloorstdid;
 
 	public void setBloorstdid(Integer bloorstdid){

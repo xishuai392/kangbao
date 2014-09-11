@@ -3,7 +3,8 @@ import java.io.Serializable;
 import java.math.*;
 import java.util.*;
 import org.apache.commons.lang.StringUtils;
-public class SysKeytable implements Serializable {
+import cn.kangbao.common.dto.AbstractDto;
+public class SysKeytable  extends AbstractDto  implements Serializable {
        	private String tablename;
 
 	public void setTablename(String tablename){

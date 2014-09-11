@@ -130,10 +130,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update patient_livestate
     <set >
-		<if test="record.livestateid != null" >
-		liveStateId= #{record.livestateid,jdbcType=INTEGER},
-	</if>
-	<if test="record.personid != null" >
+		<if test="record.personid != null" >
 		personId= #{record.personid,jdbcType=INTEGER},
 	</if>
 	<if test="record.liveitem != null" >
@@ -156,12 +153,7 @@
   <update id="updateByArg" parameterType="map" >
     update patient_livestate
     set 
-		liveStateId = #{record.livestateid,jdbcType=INTEGER},
-	personId = #{record.personid,jdbcType=INTEGER},
-	liveItem = #{record.liveitem,jdbcType=INTEGER},
-	liveState = #{record.livestate,jdbcType=CHAR},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP},
-	dr = #{record.dr,jdbcType=INTEGER}
+		personId = #{record.personid,jdbcType=INTEGER},	liveItem = #{record.liveitem,jdbcType=INTEGER},	liveState = #{record.livestate,jdbcType=CHAR},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -176,19 +168,19 @@
 		insert into patient_livestate
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="livestateid != null" >
-		livestateid,
+		liveStateId,
 	</if>
 	<if test="personid != null" >
-		personid,
+		personId,
 	</if>
 	<if test="liveitem != null" >
-		liveitem,
+		liveItem,
 	</if>
 	<if test="livestate != null" >
-		livestate,
+		liveState,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
 	<if test="dr != null" >
 		dr,

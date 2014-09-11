@@ -17,7 +17,7 @@ import java.math.*;
 import java.lang.reflect.Method;
 @Repository
 
-public class AppmgrSeerecordDao {
+public class SeerecordDao {
 
 	@Autowired
 	private AppmgrSessionAndMapperSupport mapperSupport;
@@ -69,18 +69,8 @@ public class AppmgrSeerecordDao {
 	}
 
 	public int insertBatch(List<Seerecord> records){
-		SqlSession session = mapperSupport.getSession();
-		session.commit();
-		try {
-			ISeerecordMapper mapper = session.getMapper(ISeerecordMapper.class);
-			return mapper.insertBatch(records);
-		 } catch (Exception e) {
-			session.rollback();
-			throw new RuntimeException(e);
-		}
-		finally{
-			session.close();
-		}
+		ISeerecordMapper mapper = mapperSupport.getMapper(ISeerecordMapper.class);
+		return mapper.insertBatch(records);
 	}
 
 	public int deleteByPrimaryKey(Integer key){

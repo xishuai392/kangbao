@@ -17,7 +17,7 @@ import java.math.*;
 import java.lang.reflect.Method;
 @Repository
 
-public class AppmgrPatientHealthDao {
+public class PatientHealthDao {
 
 	@Autowired
 	private AppmgrSessionAndMapperSupport mapperSupport;
@@ -69,18 +69,8 @@ public class AppmgrPatientHealthDao {
 	}
 
 	public int insertBatch(List<PatientHealth> records){
-		SqlSession session = mapperSupport.getSession();
-		session.commit();
-		try {
-			IPatientHealthMapper mapper = session.getMapper(IPatientHealthMapper.class);
-			return mapper.insertBatch(records);
-		 } catch (Exception e) {
-			session.rollback();
-			throw new RuntimeException(e);
-		}
-		finally{
-			session.close();
-		}
+		IPatientHealthMapper mapper = mapperSupport.getMapper(IPatientHealthMapper.class);
+		return mapper.insertBatch(records);
 	}
 
 	public int deleteByPrimaryKey(Integer key){

@@ -1,110 +1,108 @@
 package cn.kangbao.webapp.db.appmgr.entity;
-
 import java.io.Serializable;
 import java.math.*;
 import java.util.*;
 import org.apache.commons.lang.StringUtils;
+import cn.kangbao.common.dto.AbstractDto;
+public class PatientBloodpressure  extends AbstractDto  implements Serializable {
+       	private Integer measurementid;
 
-public class PatientBloodpressure implements Serializable {
-    private Integer measurementid;
+	public void setMeasurementid(Integer measurementid){
+		this.measurementid = measurementid;
+	}
 
-    public void setMeasurementid(Integer measurementid) {
-        this.measurementid = measurementid;
-    }
+	public Integer getMeasurementid() {
+		return measurementid; 
+	}
 
-    public Integer getMeasurementid() {
-        return measurementid;
-    }
+	private Integer personid;
 
-    private Integer personid;
+	public void setPersonid(Integer personid){
+		this.personid = personid;
+	}
 
-    public void setPersonid(Integer personid) {
-        this.personid = personid;
-    }
+	public Integer getPersonid() {
+		return personid; 
+	}
 
-    public Integer getPersonid() {
-        return personid;
-    }
+	private Integer upnum;
 
-    private Integer upnum;
+	public void setUpnum(Integer upnum){
+		this.upnum = upnum;
+	}
 
-    public void setUpnum(Integer upnum) {
-        this.upnum = upnum;
-    }
+	public Integer getUpnum() {
+		return upnum; 
+	}
 
-    public Integer getUpnum() {
-        return upnum;
-    }
+	private Integer downnum;
 
-    private Integer downnum;
+	public void setDownnum(Integer downnum){
+		this.downnum = downnum;
+	}
 
-    public void setDownnum(Integer downnum) {
-        this.downnum = downnum;
-    }
+	public Integer getDownnum() {
+		return downnum; 
+	}
 
-    public Integer getDownnum() {
-        return downnum;
-    }
+	private Integer heartrate;
 
-    private Integer heartrate;
+	public void setHeartrate(Integer heartrate){
+		this.heartrate = heartrate;
+	}
 
-    public void setHeartrate(Integer heartrate) {
-        this.heartrate = heartrate;
-    }
+	public Integer getHeartrate() {
+		return heartrate; 
+	}
 
-    public Integer getHeartrate() {
-        return heartrate;
-    }
+	private Date testtime;
 
-    private Date testtime;
+	public void setTesttime(Date testtime){
+		this.testtime = testtime;
+	}
 
-    public void setTesttime(Date testtime) {
-        this.testtime = testtime;
-    }
+	public Date getTesttime() {
+		return testtime; 
+	}
 
-    public Date getTesttime() {
-        return testtime;
-    }
+	private Integer feelingstate;
 
-    private Integer feelingstate;
+	public void setFeelingstate(Integer feelingstate){
+		this.feelingstate = feelingstate;
+	}
 
-    public void setFeelingstate(Integer feelingstate) {
-        this.feelingstate = feelingstate;
-    }
+	public Integer getFeelingstate() {
+		return feelingstate; 
+	}
 
-    public Integer getFeelingstate() {
-        return feelingstate;
-    }
+	private String feelingdesc;
 
-    private String feelingdesc;
+	public void setFeelingdesc(String feelingdesc){
+		this.feelingdesc = feelingdesc;
+	}
 
-    public void setFeelingdesc(String feelingdesc) {
-        this.feelingdesc = feelingdesc;
-    }
+	public String getFeelingdesc() {
+		return StringUtils.isBlank(feelingdesc)?feelingdesc:feelingdesc.trim(); 
+	}
 
-    public String getFeelingdesc() {
-        return StringUtils.isBlank(feelingdesc) ? feelingdesc : feelingdesc
-                .trim();
-    }
+	private Date createtime;
 
-    private Date createtime;
+	public void setCreatetime(Date createtime){
+		this.createtime = createtime;
+	}
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
-    }
+	public Date getCreatetime() {
+		return createtime; 
+	}
 
-    public Date getCreatetime() {
-        return createtime;
-    }
+	private Integer dr;
 
-    private Integer dr;
+	public void setDr(Integer dr){
+		this.dr = dr;
+	}
 
-    public void setDr(Integer dr) {
-        this.dr = dr;
-    }
-
-    public Integer getDr() {
-        return dr;
-    }
+	public Integer getDr() {
+		return dr; 
+	}
 
 }

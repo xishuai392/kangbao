@@ -19,7 +19,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cn.kangbao.common.exception.BaseAppException;
 import cn.kangbao.common.log.LoggerManager;
-import cn.kangbao.common.util.Constants;
 import cn.kangbao.webapp.db.appmgr.entity.Person;
 import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 import cn.kangbao.webapp.web.service.ILoginService;

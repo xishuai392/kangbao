@@ -3,7 +3,8 @@ import java.io.Serializable;
 import java.math.*;
 import java.util.*;
 import org.apache.commons.lang.StringUtils;
-public class SysMessage implements Serializable {
+import cn.kangbao.common.dto.AbstractDto;
+public class SysMessage  extends AbstractDto  implements Serializable {
        	private Integer messageid;
 
 	public void setMessageid(Integer messageid){

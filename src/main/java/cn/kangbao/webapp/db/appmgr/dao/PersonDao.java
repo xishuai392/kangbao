@@ -17,7 +17,7 @@ import java.math.*;
 import java.lang.reflect.Method;
 @Repository
 
-public class AppmgrPersonDao {
+public class PersonDao {
 
 	@Autowired
 	private AppmgrSessionAndMapperSupport mapperSupport;
@@ -69,18 +69,8 @@ public class AppmgrPersonDao {
 	}
 
 	public int insertBatch(List<Person> records){
-		SqlSession session = mapperSupport.getSession();
-		session.commit();
-		try {
-			IPersonMapper mapper = session.getMapper(IPersonMapper.class);
-			return mapper.insertBatch(records);
-		 } catch (Exception e) {
-			session.rollback();
-			throw new RuntimeException(e);
-		}
-		finally{
-			session.close();
-		}
+		IPersonMapper mapper = mapperSupport.getMapper(IPersonMapper.class);
+		return mapper.insertBatch(records);
 	}
 
 	public int deleteByPrimaryKey(Integer key){

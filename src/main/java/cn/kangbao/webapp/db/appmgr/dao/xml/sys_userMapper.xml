@@ -130,10 +130,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update sys_user
     <set >
-		<if test="record.userid != null" >
-		userId= #{record.userid,jdbcType=INTEGER},
-	</if>
-	<if test="record.username != null" >
+		<if test="record.username != null" >
 		userName= #{record.username,jdbcType=VARCHAR},
 	</if>
 	<if test="record.password != null" >
@@ -156,12 +153,7 @@
   <update id="updateByArg" parameterType="map" >
     update sys_user
     set 
-		userId = #{record.userid,jdbcType=INTEGER},
-	userName = #{record.username,jdbcType=VARCHAR},
-	password = #{record.password,jdbcType=VARCHAR},
-	userType = #{record.usertype,jdbcType=CHAR},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP},
-	dr = #{record.dr,jdbcType=INTEGER}
+		userName = #{record.username,jdbcType=VARCHAR},	password = #{record.password,jdbcType=VARCHAR},	userType = #{record.usertype,jdbcType=CHAR},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -176,19 +168,19 @@
 		insert into sys_user
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="userid != null" >
-		userid,
+		userId,
 	</if>
 	<if test="username != null" >
-		username,
+		userName,
 	</if>
 	<if test="password != null" >
 		password,
 	</if>
 	<if test="usertype != null" >
-		usertype,
+		userType,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
 	<if test="dr != null" >
 		dr,

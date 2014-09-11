@@ -17,7 +17,7 @@ import java.math.*;
 import java.lang.reflect.Method;
 @Repository
 
-public class AppmgrSysUserDao {
+public class SysUserDao {
 
 	@Autowired
 	private AppmgrSessionAndMapperSupport mapperSupport;
@@ -69,18 +69,8 @@ public class AppmgrSysUserDao {
 	}
 
 	public int insertBatch(List<SysUser> records){
-		SqlSession session = mapperSupport.getSession();
-		session.commit();
-		try {
-			ISysUserMapper mapper = session.getMapper(ISysUserMapper.class);
-			return mapper.insertBatch(records);
-		 } catch (Exception e) {
-			session.rollback();
-			throw new RuntimeException(e);
-		}
-		finally{
-			session.close();
-		}
+		ISysUserMapper mapper = mapperSupport.getMapper(ISysUserMapper.class);
+		return mapper.insertBatch(records);
 	}
 
 	public int deleteByPrimaryKey(Integer key){

@@ -12,6 +12,9 @@ import org.apache.mina.core.buffer.IoBuffer;
 
 import cn.kangbao.common.exception.SysException;
 
+/**
+ * byte数组操作辅助类
+ */
 public class ByteUtil {
     public static byte[] append(byte[] a, byte[] b) {
         if (a == null) {
@@ -22,9 +25,9 @@ public class ByteUtil {
 
     /**
      * 截取数组
-     *
+     * 
      * @param bytes 数组
-     * @param len   截取长度
+     * @param len 截取长度
      * @return
      */
     public static byte[] interception(byte[] bytes, int len) {
@@ -35,8 +38,8 @@ public class ByteUtil {
 
     /**
      * 截取数组末尾
-     *
-     * @param bytes    数组
+     * 
+     * @param bytes 数组
      * @param position 开始截取位置
      * @return
      */
@@ -48,10 +51,10 @@ public class ByteUtil {
 
     /**
      * 从数据中取数据
-     *
-     * @param bytes    数组
+     * 
+     * @param bytes 数组
      * @param position 开始获取数据位置
-     * @param len      获取数据长度
+     * @param len 获取数据长度
      * @return
      */
     public static byte[] takebytes(byte[] bytes, int position, int len) {
@@ -66,7 +69,8 @@ public class ByteUtil {
             return b;
         }
 
-        System.arraycopy(bytes, position, b, 0, bytes.length - position >= len ? len : bytes.length - position);
+        System.arraycopy(bytes, position, b, 0,
+                bytes.length - position >= len ? len : bytes.length - position);
         if (bytes.length - position < len) {
             for (int i = bytes.length - position; i < b.length; i++) {
                 b[i] = 0;
@@ -141,12 +145,14 @@ public class ByteUtil {
             for (int i = 0; i < 1600; i++) {
                 if (i > 10 && i % 10 == 0) {
                     a = byteUtil.interception(a, 2500);
-                } else {
+                }
+                else {
                     a = byteUtil.append(a, list.get(i));
                 }
                 try {
                     Thread.sleep(10);
-                } catch (InterruptedException e) {
+                }
+                catch (InterruptedException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
@@ -159,7 +165,7 @@ public class ByteUtil {
 
     /**
      * byte数组转换为十六进制string
-     *
+     * 
      * @param bytes 数组
      * @return
      */
@@ -198,13 +204,16 @@ public class ByteUtil {
             String ret = new String(bytes, code);
             // ret=new String(ret.getBytes(), "UTF-8");
             return ret;
-        } catch (Throwable e) {
+        }
+        catch (Throwable e) {
             throw new SysException(e);
-        } finally {
+        }
+        finally {
             if (bin != null) {
                 try {
                     bin.close();
-                } catch (IOException e) {
+                }
+                catch (IOException e) {
                     throw new SysException(e);
                 }
             }
@@ -229,16 +238,19 @@ public class ByteUtil {
         if (value < 128) {
             byts = new byte[1];
             byts[0] = (byte) value;
-        } else if (value < 16384) {
+        }
+        else if (value < 16384) {
             byts = new byte[2];
             byts[0] = (byte) (((value >> 7) & 0x7F) | 0x80);
             byts[1] = (byte) (value & 0x7F);
-        } else if (value < 2097152) {
+        }
+        else if (value < 2097152) {
             byts = new byte[3];
             byts[0] = (byte) (((value >> 14) & 0x7F) | 0x80);
             byts[1] = (byte) (((value >> 7) & 0x7F) | 0x80);
             byts[2] = (byte) (value & 0x7F);
-        } else if (value < 1073741824) {
+        }
+        else if (value < 1073741824) {
             byts = new byte[4];
             byts[0] = (byte) (((value >> 22) & 0x7F) | 0x80);
             byts[1] = (byte) (((value >> 15) & 0x7F) | 0x80);

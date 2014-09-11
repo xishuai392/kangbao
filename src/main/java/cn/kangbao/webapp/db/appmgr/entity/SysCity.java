@@ -3,7 +3,8 @@ import java.io.Serializable;
 import java.math.*;
 import java.util.*;
 import org.apache.commons.lang.StringUtils;
-public class SysCity implements Serializable {
+import cn.kangbao.common.dto.AbstractDto;
+public class SysCity  extends AbstractDto  implements Serializable {
        	private Integer cityid;
 
 	public void setCityid(Integer cityid){

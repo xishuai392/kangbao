@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.kangbao.common.log.LoggerManager;
-import cn.kangbao.webapp.db.appmgr.dao.AppmgrPatientBloodpressureDao;
+import cn.kangbao.webapp.db.appmgr.dao.PatientBloodpressureDao;
 import cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure;
 
 /**
@@ -26,10 +26,10 @@ public class BloodPressureService {
     LoggerManager logger = LoggerManager.getLogger(BloodPressureService.class);
 
     @Autowired
-    private AppmgrPatientBloodpressureDao appmgrPatientBloodpressureDao;
+    private PatientBloodpressureDao patientBloodpressureDao;
 
     public boolean insertRecord(PatientBloodpressure record) {
-        int i = appmgrPatientBloodpressureDao.insertSelective(record);
+        int i = patientBloodpressureDao.insertSelective(record);
         logger.debug("insertRecord finished,count=" + i);
         return true;
     }

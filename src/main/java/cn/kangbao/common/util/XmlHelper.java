@@ -9,6 +9,9 @@ import org.simpleframework.xml.core.Persister;
 
 import com.thoughtworks.xstream.XStream;
 
+/**
+ * <Description>XStream XML操作工具类 <br>
+ */
 public class XmlHelper {
 
     public static String bean2XML(Object bean) {
@@ -49,7 +52,7 @@ public class XmlHelper {
 
     /**
      * 将对象序列化成xml
-     *
+     * 
      * @param bean
      * @return
      */
@@ -60,7 +63,8 @@ public class XmlHelper {
             Writer writer = new StringWriter();
             serializer.write(bean, writer);
             return writer.toString();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
         return "";
@@ -68,7 +72,7 @@ public class XmlHelper {
 
     /**
      * 将xml反序列化
-     *
+     * 
      * @param xml
      * @param clazz
      * @return
@@ -77,7 +81,8 @@ public class XmlHelper {
         Serializer serializer = new Persister();
         try {
             return serializer.read(clazz, xml);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
         return null;

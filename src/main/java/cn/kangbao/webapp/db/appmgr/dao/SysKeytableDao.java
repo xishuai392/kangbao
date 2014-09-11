@@ -17,7 +17,7 @@ import java.math.*;
 import java.lang.reflect.Method;
 @Repository
 
-public class AppmgrSysKeytableDao {
+public class SysKeytableDao {
 
 	@Autowired
 	private AppmgrSessionAndMapperSupport mapperSupport;
@@ -69,18 +69,8 @@ public class AppmgrSysKeytableDao {
 	}
 
 	public int insertBatch(List<SysKeytable> records){
-		SqlSession session = mapperSupport.getSession();
-		session.commit();
-		try {
-			ISysKeytableMapper mapper = session.getMapper(ISysKeytableMapper.class);
-			return mapper.insertBatch(records);
-		 } catch (Exception e) {
-			session.rollback();
-			throw new RuntimeException(e);
-		}
-		finally{
-			session.close();
-		}
+		ISysKeytableMapper mapper = mapperSupport.getMapper(ISysKeytableMapper.class);
+		return mapper.insertBatch(records);
 	}
 
 	public int deleteByPrimaryKey(String key){

@@ -128,10 +128,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update hospital
     <set >
-		<if test="record.hospitalid != null" >
-		hospitalId= #{record.hospitalid,jdbcType=INTEGER},
-	</if>
-	<if test="record.hospitalname != null" >
+		<if test="record.hospitalname != null" >
 		hospitalName= #{record.hospitalname,jdbcType=VARCHAR},
 	</if>
 	<if test="record.createtime != null" >
@@ -148,10 +145,7 @@
   <update id="updateByArg" parameterType="map" >
     update hospital
     set 
-		hospitalId = #{record.hospitalid,jdbcType=INTEGER},
-	hospitalName = #{record.hospitalname,jdbcType=VARCHAR},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP},
-	dr = #{record.dr,jdbcType=INTEGER}
+		hospitalName = #{record.hospitalname,jdbcType=VARCHAR},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -166,13 +160,13 @@
 		insert into hospital
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="hospitalid != null" >
-		hospitalid,
+		hospitalId,
 	</if>
 	<if test="hospitalname != null" >
-		hospitalname,
+		hospitalName,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
 	<if test="dr != null" >
 		dr,

@@ -134,10 +134,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update patient_bloodpressure
     <set >
-		<if test="record.measurementid != null" >
-		measurementId= #{record.measurementid,jdbcType=INTEGER},
-	</if>
-	<if test="record.personid != null" >
+		<if test="record.personid != null" >
 		personId= #{record.personid,jdbcType=INTEGER},
 	</if>
 	<if test="record.upnum != null" >
@@ -172,16 +169,7 @@
   <update id="updateByArg" parameterType="map" >
     update patient_bloodpressure
     set 
-		measurementId = #{record.measurementid,jdbcType=INTEGER},
-	personId = #{record.personid,jdbcType=INTEGER},
-	upNum = #{record.upnum,jdbcType=INTEGER},
-	downNum = #{record.downnum,jdbcType=INTEGER},
-	heartRate = #{record.heartrate,jdbcType=INTEGER},
-	testTime = #{record.testtime,jdbcType=TIMESTAMP},
-	feelingState = #{record.feelingstate,jdbcType=INTEGER},
-	feelingDesc = #{record.feelingdesc,jdbcType=VARCHAR},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP},
-	dr = #{record.dr,jdbcType=INTEGER}
+		personId = #{record.personid,jdbcType=INTEGER},	upNum = #{record.upnum,jdbcType=INTEGER},	downNum = #{record.downnum,jdbcType=INTEGER},	heartRate = #{record.heartrate,jdbcType=INTEGER},	testTime = #{record.testtime,jdbcType=TIMESTAMP},	feelingState = #{record.feelingstate,jdbcType=INTEGER},	feelingDesc = #{record.feelingdesc,jdbcType=VARCHAR},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -196,31 +184,31 @@
 		insert into patient_bloodpressure
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="measurementid != null" >
-		measurementid,
+		measurementId,
 	</if>
 	<if test="personid != null" >
-		personid,
+		personId,
 	</if>
 	<if test="upnum != null" >
-		upnum,
+		upNum,
 	</if>
 	<if test="downnum != null" >
-		downnum,
+		downNum,
 	</if>
 	<if test="heartrate != null" >
-		heartrate,
+		heartRate,
 	</if>
 	<if test="testtime != null" >
-		testtime,
+		testTime,
 	</if>
 	<if test="feelingstate != null" >
-		feelingstate,
+		feelingState,
 	</if>
 	<if test="feelingdesc != null" >
-		feelingdesc,
+		feelingDesc,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
 	<if test="dr != null" >
 		dr,

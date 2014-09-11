@@ -4,25 +4,18 @@
 package cn.kangbao.webapp.web.controller;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
 import cn.kangbao.common.exception.BaseAppException;
-import cn.kangbao.common.util.TableSeqUtil;
 import cn.kangbao.webapp.db.appmgr.entity.Person;
 import cn.kangbao.webapp.db.appmgr.entity.SysUser;
+import cn.kangbao.webapp.web.util.SeqUtil;
 
 /**
  * <Description> <br>
@@ -57,7 +50,7 @@ public abstract class AbstractBaseController {
      * @throws BaseAppException
      */
     public Integer getPkSequence(String tableName) throws BaseAppException {
-        return TableSeqUtil.getSequence(tableName);
+        return SeqUtil.getSequence(tableName);
     }
 
     /**
@@ -73,7 +66,7 @@ public abstract class AbstractBaseController {
      */
     public Integer[] getPkSequenceArray(String tableName, int count)
             throws BaseAppException {
-        return TableSeqUtil.getSequenceBatch(tableName, count);
+        return SeqUtil.getSequenceBatch(tableName, count);
     }
 
     /**

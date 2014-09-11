@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper
+	namespace="cn.kangbao.webapp.db.appmgr.custom.mapper.IDBValidateMapper">
+
+	<sql id="Arg_Where_Same">
+		<where>
+		    <if test="verifyFieldList != null">
+			<foreach collection="verifyFieldList" item="verifyField" separator="and">
+				${verifyField.fieldName} = #{verifyField.fieldValue}
+			</foreach>
+			</if>
+			
+			<if test="verifyFieldList != null and keyFieldList != null">
+			AND 
+			</if>
+			
+			<if test="keyFieldList != null">
+            <foreach collection="keyFieldList" item="keyField" separator="and">
+                ${keyField.fieldName} <![CDATA[ <> ]]> #{keyField.fieldValue}
+            </foreach>
+			</if>
+			
+		</where>
+		
+	</sql>
+	
+    <!--  是否存在重名 statementType="STATEMENT"  -->
+	<select id="isSameValue" resultType="Integer"
+	   parameterType="cn.kangbao.webapp.db.appmgr.custom.arg.DBValidateArg">
+		SELECT COUNT(*) FROM ${tableName}
+		<if test="_parameter != null">
+			<include refid="Arg_Where_Same" />
+		</if>
+	</select>
+	
+</mapper>

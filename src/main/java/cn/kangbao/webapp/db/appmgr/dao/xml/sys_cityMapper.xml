@@ -128,10 +128,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update sys_city
     <set >
-		<if test="record.cityid != null" >
-		cityId= #{record.cityid,jdbcType=INTEGER},
-	</if>
-	<if test="record.cityname != null" >
+		<if test="record.cityname != null" >
 		cityName= #{record.cityname,jdbcType=VARCHAR},
 	</if>
 	<if test="record.upcityid != null" >
@@ -148,10 +145,7 @@
   <update id="updateByArg" parameterType="map" >
     update sys_city
     set 
-		cityId = #{record.cityid,jdbcType=INTEGER},
-	cityName = #{record.cityname,jdbcType=VARCHAR},
-	upCityId = #{record.upcityid,jdbcType=INTEGER},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP}
+		cityName = #{record.cityname,jdbcType=VARCHAR},	upCityId = #{record.upcityid,jdbcType=INTEGER},	createTime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -166,16 +160,16 @@
 		insert into sys_city
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="cityid != null" >
-		cityid,
+		cityId,
 	</if>
 	<if test="cityname != null" >
-		cityname,
+		cityName,
 	</if>
 	<if test="upcityid != null" >
-		upcityid,
+		upCityId,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >

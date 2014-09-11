@@ -127,13 +127,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update message_user
     <set >
-		<if test="record.messageid != null" >
-		messageId= #{record.messageid,jdbcType=INTEGER},
-	</if>
-	<if test="record.userid != null" >
-		userId= #{record.userid,jdbcType=INTEGER},
-	</if>
-	<if test="record.createtime != null" >
+		<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
 	</if>
     </set>
@@ -144,9 +138,7 @@
   <update id="updateByArg" parameterType="map" >
     update message_user
     set 
-		messageId = #{record.messageid,jdbcType=INTEGER},
-	userId = #{record.userid,jdbcType=INTEGER},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP}
+		createTime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -161,13 +153,13 @@
 		insert into message_user
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="messageid != null" >
-		messageid,
+		messageId,
 	</if>
 	<if test="userid != null" >
-		userid,
+		userId,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >

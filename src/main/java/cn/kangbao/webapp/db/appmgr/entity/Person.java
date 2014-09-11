@@ -3,7 +3,8 @@ import java.io.Serializable;
 import java.math.*;
 import java.util.*;
 import org.apache.commons.lang.StringUtils;
-public class Person implements Serializable {
+import cn.kangbao.common.dto.AbstractDto;
+public class Person  extends AbstractDto  implements Serializable {
        	private Integer personid;
 
 	public void setPersonid(Integer personid){

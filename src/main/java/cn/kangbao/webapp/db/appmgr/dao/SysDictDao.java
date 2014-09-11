@@ -17,7 +17,7 @@ import java.math.*;
 import java.lang.reflect.Method;
 @Repository
 
-public class AppmgrSysDictDao {
+public class SysDictDao {
 
 	@Autowired
 	private AppmgrSessionAndMapperSupport mapperSupport;
@@ -69,18 +69,8 @@ public class AppmgrSysDictDao {
 	}
 
 	public int insertBatch(List<SysDict> records){
-		SqlSession session = mapperSupport.getSession();
-		session.commit();
-		try {
-			ISysDictMapper mapper = session.getMapper(ISysDictMapper.class);
-			return mapper.insertBatch(records);
-		 } catch (Exception e) {
-			session.rollback();
-			throw new RuntimeException(e);
-		}
-		finally{
-			session.close();
-		}
+		ISysDictMapper mapper = mapperSupport.getMapper(ISysDictMapper.class);
+		return mapper.insertBatch(records);
 	}
 
 	public int deleteByPrimaryKey(Long key){

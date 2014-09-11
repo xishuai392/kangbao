@@ -9,16 +9,25 @@ import java.util.Map;
 
 import cn.kangbao.common.exception.SysException;
 
+/**
+ * <Description> Http工具类<br>
+ * 
+ * @author pan.xiaobo<br>
+ * @version 1.0<br>
+ * @taskId <br>
+ * @CreateDate 2014年8月29日 <br>
+ * @since V1.0<br>
+ * @see com.ztesoft.framework.util <br>
+ */
 public class HttpUtil {
 
     public enum HttpMethod {
         GET, POST, DELETE, PUT
     }
 
-
     private HttpURLConnection urlc = null;
 
-    private String encoding = "utf-8";
+    private String encoding = FrameWorkConstants.UTF_8_ENCODING;
 
     private HttpMethod method = HttpMethod.GET;
 
@@ -49,12 +58,14 @@ public class HttpUtil {
         StringBuffer sb = new StringBuffer();
         if (paramMap.isEmpty()) {
             return "";
-        } else {
+        }
+        else {
             for (String key : paramMap.keySet()) {
                 String value = (String) paramMap.get(key);
                 if (sb.length() < 1) {
                     sb.append(key).append("=").append(value);
-                } else {
+                }
+                else {
                     sb.append("&").append(key).append("=").append(value);
                 }
             }
@@ -62,11 +73,20 @@ public class HttpUtil {
         }
     }
 
-    public void sendRequest(String urlStr, Map<String, Object> paramMap) throws Exception {
+    /**
+     * 发送请求
+     * 
+     * @param urlStr
+     * @param paramMap
+     * @throws Exception
+     */
+    public void sendRequest(String urlStr, Map<String, Object> paramMap)
+            throws Exception {
         String paramStr = prepareParam(paramMap);
         if (paramStr == null || paramStr.trim().length() < 1) {
 
-        } else {
+        }
+        else {
             urlStr += "?" + paramStr;
         }
         sendRequest(urlStr, "");
@@ -101,8 +121,10 @@ public class HttpUtil {
 
                 String ret = new String(buffer, encoding);
                 return ret;
-            } catch (Throwable e) {
-                throw new SysException(e, "HttpHelper获取http请求出现异常" + e.getMessage());
+            }
+            catch (Throwable e) {
+                throw new SysException(e, "HttpUtil获取http请求出现异常"
+                        + e.getMessage());
             }
         }
         return "";
@@ -116,7 +138,8 @@ public class HttpUtil {
                 for (String key : properties.keySet()) {
                     if (i == 0) {
                         param.append("?");
-                    } else {
+                    }
+                    else {
                         param.append("&");
                     }
                     param.append(key).append("=").append(properties.get(key));
@@ -127,7 +150,8 @@ public class HttpUtil {
 
             URL u = new URL(url);
             urlc = (HttpURLConnection) u.openConnection();
-            urlc.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
+            urlc.setRequestProperty("User-Agent",
+                    "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
             urlc.setReadTimeout(timeout);
             urlc.addRequestProperty("method", String.valueOf(method));
             urlc.setDoOutput(true);
@@ -142,8 +166,9 @@ public class HttpUtil {
                 urlc.getOutputStream().write(data);
             }
 
-        } catch (Throwable e) {
-            throw new SysException(e, "HttpHelper发送http请求出现异常" + e.getMessage());
+        }
+        catch (Throwable e) {
+            throw new SysException(e, "HttpUtil发送http请求出现异常" + e.getMessage());
         }
 
     }
@@ -152,8 +177,9 @@ public class HttpUtil {
         byte[] sdata = null;
         try {
             sdata = data.getBytes(encoding);
-        } catch (Throwable e) {
-            throw new SysException(e, "HttpHelper发送http请求出现异常" + e.getMessage());
+        }
+        catch (Throwable e) {
+            throw new SysException(e, "HttpUtil发送http请求出现异常" + e.getMessage());
         }
         sendRequest(url, sdata);
     }
@@ -167,7 +193,8 @@ public class HttpUtil {
             InputStream inputStream = urlc.getInputStream();
             Thread.sleep(100);
             while (true) {
-                int size = inputStream.available() > 0 ? inputStream.available() : 1024;
+                int size = inputStream.available() > 0 ? inputStream
+                        .available() : 1024;
                 byte[] buffer = new byte[size];
                 int ret = inputStream.read(buffer);
                 if (ret <= 0) {
@@ -176,14 +203,16 @@ public class HttpUtil {
 
                 if (ret == size) {
                     retbuffer = ByteUtil.append(retbuffer, buffer);
-                } else {
+                }
+                else {
                     byte[] tmpbuffer = new byte[ret];
                     System.arraycopy(buffer, 0, tmpbuffer, 0, tmpbuffer.length);
                     retbuffer = ByteUtil.append(retbuffer, tmpbuffer);
                 }
             }
-        } catch (Throwable e) {
-            throw new SysException(e, "HttpHelper下载资源出现异常" + e.getMessage());
+        }
+        catch (Throwable e) {
+            throw new SysException(e, "HttpUtil下载资源出现异常" + e.getMessage());
         }
         return retbuffer;
     }

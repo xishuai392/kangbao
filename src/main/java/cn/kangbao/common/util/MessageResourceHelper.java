@@ -8,6 +8,13 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
 /**
+ * <Description>消息资源管理器 <br>
+ * 
+ * @version 1.0<br>
+ * @taskId <br>
+ * @CreateDate 2014年4月15日 <br>
+ * @see com.ztesoft.framework.util <br>
+ * @since V1.0<br>
  */
 
 public class MessageResourceHelper {
@@ -22,17 +29,16 @@ public class MessageResourceHelper {
 
     static {
         // 可以在这里增加多个配置文件
-        resource.setBasenames(FWConstants.CONFIG_PROPERTIES, FWConstants.ERORR_CODE_PROPERTIES_BASENAME, FWConstants.FW_ERORR_CODE_PROPERTIES_BASENAME);
-        resource.setDefaultEncoding(FWConstants.UTF_8);
+        resource.setBasenames(FrameWorkConstants.CONFIG_PROPERTIES,
+                FrameWorkConstants.ERORR_CODE_PROPERTIES_BASENAME);
+        resource.setDefaultEncoding(FrameWorkConstants.UTF_8_ENCODING);
     }
 
     /**
      * Description: 得到message <br>
-     *
+     * 
      * @param key <br>
      * @return <br>
-     * @author yan.qicui <br>
-     * @taskId <br>
      */
     public static String getMessage(String key) {
         String resStr = map.get(key);
@@ -49,23 +55,25 @@ public class MessageResourceHelper {
         return getMessage(key, args, "");
     }
 
-    public static String getMessage(String key, Object[] args, String defaultMessage) {
+    public static String getMessage(String key, Object[] args,
+            String defaultMessage) {
         return getMessage(key, args, defaultMessage, locale);
     }
 
-    public static String getMessage(String key, Object[] args, String defaultMessage, Locale locale) {
+    public static String getMessage(String key, Object[] args,
+            String defaultMessage, Locale locale) {
         return resource.getMessage(key, args, defaultMessage, locale);
     }
 
     /**
      * Description: 清空缓存<br>
-     *
-     * @author yan.qicui <br>
-     * @taskId <br>
-     * <br>
      */
     public static void clear() {
         map.clear();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(MessageResourceHelper.getMessage("test"));
     }
 
 }

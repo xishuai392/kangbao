@@ -5,8 +5,6 @@ import java.util.regex.Pattern;
 
 /**
  * 正则表达式辅助类
- *
- * @author Administrator
  */
 public class RegexHelper {
     public static boolean isMatch(String regex, String text) {

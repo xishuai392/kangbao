@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
 
 import cn.kangbao.webapp.db.appmgr.arg.PatientHealthArg;
 import cn.kangbao.webapp.db.appmgr.arg.PatientHealthArg.PatientHealthCriteria;
-import cn.kangbao.webapp.db.appmgr.dao.AppmgrPatientHealthDao;
-import cn.kangbao.webapp.db.appmgr.dao.mapper.IPatientHealthMapper;
+import cn.kangbao.webapp.db.appmgr.dao.PatientHealthDao;
 import cn.kangbao.webapp.db.appmgr.entity.PatientHealth;
 
 /**
@@ -27,7 +26,7 @@ import cn.kangbao.webapp.db.appmgr.entity.PatientHealth;
 @Service
 public class PatientHealthService {
     @Autowired
-    private AppmgrPatientHealthDao appmgrPatientHealthDao;
+    private  PatientHealthDao patientHealthDao;
 
     /**
      * 根据personId获取其对应的健康信息
@@ -40,7 +39,7 @@ public class PatientHealthService {
         PatientHealthCriteria crit = arg.createCriteria();
         crit.andPersonidEqualTo(personId);
         crit.andDrEqualTo(0);
-        List<PatientHealth> resultList = appmgrPatientHealthDao.selectByArg(arg);
+        List<PatientHealth> resultList = patientHealthDao.selectByArg(arg);
         return resultList;
     }
 }

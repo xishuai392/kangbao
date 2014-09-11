@@ -10,8 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.kangbao.common.log.LoggerManager;
-import cn.kangbao.common.util.Constants;
-import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 
 /**
  * <Description> <br>

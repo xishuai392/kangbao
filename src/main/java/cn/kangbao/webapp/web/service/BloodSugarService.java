@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.kangbao.common.log.LoggerManager;
-import cn.kangbao.webapp.db.appmgr.dao.AppmgrPatientBloodsugarDao;
+import cn.kangbao.webapp.db.appmgr.dao.PatientBloodsugarDao;
 import cn.kangbao.webapp.db.appmgr.entity.PatientBloodsugar;
 
 /**
@@ -25,10 +25,10 @@ public class BloodSugarService {
     LoggerManager logger = LoggerManager.getLogger(BloodSugarService.class);
 
     @Autowired
-    private AppmgrPatientBloodsugarDao appmgrPatientBloodsugarDao;
+    private  PatientBloodsugarDao patientBloodsugarDao;
 
     public boolean insertRecord(PatientBloodsugar record) {
-        int i = appmgrPatientBloodsugarDao.insertSelective(record);
+        int i = patientBloodsugarDao.insertSelective(record);
         logger.debug("insertRecord finished,count=" + i);
         return true;
     }

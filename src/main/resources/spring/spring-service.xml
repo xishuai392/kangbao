@@ -22,7 +22,7 @@
 			expression="org.springframework.stereotype.Service" />
 	</context:component-scan>
 
-	<bean class="cn.kangbao.common.util.SpringContextHolderUtils" />
+	<bean class="cn.kangbao.common.plugin.SpringContextHolder" />
 
 
 

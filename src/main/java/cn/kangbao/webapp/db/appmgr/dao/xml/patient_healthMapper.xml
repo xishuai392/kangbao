@@ -131,10 +131,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update patient_health
     <set >
-		<if test="record.healthid != null" >
-		healthId= #{record.healthid,jdbcType=INTEGER},
-	</if>
-	<if test="record.personid != null" >
+		<if test="record.personid != null" >
 		personId= #{record.personid,jdbcType=INTEGER},
 	</if>
 	<if test="record.weight != null" >
@@ -160,13 +157,7 @@
   <update id="updateByArg" parameterType="map" >
     update patient_health
     set 
-		healthId = #{record.healthid,jdbcType=INTEGER},
-	personId = #{record.personid,jdbcType=INTEGER},
-	weight = #{record.weight,jdbcType=DECIMAL},
-	height = #{record.height,jdbcType=DECIMAL},
-	isFamilyDiabetes = #{record.isfamilydiabetes,jdbcType=CHAR},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP},
-	dr = #{record.dr,jdbcType=INTEGER}
+		personId = #{record.personid,jdbcType=INTEGER},	weight = #{record.weight,jdbcType=DECIMAL},	height = #{record.height,jdbcType=DECIMAL},	isFamilyDiabetes = #{record.isfamilydiabetes,jdbcType=CHAR},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -181,10 +172,10 @@
 		insert into patient_health
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="healthid != null" >
-		healthid,
+		healthId,
 	</if>
 	<if test="personid != null" >
-		personid,
+		personId,
 	</if>
 	<if test="weight != null" >
 		weight,
@@ -193,10 +184,10 @@
 		height,
 	</if>
 	<if test="isfamilydiabetes != null" >
-		isfamilydiabetes,
+		isFamilyDiabetes,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
 	<if test="dr != null" >
 		dr,

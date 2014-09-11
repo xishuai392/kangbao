@@ -135,10 +135,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update person
     <set >
-		<if test="record.personid != null" >
-		personId= #{record.personid,jdbcType=INTEGER},
-	</if>
-	<if test="record.userid != null" >
+		<if test="record.userid != null" >
 		userId= #{record.userid,jdbcType=INTEGER},
 	</if>
 	<if test="record.mainpersonid != null" >
@@ -176,17 +173,7 @@
   <update id="updateByArg" parameterType="map" >
     update person
     set 
-		personId = #{record.personid,jdbcType=INTEGER},
-	userId = #{record.userid,jdbcType=INTEGER},
-	mainPersonId = #{record.mainpersonid,jdbcType=INTEGER},
-	userType = #{record.usertype,jdbcType=CHAR},
-	fullName = #{record.fullname,jdbcType=VARCHAR},
-	sexType = #{record.sextype,jdbcType=INTEGER},
-	birthday = #{record.birthday,jdbcType=DATE},
-	mobile = #{record.mobile,jdbcType=VARCHAR},
-	cityId = #{record.cityid,jdbcType=INTEGER},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP},
-	dr = #{record.dr,jdbcType=INTEGER}
+		userId = #{record.userid,jdbcType=INTEGER},	mainPersonId = #{record.mainpersonid,jdbcType=INTEGER},	userType = #{record.usertype,jdbcType=CHAR},	fullName = #{record.fullname,jdbcType=VARCHAR},	sexType = #{record.sextype,jdbcType=INTEGER},	birthday = #{record.birthday,jdbcType=DATE},	mobile = #{record.mobile,jdbcType=VARCHAR},	cityId = #{record.cityid,jdbcType=INTEGER},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -201,22 +188,22 @@
 		insert into person
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="personid != null" >
-		personid,
+		personId,
 	</if>
 	<if test="userid != null" >
-		userid,
+		userId,
 	</if>
 	<if test="mainpersonid != null" >
-		mainpersonid,
+		mainPersonId,
 	</if>
 	<if test="usertype != null" >
-		usertype,
+		userType,
 	</if>
 	<if test="fullname != null" >
-		fullname,
+		fullName,
 	</if>
 	<if test="sextype != null" >
-		sextype,
+		sexType,
 	</if>
 	<if test="birthday != null" >
 		birthday,
@@ -225,10 +212,10 @@
 		mobile,
 	</if>
 	<if test="cityid != null" >
-		cityid,
+		cityId,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
 	<if test="dr != null" >
 		dr,

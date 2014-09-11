@@ -17,7 +17,7 @@ import java.math.*;
 import java.lang.reflect.Method;
 @Repository
 
-public class AppmgrSysMessageDao {
+public class SysMessageDao {
 
 	@Autowired
 	private AppmgrSessionAndMapperSupport mapperSupport;
@@ -69,18 +69,8 @@ public class AppmgrSysMessageDao {
 	}
 
 	public int insertBatch(List<SysMessage> records){
-		SqlSession session = mapperSupport.getSession();
-		session.commit();
-		try {
-			ISysMessageMapper mapper = session.getMapper(ISysMessageMapper.class);
-			return mapper.insertBatch(records);
-		 } catch (Exception e) {
-			session.rollback();
-			throw new RuntimeException(e);
-		}
-		finally{
-			session.close();
-		}
+		ISysMessageMapper mapper = mapperSupport.getMapper(ISysMessageMapper.class);
+		return mapper.insertBatch(records);
 	}
 
 	public int deleteByPrimaryKey(Integer key){

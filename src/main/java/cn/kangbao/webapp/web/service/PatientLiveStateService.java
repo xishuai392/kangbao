@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import cn.kangbao.webapp.db.appmgr.arg.PatientLivestateArg;
 import cn.kangbao.webapp.db.appmgr.arg.PatientLivestateArg.PatientLivestateCriteria;
-import cn.kangbao.webapp.db.appmgr.dao.AppmgrPatientLivestateDao;
+import cn.kangbao.webapp.db.appmgr.dao.PatientLivestateDao;
 import cn.kangbao.webapp.db.appmgr.entity.PatientLivestate;
 
 /**
@@ -27,7 +27,7 @@ import cn.kangbao.webapp.db.appmgr.entity.PatientLivestate;
 public class PatientLiveStateService {
 
     @Autowired
-    private AppmgrPatientLivestateDao appmgrPatientLivestateDao;
+    private PatientLivestateDao patientLivestateDao;
 
     /**
      * 根据PersonId返回所有符合条件的生活状态
@@ -40,6 +40,6 @@ public class PatientLiveStateService {
         PatientLivestateCriteria crit = arg.createCriteria();
         crit.andPersonidEqualTo(personId);
         crit.andDrEqualTo(0);
-        return appmgrPatientLivestateDao.selectByArg(arg);
+        return patientLivestateDao.selectByArg(arg);
     }
 }

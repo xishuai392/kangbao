@@ -3,7 +3,8 @@ import java.io.Serializable;
 import java.math.*;
 import java.util.*;
 import org.apache.commons.lang.StringUtils;
-public class PatientHealth implements Serializable {
+import cn.kangbao.common.dto.AbstractDto;
+public class PatientHealth  extends AbstractDto  implements Serializable {
        	private Integer healthid;
 
 	public void setHealthid(Integer healthid){

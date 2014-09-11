@@ -3,7 +3,8 @@ import java.io.Serializable;
 import java.math.*;
 import java.util.*;
 import org.apache.commons.lang.StringUtils;
-public class SysDict implements Serializable {
+import cn.kangbao.common.dto.AbstractDto;
+public class SysDict  extends AbstractDto  implements Serializable {
        	private Long dictid;
 
 	public void setDictid(Long dictid){

@@ -1,7 +1,5 @@
 package cn.kangbao.common.util;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.Properties;
 
 import org.springframework.mail.SimpleMailMessage;
@@ -10,7 +8,6 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 /**
  * 发送邮件辅助类
- *
  */
 public class SendMailHelper {
 
@@ -49,7 +46,8 @@ public class SendMailHelper {
 
     }
 
-    public SendMailHelper(String host, int port, String username, String password) {
+    public SendMailHelper(String host, int port, String username,
+            String password) {
         JavaMailSenderImpl javaMailSenderImp = new JavaMailSenderImpl();
         javaMailSenderImp.setHost(host);
         javaMailSenderImp.setPort(port);
@@ -57,7 +55,8 @@ public class SendMailHelper {
         javaMailSenderImp.setPassword(password);
         Properties props = new Properties();
         props.setProperty("mail.smtp.auth", "true");
-        props.setProperty("ssl.SocketFactory.provider", "com.hollycrm.service.ticket.util.DNESSLSocketFactory");
+        props.setProperty("ssl.SocketFactory.provider",
+                "com.hollycrm.service.ticket.util.DNESSLSocketFactory");
         props.setProperty("mail.smtp.starttls.enable", "true");
         props.setProperty("mail.smtp.timeout", "25000");
         props.setProperty("mail.smtp.localhost", "localHostAdress");
@@ -103,7 +102,7 @@ public class SendMailHelper {
 
     /**
      * 发送普通邮件
-     *
+     * 
      * @parem sendSubject 主题
      * @parem sendText 内容
      */
@@ -114,7 +113,7 @@ public class SendMailHelper {
             mail.setFrom(sendFrom);
             mail.setSubject(sendSubject);
             mail.setText(sendText);
-            // javaMailSender.send(mail);
+            javaMailSender.send(mail);
             return true;
         }
         catch (Exception e) {
@@ -126,7 +125,7 @@ public class SendMailHelper {
 
     /**
      * 发送普通邮件组
-     *
+     * 
      * @parem sendSubject 主题
      * @parem sendText 内容
      * @parem sendToList 接收者群组
@@ -153,7 +152,8 @@ public class SendMailHelper {
     // [end]
     public static void main(String[] args) {
 
-        SendMailHelper sendMailHelper = new SendMailHelper("smtp.163.com", 25, "songhuahua0214@163.com", "19910927gao");
+        SendMailHelper sendMailHelper = new SendMailHelper("smtp.163.com", 25,
+                "username", "password");
         // sendMailHelper.setSendTo("");
         sendMailHelper.send("Test", "发送邮件");
     }

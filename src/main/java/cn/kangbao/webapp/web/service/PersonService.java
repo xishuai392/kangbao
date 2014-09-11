@@ -19,9 +19,9 @@ import cn.kangbao.webapp.db.appmgr.arg.PatientLivestateArg.PatientLivestateCrite
 import cn.kangbao.webapp.db.appmgr.arg.PersonArg;
 import cn.kangbao.webapp.db.appmgr.arg.PersonArg.PersonCriteria;
 import cn.kangbao.webapp.db.appmgr.custom.dao.CustomAllDAO;
-import cn.kangbao.webapp.db.appmgr.dao.AppmgrPatientHealthDao;
-import cn.kangbao.webapp.db.appmgr.dao.AppmgrPatientLivestateDao;
-import cn.kangbao.webapp.db.appmgr.dao.AppmgrPersonDao;
+import cn.kangbao.webapp.db.appmgr.dao.PatientHealthDao;
+import cn.kangbao.webapp.db.appmgr.dao.PatientLivestateDao;
+import cn.kangbao.webapp.db.appmgr.dao.PersonDao;
 import cn.kangbao.webapp.db.appmgr.entity.PatientHealth;
 import cn.kangbao.webapp.db.appmgr.entity.PatientLivestate;
 import cn.kangbao.webapp.db.appmgr.entity.Person;
@@ -46,13 +46,13 @@ public class PersonService {
     private CustomAllDAO customAllDAO;
 
     @Autowired
-    private AppmgrPersonDao appmgrPersonDao;
+    private PersonDao personDao;
 
     @Autowired
-    private AppmgrPatientHealthDao appmgrPatientHealthDao;
+    private PatientHealthDao patientHealthDao;
 
     @Autowired
-    private AppmgrPatientLivestateDao appmgrPatientLivestateDao;
+    private PatientLivestateDao patientLivestateDao;
 
     public List<Person> getPersonByUserId(int userId) {
         PersonArg arg = new PersonArg();
@@ -60,19 +60,19 @@ public class PersonService {
         cri.andUseridEqualTo(userId);
         // 有效的记录
         cri.andDrEqualTo(IWebConstans.FIELD_DR_ACTVED);
-        return appmgrPersonDao.selectByArg(arg);
+        return personDao.selectByArg(arg);
     }
 
     public int insert(Person record) {
-        return appmgrPersonDao.insert(record);
+        return personDao.insert(record);
     }
 
     public Person selectByPersonId(Integer personId) {
-        return appmgrPersonDao.selectByPrimaryKey(personId);
+        return personDao.selectByPrimaryKey(personId);
     }
 
     public int updateByPerson(Person record) {
-        return appmgrPersonDao.updateByPrimaryKeySelective(record);
+        return personDao.updateByPrimaryKeySelective(record);
     }
 
     /**
@@ -110,18 +110,18 @@ public class PersonService {
     public boolean insertPersonAndHealthAndLiveState(Person person,
             PatientHealth patientHealth,
             List<PatientLivestate> patientLivestateList) {
-        int i = appmgrPersonDao.insert(person);
-        int j = appmgrPatientHealthDao.insertSelective(patientHealth);
+        int i = personDao.insert(person);
+        int j = patientHealthDao.insertSelective(patientHealth);
         PatientLivestateArg patientLivestateArg = new PatientLivestateArg();
         PatientLivestateCriteria patientLivestateCriteria = patientLivestateArg
                 .createCriteria();
         patientLivestateCriteria.andPersonidEqualTo(person.getPersonid());
-        int k = appmgrPatientLivestateDao.deleteByArg(patientLivestateArg);
+        int k = patientLivestateDao.deleteByArg(patientLivestateArg);
         boolean isNeedInsertLivestate = patientLivestateList.size() > 0 ? true
                 : false;
         int l = 0;
         if (isNeedInsertLivestate)
-            l = appmgrPatientLivestateDao.insertBatch(patientLivestateList);
+            l = patientLivestateDao.insertBatch(patientLivestateList);
 
         logger.info("person insert: " + i + " ,health insert:" + j
                 + " ,livestate delete:" + k + " ,isNeedInsertLivestate :"
@@ -141,17 +141,17 @@ public class PersonService {
             PatientHealth patientHealth,
             List<PatientLivestate> patientLivestateList) {
         int i = updateByPerson(person);
-        int j = appmgrPatientHealthDao.updateByPrimaryKey(patientHealth);
+        int j = patientHealthDao.updateByPrimaryKey(patientHealth);
         PatientLivestateArg patientLivestateArg = new PatientLivestateArg();
         PatientLivestateCriteria patientLivestateCriteria = patientLivestateArg
                 .createCriteria();
         patientLivestateCriteria.andPersonidEqualTo(person.getPersonid());
-        int k = appmgrPatientLivestateDao.deleteByArg(patientLivestateArg);
+        int k = patientLivestateDao.deleteByArg(patientLivestateArg);
         boolean isNeedInsertLivestate = patientLivestateList.size() > 0 ? true
                 : false;
         int l = 0;
         if (isNeedInsertLivestate)
-            l = appmgrPatientLivestateDao.insertBatch(patientLivestateList);
+            l = patientLivestateDao.insertBatch(patientLivestateList);
 
         logger.info("person update: " + i + " ,health update:" + j
                 + " ,livestate delete:" + k + " ,isNeedInsertLivestate :"
@@ -174,7 +174,7 @@ public class PersonService {
         // 置为无效
         person.setDr(IWebConstans.FIELD_DR_DISABLED);
 
-        int i = appmgrPersonDao.updateByArgSelective(person, personArg);
+        int i = personDao.updateByArgSelective(person, personArg);
 
         PatientHealthArg patientHealthArg = new PatientHealthArg();
         PatientHealthCriteria patientHealthCriteria = patientHealthArg
@@ -184,7 +184,7 @@ public class PersonService {
         // 置为无效
         patientHealth.setDr(IWebConstans.FIELD_DR_DISABLED);
 
-        int j = appmgrPatientHealthDao.updateByArgSelective(patientHealth,
+        int j = patientHealthDao.updateByArgSelective(patientHealth,
                 patientHealthArg);
 
         PatientLivestateArg patientLivestateArg = new PatientLivestateArg();
@@ -194,8 +194,8 @@ public class PersonService {
         PatientLivestate patientLivestate = new PatientLivestate();
         // 置为无效
         patientLivestate.setDr(IWebConstans.FIELD_DR_DISABLED);
-        int k = appmgrPatientLivestateDao.updateByArgSelective(
-                patientLivestate, patientLivestateArg);
+        int k = patientLivestateDao.updateByArgSelective(patientLivestate,
+                patientLivestateArg);
 
         logger.info("delete... person update dr=1: " + i
                 + " ,health update dr=1:" + j + " ,livestate update dr=1:" + k);

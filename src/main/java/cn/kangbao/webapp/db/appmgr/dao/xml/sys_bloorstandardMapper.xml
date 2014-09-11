@@ -131,10 +131,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update sys_bloorstandard
     <set >
-		<if test="record.bloorstdid != null" >
-		bloorStdId= #{record.bloorstdid,jdbcType=INTEGER},
-	</if>
-	<if test="record.standardname != null" >
+		<if test="record.standardname != null" >
 		standardName= #{record.standardname,jdbcType=VARCHAR},
 	</if>
 	<if test="record.contractmaxnum != null" >
@@ -160,13 +157,7 @@
   <update id="updateByArg" parameterType="map" >
     update sys_bloorstandard
     set 
-		bloorStdId = #{record.bloorstdid,jdbcType=INTEGER},
-	standardName = #{record.standardname,jdbcType=VARCHAR},
-	contractMaxNum = #{record.contractmaxnum,jdbcType=INTEGER},
-	contractMinNum = #{record.contractminnum,jdbcType=INTEGER},
-	diastolicMaxNum = #{record.diastolicmaxnum,jdbcType=INTEGER},
-	diastolicMinNum = #{record.diastolicminnum,jdbcType=INTEGER},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP}
+		standardName = #{record.standardname,jdbcType=VARCHAR},	contractMaxNum = #{record.contractmaxnum,jdbcType=INTEGER},	contractMinNum = #{record.contractminnum,jdbcType=INTEGER},	diastolicMaxNum = #{record.diastolicmaxnum,jdbcType=INTEGER},	diastolicMinNum = #{record.diastolicminnum,jdbcType=INTEGER},	createTime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -181,25 +172,25 @@
 		insert into sys_bloorstandard
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="bloorstdid != null" >
-		bloorstdid,
+		bloorStdId,
 	</if>
 	<if test="standardname != null" >
-		standardname,
+		standardName,
 	</if>
 	<if test="contractmaxnum != null" >
-		contractmaxnum,
+		contractMaxNum,
 	</if>
 	<if test="contractminnum != null" >
-		contractminnum,
+		contractMinNum,
 	</if>
 	<if test="diastolicmaxnum != null" >
-		diastolicmaxnum,
+		diastolicMaxNum,
 	</if>
 	<if test="diastolicminnum != null" >
-		diastolicminnum,
+		diastolicMinNum,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >

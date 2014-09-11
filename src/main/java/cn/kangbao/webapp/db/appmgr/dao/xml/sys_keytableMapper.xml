@@ -128,10 +128,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update sys_keytable
     <set >
-		<if test="record.tablename != null" >
-		tableName= #{record.tablename,jdbcType=VARCHAR},
-	</if>
-	<if test="record.currentvalue != null" >
+		<if test="record.currentvalue != null" >
 		currentValue= #{record.currentvalue,jdbcType=INTEGER},
 	</if>
 	<if test="record.increment != null" >
@@ -148,10 +145,7 @@
   <update id="updateByArg" parameterType="map" >
     update sys_keytable
     set 
-		tableName = #{record.tablename,jdbcType=VARCHAR},
-	currentValue = #{record.currentvalue,jdbcType=INTEGER},
-	increment = #{record.increment,jdbcType=INTEGER},
-	createTime = #{record.createtime,jdbcType=TIMESTAMP}
+		currentValue = #{record.currentvalue,jdbcType=INTEGER},	increment = #{record.increment,jdbcType=INTEGER},	createTime = #{record.createtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -166,16 +160,16 @@
 		insert into sys_keytable
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="tablename != null" >
-		tablename,
+		tableName,
 	</if>
 	<if test="currentvalue != null" >
-		currentvalue,
+		currentValue,
 	</if>
 	<if test="increment != null" >
 		increment,
 	</if>
 	<if test="createtime != null" >
-		createtime,
+		createTime,
 	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >

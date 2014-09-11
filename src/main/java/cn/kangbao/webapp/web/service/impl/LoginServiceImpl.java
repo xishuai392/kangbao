@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import cn.kangbao.common.exception.BaseAppException;
 import cn.kangbao.webapp.db.appmgr.arg.SysUserArg;
 import cn.kangbao.webapp.db.appmgr.arg.SysUserArg.SysUserCriteria;
-import cn.kangbao.webapp.db.appmgr.dao.AppmgrSysUserDao;
+import cn.kangbao.webapp.db.appmgr.dao.SysUserDao;
 import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 import cn.kangbao.webapp.web.controller.IWebConstans;
 import cn.kangbao.webapp.web.service.ILoginService;
@@ -33,7 +33,7 @@ import cn.kangbao.webapp.web.service.ILoginService;
 public class LoginServiceImpl implements ILoginService {
 
     @Autowired
-    private AppmgrSysUserDao appmgrSysUserDao;
+    private SysUserDao sysUserDao;
 
     /*
      * (non-Javadoc)
@@ -51,7 +51,7 @@ public class LoginServiceImpl implements ILoginService {
         criteria.andPasswordEqualTo(password);
         //有效的记录
         criteria.andDrEqualTo(IWebConstans.FIELD_DR_ACTVED);
-        List<SysUser> listUsers = appmgrSysUserDao.selectByArgAndPage(arg,
+        List<SysUser> listUsers = sysUserDao.selectByArgAndPage(arg,
                 new RowBounds(0, 10));
         if (null == listUsers || listUsers.size() == 0)
             throw new BaseAppException("用户不存在或密码错误！");

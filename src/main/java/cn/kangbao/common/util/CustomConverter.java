@@ -6,8 +6,6 @@ import java.beans.PropertyDescriptor;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.util.StringUtils;
-
 import net.sf.cglib.core.Converter;
 import cn.kangbao.common.log.LoggerManager;
 
@@ -16,7 +14,8 @@ import cn.kangbao.common.log.LoggerManager;
  */
 public class CustomConverter implements Converter {
 
-    public static final LoggerManager logger = LoggerManager.getLogger(CustomConverter.class);
+    public static final LoggerManager logger = LoggerManager
+            .getLogger(CustomConverter.class);
 
     public Object target;
 
@@ -28,15 +27,19 @@ public class CustomConverter implements Converter {
     public Object convert(Object sourceValue, Class target, Object context) {
 
         if (context.toString().startsWith("set")) {
-            String methodName = context.toString().replace(context.toString().substring(0, 3), "get");
-            Map<String, PropertyDescriptor> getterMap = getPropertiesHelper(this.target.getClass());
+            String methodName = context.toString().replace(
+                    context.toString().substring(0, 3), "get");
+            Map<String, PropertyDescriptor> getterMap = getPropertiesHelper(this.target
+                    .getClass());
             if (getterMap.containsKey(methodName)) {
                 try {
-                    Object targetValue = getterMap.get(methodName).getReadMethod().invoke(this.target, null);
-                    if ((targetValue instanceof String) && (StringUtils.isEmpty((String) targetValue))) {// 是空字符串，才取源对象值覆盖
+                    Object targetValue = getterMap.get(methodName)
+                            .getReadMethod().invoke(this.target, null);
+                    if ((targetValue instanceof String)
+                            && (Utils.isEmpty((String) targetValue))) {// 是空字符串，才取源对象值覆盖
                         return sourceValue;
                     }
-                    else if (StringUtils.isEmpty(targetValue)) {// 是空对象，才取源对象值覆盖
+                    else if (Utils.isEmpty(targetValue)) {// 是空对象，才取源对象值覆盖
                         return sourceValue;
                     }
                     else {

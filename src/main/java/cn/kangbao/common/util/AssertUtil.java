@@ -1,6 +1,13 @@
 package cn.kangbao.common.util;
 
 /**
+ * <Description>断言工具 <br>
+ * 
+ * @version 1.0<br>
+ * @taskId <br>
+ * @CreateDate 2014年8月28日 <br>
+ * @since V1.0<br>
+ * @see com.ztesoft.framework.util <br>
  */
 public class AssertUtil {
     public static <T> void isNotNull(T obj, String msg) {
@@ -74,11 +81,15 @@ public class AssertUtil {
     }
 
     public static void isNotEmpty(byte[] array) {
-        isNotEmpty(array, "[Assertion failed] - this byte array must not be empty: it must contain at least 1 element");
+        isNotEmpty(
+                array,
+                "[Assertion failed] - this byte array must not be empty: it must contain at least 1 element");
     }
 
     public static <T> void notEmpty(T[] array) {
-        isNotEmpty(array, "[Assertion failed] - this array must not be empty: it must contain at least 1 element");
+        isNotEmpty(
+                array,
+                "[Assertion failed] - this array must not be empty: it must contain at least 1 element");
     }
 
     public static void main(String[] argsw) {

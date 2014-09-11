@@ -14,6 +14,12 @@ import java.io.UnsupportedEncodingException;
 
 /**
  * 文件操作辅助类
+ * 
+ * @author hhsong
+ * @project appmgr
+ * @verson 1.0.0
+ * @date 2014.04.14
+ * @jdk 1.6.0_37
  */
 public class FileHelper {
 
@@ -29,7 +35,7 @@ public class FileHelper {
 
     /**
      * 从文件路径中提取文件名
-     *
+     * 
      * @param path
      * @return
      */
@@ -40,13 +46,7 @@ public class FileHelper {
 
     /**
      * 获取文件夹路径
-     *
-     * @param path
-     * @return
-     */
-    /**
-     * 获取文件夹路径
-     *
+     * 
      * @param path 原来的完整路径
      * @param index 指定的斜线数，截取该斜线之前得路径
      * @return
@@ -62,7 +62,7 @@ public class FileHelper {
 
     /**
      * 从文件路径中提取文件名，倒数第二个“/”与倒数第三个“/”之间的字符串
-     *
+     * 
      * @param path
      * @return
      */
@@ -74,7 +74,7 @@ public class FileHelper {
 
     /**
      * 从文件路径中提取文件名，倒数第1个“/”与倒数第2个“/”之间的字符串
-     *
+     * 
      * @param path
      * @return
      */
@@ -86,7 +86,7 @@ public class FileHelper {
 
     /**
      * 读取字符串中指定字符串后后面的内容
-     *
+     * 
      * @param path
      * @return
      */
@@ -97,47 +97,51 @@ public class FileHelper {
 
     /**
      * 将路径中的/ 替换成 \，并且将路径格式化以 \结尾
-     *
+     * 
      * @param path
      * @return
      */
     public String filePathFormat(String path) {
-        return path.replace("\\", "/").endsWith("/") ? path.replace("\\", "/") : path.replace("\\", "/") + "/";
+        return path.replace("\\", "/").endsWith("/") ? path.replace("\\", "/")
+                : path.replace("\\", "/") + "/";
     }
 
     /**
      * 将路径中的\替换成 /
-     *
+     * 
      * @param path
      * @return
      */
     public String filePathFormat2(String path) {
-        return path.replace("\\", "/").endsWith("/") ? path.replace("\\", "/") : path.replace("\\", "/");
+        return path.replace("\\", "/").endsWith("/") ? path.replace("\\", "/")
+                : path.replace("\\", "/");
     }
 
     /**
      * 判断路径中最后是否存在斜线，不存在的话添加一条斜线/
-     *
+     * 
      * @param path
      * @return
      */
     public String filePathFormatEnds(String path) {
-        return (path.endsWith("/") || path.endsWith("\\")) ? path : (path + "/");
+        return (path.endsWith("/") || path.endsWith("\\")) ? path
+                : (path + "/");
     }
 
     /**
      * 判断路径中最后是否存在斜线，存在的话去掉这条斜线/
-     *
+     * 
      * @param path
      * @return
      */
     public String filePathFormatEndsRemove(String path) {
-        return (path.endsWith("/") || path.endsWith("\\")) ? path.substring(0, path.length() - 1) : path;
+        return (path.endsWith("/") || path.endsWith("\\")) ? path.substring(0,
+                path.length() - 1) : path;
     }
 
     /**
      * 文件重命名
-     *
+     * 
      * @param oldFile
      * @param newFile
      */
@@ -150,7 +154,7 @@ public class FileHelper {
 
     /**
      * 判断文件是否存在
-     *
+     * 
      * @param fullFilePath 文件全路径
      */
 
@@ -169,7 +173,7 @@ public class FileHelper {
 
     /**
      * 读文件
-     *
+     * 
      * @param fileName 文件名
      * @return 文件内容
      */
@@ -203,7 +207,7 @@ public class FileHelper {
 
     /**
      * 读文件流
-     *
+     * 
      * @param in 文件流
      * @return 文件内容
      */
@@ -219,6 +223,10 @@ public class FileHelper {
         catch (UnsupportedEncodingException e1) {
             e1.printStackTrace();
         }
+        if (inreader == null) {
+            return "";
+        }
+
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(inreader);
@@ -254,7 +262,7 @@ public class FileHelper {
 
     /**
      * 新建目录
-     *
+     * 
      * @param folderPath 目录
      * @return 返回目录创建后的路径
      */
@@ -269,12 +277,13 @@ public class FileHelper {
 
     /**
      * 多级目录创建
-     *
+     * 
      * @param folderPath 准备要在本级目录下创建新目录的目录路径 例如 c:myf
      * @param paths 无限级目录参数，各级目录以单数线区分 例如 a|b|c
      * @return 返回创建文件后的路径 例如 c:myf/a/b/c
      */
-    public String createFolders(String folderPath, String paths) throws Exception {
+    public String createFolders(String folderPath, String paths)
+            throws Exception {
         String txts = folderPath;
         String[] st = paths.split("\\|");
         for (String str : st) {
@@ -292,12 +301,13 @@ public class FileHelper {
 
     /**
      * 新建文件
-     *
+     * 
      * @param fullFilePath 文本文件完整绝对路径及文件名
      * @param fileContent 文本文件内容
      * @return
      */
-    public void createFile(String fullFilePath, String fileContent) throws Exception {
+    public void createFile(String fullFilePath, String fileContent)
+            throws Exception {
         String filePath = fullFilePath.replace("\\", "/");
         filePath = filePath.toString();
 
@@ -310,12 +320,15 @@ public class FileHelper {
             filePath = filePath.substring(3);
         }
 
-        createFolders(folderPath, filePath.substring(0, filePath.lastIndexOf("/") + 1).replace('/', '|'));
+        createFolders(
+                folderPath,
+                filePath.substring(0, filePath.lastIndexOf("/") + 1).replace(
+                        '/', '|'));
         File myFilePath = new File(fullFilePath.replace("\\", "/"));
         if (!myFilePath.exists()) {
             myFilePath.createNewFile();
         }
-        if (!fileContent.equals(null) && !fileContent.equals("")) {
+        if (fileContent != null && !fileContent.equals("")) {
             FileWriter resultFile = new FileWriter(myFilePath);
             PrintWriter myFile = new PrintWriter(resultFile);
             myFile.println(fileContent);
@@ -326,13 +339,14 @@ public class FileHelper {
 
     /**
      * 有编码方式的文件创建
-     *
+     * 
      * @param fullFilePath 文本文件完整绝对路径及文件名
      * @param fileContent 文本文件内容
      * @param encoding 编码方式 例如 GBK 或者 UTF-8
      * @return
      */
-    public void createFile(String fullFilePath, String fileContent, String encoding) throws Exception {
+    public void createFile(String fullFilePath, String fileContent,
+            String encoding) throws Exception {
         String filePath = fullFilePath.replace("\\", "/");
         filePath = filePath.toString();
 
@@ -345,12 +359,15 @@ public class FileHelper {
             filePath = filePath.substring(3);
         }
 
-        createFolders(folderPath, filePath.substring(0, filePath.lastIndexOf("/") + 1).replace('/', '|'));
+        createFolders(
+                folderPath,
+                filePath.substring(0, filePath.lastIndexOf("/") + 1).replace(
+                        '/', '|'));
         File myFilePath = new File(fullFilePath.replace("\\", "/"));
         if (!myFilePath.exists()) {
             myFilePath.createNewFile();
         }
-        if (!fileContent.equals(null) && !fileContent.equals("")) {
+        if (fileContent != null && !fileContent.equals("")) {
             PrintWriter myFile = new PrintWriter(myFilePath, encoding);
             myFile.println(fileContent);
             myFile.close();
@@ -363,7 +380,7 @@ public class FileHelper {
 
     /**
      * 删除文件
-     *
+     * 
      * @param fullFilePath 文本文件完整绝对路径及文件名
      * @return Boolean 成功删除返回true遭遇异常返回false
      */
@@ -385,7 +402,7 @@ public class FileHelper {
 
     /**
      * 删除文件夹
-     *
+     * 
      * @param folderPath 文件夹完整绝对路径
      * @return
      */
@@ -406,7 +423,7 @@ public class FileHelper {
 
     /**
      * 删除指定文件夹下所有文件
-     *
+     * 
      * @param path 文件夹完整绝对路径
      * @return
      */
@@ -448,12 +465,13 @@ public class FileHelper {
 
     /**
      * 复制单个文件
-     *
+     * 
      * @param oldPathFile 准备复制的文件源
      * @param newPathFile 拷贝到新绝对路径带文件名
      * @return
      */
-    public void copyFile(String oldPathFile, String newPathFile) throws Exception {
+    public void copyFile(String oldPathFile, String newPathFile)
+            throws Exception {
         int bytesum = 0;
         int byteread = 0;
         File oldfile = new File(oldPathFile);
@@ -475,13 +493,12 @@ public class FileHelper {
 
     /**
      * 复制整个文件夹的内容
-     *
+     * 
      * @param oldPath 准备拷贝的目录
      * @param newPath 指定绝对路径的新目录
      * @return
      */
-    public void copyFolder(String oldPath, String newPath, String message) {
-        message = "";
+    public void copyFolder(String oldPath, String newPath) {
         try {
             // 如果文件夹不存在 则建立新文件夹
             new File(newPath).mkdirs();
@@ -498,7 +515,8 @@ public class FileHelper {
                 }
                 if (temp.isFile()) {
                     FileInputStream input = new FileInputStream(temp);
-                    FileOutputStream output = new FileOutputStream(newPath + "/" + (temp.getName()).toString());
+                    FileOutputStream output = new FileOutputStream(newPath
+                            + "/" + (temp.getName()).toString());
                     byte[] b = new byte[1024 * 5];
                     int len;
                     while ((len = input.read(b)) != -1) {
@@ -511,12 +529,12 @@ public class FileHelper {
 
                 // 如果是子文件夹
                 if (temp.isDirectory()) {
-                    copyFolder(oldPath + "/" + file[i], newPath + "/" + file[i], message);
+                    copyFolder(oldPath + "/" + file[i], newPath + "/" + file[i]);
                 }
             }
         }
         catch (Exception e) {
-            message = "复制整个文件夹内容操作出错:" + e.toString();
+            System.err.println(e);
         }
     }
 
@@ -526,7 +544,7 @@ public class FileHelper {
 
     /**
      * 移动文件
-     *
+     * 
      * @param oldPath
      * @param newPath
      * @return
@@ -538,13 +556,13 @@ public class FileHelper {
 
     /**
      * 移动目录
-     *
+     * 
      * @param oldPath
      * @param newPath
      * @return
      */
     public void moveFolder(String oldPath, String newPath) throws Exception {
-        copyFolder(oldPath, newPath, message);
+        copyFolder(oldPath, newPath);
         delFolder(oldPath);
     }
 
@@ -552,7 +570,7 @@ public class FileHelper {
 
     /**
      * 取得文件大小
-     *
+     * 
      * @param fullFilePath 文件绝对路径
      * @return 文件大小
      */

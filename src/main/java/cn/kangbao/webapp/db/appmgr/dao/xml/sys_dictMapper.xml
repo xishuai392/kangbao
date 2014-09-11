@@ -128,10 +128,7 @@
   <update id="updateByArgSelective" parameterType="map" >
     update sys_dict
     <set >
-		<if test="record.dictid != null" >
-		dictId= #{record.dictid,jdbcType=BIGINT},
-	</if>
-	<if test="record.dictname != null" >
+		<if test="record.dictname != null" >
 		dictName= #{record.dictname,jdbcType=VARCHAR},
 	</if>
 	<if test="record.updictid != null" >
@@ -148,10 +145,7 @@
   <update id="updateByArg" parameterType="map" >
     update sys_dict
     set 
-		dictId = #{record.dictid,jdbcType=BIGINT},
-	dictName = #{record.dictname,jdbcType=VARCHAR},
-	updictId = #{record.updictid,jdbcType=INTEGER},
-	constant = #{record.constant,jdbcType=VARCHAR}
+		dictName = #{record.dictname,jdbcType=VARCHAR},	updictId = #{record.updictid,jdbcType=INTEGER},	constant = #{record.constant,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -166,13 +160,13 @@
 		insert into sys_dict
 <trim prefix="(" suffix=")" suffixOverrides="," >
 	<if test="dictid != null" >
-		dictid,
+		dictId,
 	</if>
 	<if test="dictname != null" >
-		dictname,
+		dictName,
 	</if>
 	<if test="updictid != null" >
-		updictid,
+		updictId,
 	</if>
 	<if test="constant != null" >
 		constant,

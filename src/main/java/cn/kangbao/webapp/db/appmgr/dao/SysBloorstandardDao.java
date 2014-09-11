@@ -17,7 +17,7 @@ import java.math.*;
 import java.lang.reflect.Method;
 @Repository
 
-public class AppmgrSysBloorstandardDao {
+public class SysBloorstandardDao {
 
 	@Autowired
 	private AppmgrSessionAndMapperSupport mapperSupport;
@@ -69,18 +69,8 @@ public class AppmgrSysBloorstandardDao {
 	}
 
 	public int insertBatch(List<SysBloorstandard> records){
-		SqlSession session = mapperSupport.getSession();
-		session.commit();
-		try {
-			ISysBloorstandardMapper mapper = session.getMapper(ISysBloorstandardMapper.class);
-			return mapper.insertBatch(records);
-		 } catch (Exception e) {
-			session.rollback();
-			throw new RuntimeException(e);
-		}
-		finally{
-			session.close();
-		}
+		ISysBloorstandardMapper mapper = mapperSupport.getMapper(ISysBloorstandardMapper.class);
+		return mapper.insertBatch(records);
 	}
 
 	public int deleteByPrimaryKey(Integer key){

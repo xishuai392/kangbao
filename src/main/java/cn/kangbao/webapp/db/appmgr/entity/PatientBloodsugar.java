@@ -3,7 +3,8 @@ import java.io.Serializable;
 import java.math.*;
 import java.util.*;
 import org.apache.commons.lang.StringUtils;
-public class PatientBloodsugar implements Serializable {
+import cn.kangbao.common.dto.AbstractDto;
+public class PatientBloodsugar  extends AbstractDto  implements Serializable {
        	private Integer bloodsugarid;
 
 	public void setBloodsugarid(Integer bloodsugarid){
