@@ -292,82 +292,82 @@ public class PatientBloodsugarArg {
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumEqualTo(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumEqualTo(BigDecimal value) {
 			addCriterion("bloodSugarNum =", value, "bloodSugarNum");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumNotEqualTo(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumNotEqualTo(BigDecimal value) {
 			addCriterion("bloodSugarNum <>", value, "bloodSugarNum");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumGreaterThan(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumGreaterThan(BigDecimal value) {
 			addCriterion("bloodSugarNum >", value, "bloodSugarNum");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumGreaterThanOrEqualTo(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumGreaterThanOrEqualTo(BigDecimal value) {
 			addCriterion("bloodSugarNum >=", value, "bloodSugarNum");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumLessThan(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumLessThan(BigDecimal value) {
 			addCriterion("bloodSugarNum <", value, "bloodSugarNum");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumLessThanOrEqualTo(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumLessThanOrEqualTo(BigDecimal value) {
 			addCriterion("bloodSugarNum <=", value, "bloodSugarNum");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumLike(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumLike(BigDecimal value) {
 			addCriterion("bloodSugarNum like ", value, "bloodSugarNum",1);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumNotLike(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumNotLike(BigDecimal value) {
 			addCriterion("bloodSugarNum  not like ", value, "bloodSugarNum",1);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumLeftLike(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumLeftLike(BigDecimal value) {
 			addCriterion("bloodSugarNum like ", value, "bloodSugarNum",0);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumNotLeftLike(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumNotLeftLike(BigDecimal value) {
 			addCriterion("bloodSugarNum  not like ", value, "bloodSugarNum",0);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumRightLike(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumRightLike(BigDecimal value) {
 			addCriterion("bloodSugarNum like ", value, "bloodSugarNum",2);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumNotRightLike(Integer value) {
+		public PatientBloodsugarCriteria andBloodsugarnumNotRightLike(BigDecimal value) {
 			addCriterion("bloodSugarNum  not like ", value, "bloodSugarNum",2);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumIn(List<Integer> values) {
+		public PatientBloodsugarCriteria andBloodsugarnumIn(List<BigDecimal> values) {
 			addCriterion("bloodSugarNum  in ", values, "bloodSugarNum");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumNotIn(List<Integer> values) {
+		public PatientBloodsugarCriteria andBloodsugarnumNotIn(List<BigDecimal> values) {
 			addCriterion("bloodSugarNum not in ", values, "bloodSugarNum");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumBetween(Integer value1,Integer value2) {
+		public PatientBloodsugarCriteria andBloodsugarnumBetween(BigDecimal value1,BigDecimal value2) {
 			addCriterion("bloodSugarNum between ", value1, value2, "bloodSugarNum");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andBloodsugarnumNotBetween(Integer value1,Integer value2) {
+		public PatientBloodsugarCriteria andBloodsugarnumNotBetween(BigDecimal value1,BigDecimal value2) {
 			addCriterion("bloodSugarNum not between ", value1, value2, "bloodSugarNum");
 			return (PatientBloodsugarCriteria) this;
 		}
@@ -382,82 +382,82 @@ public class PatientBloodsugarArg {
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceEqualTo(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceEqualTo(String value) {
 			addCriterion("influence =", value, "influence");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceNotEqualTo(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceNotEqualTo(String value) {
 			addCriterion("influence <>", value, "influence");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceGreaterThan(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceGreaterThan(String value) {
 			addCriterion("influence >", value, "influence");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceGreaterThanOrEqualTo(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceGreaterThanOrEqualTo(String value) {
 			addCriterion("influence >=", value, "influence");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceLessThan(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceLessThan(String value) {
 			addCriterion("influence <", value, "influence");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceLessThanOrEqualTo(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceLessThanOrEqualTo(String value) {
 			addCriterion("influence <=", value, "influence");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceLike(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceLike(String value) {
 			addCriterion("influence like ", value, "influence",1);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceNotLike(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceNotLike(String value) {
 			addCriterion("influence  not like ", value, "influence",1);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceLeftLike(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceLeftLike(String value) {
 			addCriterion("influence like ", value, "influence",0);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceNotLeftLike(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceNotLeftLike(String value) {
 			addCriterion("influence  not like ", value, "influence",0);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceRightLike(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceRightLike(String value) {
 			addCriterion("influence like ", value, "influence",2);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceNotRightLike(Integer value) {
+		public PatientBloodsugarCriteria andInfluenceNotRightLike(String value) {
 			addCriterion("influence  not like ", value, "influence",2);
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceIn(List<Integer> values) {
+		public PatientBloodsugarCriteria andInfluenceIn(List<String> values) {
 			addCriterion("influence  in ", values, "influence");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceNotIn(List<Integer> values) {
+		public PatientBloodsugarCriteria andInfluenceNotIn(List<String> values) {
 			addCriterion("influence not in ", values, "influence");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceBetween(Integer value1,Integer value2) {
+		public PatientBloodsugarCriteria andInfluenceBetween(String value1,String value2) {
 			addCriterion("influence between ", value1, value2, "influence");
 			return (PatientBloodsugarCriteria) this;
 		}
 
-		public PatientBloodsugarCriteria andInfluenceNotBetween(Integer value1,Integer value2) {
+		public PatientBloodsugarCriteria andInfluenceNotBetween(String value1,String value2) {
 			addCriterion("influence not between ", value1, value2, "influence");
 			return (PatientBloodsugarCriteria) this;
 		}

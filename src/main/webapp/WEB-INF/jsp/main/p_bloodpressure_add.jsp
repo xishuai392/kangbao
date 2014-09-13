@@ -33,7 +33,7 @@
 			method="post">
 			<form:form id="bloodpressure_data_input"
 				action="${ctx }/bp/saveRecord.json"
-				commandName="thisPatientBloodpressureVO" method="post">
+				commandName="thisOperateVO" method="post">
 				<div id="main_left_container">
 					<div id="user_info">
 						<!--<a href="/index.php/home/health/changenowmember/now_member_id/0.html">-->
@@ -42,11 +42,11 @@
 						<!--</a>-->
 
 						<!--
-						<div id="user_name">${pList.get(0).fullname}</div>
+						<div id="user_name">${patientList.get(0).fullname}</div>
 						-->
 
 						<div id="select_user">
-							<form:select path="personid" items="${pList}"
+							<form:select path="personid" items="${patientList}"
 								itemLabel="fullname" itemValue="personid" />
 						</div>
 					</div>
@@ -100,7 +100,7 @@
 										src="${ctx }/images/health/face/zheng.gif">
 
 									<div>
-										<form:radiobutton path="feelingstate" value="1" />
+										<form:radiobutton path="feelingstate" value="2001" />
 										正常
 									</div>
 								</div>
@@ -108,7 +108,7 @@
 									<img class="feel_img" data="2"
 										src="${ctx }/images/health/face/smile.gif">
 									<div>
-										<form:radiobutton path="feelingstate" value="2" />
+										<form:radiobutton path="feelingstate" value="2002" />
 										开心
 									</div>
 								</div>
@@ -116,7 +116,7 @@
 									<img class="feel_img" data="3"
 										src="${ctx }/images/health/face/nan.gif">
 									<div>
-										<form:radiobutton path="feelingstate" value="3" />
+										<form:radiobutton path="feelingstate" value="2003" />
 										难过
 									</div>
 								</div>
@@ -124,7 +124,7 @@
 									<img class="feel_img" data="4"
 										src="${ctx }/images/health/face/tou.gif">
 									<div>
-										<form:radiobutton path="feelingstate" value="4" />
+										<form:radiobutton path="feelingstate" value="2004" />
 										头晕
 									</div>
 								</div>
@@ -132,7 +132,7 @@
 									<img class="feel_img" data="5"
 										src="${ctx }/images/health/face/men.gif">
 									<div>
-										<form:radiobutton path="feelingstate" value="5" />
+										<form:radiobutton path="feelingstate" value="2005" />
 										胸闷
 									</div>
 								</div>
@@ -140,7 +140,7 @@
 									<img class="feel_img" data="6"
 										src="${ctx }/images/health/face/xin.gif">
 									<div>
-										<form:radiobutton path="feelingstate" value="6" />
+										<form:radiobutton path="feelingstate" value="2006" />
 										心慌
 									</div>
 								</div>

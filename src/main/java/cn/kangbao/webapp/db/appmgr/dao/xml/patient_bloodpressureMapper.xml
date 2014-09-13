@@ -10,11 +10,12 @@
 		<result column="testTime" property="testtime" jdbcType="TIMESTAMP" />
 		<result column="feelingState" property="feelingstate" jdbcType="INTEGER" />
 		<result column="feelingDesc" property="feelingdesc" jdbcType="VARCHAR" />
+		<result column="evaluate" property="evaluate" jdbcType="VARCHAR" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
 		<result column="dr" property="dr" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime,dr
+  	measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,evaluate,createTime,dr
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -155,6 +156,9 @@
 	<if test="record.feelingdesc != null" >
 		feelingDesc= #{record.feelingdesc,jdbcType=VARCHAR},
 	</if>
+	<if test="record.evaluate != null" >
+		evaluate= #{record.evaluate,jdbcType=VARCHAR},
+	</if>
 	<if test="record.createtime != null" >
 		createTime= #{record.createtime,jdbcType=TIMESTAMP},
 	</if>
@@ -169,15 +173,15 @@
   <update id="updateByArg" parameterType="map" >
     update patient_bloodpressure
     set 
-		personId = #{record.personid,jdbcType=INTEGER},	upNum = #{record.upnum,jdbcType=INTEGER},	downNum = #{record.downnum,jdbcType=INTEGER},	heartRate = #{record.heartrate,jdbcType=INTEGER},	testTime = #{record.testtime,jdbcType=TIMESTAMP},	feelingState = #{record.feelingstate,jdbcType=INTEGER},	feelingDesc = #{record.feelingdesc,jdbcType=VARCHAR},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
+		personId = #{record.personid,jdbcType=INTEGER},	upNum = #{record.upnum,jdbcType=INTEGER},	downNum = #{record.downnum,jdbcType=INTEGER},	heartRate = #{record.heartrate,jdbcType=INTEGER},	testTime = #{record.testtime,jdbcType=TIMESTAMP},	feelingState = #{record.feelingstate,jdbcType=INTEGER},	feelingDesc = #{record.feelingdesc,jdbcType=VARCHAR},	evaluate = #{record.evaluate,jdbcType=VARCHAR},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure" >
-		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime,dr
+		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,evaluate,createTime,dr
 			)
-		 values (#{measurementid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{upnum,jdbcType=INTEGER},#{downnum,jdbcType=INTEGER},#{heartrate,jdbcType=INTEGER},#{testtime,jdbcType=TIMESTAMP},#{feelingstate,jdbcType=INTEGER},#{feelingdesc,jdbcType=VARCHAR},#{createtime,jdbcType=TIMESTAMP},#{dr,jdbcType=INTEGER}
+		 values (#{measurementid,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{upnum,jdbcType=INTEGER},#{downnum,jdbcType=INTEGER},#{heartrate,jdbcType=INTEGER},#{testtime,jdbcType=TIMESTAMP},#{feelingstate,jdbcType=INTEGER},#{feelingdesc,jdbcType=VARCHAR},#{evaluate,jdbcType=VARCHAR},#{createtime,jdbcType=TIMESTAMP},#{dr,jdbcType=INTEGER}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodpressure" >
@@ -206,6 +210,9 @@
 	</if>
 	<if test="feelingdesc != null" >
 		feelingDesc,
+	</if>
+	<if test="evaluate != null" >
+		evaluate,
 	</if>
 	<if test="createtime != null" >
 		createTime,
@@ -239,6 +246,9 @@
 	<if test="feelingdesc != null" >
 		#{feelingdesc,jdbcType=VARCHAR},
 	</if>
+	<if test="evaluate != null" >
+		#{evaluate,jdbcType=VARCHAR},
+	</if>
 	<if test="createtime != null" >
 		#{createtime,jdbcType=TIMESTAMP},
 	</if>
@@ -248,10 +258,10 @@
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,createTime,dr
+		insert into patient_bloodpressure(measurementId,personId,upNum,downNum,heartRate,testTime,feelingState,feelingDesc,evaluate,createTime,dr
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.measurementid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.upnum,jdbcType=INTEGER},#{ item.downnum,jdbcType=INTEGER},#{ item.heartrate,jdbcType=INTEGER},#{ item.testtime,jdbcType=TIMESTAMP},#{ item.feelingstate,jdbcType=INTEGER},#{ item.feelingdesc,jdbcType=VARCHAR},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.dr,jdbcType=INTEGER}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.measurementid,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.upnum,jdbcType=INTEGER},#{ item.downnum,jdbcType=INTEGER},#{ item.heartrate,jdbcType=INTEGER},#{ item.testtime,jdbcType=TIMESTAMP},#{ item.feelingstate,jdbcType=INTEGER},#{ item.feelingdesc,jdbcType=VARCHAR},#{ item.evaluate,jdbcType=VARCHAR},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.dr,jdbcType=INTEGER}
 			)
 		</foreach>
   </insert>
@@ -289,6 +299,9 @@
 	<if test="feelingdesc != null" >
 		feelingDesc = #{feelingdesc,jdbcType=VARCHAR},
 	</if>
+	<if test="evaluate != null" >
+		evaluate = #{evaluate,jdbcType=VARCHAR},
+	</if>
 	<if test="createtime != null" >
 		createTime = #{createtime,jdbcType=TIMESTAMP},
 	</if>
@@ -308,6 +321,7 @@
 		testTime = #{testtime,jdbcType=TIMESTAMP},
 		feelingState = #{feelingstate,jdbcType=INTEGER},
 		feelingDesc = #{feelingdesc,jdbcType=VARCHAR},
+		evaluate = #{evaluate,jdbcType=VARCHAR},
 		createTime = #{createtime,jdbcType=TIMESTAMP},
 		dr = #{dr,jdbcType=INTEGER}
 	 where measurementId = #{measurementid,jdbcType=INTEGER}

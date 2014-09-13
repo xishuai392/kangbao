@@ -1,8 +1,10 @@
 package cn.kangbao.webapp.db.appmgr.entity;
 import java.io.Serializable;
-import java.math.*;
-import java.util.*;
+import java.math.BigDecimal;
+import java.util.Date;
+
 import org.apache.commons.lang.StringUtils;
+
 import cn.kangbao.common.dto.AbstractDto;
 public class PatientBloodsugar  extends AbstractDto  implements Serializable {
        	private Integer bloodsugarid;
@@ -15,24 +17,24 @@ public class PatientBloodsugar  extends AbstractDto  implements Serializable {
 		return bloodsugarid; 
 	}
 
-	private Integer bloodsugarnum;
+	private BigDecimal bloodsugarnum;
 
-	public void setBloodsugarnum(Integer bloodsugarnum){
+	public void setBloodsugarnum(BigDecimal bloodsugarnum){
 		this.bloodsugarnum = bloodsugarnum;
 	}
 
-	public Integer getBloodsugarnum() {
+	public BigDecimal getBloodsugarnum() {
 		return bloodsugarnum; 
 	}
 
-	private Integer influence;
+	private String influence;
 
-	public void setInfluence(Integer influence){
+	public void setInfluence(String influence){
 		this.influence = influence;
 	}
 
-	public Integer getInfluence() {
-		return influence; 
+	public String getInfluence() {
+		return StringUtils.isBlank(influence)?influence:influence.trim(); 
 	}
 
 	private Integer personid;

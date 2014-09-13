@@ -3,8 +3,8 @@
 <mapper namespace="cn.kangbao.webapp.db.appmgr.dao.mapper.IPatientBloodsugarMapper" >
     <resultMap id="BaseResultMap" type="cn.kangbao.webapp.db.appmgr.entity.PatientBloodsugar">
 		<id column="bloodSugarId" property="bloodsugarid" jdbcType="INTEGER" />
-		<result column="bloodSugarNum" property="bloodsugarnum" jdbcType="INTEGER" />
-		<result column="influence" property="influence" jdbcType="INTEGER" />
+		<result column="bloodSugarNum" property="bloodsugarnum" jdbcType="DECIMAL" />
+		<result column="influence" property="influence" jdbcType="VARCHAR" />
 		<result column="personId" property="personid" jdbcType="INTEGER" />
 		<result column="testPeriod" property="testperiod" jdbcType="CHAR" />
 		<result column="testTime" property="testtime" jdbcType="TIMESTAMP" />
@@ -133,10 +133,10 @@
     update patient_bloodsugar
     <set >
 		<if test="record.bloodsugarnum != null" >
-		bloodSugarNum= #{record.bloodsugarnum,jdbcType=INTEGER},
+		bloodSugarNum= #{record.bloodsugarnum,jdbcType=DECIMAL},
 	</if>
 	<if test="record.influence != null" >
-		influence= #{record.influence,jdbcType=INTEGER},
+		influence= #{record.influence,jdbcType=VARCHAR},
 	</if>
 	<if test="record.personid != null" >
 		personId= #{record.personid,jdbcType=INTEGER},
@@ -161,7 +161,7 @@
   <update id="updateByArg" parameterType="map" >
     update patient_bloodsugar
     set 
-		bloodSugarNum = #{record.bloodsugarnum,jdbcType=INTEGER},	influence = #{record.influence,jdbcType=INTEGER},	personId = #{record.personid,jdbcType=INTEGER},	testPeriod = #{record.testperiod,jdbcType=CHAR},	testTime = #{record.testtime,jdbcType=TIMESTAMP},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
+		bloodSugarNum = #{record.bloodsugarnum,jdbcType=DECIMAL},	influence = #{record.influence,jdbcType=VARCHAR},	personId = #{record.personid,jdbcType=INTEGER},	testPeriod = #{record.testperiod,jdbcType=CHAR},	testTime = #{record.testtime,jdbcType=TIMESTAMP},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
@@ -169,7 +169,7 @@
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodsugar" >
 		insert into patient_bloodsugar(bloodSugarId,bloodSugarNum,influence,personId,testPeriod,testTime,createTime,dr
 			)
-		 values (#{bloodsugarid,jdbcType=INTEGER},#{bloodsugarnum,jdbcType=INTEGER},#{influence,jdbcType=INTEGER},#{personid,jdbcType=INTEGER},#{testperiod,jdbcType=CHAR},#{testtime,jdbcType=TIMESTAMP},#{createtime,jdbcType=TIMESTAMP},#{dr,jdbcType=INTEGER}
+		 values (#{bloodsugarid,jdbcType=INTEGER},#{bloodsugarnum,jdbcType=DECIMAL},#{influence,jdbcType=VARCHAR},#{personid,jdbcType=INTEGER},#{testperiod,jdbcType=CHAR},#{testtime,jdbcType=TIMESTAMP},#{createtime,jdbcType=TIMESTAMP},#{dr,jdbcType=INTEGER}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodsugar" >
@@ -205,10 +205,10 @@
 		#{bloodsugarid,jdbcType=INTEGER},
 	</if>
 	<if test="bloodsugarnum != null" >
-		#{bloodsugarnum,jdbcType=INTEGER},
+		#{bloodsugarnum,jdbcType=DECIMAL},
 	</if>
 	<if test="influence != null" >
-		#{influence,jdbcType=INTEGER},
+		#{influence,jdbcType=VARCHAR},
 	</if>
 	<if test="personid != null" >
 		#{personid,jdbcType=INTEGER},
@@ -231,7 +231,7 @@
 		insert into patient_bloodsugar(bloodSugarId,bloodSugarNum,influence,personId,testPeriod,testTime,createTime,dr
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.bloodsugarid,jdbcType=INTEGER},#{ item.bloodsugarnum,jdbcType=INTEGER},#{ item.influence,jdbcType=INTEGER},#{ item.personid,jdbcType=INTEGER},#{ item.testperiod,jdbcType=CHAR},#{ item.testtime,jdbcType=TIMESTAMP},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.dr,jdbcType=INTEGER}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.bloodsugarid,jdbcType=INTEGER},#{ item.bloodsugarnum,jdbcType=DECIMAL},#{ item.influence,jdbcType=VARCHAR},#{ item.personid,jdbcType=INTEGER},#{ item.testperiod,jdbcType=CHAR},#{ item.testtime,jdbcType=TIMESTAMP},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.dr,jdbcType=INTEGER}
 			)
 		</foreach>
   </insert>
@@ -249,10 +249,10 @@
 		update patient_bloodsugar
 		<set >
 	<if test="bloodsugarnum != null" >
-		bloodSugarNum = #{bloodsugarnum,jdbcType=INTEGER},
+		bloodSugarNum = #{bloodsugarnum,jdbcType=DECIMAL},
 	</if>
 	<if test="influence != null" >
-		influence = #{influence,jdbcType=INTEGER},
+		influence = #{influence,jdbcType=VARCHAR},
 	</if>
 	<if test="personid != null" >
 		personId = #{personid,jdbcType=INTEGER},
@@ -275,8 +275,8 @@
 	<update id="updateByPrimaryKey" parameterType="cn.kangbao.webapp.db.appmgr.entity.PatientBloodsugar" >
 		update patient_bloodsugar
 		set 
-		bloodSugarNum = #{bloodsugarnum,jdbcType=INTEGER},
-		influence = #{influence,jdbcType=INTEGER},
+		bloodSugarNum = #{bloodsugarnum,jdbcType=DECIMAL},
+		influence = #{influence,jdbcType=VARCHAR},
 		personId = #{personid,jdbcType=INTEGER},
 		testPeriod = #{testperiod,jdbcType=CHAR},
 		testTime = #{testtime,jdbcType=TIMESTAMP},

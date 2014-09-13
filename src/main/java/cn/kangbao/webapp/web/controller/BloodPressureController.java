@@ -60,30 +60,30 @@ public class BloodPressureController extends AbstractBaseController {
 
         PatientBloodpressureVO patientBloodpressureVO = new PatientBloodpressureVO();
         patientBloodpressureVO.setTesttime(new Date());
-        mav.addObject("thisPatientBloodpressureVO", patientBloodpressureVO);
+        mav.addObject("thisOperateVO", patientBloodpressureVO);
 
-        mav.addObject("pList", pList);
+        mav.addObject("patientList", pList);
 
         return mav;
     }
 
     @RequestMapping(value = "/bp/saveRecord.json")
     @ResponseBody
-    public Map save(PatientBloodpressureVO patientBloodpressureVO)
+    public Map save(PatientBloodpressureVO operateVO)
             throws BaseAppException {
-        logger.debug(patientBloodpressureVO.toString());
+        logger.debug(operateVO.toString());
 
-        PatientBloodpressure bpDTO = new PatientBloodpressure();
+        PatientBloodpressure operateDTO = new PatientBloodpressure();
 
-        BeanUtils.copyProperties(patientBloodpressureVO, bpDTO);
+        BeanUtils.copyProperties(operateVO, operateDTO);
 
         // 设置初始值
-        bpDTO.setMeasurementid(getPkSequence(IWebConstans.PATIENT_BLOODPRESSURE));
-        bpDTO.setCreatetime(new Date());
-        bpDTO.setDr(0);
+        operateDTO.setMeasurementid(getPkSequence(IWebConstans.PATIENT_BLOODPRESSURE));
+        operateDTO.setCreatetime(new Date());
+        operateDTO.setDr(0);
         // bpDTO.setPersonid(personid);
 
-        boolean isOperateDone = bloodPressureService.insertRecord(bpDTO);
+        boolean isOperateDone = bloodPressureService.insertRecord(operateDTO);
 
         return getResultMap();
     }

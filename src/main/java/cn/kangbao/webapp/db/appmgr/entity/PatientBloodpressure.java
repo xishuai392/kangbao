@@ -1,8 +1,9 @@
 package cn.kangbao.webapp.db.appmgr.entity;
 import java.io.Serializable;
-import java.math.*;
-import java.util.*;
+import java.util.Date;
+
 import org.apache.commons.lang.StringUtils;
+
 import cn.kangbao.common.dto.AbstractDto;
 public class PatientBloodpressure  extends AbstractDto  implements Serializable {
        	private Integer measurementid;
@@ -83,6 +84,16 @@ public class PatientBloodpressure  extends AbstractDto  implements Serializable 
 
 	public String getFeelingdesc() {
 		return StringUtils.isBlank(feelingdesc)?feelingdesc:feelingdesc.trim(); 
+	}
+
+	private String evaluate;
+
+	public void setEvaluate(String evaluate){
+		this.evaluate = evaluate;
+	}
+
+	public String getEvaluate() {
+		return StringUtils.isBlank(evaluate)?evaluate:evaluate.trim(); 
 	}
 
 	private Date createtime;

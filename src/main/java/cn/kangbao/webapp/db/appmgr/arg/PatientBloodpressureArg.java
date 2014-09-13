@@ -912,6 +912,96 @@ public class PatientBloodpressureArg {
 			return (PatientBloodpressureCriteria) this;
 		}
 
+		public PatientBloodpressureCriteria andEvaluateIsNull() {
+			addCriterion("evaluate is null");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateIsNotNull() {
+			addCriterion("evaluate is not null");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateEqualTo(String value) {
+			addCriterion("evaluate =", value, "evaluate");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateNotEqualTo(String value) {
+			addCriterion("evaluate <>", value, "evaluate");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateGreaterThan(String value) {
+			addCriterion("evaluate >", value, "evaluate");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateGreaterThanOrEqualTo(String value) {
+			addCriterion("evaluate >=", value, "evaluate");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateLessThan(String value) {
+			addCriterion("evaluate <", value, "evaluate");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateLessThanOrEqualTo(String value) {
+			addCriterion("evaluate <=", value, "evaluate");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateLike(String value) {
+			addCriterion("evaluate like ", value, "evaluate",1);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateNotLike(String value) {
+			addCriterion("evaluate  not like ", value, "evaluate",1);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateLeftLike(String value) {
+			addCriterion("evaluate like ", value, "evaluate",0);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateNotLeftLike(String value) {
+			addCriterion("evaluate  not like ", value, "evaluate",0);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateRightLike(String value) {
+			addCriterion("evaluate like ", value, "evaluate",2);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateNotRightLike(String value) {
+			addCriterion("evaluate  not like ", value, "evaluate",2);
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateIn(List<String> values) {
+			addCriterion("evaluate  in ", values, "evaluate");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateNotIn(List<String> values) {
+			addCriterion("evaluate not in ", values, "evaluate");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateBetween(String value1,String value2) {
+			addCriterion("evaluate between ", value1, value2, "evaluate");
+			return (PatientBloodpressureCriteria) this;
+		}
+
+		public PatientBloodpressureCriteria andEvaluateNotBetween(String value1,String value2) {
+			addCriterion("evaluate not between ", value1, value2, "evaluate");
+			return (PatientBloodpressureCriteria) this;
+		}
+
 		public PatientBloodpressureCriteria andCreatetimeIsNull() {
 			addCriterion("createTime is null");
 			return (PatientBloodpressureCriteria) this;
