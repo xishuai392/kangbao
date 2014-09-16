@@ -10,9 +10,11 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import cn.kangbao.common.Page;
 import cn.kangbao.common.exception.BaseAppException;
 import cn.kangbao.common.log.LoggerManager;
 import cn.kangbao.common.util.BeanUtils;
@@ -21,7 +23,6 @@ import cn.kangbao.webapp.db.appmgr.entity.Person;
 import cn.kangbao.webapp.db.appmgr.entity.SysUser;
 import cn.kangbao.webapp.web.service.BloodSugarService;
 import cn.kangbao.webapp.web.service.PersonService;
-import cn.kangbao.webapp.web.vo.PatientBloodpressureVO;
 import cn.kangbao.webapp.web.vo.PatientBloodsugarVO;
 
 /**
@@ -85,6 +86,56 @@ public class BloodSugarController extends AbstractBaseController {
         boolean isOperateDone = bloodSugarService.insertRecord(operateDTO);
 
         return getResultMap();
+    }
+
+    @RequestMapping(value = "/bs/showRecord.html")
+    public ModelAndView show(ModelAndView mav) {
+        mav.setViewName("main/p_bloodsugar_show");
+        SysUser newSysUser = getSessionSysUser();
+        Person mainPerson = getSessionMainPerson();
+
+        List<Person> pList = personService.getPersonByUserId(newSysUser
+                .getUserid());
+
+        if (null == getOperateContext()) {
+            mav.addObject("operateContext", "");
+        }
+
+        PatientBloodsugarVO patientBloodsugarVO = new PatientBloodsugarVO();
+        patientBloodsugarVO.setTesttime(new Date());
+        mav.addObject("thisOperateVO", patientBloodsugarVO);
+
+        mav.addObject("patientList", pList);
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/bs/queryRecordByPage.json")
+    @ResponseBody
+    public Page<PatientBloodsugarVO> queryRecordByPage(
+            PatientBloodsugarVO patientBloodsugarVO,
+            @RequestParam("page") int page, @RequestParam("rp") int limit,
+            @RequestParam("qtype") String queryField,
+            @RequestParam("query") String queryValue,
+            @RequestParam("sortname") String sortName,
+            @RequestParam("sortorder") String sortOrder)
+            throws BaseAppException {
+        int start = (page - 1) * limit;
+        start = start >= 0 ? start : 0;
+        Page<PatientBloodsugarVO> resultPage = bloodSugarService
+                .selectByArgAndPage(patientBloodsugarVO, page, start, limit,
+                        queryField, queryValue, sortName, sortOrder);
+        return resultPage;
+    }
+
+    @RequestMapping(value = "/bs/deleteRecord.json")
+    @ResponseBody
+    public Map delete(@RequestParam("ids") String ids) throws BaseAppException {
+        logger.debug(ids);
+
+        int i = bloodSugarService.batchUpdateToDisabled(ids);
+
+        return getResultMap("操作成功" + i + "条！");
     }
 
 }

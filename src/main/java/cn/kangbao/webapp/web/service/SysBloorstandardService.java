@@ -43,16 +43,18 @@ public class SysBloorstandardService {
     public List<SysBloorstandard> selectByArg(
             PatientBloodpressure patientBloodpressure) {
         SysBloorstandardArg arg = new SysBloorstandardArg();
-        SysBloorstandardCriteria cri = arg.createCriteria();
-        cri.andContractmaxnumGreaterThanOrEqualTo(patientBloodpressure
+        SysBloorstandardCriteria maxCri = arg.createCriteria();
+        SysBloorstandardCriteria minCri = arg.or();
+        maxCri.andContractmaxnumGreaterThanOrEqualTo(patientBloodpressure
                 .getUpnum());
-        cri.andContractminnumLessThanOrEqualTo(patientBloodpressure.getUpnum());
+        maxCri.andContractminnumLessThanOrEqualTo(patientBloodpressure
+                .getUpnum());
 
-        cri.andDiastolicmaxnumGreaterThanOrEqualTo(patientBloodpressure
+        minCri.andDiastolicmaxnumGreaterThanOrEqualTo(patientBloodpressure
                 .getDownnum());
-        cri.andDiastolicminnumLessThanOrEqualTo(patientBloodpressure
+        minCri.andDiastolicminnumLessThanOrEqualTo(patientBloodpressure
                 .getDownnum());
-        arg.setOrderByClause("BLOORSTDID ASC");
+        arg.setOrderByClause("BLOORSTDID DESC");
 
         return sysBloorstandardDao.selectByArg(arg);
     }

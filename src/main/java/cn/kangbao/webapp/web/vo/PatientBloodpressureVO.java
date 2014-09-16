@@ -78,6 +78,7 @@ public class PatientBloodpressureVO implements Serializable {
         this.testtime = testtime;
     }
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getTesttime() {
         return testtime;
     }
@@ -122,4 +123,21 @@ public class PatientBloodpressureVO implements Serializable {
     public Integer getDr() {
         return dr;
     }
+
+    private String evaluate;
+
+    /**
+     * @return the evaluate
+     */
+    public String getEvaluate() {
+        return evaluate;
+    }
+
+    /**
+     * @param evaluate the evaluate to set
+     */
+    public void setEvaluate(String evaluate) {
+        this.evaluate = evaluate;
+    }
+
 }
