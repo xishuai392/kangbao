@@ -13,6 +13,7 @@
 		<org.springframework-version>3.2.9.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.12</org.aspectj-version>
 		<org.slf4j-version>1.7.7</org.slf4j-version>
+		<logback.version>1.1.2</logback.version>
 	</properties>
 
 
@@ -156,7 +157,28 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
-
+		<!-- 取消logback
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-access</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.logback-extensions</groupId>
+			<artifactId>logback-ext-spring</artifactId>
+			<version>0.1.1</version>
+		</dependency>
+ 		-->
 
 		<!-- mybatis -->
 		<dependency>
@@ -182,7 +204,7 @@
 			<artifactId>geronimo-servlet_2.5_spec</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
@@ -218,7 +240,7 @@
 			<artifactId>commons-beanutils</artifactId>
 			<version>1.8.3</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
@@ -263,13 +285,13 @@
 			<version>16.0.1</version>
 			<type>bundle</type>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
 	</dependencies>
 	<build>
 		<finalName>kangbao</finalName>
@@ -282,7 +304,7 @@
 				<artifactId>
                     maven-compiler-plugin
                 </artifactId>
-                <version>2.3.2</version>
+				<version>2.3.2</version>
 				<configuration>
 					<encoding>
 						UTF-8
