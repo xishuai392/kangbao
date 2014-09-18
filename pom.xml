@@ -157,7 +157,7 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- 取消logback
+		<!-- 取消logback-->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
@@ -178,7 +178,13 @@
 			<artifactId>logback-ext-spring</artifactId>
 			<version>0.1.1</version>
 		</dependency>
- 		-->
+ 		<dependency>
+	       <groupId>com.googlecode.log4jdbc</groupId>
+	       <artifactId>log4jdbc</artifactId>
+	       <version>1.2</version>
+        </dependency>
+        
+        
 
 		<!-- mybatis -->
 		<dependency>
