@@ -1,10 +1,8 @@
 package cn.kangbao.webapp.db.appmgr.entity;
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.Date;
-
+import java.math.*;
+import java.util.*;
 import org.apache.commons.lang.StringUtils;
-
 import cn.kangbao.common.dto.AbstractDto;
 public class PatientBloodsugar  extends AbstractDto  implements Serializable {
        	private Integer bloodsugarid;

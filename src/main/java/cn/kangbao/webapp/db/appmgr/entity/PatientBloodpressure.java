@@ -1,9 +1,8 @@
 package cn.kangbao.webapp.db.appmgr.entity;
 import java.io.Serializable;
-import java.util.Date;
-
+import java.math.*;
+import java.util.*;
 import org.apache.commons.lang.StringUtils;
-
 import cn.kangbao.common.dto.AbstractDto;
 public class PatientBloodpressure  extends AbstractDto  implements Serializable {
        	private Integer measurementid;

@@ -3,11 +3,12 @@
  */
 package cn.kangbao.webapp.web.vo;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import cn.kangbao.common.dto.AbstractDto;
 
 /**
  * <Description> <br>
@@ -20,7 +21,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  * @see cn.kangbao.webapp.web.vo <br>
  */
 
-public class PatientBloodpressureVO implements Serializable {
+public class PatientBloodpressureVO extends AbstractDto {
     private Integer measurementid;
 
     public void setMeasurementid(Integer measurementid) {

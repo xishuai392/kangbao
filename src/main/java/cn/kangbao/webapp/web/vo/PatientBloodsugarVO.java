@@ -1,15 +1,14 @@
 package cn.kangbao.webapp.web.vo;
 
-import java.io.Serializable;
-import java.math.*;
-import java.util.*;
+import java.math.BigDecimal;
+import java.util.Date;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import cn.kangbao.common.dto.AbstractDto;
 
-public class PatientBloodsugarVO extends AbstractDto implements Serializable {
+public class PatientBloodsugarVO extends AbstractDto {
 
     private Integer bloodsugarid;
 

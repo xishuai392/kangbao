@@ -65,4 +65,34 @@ public class SysUser  extends AbstractDto  implements Serializable {
 		return dr; 
 	}
 
+	private String email;
+
+	public void setEmail(String email){
+		this.email = email;
+	}
+
+	public String getEmail() {
+		return StringUtils.isBlank(email)?email:email.trim(); 
+	}
+
+	private Date registertime;
+
+	public void setRegistertime(Date registertime){
+		this.registertime = registertime;
+	}
+
+	public Date getRegistertime() {
+		return registertime; 
+	}
+
+	private String state;
+
+	public void setState(String state){
+		this.state = state;
+	}
+
+	public String getState() {
+		return StringUtils.isBlank(state)?state:state.trim(); 
+	}
+
 }

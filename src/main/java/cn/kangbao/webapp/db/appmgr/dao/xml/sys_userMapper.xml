@@ -8,9 +8,12 @@
 		<result column="userType" property="usertype" jdbcType="CHAR" />
 		<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
 		<result column="dr" property="dr" jdbcType="INTEGER" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="registertime" property="registertime" jdbcType="TIMESTAMP" />
+		<result column="state" property="state" jdbcType="CHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-  	userId,userName,password,userType,createTime,dr
+  	userId,userName,password,userType,createTime,dr,email,registertime,state
   </sql>
   <sql id="Arg_Where_Clause" >
     <where >
@@ -145,6 +148,15 @@
 	<if test="record.dr != null" >
 		dr= #{record.dr,jdbcType=INTEGER},
 	</if>
+	<if test="record.email != null" >
+		email= #{record.email,jdbcType=VARCHAR},
+	</if>
+	<if test="record.registertime != null" >
+		registertime= #{record.registertime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="record.state != null" >
+		state= #{record.state,jdbcType=CHAR},
+	</if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
@@ -153,15 +165,15 @@
   <update id="updateByArg" parameterType="map" >
     update sys_user
     set 
-		userName = #{record.username,jdbcType=VARCHAR},	password = #{record.password,jdbcType=VARCHAR},	userType = #{record.usertype,jdbcType=CHAR},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER}
+		userName = #{record.username,jdbcType=VARCHAR},	password = #{record.password,jdbcType=VARCHAR},	userType = #{record.usertype,jdbcType=CHAR},	createTime = #{record.createtime,jdbcType=TIMESTAMP},	dr = #{record.dr,jdbcType=INTEGER},	email = #{record.email,jdbcType=VARCHAR},	registertime = #{record.registertime,jdbcType=TIMESTAMP},	state = #{record.state,jdbcType=CHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Arg_Where_Clause" />
     </if>
   </update>
   <insert id="insert" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysUser" >
-		insert into sys_user(userId,userName,password,userType,createTime,dr
+		insert into sys_user(userId,userName,password,userType,createTime,dr,email,registertime,state
 			)
-		 values (#{userid,jdbcType=INTEGER},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{usertype,jdbcType=CHAR},#{createtime,jdbcType=TIMESTAMP},#{dr,jdbcType=INTEGER}
+		 values (#{userid,jdbcType=INTEGER},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{usertype,jdbcType=CHAR},#{createtime,jdbcType=TIMESTAMP},#{dr,jdbcType=INTEGER},#{email,jdbcType=VARCHAR},#{registertime,jdbcType=TIMESTAMP},#{state,jdbcType=CHAR}
 			)
   </insert>
   <insert id="insertSelective" parameterType="cn.kangbao.webapp.db.appmgr.entity.SysUser" >
@@ -185,6 +197,15 @@
 	<if test="dr != null" >
 		dr,
 	</if>
+	<if test="email != null" >
+		email,
+	</if>
+	<if test="registertime != null" >
+		registertime,
+	</if>
+	<if test="state != null" >
+		state,
+	</if>
  </trim>
   <trim prefix="values (" suffix=")" suffixOverrides="," >
 	<if test="userid != null" >
@@ -205,13 +226,22 @@
 	<if test="dr != null" >
 		#{dr,jdbcType=INTEGER},
 	</if>
+	<if test="email != null" >
+		#{email,jdbcType=VARCHAR},
+	</if>
+	<if test="registertime != null" >
+		#{registertime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="state != null" >
+		#{state,jdbcType=CHAR},
+	</if>
     </trim>
   </insert>
    <insert id="insertBatch" parameterType="list" >
-		insert into sys_user(userId,userName,password,userType,createTime,dr
+		insert into sys_user(userId,userName,password,userType,createTime,dr,email,registertime,state
 			)
 		 values 
-		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.userid,jdbcType=INTEGER},#{ item.username,jdbcType=VARCHAR},#{ item.password,jdbcType=VARCHAR},#{ item.usertype,jdbcType=CHAR},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.dr,jdbcType=INTEGER}
+		 <foreach collection="list" item="item" index="index" separator=",">(#{ item.userid,jdbcType=INTEGER},#{ item.username,jdbcType=VARCHAR},#{ item.password,jdbcType=VARCHAR},#{ item.usertype,jdbcType=CHAR},#{ item.createtime,jdbcType=TIMESTAMP},#{ item.dr,jdbcType=INTEGER},#{ item.email,jdbcType=VARCHAR},#{ item.registertime,jdbcType=TIMESTAMP},#{ item.state,jdbcType=CHAR}
 			)
 		</foreach>
   </insert>
@@ -243,6 +273,15 @@
 	<if test="dr != null" >
 		dr = #{dr,jdbcType=INTEGER},
 	</if>
+	<if test="email != null" >
+		email = #{email,jdbcType=VARCHAR},
+	</if>
+	<if test="registertime != null" >
+		registertime = #{registertime,jdbcType=TIMESTAMP},
+	</if>
+	<if test="state != null" >
+		state = #{state,jdbcType=CHAR},
+	</if>
 		</set >
 	 where userId = #{userid,jdbcType=INTEGER}
 	</update>
@@ -253,7 +292,10 @@
 		password = #{password,jdbcType=VARCHAR},
 		userType = #{usertype,jdbcType=CHAR},
 		createTime = #{createtime,jdbcType=TIMESTAMP},
-		dr = #{dr,jdbcType=INTEGER}
+		dr = #{dr,jdbcType=INTEGER},
+		email = #{email,jdbcType=VARCHAR},
+		registertime = #{registertime,jdbcType=TIMESTAMP},
+		state = #{state,jdbcType=CHAR}
 	 where userId = #{userid,jdbcType=INTEGER}
 	</update>
 </mapper>

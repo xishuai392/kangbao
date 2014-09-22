@@ -59,6 +59,19 @@ public final class IWebConstans {
     /** 字段DR的删除值*/
     public static final int FIELD_DR_DISABLED = 1;
     
+    
+    /** 用户状态，通过验证 */
+    public static final String USERSTATE_ACTVED = "A";
+    
+    /** 用户状态，冻结 */
+    public static final String USERSTATE_DISABLED = "X";
+    
+    /** 用户状态，新注册 */
+    public static final String USERSTATE_CREATED = "C";
+    
+
+    
+    
     /** 用户类型  病人*/
     public static final String USERTYPE_PATIENT="0";
     /** 用户类型  医生*/

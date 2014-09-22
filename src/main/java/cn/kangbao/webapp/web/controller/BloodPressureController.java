@@ -87,7 +87,7 @@ public class BloodPressureController extends AbstractBaseController {
         operateDTO
                 .setMeasurementid(getPkSequence(IWebConstans.PATIENT_BLOODPRESSURE));
         operateDTO.setCreatetime(new Date());
-        operateDTO.setDr(0);
+        operateDTO.setDr(IWebConstans.FIELD_DR_ACTVED);
         // bpDTO.setPersonid(personid);
         setEvaluate(operateDTO);
 

@@ -80,7 +80,7 @@ public class BloodSugarController extends AbstractBaseController {
         operateDTO
                 .setBloodsugarid(getPkSequence(IWebConstans.PATIENT_BLOODSUGAR));
         operateDTO.setCreatetime(new Date());
-        operateDTO.setDr(0);
+        operateDTO.setDr(IWebConstans.FIELD_DR_ACTVED);
         // bpDTO.setPersonid(personid);
 
         boolean isOperateDone = bloodSugarService.insertRecord(operateDTO);

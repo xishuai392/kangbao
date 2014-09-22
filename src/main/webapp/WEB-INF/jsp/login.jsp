@@ -64,7 +64,7 @@
 	  <a href="/index.php/home/register/forget.html">
 		<p id="forget_pwd">忘记密码&gt;</p>
       </a> 
-	  <a href="/index.php/home/register/register.html">
+	  <a href="${ctx}/register.html">
 		<button id="register">免费注册</button>
       </a>
 	</div>

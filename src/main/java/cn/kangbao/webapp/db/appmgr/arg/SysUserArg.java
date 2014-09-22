@@ -732,6 +732,276 @@ public class SysUserArg {
 			return (SysUserCriteria) this;
 		}
 
+		public SysUserCriteria andEmailIsNull() {
+			addCriterion("email is null");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailIsNotNull() {
+			addCriterion("email is not null");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailEqualTo(String value) {
+			addCriterion("email =", value, "email");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailNotEqualTo(String value) {
+			addCriterion("email <>", value, "email");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailGreaterThan(String value) {
+			addCriterion("email >", value, "email");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailGreaterThanOrEqualTo(String value) {
+			addCriterion("email >=", value, "email");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailLessThan(String value) {
+			addCriterion("email <", value, "email");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailLessThanOrEqualTo(String value) {
+			addCriterion("email <=", value, "email");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailLike(String value) {
+			addCriterion("email like ", value, "email",1);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailNotLike(String value) {
+			addCriterion("email  not like ", value, "email",1);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailLeftLike(String value) {
+			addCriterion("email like ", value, "email",0);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailNotLeftLike(String value) {
+			addCriterion("email  not like ", value, "email",0);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailRightLike(String value) {
+			addCriterion("email like ", value, "email",2);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailNotRightLike(String value) {
+			addCriterion("email  not like ", value, "email",2);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailIn(List<String> values) {
+			addCriterion("email  in ", values, "email");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailNotIn(List<String> values) {
+			addCriterion("email not in ", values, "email");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailBetween(String value1,String value2) {
+			addCriterion("email between ", value1, value2, "email");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andEmailNotBetween(String value1,String value2) {
+			addCriterion("email not between ", value1, value2, "email");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeIsNull() {
+			addCriterion("registertime is null");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeIsNotNull() {
+			addCriterion("registertime is not null");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeEqualTo(Date value) {
+			addCriterion("registertime =", value, "registertime");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeNotEqualTo(Date value) {
+			addCriterion("registertime <>", value, "registertime");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeGreaterThan(Date value) {
+			addCriterion("registertime >", value, "registertime");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeGreaterThanOrEqualTo(Date value) {
+			addCriterion("registertime >=", value, "registertime");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeLessThan(Date value) {
+			addCriterion("registertime <", value, "registertime");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeLessThanOrEqualTo(Date value) {
+			addCriterion("registertime <=", value, "registertime");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeLike(Date value) {
+			addCriterion("registertime like ", value, "registertime",1);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeNotLike(Date value) {
+			addCriterion("registertime  not like ", value, "registertime",1);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeLeftLike(Date value) {
+			addCriterion("registertime like ", value, "registertime",0);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeNotLeftLike(Date value) {
+			addCriterion("registertime  not like ", value, "registertime",0);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeRightLike(Date value) {
+			addCriterion("registertime like ", value, "registertime",2);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeNotRightLike(Date value) {
+			addCriterion("registertime  not like ", value, "registertime",2);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeIn(List<Date> values) {
+			addCriterion("registertime  in ", values, "registertime");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeNotIn(List<Date> values) {
+			addCriterion("registertime not in ", values, "registertime");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeBetween(Date value1,Date value2) {
+			addCriterion("registertime between ", value1, value2, "registertime");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andRegistertimeNotBetween(Date value1,Date value2) {
+			addCriterion("registertime not between ", value1, value2, "registertime");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateIsNull() {
+			addCriterion("state is null");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateIsNotNull() {
+			addCriterion("state is not null");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateEqualTo(String value) {
+			addCriterion("state =", value, "state");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateNotEqualTo(String value) {
+			addCriterion("state <>", value, "state");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateGreaterThan(String value) {
+			addCriterion("state >", value, "state");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateGreaterThanOrEqualTo(String value) {
+			addCriterion("state >=", value, "state");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateLessThan(String value) {
+			addCriterion("state <", value, "state");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateLessThanOrEqualTo(String value) {
+			addCriterion("state <=", value, "state");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateLike(String value) {
+			addCriterion("state like ", value, "state",1);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateNotLike(String value) {
+			addCriterion("state  not like ", value, "state",1);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateLeftLike(String value) {
+			addCriterion("state like ", value, "state",0);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateNotLeftLike(String value) {
+			addCriterion("state  not like ", value, "state",0);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateRightLike(String value) {
+			addCriterion("state like ", value, "state",2);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateNotRightLike(String value) {
+			addCriterion("state  not like ", value, "state",2);
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateIn(List<String> values) {
+			addCriterion("state  in ", values, "state");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateNotIn(List<String> values) {
+			addCriterion("state not in ", values, "state");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateBetween(String value1,String value2) {
+			addCriterion("state between ", value1, value2, "state");
+			return (SysUserCriteria) this;
+		}
+
+		public SysUserCriteria andStateNotBetween(String value1,String value2) {
+			addCriterion("state not between ", value1, value2, "state");
+			return (SysUserCriteria) this;
+		}
+
     }
 
     public static class SysUserCriteria extends GeneratedCriteria {

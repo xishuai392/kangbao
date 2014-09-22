@@ -17,7 +17,7 @@
 			    if (null == mainPerson) {
 			%>
 			<a href="${ctx}/login/login.html" id='login'>登录</a> <a
-				href="/index.php/home/register/register.html" id='reg'>注册</a>
+				href="${ctx}/register.html" id='reg'>注册</a>
 			<%
 			    }
 			    else {

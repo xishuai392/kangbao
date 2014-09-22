@@ -3,14 +3,12 @@
  */
 package cn.kangbao.webapp.web.vo;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import cn.kangbao.webapp.db.appmgr.entity.PatientLivestate;
+import cn.kangbao.common.dto.AbstractDto;
 
 /**
  * <Description> <br>
@@ -23,7 +21,7 @@ import cn.kangbao.webapp.db.appmgr.entity.PatientLivestate;
  * @see cn.kangbao.webapp.web.vo <br>
  */
 
-public class PersonVO implements Serializable {
+public class PersonVO extends AbstractDto {
 
     private Integer personid;
 

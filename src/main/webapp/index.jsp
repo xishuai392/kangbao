@@ -27,7 +27,7 @@
 							if (null == mainPerson) {
 				%>
 				<a href="${ctx}/login/login.html" id='login'>登录</a> <a
-					href="/index.php/home/register/register.html" id='reg'>注册</a>
+					href="${ctx}/register.html" id='reg'>注册</a>
 				<%
 				    } else {
 				%>
@@ -72,7 +72,7 @@
 												id='ios'>
 												<img src='${ctx}/images/ios.png'><span>iphone
 													下载</span>
-											</div></a> <a href='http://37mhealth.com/downloads/blood_press.apk'><div
+											</div></a> <a href='${ctx}/downloads/blood_press.apk'><div
 												id='android'>
 												<img src='${ctx}/images/android.png'><span>android
 													下载</span>

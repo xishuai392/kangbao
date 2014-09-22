@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+
+div#register_container {
+	width: 500px;
+	height: 390px;
+	background-color: #fff;
+	position: absolute;
+	left: 50%;
+	margin-left: -250px;
+	top: 20%;
+}
+
+#register_container table {
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	border-style: none;
+}
+
+#register_container td {
+	height: 60px;
+	vertical-align: middle;
+}
+
+td.register_lable {
+	width: 100px;
+	text-align: right;
+	font-size: 18px;
+}
+
+td.right_td {
+	
+}
+
+td.right_td input {
+	height: 30px;
+	font-size: 16px;
+	margin-left: 20px;
+}
+
+input#verify {
+	width: 80px;
+}
+
+img.verify {
+	position: relative;
+	top: 10px;
+	cursor: pointer;
+}
+
+button.submit_button {
+	width: 150px;
+	height: 50px;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	font-weight: 700;
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: baseline;
+	line-height: 38px;
+	outline: 0;
+	background-color: transparent;
+	border-radius: 3px;
+	color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 28, 88, .3);
+	background-color: #44b5df;
+	font-size: 18px;
+	margin-left: 50px;
+}
+
+.submit_button:hover {
+	background-color: #71d0f3;
+}
+/*注册end*/
