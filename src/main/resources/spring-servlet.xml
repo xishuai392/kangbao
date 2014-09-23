@@ -85,9 +85,14 @@
 	<mvc:resources location="/" mapping="/*.ico" />
 
 	<!-- 拦截器 -->
-	<!-- <mvc:interceptors> <mvc:interceptor> <mvc:mapping path="/*" /> <bean 
-		class="com.iflytek.framework.common.CommonInterceptor"></bean> </mvc:interceptor> 
-		</mvc:interceptors> -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/bp/*" />
+			<mvc:mapping path="/bs/*" />
+			<mvc:mapping path="/person/*" />
+			<bean class="cn.kangbao.common.interceptor.SessionUserInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 	<bean id="exceptionResolver"
 		class="cn.kangbao.common.plugin.CustomSimpleMappingExceptionResolver">
