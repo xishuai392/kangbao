@@ -33,7 +33,7 @@
 			<a href="${ctx}"><li name="menu">首页</li></a>
 			<a href="${ctx}/steward/index.html"><li name="menu">管家</li></a>
 			<a href="${ctx}/supermarket_index.html"><li name="menu">健康超市</li></a>
-			<a href="${ctx}/forum.php" target="_blank"><li name="menu">健康论坛</li></a>
+			<a href="${ctx}" target="_blank"><li name="menu">健康论坛</li></a>
 			<a href="${ctx}/news_index.html"><li name="menu">康宝动态</li></a>
 			<a href="${ctx}/about_index.html"><li name="menu">关于我们</li></a>
 		</ul>
