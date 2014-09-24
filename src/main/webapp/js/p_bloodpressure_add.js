@@ -139,6 +139,11 @@ $(document).ready(function() {
             });
         } else {
             $.post(webRoot + 'bp/saveRecord.json', $('form[name=blood_data_input]').serialize(), function(data, textStatus, xhr) {
+                if (data.errCode) {
+                    jError("错误代码：" + data.errCode + "，" + data.msg);
+                    setTimeout("window.location = '" + webRoot + "login/login.html'", 2000);
+                    return ;
+                }
                 if (data.success) {
                     jSuccess("添加记录成功!", {
                         VerticalPosition : 'center',
