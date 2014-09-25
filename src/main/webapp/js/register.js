@@ -39,6 +39,10 @@ $(document).ready(function() {
             });
         } else {
             $.post(webRoot + 'register/addRecord.json', $('form[name=register]').serialize(), function(data, textStatus, xhr) {
+                if (data.errCode) {
+                    jError("错误代码：" + data.errCode + "，" + data.msg);
+                    return;
+                }
                 if (data.success) {
                     jSuccess("注册成功!", {
                         VerticalPosition : 'center',

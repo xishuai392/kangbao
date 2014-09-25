@@ -24,15 +24,21 @@
   <ul>
   <!--<li><a>软件下载</a></li>
 	<span>|</span>-->
-	<li><a href="/index.php/home/index/index.html">首页</a></li>
-	<li><a href="/index.php/home/health/member.html">管家</a></li>
-	<li><a href="http://bbs.37mhealth.com/forum.php">健康论坛</a></li>
-	<!--<li><a href="/index.php/home/sales/saleslist.html">超市</a></li>-->
-	<li><a href="/index.php/home/about/index.html">关于我们</a></li>
-	<li><a href="/index.php/home/news/newslist.html">37动态</a></li>
-	<li><a href="/index.php/home/about/cooperate.html">商务合作</a></li>
-	<li><a href="/index.php/home/about/contact.html">联系我们</a></li>
-	<li><a href="/index.php/home/about/link.html">友情链接</a></li>
+	<a href="${ctx}"><li name="menu">首页</li></a>
+			<a href="${ctx}/steward/index.html"><li name="menu">管家</li></a>
+			<a href="${ctx}/supermarket_index.html"><li name="menu">健康超市</li></a>
+			<a href="${ctx}" target="_blank"><li name="menu">健康论坛</li></a>
+			<a href="${ctx}/news_index.html"><li name="menu">康宝动态</li></a>
+			<a href="${ctx}/about_index.html"><li name="menu">关于我们</li></a>
+				
+	<li><a href="${ctx}">首页</a></li>
+	<li><a href="${ctx}/steward/index.html">管家</a></li>
+	<li><a href="${ctx}">健康论坛</a></li>
+	<li><a href="${ctx}/about_index.html">关于我们</a></li>
+	<li><a href="${ctx}/news_index.html">康宝动态</a></li>
+	<li><a href="${ctx}">商务合作</a></li>
+	<li><a href="${ctx}">联系我们</a></li>
+	<li><a href="${ctx}">友情链接</a></li>
 	<!--<span>|</span>-->
 	<!--<li>最热问题</li>-->
 	<div class="clear"></div>

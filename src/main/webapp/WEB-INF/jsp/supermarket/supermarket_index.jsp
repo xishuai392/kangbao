@@ -14,7 +14,7 @@
   <div style='width: 1240px; margin-left: auto; margin-right: auto; min-height: 100%'>
 	<div style='margin-top: 20px; width: 1240px;'>
 	  <h2 style='line-height: 40px; width: 500px; float: left; margin: 0px; padding: 10px; font-size: 28px; font-weight: normal'>
-	    37mhealth血压计
+	    康宝血压计
 	  </h2>
 	  <div class="button_contaienr0">
 		<!--<a href="/index.php/home/sales/doalipay.html"><span style='font-size: 20px;font-weight: normal;color: green'>立即支付</span></a>-->
@@ -29,7 +29,7 @@
 	  <div id='all'>
 		<div id='all_1'>全部商品分类</div>
 		  <a href="/index.php/home/sales/saleslist.html">
-		    <div id='all_one' style='color: #f5ff00'>37mhealth血压计</div>
+		    <div id='all_one' style='color: #f5ff00'>康宝血压计</div>
 		  </a>
 		  <a href="/index.php/home/sales/saleslist_tw.html">
 		    <div id='all_one'>健康存折</div>
@@ -58,8 +58,8 @@
 	  <div class="bm_2" style='clear: both; background-color: #F7F7F7'>
 		<div class="bm_2_1">
 		  <span class=""><br> <br> 
-		    <span style='font-size: 30px; font-weight: bold; color: #3689F7'>37智能血压计</span><br>
-		    <br>37健康推出的37智能压计，是血压管家团队根据老年人的人机交互行为和生活习惯自主研发的HOS系统，可直接测量血压，免费将数据保存于云端，同时方便查看血压状况并提供相关服务，并且支持多个成员测量
+		    <span style='font-size: 30px; font-weight: bold; color: #3689F7'>康宝智能血压计</span><br>
+		    <br>康宝健康推出的康宝智能压计，是血压管家团队根据老年人的人机交互行为和生活习惯自主研发的HOS系统，可直接测量血压，免费将数据保存于云端，同时方便查看血压状况并提供相关服务，并且支持多个成员测量
 		  </span>
 		</div>
 		<div class="bm_2_3">
@@ -143,7 +143,7 @@
 		</div>
 		<div class="bm_6_3">
 		  <span><br> <br> <span style='color: #3689F7'>产品名称</span>
-		     ：37云血压计&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		     ：康宝云血压计&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		  <span style='color: #3689F7'>测量方法</span>：示波法<br> <br> 
 		  <span style='color: #3689F7'>测量范围</span>：压力：0~300mmHg （0~40.0KPa）<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;心率：40~200跳/分<br><br> 
 		  <span style='color: #3689F7'>测量精度</span>：压力：±4mmHg ，心率：±5%以内<br> <br> 
@@ -171,7 +171,7 @@
 		<div class="clear"></div>
 	  </div>
 	  <div class="button_contaienr2">
-		<h1 style='font-size: 50px; color: #808080; margin-bottom: 20px;'>37mhealth血压计</h1>
+		<h1 style='font-size: 50px; color: #808080; margin-bottom: 20px;'>康宝血压计</h1>
 		<button type="submit" class="submit_button" id='order'>立即预约</button>
 	  </div>
 	</div>

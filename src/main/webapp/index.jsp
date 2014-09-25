@@ -42,7 +42,7 @@
 				<a href="${ctx}"><li id="current_page">首页</li></a>
 				<a href="${ctx}/steward/index.html"><li>管家</li></a>
 				<a href="${ctx}/supermarket_index.html"><li>健康超市</li></a>
-				<a href="${ctx}/forum.php" target="_blank"><li>健康论坛</li></a>
+				<a href="${ctx}" target="_blank"><li>健康论坛</li></a>
 				<a href="${ctx}/news_index.html"><li>康宝动态</li></a>
 				<a href="${ctx}/about_index.html"><li>关于我们</li></a>
 			</ul>
@@ -102,11 +102,11 @@
 
 	<!--产品介绍start-->
 	<!--介绍1start-->
-	<a href="/index.php/home/sales/saleslist.html"><div id="main1">
+	<a href="${ctx}/supermarket_index.html"><div id="main1">
 			<div id="main_intro_1">
 				<div class="main_intro_title">
 					<span class="intro_title_text"><span
-						style='font-size: 50px; font-weight: bold'>37mhealth </span> 血压计</span>
+						style='font-size: 50px; font-weight: bold'>康宝 </span> 血压计</span>
 				</div>
 				<div class="main_intro_1">
 					<span class="intro_title_1">重新定义血压计<br>深度定制HOS系统<br>专为用户的使用习惯而设计<br>
@@ -192,7 +192,7 @@
 				<span class="intro_title_text2">做最好的慢性病管理平台</span>
 			</div>
 			<div id="intro_1_left2">
-				<div id="intro_1_text2" class="intro_text2">37健康致力于慢性病管理平台搭建，帮您记录血压数据，提供数据分析、预警，进行健康干预，同时也能帮您找到病友和医生，交流健康信息，获取健康指导</div>
+				<div id="intro_1_text2" class="intro_text2">康宝致力于慢性病管理平台搭建，帮您记录血压数据，提供数据分析、预警，进行健康干预，同时也能帮您找到病友和医生，交流健康信息，获取健康指导</div>
 				<!--
 						<span class="download_text" >免费提供软件下载，现已支持IOS/Android系统</span>
 						<img id="download_link_img" src="${ctx}/images/download_link.png" />
