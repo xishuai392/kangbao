@@ -11,7 +11,7 @@
 <script type="text/javascript" src="${ctx }/js/login.js"
 	defer="defer"></script>
 	
-<title>康宝健康--登录</title>
+<title>康宝健康专家--登录</title>
 </head>
 <body>
   <!--顶部start-->

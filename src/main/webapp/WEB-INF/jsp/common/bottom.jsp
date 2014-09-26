@@ -3,13 +3,13 @@
   <div class='up1'>
 	<div id='upload1'>
 	  <div class='up2'>
-		<a href='https://itunes.apple.com/cn/app/xue-ya-guan-jia/id702674599?mt=8'>
+		<a href='${ctx}'>
 		  <div id='ios1'>
 			<img src='${ctx}/images/ios.png'>
 		    <span>iphone 下载</span>
 		  </div>
 	    </a> 
-	    <a href='http://37mhealth.com/downloads/blood_press.apk'>
+	    <a href='${ctx}'>
 	      <div id='android1'>
 			<img src='${ctx}/images/android.png'>
 			<span>android下载</span>
@@ -57,6 +57,6 @@
     </div>
 	<div class="clear"></div>
 	<p>Copyright © 2013-2014 康宝科技股份有限公司 All rights reserved.<br>
-	 京ICP备13038247号-1－京公网安备11010802012458号</p>
+	</p>
 </div>
 	
