@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import cn.kangbao.common.log.LoggerManager;
 
 /**
- * <Description> <br>
- * 主界面
+ * <Description> 主界面<br>
  * 
  * @author pan.xiaobo<br>
  * @version 1.0<br>
@@ -28,10 +27,13 @@ public class IndexController extends AbstractBaseController {
 
     @RequestMapping(value = "/steward/index.html")
     public String index(HttpServletRequest request, Model model) {
-        if (null == request.getSession() || null == request.getSession().getAttribute(IWebConstans.SESSIONUSER)) {
+        if (null == request.getSession()
+                || null == request.getSession().getAttribute(
+                        IWebConstans.SESSIONUSER)) {
             // 没登陆
             return "login";
         }
-        return "login/main";
+        // return "login/main";
+        return "redirect:/person/index.html";
     }
 }

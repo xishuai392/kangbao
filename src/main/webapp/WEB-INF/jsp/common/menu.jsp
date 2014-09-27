@@ -6,7 +6,7 @@
 	<a class="steward_a" href="${ctx }/bp/showRecord.html"> 血压查看</a> 
 	<a class="steward_a" href="${ctx }/bs/addRecord.html"> 血糖输入</a> 
 	<a class="steward_a" href="${ctx }/bs/showRecord.html"> 血糖查看</a> 
-	<a class="steward_a" href="${ctx }"> 医生回复查看</a>
+	<a class="steward_a" href="#"> 医生回复查看</a>
 	
 	
   </div>

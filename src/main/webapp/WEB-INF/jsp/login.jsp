@@ -21,7 +21,7 @@
   <!--页面专有内容start-->
   <div id="login_container">
 	<form name="login_form" action="" method="post">
-	  <div id="account_container1">
+	  <div id="account_container1" style="display: none">
 		<table class="life_state_table">
 		  <tr>
 			<td class="life_state_lable">请选择类型:</td>
@@ -42,13 +42,13 @@
 		<div class="input_left">
 		  <span>账户</span>
 		</div>
-		<input type="text" name="username" value="18888888888" placeholder="血压管家邮箱或手机号" required="required" />
+		<input type="text" name="username" value="" placeholder="邮箱或手机号" required="required" />
       </div>
 	  <div id="password_container">
 		<div class="input_left">
 		  <span>密码</span>
 		</div>
-		<input type="password" name="password" value="1" placeholder="请输入密码" required="required" />
+		<input type="password" name="password" value="" placeholder="请输入密码" required="required" />
 	  </div>
 	  <div id="submit_button_container"> 
 		<button type="button" id="submit_button">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
@@ -61,7 +61,7 @@
 	  <span id="qq_login_btn"></span>
 	</div>
 	<div id="login_other">
-	  <a href="/index.php/home/register/forget.html">
+	  <a href="#">
 		<p id="forget_pwd">忘记密码&gt;</p>
       </a> 
 	  <a href="${ctx}/register.html">

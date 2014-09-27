@@ -4,12 +4,17 @@
 
 <%@include file="/WEB-INF/jsp/common/common.inc.jsp"%>
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>康宝健康专家</title>
 <script type="text/javascript" src="${ctx}/js/index.js"></script>
 <script type="text/javascript">
 	function checkIsLogin() {
 		document.forms[0].submit();
 	}
 </script>
+</head>
+
 <body>
 
 	<!--顶部start-->
@@ -40,11 +45,8 @@
 			</div>
 			<ul id="header_nav">
 				<a href="${ctx}"><li id="current_page">首页</li></a>
-				<a href="${ctx}/steward/index.html"><li>管家</li></a>
-				<a href="${ctx}/supermarket_index.html"><li>健康超市</li></a>
-				<a href="${ctx}" target="_blank"><li>健康论坛</li></a>
-				<a href="${ctx}/news_index.html"><li>康宝动态</li></a>
-				<a href="${ctx}/about_index.html"><li>关于我们</li></a>
+				<a href="${ctx}/steward/index.html"><li>血压血糖</li></a>
+				<a href="${ctx}/supermarket_index.html"><li>康宝商城</li></a>
 			</ul>
 		</div>
 	</div>
@@ -78,7 +80,7 @@
 													下载</span>
 											</div></a>
 									</div>
-									<div class='er'>
+									<div class='er' style="display: none" >
 										<img src='${ctx}/images/download_link.png'>
 									</div>
 								</div>
@@ -101,39 +103,11 @@
 
 
 	<!--产品介绍start-->
-	<!--介绍1start-->
-	<a href="${ctx}/supermarket_index.html"><div id="main1">
-			<div id="main_intro_1">
-				<div class="main_intro_title">
-					<span class="intro_title_text"><span
-						style='font-size: 50px; font-weight: bold'>康宝 </span> 血压计</span>
-				</div>
-				<div class="main_intro_1">
-					<span class="intro_title_1">重新定义血压计<br>深度定制HOS系统<br>专为用户的使用习惯而设计<br>
-						<div id="intro_1_left">
-							<h2>漂亮的界面</h2>
-						</div>
-						<div id="intro_1_left">
-							<h2>顺畅的操作</h2>
-						</div>
-						<div id="intro_1_left">
-							<h2>贴心的服务</h2>
-						</div>
-					</span>
-					<div id="intro_2">使慢病管理变得更简单、更实用、更方便</div>
-				</div>
-				<div id="intro_1_right">
-					<img src="${ctx}/images/xueyaji.png" />
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div></a>
-	<!--介绍1end-->
 	<!--介绍2start-->
 	<div id="main2">
 		<div id="main_intro_2">
 			<div class="main_intro_title1">
-				<span class="intro_title_text1">最大的高血压移动社区</span>
+				<span class="intro_title_text1">最专业的慢性病服务社区</span>
 			</div>
 			<div id="intro_1_left1">
 				<div class='big'>
