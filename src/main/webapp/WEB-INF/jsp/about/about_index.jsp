@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>康宝--关于我们</title>
+<title>康宝健康专家--关于我们</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/detail.css">
 </head>

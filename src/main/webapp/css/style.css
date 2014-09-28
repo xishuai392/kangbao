@@ -421,9 +421,9 @@ p#back-to-top a span {
 }
 #logo_img {
     border: medium none;
-    height: 90px;
+    height: 85px;
     margin-left: 50px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .blood_count {
     height: 300px;

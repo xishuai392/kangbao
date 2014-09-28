@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<title>康宝</title>
+<title>康宝健康专家</title>
 <%@include file="/WEB-INF/jsp/common/common.inc.jsp"%>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/health_common.css">
@@ -27,7 +27,6 @@
 	<%@ include file="/WEB-INF/jsp/common/top.jsp"%>
 	<!--顶部end-->
 
-	<%@ include file="/WEB-INF/jsp/common/menu.jsp"%>
 
 	<script type="text/javascript"
 		src="${ctx }/jslibs/My97DatePicker/WdatePicker.js" defer="defer"></script>
@@ -35,9 +34,33 @@
 	<script type="text/javascript" src="${ctx }/js/person_operate.js"
 		defer="defer"></script>
 
+	<script type="text/javascript" src="${ctx }/js/menu.js" defer="defer"></script>
+
 
 	<!--main_start-->
 	<div id="main">
+		<div id="main_left_container">
+			<div id="user_info">
+				<img id="user_head_img"
+					src="${ctx }/images/health/user_head_img.png" title="选择此用户">
+				<div id="select_user"></div>
+
+			</div>
+			<ul id="nav">
+				<li><a href="${ctx }/person/index.html">家庭成员管理 </a></li>
+				<li><a href="#" onClick="DoMenu('ChildMenu1')">血压管理</a>
+					<ul id="ChildMenu1" class="collapsed">
+						<li><a href="${ctx }/bp/addRecord.html"> 血压输入</a></li>
+						<li><a href="${ctx }/bp/showRecord.html"> 血压查看</a></li>
+					</ul></li>
+				<li><a href="#" onClick="DoMenu('ChildMenu2')">血糖管理</a>
+					<ul id="ChildMenu2" class="collapsed">
+						<li><a href="${ctx }/bs/addRecord.html"> 血糖输入</a></li>
+						<li><a href="${ctx }/bs/showRecord.html"> 血糖查看</a></li>
+					</ul></li>
+				<li><a href="#"> 医生回复查看</a></li>
+			</ul>
+		</div>
 		<div id="main_right_container">
 			<div id="main_right_title_container">
 				<span>家庭成员管理</span>
@@ -67,9 +90,9 @@
 								<tr>
 									<td>生日：</td>
 									<td><form:input path="birthday"
-											onclick="return WdatePicker({dateFmt:'yyyy-MM-dd'});" autocomplete="off"
-											readonly="readonly" required="required" placeholder="日期" />
-									</td>
+											onclick="return WdatePicker({dateFmt:'yyyy-MM-dd'});"
+											autocomplete="off" readonly="readonly" required="required"
+											placeholder="日期" /></td>
 								</tr>
 								<tr>
 									<td>手机号码：</td>
@@ -239,7 +262,8 @@
 										</table>
 									</td>
 									<td class="life_state_lable">糖尿病</td>
-									<td input-name="livestate_tangniaobing" class="life_state_select">
+									<td input-name="livestate_tangniaobing"
+										class="life_state_select">
 										<table>
 											<tbody>
 												<tr>
@@ -256,9 +280,9 @@
 								</tr>
 							</tbody>
 						</table>
-						
+
 						<input type="hidden" name="operateType" value="${operateType }" />
-						
+
 						<form:hidden path="personid" />
 						<form:hidden path="healthid" />
 						<form:hidden path="mainpersonid" />
@@ -292,5 +316,9 @@
 	<!----------------------------footer_end------------>
 
 </body>
+<script type="text/javascript">
+	console.log($("li#sales_page"));
+	$("li#health_page").css('border-bottom', '4px solid #f5ff00');
+</script>
 </html>
 

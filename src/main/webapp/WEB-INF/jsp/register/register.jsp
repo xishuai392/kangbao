@@ -3,7 +3,7 @@
 <%@include file="/WEB-INF/jsp/common/common.inc.jsp"%>
 <html>
 <head>
-<title>康宝</title>
+<title>康宝健康专家</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/register.css">
 

@@ -4,10 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>康宝--商城</title>
+<title>康宝健康专家--商城</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/detail.css">
 </head>
+
+
+
 <body>
 	<!--顶部start-->
 	<%@ include file="/WEB-INF/jsp/common/top.jsp"%>
@@ -24,4 +27,9 @@
 	<%@ include file="/WEB-INF/jsp/common/bottom.jsp"%>
 	<!----------------------------footer_end------------>
 </body>
+
+<script type="text/javascript">
+	console.log($("li#sales_page"));
+	$("li#sales_page").css('border-bottom', '4px solid #f5ff00');
+</script>
 </html>
