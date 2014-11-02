@@ -222,7 +222,7 @@
 					
 				</script>
 
-				<div id="ptable" style="margin: 10px">
+				<div id="ptable" style="margin: 0px">
 					<table id="flex1" style="display: none"></table>
 				</div>
 				<input id="action" type="hidden" name="action" value="null" />

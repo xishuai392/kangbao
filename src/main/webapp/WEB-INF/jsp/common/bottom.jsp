@@ -46,7 +46,7 @@
 	  <div></div>
     </div>
 	<div class="clear"></div>
-	<p>Copyright © 2013-2014 康宝科技股份有限公司 All rights reserved.<br>
+	<p>Copyright © 2013-2014 康宝科技股份有限公司 All rights reserved.闽ICP备14017798号-1 <br>
 	</p>
 </div>
 	

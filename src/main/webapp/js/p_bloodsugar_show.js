@@ -14,7 +14,7 @@ $(document).ready(function() {
     console.log("params:" + params);
 
     var grid = $("#flex1").flexigrid({
-        width : 660,
+        width : 700,
         height : 350,
         url : webRoot + 'bs/queryRecordByPage.json?' + params,
         // url : webRoot + 'bs/queryRecordByPage.json',

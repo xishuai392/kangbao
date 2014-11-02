@@ -14,12 +14,14 @@ $(document).ready(function($) {
 						VerticalPosition : 'center',
 						HorizontalPosition : 'center'
 					});
+			return false;
 		}
 		if (pass == '') {
 			jError("密码不能为空!!", {
 						VerticalPosition : 'center',
 						HorizontalPosition : 'center'
 					});
+			return false;
 		}
 		if (regPartton.test(account) || filter.test(account)) {
 			var form = $(this).parents('form');
@@ -54,7 +56,7 @@ $(document).ready(function($) {
 						};
 					});
 		} else {
-			jError("请输入正确的账号!!", {
+			jError("请输入正确的账号（手机号码）!!", {
 						VerticalPosition : 'center',
 						HorizontalPosition : 'center'
 					});
